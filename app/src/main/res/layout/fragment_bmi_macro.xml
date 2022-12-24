@@ -9,18 +9,38 @@
     tools:context=".BMIMacroCalc">
 
     <TextView
-        android:id="@+id/kg"
+        android:id="@+id/Height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:text="@string/kg"
+        android:layout_marginTop="28dp"
+        android:text="@string/height"
         android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/HeightTI"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="90dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="248dp"
+        app:boxBackgroundColor="#DDEBFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foregroundTint="#FFFFFF"
+            android:shadowColor="#FFFFFF"
+            android:textColor="#5465FF"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/cm"
@@ -71,38 +91,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/Height"
+        android:id="@+id/kg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/height"
+        android:layout_marginTop="72dp"
+        android:text="@string/kg"
         android:textColor="#000000"
-        android:textStyle="normal"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/HeightTI"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="90dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="248dp"
-        app:boxBackgroundColor="#DDEBFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foregroundTint="#FFFFFF"
-            android:shadowColor="#FFFFFF"
-            android:textColor="#5465FF"
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/MWG"
@@ -179,5 +179,17 @@
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <TextView
+        android:id="@+id/AL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="212dp"
+        android:text="Activity Level:"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
