@@ -5,6 +5,7 @@
     android:id="@+id/CSBMILayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C6DDFF"
     tools:context=".BMIMacroCalc">
 
     <!-- TODO: Update blank fragment layout -->
