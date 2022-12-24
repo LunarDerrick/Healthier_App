@@ -18,4 +18,5 @@
     <string name="mild_loss">Mild Loss</string>
     <string name="extra_loss">Extra Loss</string>
     <string name="loss">Loss</string>
+    <string name="sedentary">Sedentary\n(no exercises)</string>
 </resources>
