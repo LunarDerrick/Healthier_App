@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Healthier_App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="TVToday">Today\'s plan:</string>
+    <string name="TVTableTitleBF">Breakfast</string>
+    <string name="TVTableTitleL">Lunch</string>
+    <string name="TVTableTitleD">Dinner</string>
+    <string name="BtnComplete">Complete</string>
+    <string name="TVWeekly">Weekly diet plan:</string>
+    <string name="BtnEdit">Edit</string>
 </resources>
