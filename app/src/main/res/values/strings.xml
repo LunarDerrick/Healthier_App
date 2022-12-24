@@ -9,4 +9,13 @@
     <string name="BtnComplete">Complete</string>
     <string name="TVWeekly">Weekly diet plan:</string>
     <string name="BtnEdit">Edit</string>
+    <string name="kg">kg</string>
+    <string name="cm">cm</string>
+    <string name="weight">Weight:</string>
+    <string name="height">Height:</string>
+    <string name="main_weight_goal">Main Weight Goal:</string>
+    <string name="maintain">Maintain</string>
+    <string name="mild_loss">Mild Loss</string>
+    <string name="extra_loss">Extra Loss</string>
+    <string name="loss">Loss</string>
 </resources>
