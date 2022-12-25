@@ -233,13 +233,14 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="14sp"
-        app:cornerRadius="5dp"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/CVBMI"
         android:layout_width="346dp"
         android:layout_height="135dp"
         android:layout_marginTop="348dp"
@@ -249,14 +250,27 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/Category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_category"
+            android:textColor="#8B8B8B"
+            android:textSize="12sp"
+            android:translationX="130dp"
+            android:translationY="35dp"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+        <TextView
             android:id="@+id/BMIScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your BMI Score"
+            android:text="@string/your_bmi_score"
             android:textColor="#8B8B8B"
             android:textSize="12sp"
+            android:textStyle="bold"
             android:translationX="20dp"
-            android:translationY="10dp" />
+            android:translationY="10dp"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
 
         <TextView
             android:id="@+id/bminum"
@@ -264,11 +278,175 @@
             android:layout_height="45dp"
             android:background="@drawable/bg_rounded"
             android:gravity="center"
-            android:text="0.0"
+            android:text="@string/_0_0"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:translationX="20sp"
             android:translationY="35dp" />
+
+        <RadioButton
+            android:id="@+id/WeightClass"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:buttonTint="#818181"
+            android:checked="true"
+            android:text="@string/weight_class"
+            android:textColor="#000000"
+            android:translationX="125dp"
+            android:translationY="50dp"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_healthy_weight_range_0kg"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:translationX="20sp"
+            android:translationY="108sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="346dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="17dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CVBMI">
+
+        <TextView
+            android:id="@+id/fat"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/bg_rounded"
+            android:backgroundTint="#C6DDFF"
+            android:gravity="center"
+            android:text="62g"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:translationX="260dp"
+            android:translationY="60dp" />
+
+        <TextView
+            android:id="@+id/tvfat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fat"
+            android:textSize="8sp"
+            android:translationX="277.5dp"
+            android:translationY="90dp" />
+
+        <TextView
+            android:id="@+id/MacroScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your daily macro goals"
+            android:textColor="#8B8B8B"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:translationX="20dp"
+            android:translationY="10dp"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/Circular"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:background="@drawable/circleshape"
+            android:gravity="center"
+            android:text="1533"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:translationX="20dp"
+            android:translationY="30dp" />
+
+        <TextView
+            android:id="@+id/circulartotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Total \n0.25kg/week\n\n\nCalories/day"
+            android:textSize="10sp"
+            android:translationX="42.5dp"
+            android:translationY="50dp" />
+
+        <TextView
+            android:id="@+id/protein"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/bg_rounded"
+            android:backgroundTint="#C6DDFF"
+            android:gravity="center"
+            android:text="75g"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:translationX="140dp"
+            android:translationY="60dp" />
+
+        <TextView
+            android:id="@+id/tvprotein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Protein"
+            android:textSize="8sp"
+            android:translationX="150dp"
+            android:translationY="90dp" />
+
+        <TextView
+            android:id="@+id/carbs"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/bg_rounded"
+            android:backgroundTint="#C6DDFF"
+            android:gravity="center"
+            android:text="36g"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:translationX="200dp"
+            android:translationY="60dp" />
+
+        <TextView
+            android:id="@+id/tvcarbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carbs"
+            android:textSize="8sp"
+            android:translationX="212.5dp"
+            android:translationY="90dp" />
+
+        <ImageView
+            android:id="@+id/IVegg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="egg"
+            android:translationX="147.5dp"
+            android:translationY="45dp"
+            tools:src="@drawable/egg" />
+
+        <ImageView
+            android:id="@+id/IVRamen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="ramen"
+            android:src="@drawable/ramen"
+            android:translationX="210dp"
+            android:translationY="45dp" />
+
+        <ImageView
+            android:id="@+id/IVicecream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="icecream"
+            android:src="@drawable/icecream"
+            android:translationX="270dp"
+            android:translationY="45dp" />
 
     </androidx.cardview.widget.CardView>
 

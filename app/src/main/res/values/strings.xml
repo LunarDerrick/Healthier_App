@@ -28,4 +28,9 @@
     <string name="TVTableDaySu">Sun</string>
     <string name="activity_level">Activity Level:</string>
     <string name="calculate">Calculate</string>
+    <string name="your_category">Your Category</string>
+    <string name="your_bmi_score">Your BMI Score</string>
+    <string name="_0_0">0.0</string>
+    <string name="weight_class">Weight class</string>
+    <string name="your_healthy_weight_range_0kg">Your healthy weight range: 0kg</string>
 </resources>
