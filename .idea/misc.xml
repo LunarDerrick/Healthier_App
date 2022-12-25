@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/drawable/border.xml" value="0.2985" />
+        <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/drawable/border_green.xml" value="0.2985" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/activity_planner.xml" value="0.358695652173913" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_bmi_macro.xml" value="0.358695652173913" />
