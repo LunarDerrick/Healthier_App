@@ -21,4 +21,9 @@
     <string name="sedentary">Sedentary\n(no exercises)</string>
     <string name="TVTableDayM">Mon</string>
     <string name="TVTableDayT">Tue</string>
+    <string name="TVTableDayW">Wed</string>
+    <string name="TVTableDayTh">Thu</string>
+    <string name="TVTableDayF">Fri</string>
+    <string name="TVTableDayS">Sat</string>
+    <string name="TVTableDaySu">Sun</string>
 </resources>
