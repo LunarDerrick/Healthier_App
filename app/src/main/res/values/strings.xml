@@ -26,4 +26,6 @@
     <string name="TVTableDayF">Fri</string>
     <string name="TVTableDayS">Sat</string>
     <string name="TVTableDaySu">Sun</string>
+    <string name="activity_level">Activity Level:</string>
+    <string name="calculate">Calculate</string>
 </resources>
