@@ -10,9 +10,10 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVCalc"
         android:name="wia2007.example.healthier_app.BMIMacroCalc"
-        android:layout_width="412dp"
-        android:layout_height="493dp"
+        android:layout_width="414dp"
+        android:layout_height="650dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_bmi_macro" />

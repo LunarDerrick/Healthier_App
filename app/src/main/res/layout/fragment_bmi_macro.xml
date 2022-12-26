@@ -129,6 +129,7 @@
         app:singleSelection="true">
 
         <Button
+            android:id="@+id/BTMaintain"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="38dp"
@@ -142,6 +143,7 @@
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
         <Button
+            android:id="@+id/BTMLoss"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="38dp"
@@ -155,6 +157,7 @@
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
 
         <Button
+            android:id="@+id/BTLoss"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="38dp"
@@ -168,6 +171,7 @@
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
 
         <Button
+            android:id="@+id/BTELoss"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="38dp"
@@ -195,10 +199,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/materialButtonToggleGroup"
-        android:layout_width="wrap_content"
+        android:id="@+id/toggleAL"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="230dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -206,11 +211,39 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sedentary"
             style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="116dp"
             android:layout_height="38dp"
             android:backgroundTint="#FFFFFF"
             android:letterSpacing="0"
             android:text="@string/sedentary"
+            android:textAllCaps="false"
+            android:textColor="#8B8B8B"
+            android:textSize="12sp"
+            app:cornerRadius="5dp"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/moderate"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="116dp"
+            android:layout_height="38dp"
+            android:backgroundTint="#FFFFFF"
+            android:letterSpacing="0"
+            android:text="Moderate"
+            android:textAllCaps="false"
+            android:textColor="#8B8B8B"
+            android:textSize="12sp"
+            app:cornerRadius="5dp"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/active"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="116dp"
+            android:layout_height="38dp"
+            android:backgroundTint="#FFFFFF"
+            android:letterSpacing="0"
+            android:text="Active"
             android:textAllCaps="false"
             android:textColor="#8B8B8B"
             android:textSize="12sp"
@@ -309,6 +342,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/CVMacro"
         android:layout_width="346dp"
         android:layout_height="140dp"
         android:layout_marginTop="17dp"
