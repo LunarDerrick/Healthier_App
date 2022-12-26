@@ -8,6 +8,21 @@
     android:background="#D9F2D5"
     tools:context=".DietFragment">
 
+    <android.widget.Toolbar
+        android:id="@+id/TBPlanner"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#36872c"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:title="@string/TBPlanner"
+        android:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <TextView
         android:id="@+id/TVToday"
         android:layout_width="wrap_content"
@@ -18,7 +33,7 @@
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TBPlanner" />
 
     <TextView
         android:id="@+id/TVDay"
@@ -30,7 +45,7 @@
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/TVToday"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TBPlanner" />
 
     <TextView
         android:id="@+id/TVDate"
@@ -41,7 +56,7 @@
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/IVCalendar"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TBPlanner" />
 
     <ImageView
         android:id="@+id/IVCalendar"
@@ -52,7 +67,7 @@
         android:contentDescription="calendar icon"
         android:src="@android:drawable/ic_menu_my_calendar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TBPlanner" />
 
     <TableLayout
         android:id="@+id/TLToday"
@@ -141,6 +156,7 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
+        android:onClick="BtnCompleteOnClick"
         android:layout_marginEnd="3dp"
         android:backgroundTint="#36872c"
         android:text="@string/BtnComplete"
@@ -168,6 +184,7 @@
         android:layout_marginEnd="3dp"
         android:backgroundTint="#0070BF69"
         android:drawableEnd="@android:drawable/ic_menu_edit"
+        android:onClick="BtnEditOnClick"
         android:stateListAnimator="@null"
         android:text="@string/BtnEdit"
         android:textAllCaps="false"
