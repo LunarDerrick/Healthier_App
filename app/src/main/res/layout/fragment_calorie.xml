@@ -5,17 +5,227 @@
     android:id="@+id/CSCalLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C6DDFF"
     tools:context=".CalorieCalc">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/hello_blank_fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/TVEat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="396dp"
+        android:text="What have you eaten today?"
+        android:textColor="#000000"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TVMCCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Meal Calorie Calculator"
+        android:textColor="#000000"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Calories"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="175dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="165dp"
+        app:boxBackgroundColor="#DDEBFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ETCalories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foregroundTint="#FFFFFF"
+            android:hint="Calories"
+            android:shadowColor="#FFFFFF"
+            android:textColor="#5465FF"
+            android:textSize="14sp"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/kcalday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="128dp"
+        android:text="kcal/day"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Calories"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Quantity"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="175dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="165dp"
+        app:boxBackgroundColor="#DDEBFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ETQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foregroundTint="#FFFFFF"
+            android:hint="Meals per day"
+            android:shadowColor="#FFFFFF"
+            android:textColor="#5465FF"
+            android:textSize="14sp"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="128dp"
+        android:text="quantity"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Quantity"
+        app:layout_constraintTop_toBottomOf="@+id/kcalday" />
+
+    <Button
+        android:id="@+id/calcButton"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        android:backgroundTint="#FFFFFF"
+        android:elevation="10dp"
+        android:letterSpacing="0"
+        android:stateListAnimator="@null"
+        android:text="@string/calculate"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TVRecommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="228dp"
+        android:text="Recommendation daily calories intake"
+        android:textColor="#000000"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CVRecommend"
+        android:layout_width="346dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="258dp"
+        android:layout_marginEnd="29dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/TVDinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dinner          550 kcal"
+            android:textColor="#000000"
+            android:translationX="15dp"
+            android:translationY="90dp" />
+
+        <TextView
+            android:id="@+id/TVLunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lunch           750 kcal"
+            android:textColor="#000000"
+            android:translationX="15dp"
+            android:translationY="65dp" />
+
+        <TextView
+            android:id="@+id/TVMornSnack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Morning snack           150 kcal"
+            android:textColor="#000000"
+            android:translationX="15dp"
+            android:translationY="40dp" />
+
+        <TextView
+            android:id="@+id/TVBreakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Breakfast           550 kcal"
+            android:textColor="#000000"
+            android:translationX="15dp"
+            android:translationY="15dp" />
+
+        <TextView
+            android:id="@+id/TVBMinMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(min: 500, max: 600)"
+            android:textSize="12sp"
+            android:translationX="225dp"
+            android:translationY="15dp" />
+
+        <TextView
+            android:id="@+id/TVMSMinMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(min: 100, max: 200)"
+            android:textSize="12sp"
+            android:translationX="225dp"
+            android:translationY="40dp" />
+
+        <TextView
+            android:id="@+id/TVLMinMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(min: 700, max: 800)"
+            android:textSize="12sp"
+            android:translationX="225dp"
+            android:translationY="65dp" />
+
+        <TextView
+            android:id="@+id/TVDMinMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(min: 500, max: 600)"
+            android:textSize="12sp"
+            android:translationX="225dp"
+            android:translationY="90dp" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

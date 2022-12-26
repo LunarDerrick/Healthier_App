@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/HeightTI"
+        android:id="@+id/Calories"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="60dp"
         android:layout_height="48dp"
