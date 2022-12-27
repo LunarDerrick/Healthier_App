@@ -8,6 +8,24 @@
     android:background="#D9F2D5"
     tools:context=".DietFragment">
 
+    <Button
+        android:id="@+id/BTEditPlan"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="221dp"
+        android:layout_marginTop="269dp"
+        android:layout_marginEnd="3dp"
+        android:drawableEnd="@drawable/pen"
+        android:letterSpacing="0"
+        android:text="Edit"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TVWeekly"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
     <android.widget.Toolbar
         android:id="@+id/TBPlanner"
         android:layout_width="0dp"
@@ -156,9 +174,9 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
-        android:onClick="BtnCompleteOnClick"
         android:layout_marginEnd="3dp"
         android:backgroundTint="#36872c"
+        android:onClick="BtnCompleteOnClick"
         android:text="@string/BtnComplete"
         android:textAllCaps="false"
         android:textSize="14sp"
@@ -176,22 +194,6 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BtnComplete" />
-
-    <Button
-        android:id="@+id/BtnEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginEnd="3dp"
-        android:backgroundTint="#0070BF69"
-        android:drawableEnd="@android:drawable/ic_menu_edit"
-        android:onClick="BtnEditOnClick"
-        android:stateListAnimator="@null"
-        android:text="@string/BtnEdit"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/TLWeekly"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <TableLayout
         android:id="@+id/TLWeekly"
