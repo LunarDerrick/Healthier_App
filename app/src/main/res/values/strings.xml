@@ -62,4 +62,9 @@
     <string name="_564_kcal">564 kcal</string>
     <string name="plate">plate</string>
     <string name="pasta">pasta</string>
+    <string name="calculator">Calculator</string>
+    <string name="planner">Planner</string>
+    <string name="tracker">Tracker</string>
+    <string name="coaching">Coaching</string>
+    <string name="settings">Settings</string>
 </resources>
