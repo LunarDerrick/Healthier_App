@@ -60,7 +60,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
         android:text="Monday"
-        android:textColor="#000000"
+        android:textColor="#0C9600"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/TVToday"
         app:layout_constraintTop_toBottomOf="@+id/TBPlanner" />
@@ -176,6 +176,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="3dp"
         android:backgroundTint="#36872c"
+        android:letterSpacing="0"
         android:onClick="BtnCompleteOnClick"
         android:text="@string/BtnComplete"
         android:textAllCaps="false"
@@ -187,13 +188,13 @@
         android:id="@+id/TVWeekly"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="269dp"
         android:text="@string/TVWeekly"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BtnComplete" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/TLWeekly"
