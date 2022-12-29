@@ -10,11 +10,20 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVCalc"
         android:name="wia2007.example.healthier_app.BMIMacroCalc"
-        android:layout_width="414dp"
-        android:layout_height="650dp"
+        android:layout_width="412dp"
+        android:layout_height="675dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_bmi_macro" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom" />
 </androidx.constraintlayout.widget.ConstraintLayout>
