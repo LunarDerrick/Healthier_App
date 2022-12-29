@@ -8,11 +8,26 @@
     android:background="#C6DDFF"
     tools:context=".CalorieCalc">
 
+    <android.widget.Toolbar
+        android:id="@+id/TBCalculator"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#5465FF"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:title="Calorie Calculator"
+        android:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <TextView
         android:id="@+id/TVMCCalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="72dp"
         android:text="@string/meal_calorie_calculator"
         android:textColor="#000000"
         android:textStyle="normal"
@@ -26,10 +41,11 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="175dp"
         android:layout_height="48dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="165dp"
         app:boxBackgroundColor="#DDEBFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -42,7 +58,9 @@
             android:shadowColor="#FFFFFF"
             android:textColor="#5465FF"
             android:textSize="14sp"
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="109dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -50,12 +68,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="112dp"
         android:layout_marginEnd="128dp"
         android:text="@string/kcal_day"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Calories"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,10 +83,11 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="175dp"
         android:layout_height="48dp"
-        android:layout_marginTop="115dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="165dp"
         app:boxBackgroundColor="#DDEBFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -80,7 +100,9 @@
             android:shadowColor="#FFFFFF"
             android:textColor="#5465FF"
             android:textSize="14sp"
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TextContrastCheck" />
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TextContrastCheck"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="169dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -88,12 +110,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="128dp"
         android:text="@string/quantity"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/Quantity"
         app:layout_constraintTop_toBottomOf="@+id/kcalday" />
 
@@ -102,7 +125,7 @@
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="216dp"
         android:backgroundTint="#FFFFFF"
         android:elevation="10dp"
         android:letterSpacing="0"
@@ -121,7 +144,7 @@
         android:id="@+id/TVRecommend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="272dp"
         android:text="@string/recommendation_daily_calories_intake"
         android:textColor="#000000"
         android:textStyle="normal"
@@ -135,10 +158,11 @@
         android:layout_width="346dp"
         android:layout_height="125dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="258dp"
+        android:layout_marginTop="304dp"
         android:layout_marginEnd="29dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -149,7 +173,9 @@
             android:text="Dinner          550 kcal"
             android:textColor="#000000"
             android:translationX="15dp"
-            android:translationY="90dp" />
+            android:translationY="90dp"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="402dp" />
 
         <TextView
             android:id="@+id/TVLunch"
@@ -158,7 +184,9 @@
             android:text="Lunch           750 kcal"
             android:textColor="#000000"
             android:translationX="15dp"
-            android:translationY="65dp" />
+            android:translationY="65dp"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="377dp" />
 
         <TextView
             android:id="@+id/TVMornSnack"
@@ -167,7 +195,9 @@
             android:text="Morning snack           150 kcal"
             android:textColor="#000000"
             android:translationX="15dp"
-            android:translationY="40dp" />
+            android:translationY="40dp"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="352dp" />
 
         <TextView
             android:id="@+id/TVBreakfast"
@@ -176,7 +206,9 @@
             android:text="Breakfast           550 kcal"
             android:textColor="#000000"
             android:translationX="15dp"
-            android:translationY="15dp" />
+            android:translationY="15dp"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="327dp" />
 
         <TextView
             android:id="@+id/TVBMinMax"
@@ -185,7 +217,9 @@
             android:text="@string/min_500_max_600"
             android:textSize="12sp"
             android:translationX="225dp"
-            android:translationY="15dp" />
+            android:translationY="15dp"
+            tools:layout_editor_absoluteX="262dp"
+            tools:layout_editor_absoluteY="327dp" />
 
         <TextView
             android:id="@+id/TVMSMinMax"
@@ -194,7 +228,9 @@
             android:text="@string/min_100_max_200"
             android:textSize="12sp"
             android:translationX="225dp"
-            android:translationY="40dp" />
+            android:translationY="40dp"
+            tools:layout_editor_absoluteX="262dp"
+            tools:layout_editor_absoluteY="352dp" />
 
         <TextView
             android:id="@+id/TVLMinMax"
@@ -203,7 +239,9 @@
             android:text="@string/min_700_max_800"
             android:textSize="12sp"
             android:translationX="225dp"
-            android:translationY="65dp" />
+            android:translationY="65dp"
+            tools:layout_editor_absoluteX="262dp"
+            tools:layout_editor_absoluteY="377dp" />
 
         <TextView
             android:id="@+id/TVDMinMax"
@@ -212,7 +250,9 @@
             android:text="@string/min_500_max_600"
             android:textSize="12sp"
             android:translationX="225dp"
-            android:translationY="90dp" />
+            android:translationY="90dp"
+            tools:layout_editor_absoluteX="262dp"
+            tools:layout_editor_absoluteY="402dp" />
 
         <ImageView
             android:id="@+id/IVBreakfast"
@@ -222,7 +262,9 @@
             android:src="@drawable/bread"
             android:translationX="82.5dp"
             android:translationY="13dp"
-            tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+            tools:ignore="ImageContrastCheck,ImageContrastCheck"
+            tools:layout_editor_absoluteX="119dp"
+            tools:layout_editor_absoluteY="325dp" />
 
         <ImageView
             android:id="@+id/IVSnack"
@@ -232,7 +274,9 @@
             android:src="@drawable/croissant"
             android:translationX="115dp"
             android:translationY="40dp"
-            tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+            tools:ignore="ImageContrastCheck,ImageContrastCheck"
+            tools:layout_editor_absoluteX="152dp"
+            tools:layout_editor_absoluteY="352dp" />
 
         <ImageView
             android:id="@+id/IVLunch"
@@ -242,7 +286,9 @@
             android:src="@drawable/plate"
             android:translationX="58dp"
             android:translationY="63dp"
-            tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+            tools:ignore="ImageContrastCheck,ImageContrastCheck"
+            tools:layout_editor_absoluteX="94dp"
+            tools:layout_editor_absoluteY="375dp" />
 
         <ImageView
             android:id="@+id/IVDinner"
@@ -252,7 +298,9 @@
             android:src="@drawable/spaghetti"
             android:translationX="60dp"
             android:translationY="90dp"
-            tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+            tools:ignore="ImageContrastCheck,ImageContrastCheck"
+            tools:layout_editor_absoluteX="97dp"
+            tools:layout_editor_absoluteY="402dp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -260,7 +308,7 @@
         android:id="@+id/TVEat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="396dp"
+        android:layout_marginTop="440dp"
         android:text="@string/what_have_you_eaten_today"
         android:textColor="#000000"
         android:textStyle="normal"
@@ -269,41 +317,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/TVTarget"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginEnd="165dp"
-        android:background="#FFFFFF"
-        android:includeFontPadding="true"
-        android:padding="5dp"
-        android:text="@string/_1487_2000_kcal"
-        android:textColor="#2B40FF"
+    <Button
+        android:id="@+id/BTEditEat"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="436dp"
+        android:layout_marginEnd="24dp"
+        android:drawableEnd="@drawable/pen"
+        android:letterSpacing="0"
+        android:text="Edit"
+        android:textAllCaps="false"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/TVCalTotal"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/TVCalTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="555dp"
-        android:text="@string/total_calories"
-        android:textColor="#000000"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/TVEat"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <TableLayout
         android:layout_width="346dp"
         android:layout_height="114dp"
         android:layout_marginStart="37dp"
-        android:layout_marginTop="427dp"
+        android:layout_marginTop="472dp"
         android:layout_marginEnd="28dp"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -315,7 +352,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#5465FF"
-            android:textAlignment="center">
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="481dp">
 
             <TextView
                 android:layout_width="1dp"
@@ -328,7 +367,9 @@
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
-                tools:ignore="TextContrastCheck" />
+                tools:ignore="TextContrastCheck"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="481dp" />
 
             <TextView
                 android:layout_width="80dp"
@@ -341,7 +382,9 @@
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
-                tools:ignore="TextContrastCheck,TextContrastCheck" />
+                tools:ignore="TextContrastCheck,TextContrastCheck"
+                tools:layout_editor_absoluteX="126dp"
+                tools:layout_editor_absoluteY="481dp" />
 
             <TextView
                 android:layout_width="1dp"
@@ -354,14 +397,18 @@
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
-                tools:ignore="TextContrastCheck,TextContrastCheck" />
+                tools:ignore="TextContrastCheck,TextContrastCheck"
+                tools:layout_editor_absoluteX="294dp"
+                tools:layout_editor_absoluteY="481dp" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAlignment="center">
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="510dp">
 
             <TextView
                 android:layout_width="1dp"
@@ -373,7 +420,9 @@
                 android:text="@string/breakfast"
                 android:textAlignment="center"
                 android:textColor="#0019FF"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="510dp" />
 
             <TextView
                 android:layout_width="80dp"
@@ -385,7 +434,9 @@
                 android:text="@string/sandwich_eggs_and_milk"
                 android:textAlignment="center"
                 android:textColor="#0019FF"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                tools:layout_editor_absoluteX="126dp"
+                tools:layout_editor_absoluteY="510dp" />
 
             <TextView
                 android:layout_width="1dp"
@@ -397,14 +448,18 @@
                 android:text="@string/_540_kcal"
                 android:textAlignment="center"
                 android:textColor="#0019FF"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                tools:layout_editor_absoluteX="294dp"
+                tools:layout_editor_absoluteY="510dp" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAlignment="center">
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="538dp">
 
             <TextView
                 android:layout_width="1dp"
@@ -416,7 +471,9 @@
                 android:text="@string/lunch"
                 android:textAlignment="center"
                 android:textColor="#0019FF"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="538dp" />
 
             <TextView
                 android:layout_width="80dp"
@@ -428,7 +485,9 @@
                 android:text="@string/fried_rice_and_green_tea"
                 android:textAlignment="center"
                 android:textColor="#0019FF"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                tools:layout_editor_absoluteX="126dp"
+                tools:layout_editor_absoluteY="538dp" />
 
             <TextView
                 android:layout_width="1dp"
@@ -440,14 +499,18 @@
                 android:text="@string/_762_kcal"
                 android:textAlignment="center"
                 android:textColor="#0019FF"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                tools:layout_editor_absoluteX="294dp"
+                tools:layout_editor_absoluteY="538dp" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAlignment="center">
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="567dp">
 
             <TextView
                 android:layout_width="1dp"
@@ -459,7 +522,9 @@
                 android:text="@string/dinner"
                 android:textAlignment="center"
                 android:textColor="#0019FF"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="567dp" />
 
             <TextView
                 android:layout_width="80dp"
@@ -471,7 +536,9 @@
                 android:text="@string/noodle_cake_and_apple_juice"
                 android:textAlignment="center"
                 android:textColor="#0019FF"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                tools:layout_editor_absoluteX="126dp"
+                tools:layout_editor_absoluteY="567dp" />
 
             <TextView
                 android:layout_width="1dp"
@@ -483,29 +550,43 @@
                 android:text="@string/_564_kcal"
                 android:textAlignment="center"
                 android:textColor="#0019FF"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                tools:layout_editor_absoluteX="294dp"
+                tools:layout_editor_absoluteY="567dp" />
 
 
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/BTEditEat"
-        style="?attr/borderlessButtonStyle"
-        android:layout_width="75dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="392dp"
-        android:layout_marginEnd="24dp"
-        android:drawableEnd="@drawable/pen"
-        android:letterSpacing="0"
-        android:text="Edit"
-        android:textAllCaps="false"
+    <TextView
+        android:id="@+id/TVCalTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:text="@string/total_calories"
         android:textColor="#000000"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/TVEat"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TVTarget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="596dp"
+        android:layout_marginEnd="165dp"
+        android:background="#FFFFFF"
+        android:includeFontPadding="true"
+        android:padding="5dp"
+        android:text="@string/_1487_2000_kcal"
+        android:textColor="#2B40FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/TVCalTotal"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
