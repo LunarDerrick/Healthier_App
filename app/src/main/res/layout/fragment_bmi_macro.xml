@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/CSBMILayout"
@@ -186,6 +185,76 @@
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
+    <Button
+        android:id="@+id/Sedentary"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="232dp"
+        android:backgroundTint="#FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:letterSpacing="0"
+        android:text="@string/sedentary_n_no_exercises"
+        android:textAllCaps="false"
+        android:textColor="#8B8B8B"
+        android:textSize="11sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/Moderate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#CDCDCD"
+        app:strokeWidth="0.6dp"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/Moderate"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="232dp"
+        android:backgroundTint="#FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:letterSpacing="0"
+        android:text="@string/moderate_n_3x_4x_per_week"
+        android:textAllCaps="false"
+        android:textColor="#8B8B8B"
+        android:textSize="11sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#CDCDCD"
+        app:strokeWidth="0.6dp"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/Active"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="232dp"
+        android:backgroundTint="#FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:letterSpacing="0"
+        android:text="@string/active_n_5x_per_week"
+        android:textAllCaps="false"
+        android:textColor="#8B8B8B"
+        android:textSize="11sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#CDCDCD"
+        app:strokeWidth="0.6dp"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
+
     <TextView
         android:id="@+id/AL"
         android:layout_width="wrap_content"
@@ -197,60 +266,6 @@
         app:layout_constraintHorizontal_bias="0.121"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/toggleAL"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="230dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/sedentary"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="116dp"
-            android:layout_height="38dp"
-            android:backgroundTint="#FFFFFF"
-            android:letterSpacing="0"
-            android:text="@string/sedentary"
-            android:textAllCaps="false"
-            android:textColor="#8B8B8B"
-            android:textSize="12sp"
-            app:cornerRadius="5dp"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/moderate"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="116dp"
-            android:layout_height="38dp"
-            android:backgroundTint="#FFFFFF"
-            android:letterSpacing="0"
-            android:text="Moderate"
-            android:textAllCaps="false"
-            android:textColor="#8B8B8B"
-            android:textSize="12sp"
-            app:cornerRadius="5dp"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/active"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="116dp"
-            android:layout_height="38dp"
-            android:backgroundTint="#FFFFFF"
-            android:letterSpacing="0"
-            android:text="Active"
-            android:textAllCaps="false"
-            android:textColor="#8B8B8B"
-            android:textSize="12sp"
-            app:cornerRadius="5dp"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck" />
-
-    </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <Button
         android:id="@+id/CalcButton"
@@ -275,7 +290,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/CVBMI"
         android:layout_width="346dp"
-        android:layout_height="135dp"
+        android:layout_height="137dp"
         android:layout_marginTop="348dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -337,7 +352,16 @@
             android:textColor="#000000"
             android:textSize="12sp"
             android:translationX="20sp"
-            android:translationY="108sp" />
+            android:translationY="111sp" />
+
+        <ImageView
+            android:id="@+id/IVIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/colored_indicator"
+            android:src="@drawable/indicator"
+            android:translationX="19sp"
+            android:translationY="85sp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -477,7 +501,7 @@
             android:id="@+id/IVicecream"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="icecream"
+            android:contentDescription="@string/icecream"
             android:src="@drawable/icecream"
             android:translationX="270dp"
             android:translationY="45dp" />

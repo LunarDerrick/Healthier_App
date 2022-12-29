@@ -67,4 +67,9 @@
     <string name="tracker">Tracker</string>
     <string name="coaching">Coaching</string>
     <string name="settings">Settings</string>
+    <string name="sedentary_n_no_exercises">Sedentary\n(no exercises)</string>
+    <string name="active_n_5x_per_week">Active\n(5x+ per week)</string>
+    <string name="moderate_n_3x_4x_per_week">Moderate\n(3x-4x per week)</string>
+    <string name="icecream">icecream</string>
+    <string name="colored_indicator">colored indicator</string>
 </resources>
