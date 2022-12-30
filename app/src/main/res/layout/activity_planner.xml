@@ -8,13 +8,46 @@
     tools:context=".PlannerActivity">
 
     <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/FCVExercise"
+        android:name="wia2007.example.healthier_app.ExerciseFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDiet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_exercise" />
+
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVDiet"
         android:name="wia2007.example.healthier_app.DietFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDiet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_diet" />
+
+    <Button
+        android:id="@+id/BtnDiet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:onClick="BtnDietOnClick"
+        android:layout_marginBottom="10dp"
+        android:text="Diet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/BtnExercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:onClick="BtnExerciseOnClick"
+        android:layout_marginBottom="10dp"
+        android:text="Exercise"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BtnDiet" />
 </androidx.constraintlayout.widget.ConstraintLayout>

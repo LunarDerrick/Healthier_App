@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D9F2D5"
-    tools:context=".ExerciseFragment" >
+    tools:context=".ExerciseFragment">
 
     <android.widget.Toolbar
         android:id="@+id/TBExercise"
@@ -36,13 +36,13 @@
 
     <EditText
         android:id="@+id/ETTargetBurn"
-        android:layout_width="100dp"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="6dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="whole number"
+        android:hint="500"
         android:inputType="number"
         android:minHeight="48dp"
         android:textAlignment="center"
@@ -60,4 +60,214 @@
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/ETTargetBurn"
         app:layout_constraintTop_toBottomOf="@+id/TBExercise" />
+
+    <TextView
+        android:id="@+id/TVPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/TVPlan"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETTargetBurn" />
+
+    <TableLayout
+        android:id="@+id/TLExercise"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVPlan">
+
+        <TableRow
+            android:id="@+id/TRExercise1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TVTable3TitleName"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_green"
+                android:padding="10dp"
+                android:text="@string/TVTable3TitleName"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/TVTable3TitleTime"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_green"
+                android:padding="10dp"
+                android:text="@string/TVTable3TitleTime"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRExercise2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TVTable3Name1"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_white"
+                android:padding="10dp"
+                android:text="Jogging"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/TVTable3Time1"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_white"
+                android:padding="10dp"
+                android:text="60"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRExercise3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TVTable3Name2"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_white"
+                android:padding="10dp"
+                android:text="Cycling"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/TVTable3Time2"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_white"
+                android:padding="10dp"
+                android:text="60"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRExercise4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TVTable3Name3"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_white"
+                android:padding="10dp"
+                android:text="Swimming"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/TVTable3Time3"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_white"
+                android:padding="10dp"
+                android:text="30"
+                android:textColor="@color/black" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/BtnAdd"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:backgroundTint="#36872c"
+        android:onClick="BtnAddOnClick"
+        android:text="@string/BtnAdd"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TLExercise" />
+
+    <TextView
+        android:id="@+id/TVEstiBurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/TVEstiBurn"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnAdd" />
+
+    <EditText
+        android:id="@+id/ETEstiBurn"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="420"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/TVEstiBurn"
+        app:layout_constraintTop_toBottomOf="@+id/BtnAdd" />
+
+    <TextView
+        android:id="@+id/TVUnitKcal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/TVUnitKcal"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/ETEstiBurn"
+        app:layout_constraintTop_toBottomOf="@+id/BtnAdd" />
+
+    <TextView
+        android:id="@+id/TVExCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/TVExCourse"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETEstiBurn" />
+
+    <Button
+        android:id="@+id/BtnStrTrain"
+        android:layout_width="344dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/white"
+        android:drawableEnd="@drawable/dumbbell"
+        android:onClick="BtnStrTrainOnClick"
+        android:text="@string/BtnStrTrain"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVExCourse" />
+
+    <Button
+        android:id="@+id/BtnYoga"
+        android:layout_width="344dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="35dp"
+        android:backgroundTint="@color/white"
+        android:drawableEnd="@drawable/yoga"
+        android:onClick="BtnYogaOnClick"
+        android:text="@string/BtnYoga"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnStrTrain" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

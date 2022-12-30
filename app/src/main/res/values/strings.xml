@@ -79,4 +79,12 @@
     <string name="TBExercise">Exercise Planner</string>
     <string name="TVTargetBurn">Target Calorie Burnt:</string>
     <string name="TVUnitKcal">kcal</string>
+    <string name="TVPlan">Exercise Plan:</string>
+    <string name="TVTable3TitleName">Name</string>
+    <string name="TVTable3TitleTime">Duration (min)</string>
+    <string name="BtnAdd">+</string>
+    <string name="TVEstiBurn">Estimated Burnt Calories:</string>
+    <string name="TVExCourse">Exercise Courses:</string>
+    <string name="BtnStrTrain">Strength Training</string>
+    <string name="BtnYoga">Yoga and stretching</string>
 </resources>
