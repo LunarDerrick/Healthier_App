@@ -20,10 +20,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        /*
         NavHostFragment host = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.FCVBlank);
         NavController navController = host.getNavController();
         setupBottomNavMenu(navController);
+        */
     }
 
     public void BtnPlannerOnClick(View view) {
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_bottom, menu);
         return true;
     }
-
+    /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         try {
@@ -56,5 +57,5 @@ public class MainActivity extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
         }
     }
-
+    */
 }
