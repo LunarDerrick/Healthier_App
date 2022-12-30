@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CLExercise"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExerciseFragment">
+    android:background="#D9F2D5"
+    tools:context=".ExerciseFragment" >
 
-    <!-- TODO: Update blank fragment layout -->
+    <android.widget.Toolbar
+        android:id="@+id/TBExercise"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#36872c"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:title="@string/TBExercise"
+        android:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/TVTargetBurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/TVTargetBurn"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBExercise" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/ETTargetBurn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="whole number"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/TVTargetBurn"
+        app:layout_constraintTop_toBottomOf="@+id/TBExercise" />
+
+    <TextView
+        android:id="@+id/TVUnitKcal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/TVUnitKcal"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/ETTargetBurn"
+        app:layout_constraintTop_toBottomOf="@+id/TBExercise" />
+</androidx.constraintlayout.widget.ConstraintLayout>

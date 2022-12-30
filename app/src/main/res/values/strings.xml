@@ -33,7 +33,7 @@
     <string name="_0_0">0.0</string>
     <string name="weight_class">Weight class</string>
     <string name="your_healthy_weight_range_0kg">Your healthy weight range: 0kg</string>
-    <string name="TBPlanner">Diet Planner</string>
+    <string name="TBDiet">Diet Planner</string>
     <string name="meal_calorie_calculator">Meal Calorie Calculator</string>
     <string name="calories">Calories</string>
     <string name="kcal_day">kcal/day</string>
@@ -76,4 +76,7 @@
     <string name="agree">Agree with</string>
     <string name="terms"><![CDATA[Terms & Conditions]]></string>
     <string name="already_have">I already have an account</string>
+    <string name="TBExercise">Exercise Planner</string>
+    <string name="TVTargetBurn">Target Calorie Burnt:</string>
+    <string name="TVUnitKcal">kcal</string>
 </resources>

@@ -8,32 +8,14 @@
     android:background="#D9F2D5"
     tools:context=".DietFragment">
 
-    <Button
-        android:id="@+id/BTEditPlan"
-        style="?attr/borderlessButtonStyle"
-        android:layout_width="75dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="221dp"
-        android:layout_marginTop="269dp"
-        android:layout_marginEnd="3dp"
-        android:drawableEnd="@drawable/pen"
-        android:letterSpacing="0"
-        android:text="Edit"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/TVWeekly"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
     <android.widget.Toolbar
-        android:id="@+id/TBPlanner"
+        android:id="@+id/TBDiet"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="#36872c"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:title="@string/TBPlanner"
+        android:title="@string/TBDiet"
         android:titleTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -48,10 +30,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:text="@string/TVToday"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBPlanner" />
+        app:layout_constraintTop_toBottomOf="@+id/TBDiet" />
 
     <TextView
         android:id="@+id/TVDay"
@@ -63,7 +45,7 @@
         android:textColor="#0C9600"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/TVToday"
-        app:layout_constraintTop_toBottomOf="@+id/TBPlanner" />
+        app:layout_constraintTop_toBottomOf="@+id/TBDiet" />
 
     <TextView
         android:id="@+id/TVDate"
@@ -71,10 +53,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="5 December 2022"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/IVCalendar"
-        app:layout_constraintTop_toBottomOf="@+id/TBPlanner" />
+        app:layout_constraintTop_toBottomOf="@+id/TBDiet" />
 
     <ImageView
         android:id="@+id/IVCalendar"
@@ -85,7 +67,7 @@
         android:contentDescription="calendar icon"
         android:src="@android:drawable/ic_menu_my_calendar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBPlanner" />
+        app:layout_constraintTop_toBottomOf="@+id/TBDiet" />
 
     <TableLayout
         android:id="@+id/TLToday"
@@ -110,7 +92,7 @@
                 android:background="@drawable/border_green"
                 android:text="@string/TVTableTitleBF"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/TVTable1TitleL"
@@ -119,7 +101,7 @@
                 android:background="@drawable/border_green"
                 android:text="@string/TVTableTitleL"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/TVTable1TitleD"
@@ -128,7 +110,7 @@
                 android:background="@drawable/border_green"
                 android:text="@string/TVTableTitleD"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white" />
         </TableRow>
 
         <TableRow
@@ -191,10 +173,28 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="269dp"
         android:text="@string/TVWeekly"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BTEditPlan"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="221dp"
+        android:layout_marginTop="269dp"
+        android:layout_marginEnd="3dp"
+        android:drawableEnd="@drawable/pen"
+        android:letterSpacing="0"
+        android:text="Edit"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TVWeekly"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <TableLayout
         android:id="@+id/TLWeekly"
@@ -224,7 +224,7 @@
                 android:background="@drawable/border_green"
                 android:text="@string/TVTableTitleBF"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
@@ -234,7 +234,7 @@
                 android:background="@drawable/border_green"
                 android:text="@string/TVTableTitleL"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
@@ -244,7 +244,7 @@
                 android:background="@drawable/border_green"
                 android:text="@string/TVTableTitleD"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textSize="14sp" />
         </TableRow>
 
@@ -259,7 +259,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/TVTableDayM"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <TextView
@@ -304,7 +304,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/TVTableDayT"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <TextView
@@ -349,7 +349,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/TVTableDayW"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <TextView
@@ -394,7 +394,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/TVTableDayTh"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <TextView
@@ -439,7 +439,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/TVTableDayF"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <TextView
@@ -484,7 +484,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/TVTableDayS"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <TextView
@@ -529,7 +529,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/TVTableDaySu"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <TextView
