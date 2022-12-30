@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_healthier"
+    app:startDestination="@id/DestMain">
+
+    <activity
+        android:id="@+id/DestMain"
+        android:name="wia2007.example.healthier_app.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/DestActPlanner"
+        android:name="wia2007.example.healthier_app.PlannerActivity"
+        android:label="activity_planner"
+        tools:layout="@layout/activity_planner" />
+    <fragment
+        android:id="@+id/DestFragBMIMacroCalc"
+        android:name="wia2007.example.healthier_app.BMIMacroCalc"
+        android:label="fragment_bmi_macro"
+        tools:layout="@layout/fragment_bmi_macro" />
+    <fragment
+        android:id="@+id/DestFragCalorieCalc"
+        android:name="wia2007.example.healthier_app.CalorieCalc"
+        android:label="fragment_calorie"
+        tools:layout="@layout/fragment_calorie" />
+    <fragment
+        android:id="@+id/DestBlank"
+        android:name="wia2007.example.healthier_app.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" />
+</navigation>

@@ -8,9 +8,18 @@
     android:layout_height="match_parent"
     tools:context=".fragment_register" >
 
+    <TextView
+        android:id="@+id/white_rectangle_rounded"
+        android:layout_width="355dp"
+        android:layout_height="666dp"
+        android:background="@drawable/white_rectangle_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView"
-        android:translationZ="90dp"
         android:layout_width="214dp"
         android:layout_height="147dp"
         android:layout_marginTop="80dp"
@@ -29,7 +38,6 @@
         android:fontFamily="@font/inter"
         android:text="@string/username"
         android:textColor="#000000"
-        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -43,7 +51,6 @@
         android:text="@string/register"
         android:textColor="#000000"
         android:textSize="24sp"
-        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toTopOf="@+id/white_rectangle_rounded" />
 
@@ -56,7 +63,6 @@
         android:fontFamily="@font/inter"
         android:text="@string/password"
         android:textColor="#000000"
-        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
@@ -69,7 +75,6 @@
         android:fontFamily="@font/inter"
         android:text="@string/confirm_password"
         android:textColor="#000000"
-        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
@@ -82,7 +87,6 @@
         android:fontFamily="@font/inter"
         android:text="@string/email"
         android:textColor="#000000"
-        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toBottomOf="@+id/editTextUserName" />
 
@@ -93,10 +97,8 @@
         android:layout_marginTop="5dp"
         android:background="@drawable/edit_text_lightyellow"
         android:drawableStart="@drawable/email_icon"
-        android:elevation="5dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:translationZ="90dp"
         app:layout_constraintEnd_toEndOf="@+id/white_rectangle_rounded"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toBottomOf="@+id/email_text"
@@ -112,7 +114,6 @@
         android:text="@string/register_flavor_text"
         android:textColor="#6F6E6E"
         android:textSize="12sp"
-        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toTopOf="@+id/white_rectangle_rounded" />
 
@@ -125,7 +126,6 @@
         android:drawableStart="@drawable/username_icon"
         android:ems="10"
         android:inputType="textPersonName"
-        android:translationZ="90dp"
         app:layout_constraintEnd_toEndOf="@+id/white_rectangle_rounded"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toBottomOf="@+id/username_text"
@@ -142,7 +142,6 @@
         android:drawableEnd="@drawable/hide_icon"
         android:ems="10"
         android:inputType="textPassword"
-        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toBottomOf="@+id/password_text"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -158,7 +157,6 @@
         android:drawableEnd="@drawable/hide_icon"
         android:ems="10"
         android:inputType="textPassword"
-        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toBottomOf="@+id/password_text2"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -172,7 +170,6 @@
         android:fontFamily="@font/inter"
         android:text="@string/agree"
         android:textColor="#000000"
-        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toBottomOf="@+id/editTextConfirmtPassword" />
 
@@ -186,7 +183,6 @@
         android:fontFamily="@font/inter"
         android:text="@string/terms"
         android:textColor="#33B6FF"
-        android:translationZ="90dp"
         app:layout_constraintEnd_toEndOf="@+id/white_rectangle_rounded"
         app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toEndOf="@+id/agree_text"
@@ -200,7 +196,6 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="17dp"
         android:src="@drawable/checked_icon"
-        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toBottomOf="@+id/editTextConfirmtPassword" />
 
@@ -210,23 +205,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="#F0C869"
-        android:elevation="6dp"
         android:text="@string/register"
-        android:translationZ="90dp"
         app:layout_constraintEnd_toEndOf="@+id/white_rectangle_rounded"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
         app:layout_constraintTop_toBottomOf="@+id/agree_text" />
-
-    <TextView
-        android:id="@+id/white_rectangle_rounded"
-        android:layout_width="355dp"
-        android:layout_height="666dp"
-        android:background="@drawable/white_rectangle_rounded"
-        android:elevation="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/already_have_text"
@@ -238,7 +220,6 @@
         android:text="@string/already_have"
         android:textColor="#33B6FF"
         android:textSize="12sp"
-        android:translationZ="90dp"
         app:layout_constraintEnd_toEndOf="@+id/white_rectangle_rounded"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_rounded"
