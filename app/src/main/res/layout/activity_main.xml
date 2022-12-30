@@ -8,28 +8,28 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/BtnPlanner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:onClick="BtnPlannerOnClick"
-        android:text="Planner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BtnCalculator" />
-
-    <Button
         android:id="@+id/BtnCalculator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="BtnCalculatorOnClick"
         android:layout_marginTop="250dp"
+        android:onClick="BtnCalculatorOnClick"
         android:text="Calculator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BtnPlanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="BtnPlannerOnClick"
+        android:text="@string/planner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnCalculator" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_view"

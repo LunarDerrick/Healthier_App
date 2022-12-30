@@ -37,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void BtnExerciseOnClick(View view) {
+
+    }
+
     private void setupBottomNavMenu(NavController navController) {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_view);
         NavigationUI.setupWithNavController(bottomNav, navController);
