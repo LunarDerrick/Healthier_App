@@ -1,14 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CLFasting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D9F2D5"
+    android:scrollbarSize="50dp"
     tools:context=".FastingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <android.widget.Toolbar
+        android:id="@+id/TBFasting"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#36872c"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:title="@string/TBFasting"
+        android:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/TVStatusFast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="You're fasting!"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBFasting" />
+
+    <EditText
+        android:id="@+id/ETDurationFast"
+        android:layout_width="73dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:drawableEnd="@drawable/pen"
+        android:ems="10"
+        android:hint="hr:min"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="14:10"
+        android:textColor="#14ABFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVStatusFast" />
+
+    <ProgressBar
+        android:id="@+id/PBProgressFast"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETDurationFast" />
+
+    <TextView
+        android:id="@+id/TVProgComp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="72% completed"
+        app:layout_constraintEnd_toEndOf="@+id/PBProgressFast"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/PBProgressFast"
+        app:layout_constraintTop_toTopOf="@+id/PBProgressFast" />
+
+    <TextView
+        android:id="@+id/TVTimeCountDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7:54:21"
+        android:textColor="@color/black"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/PBProgressFast"
+        app:layout_constraintStart_toStartOf="@+id/PBProgressFast"
+        app:layout_constraintTop_toBottomOf="@+id/TVProgComp" />
+
+    <TextView
+        android:id="@+id/TVProgDur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2hrs remaining"
+        app:layout_constraintEnd_toEndOf="@+id/PBProgressFast"
+        app:layout_constraintStart_toStartOf="@+id/PBProgressFast"
+        app:layout_constraintTop_toBottomOf="@+id/TVTimeCountDown" />
+
+    <TableLayout
+        android:id="@+id/TLStatusFast"
+        android:layout_width="270dp"
+        android:layout_height="218dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PBProgressFast">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

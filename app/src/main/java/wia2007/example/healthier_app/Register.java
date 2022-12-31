@@ -19,7 +19,7 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_general);
 
         final EditText Uname = findViewById(R.id.userName);
         final EditText Mail = findViewById(R.id.email);

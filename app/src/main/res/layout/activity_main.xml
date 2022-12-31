@@ -8,16 +8,28 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/BtnCalculator"
+        android:id="@+id/BtnGeneral"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:onClick="BtnCalculatorOnClick"
-        android:text="Calculator"
+        android:layout_marginTop="200dp"
+        android:text="General"
+        android:onClick="BtnGeneralOnClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BtnCalculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="BtnCalculatorOnClick"
+        android:text="@string/calculator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnGeneral" />
 
     <Button
         android:id="@+id/BtnPlanner"
@@ -39,6 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_bottom" />
+
     <!--
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVBlank"

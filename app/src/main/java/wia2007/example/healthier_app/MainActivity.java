@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         */
     }
 
-    public void BtnPlannerOnClick(View view) {
-        Intent intent = new Intent(getApplicationContext(), PlannerActivity.class);
+    public void BtnGeneralOnClick(View view) {
+        Intent intent = new Intent(getApplicationContext(), GeneralActivity.class);
         startActivity(intent);
     }
 
@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void BtnExerciseOnClick(View view) {
-
+    public void BtnPlannerOnClick(View view) {
+        Intent intent = new Intent(getApplicationContext(), PlannerActivity.class);
+        startActivity(intent);
     }
 
     private void setupBottomNavMenu(NavController navController) {
