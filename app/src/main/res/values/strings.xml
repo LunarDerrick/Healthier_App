@@ -88,4 +88,13 @@
     <string name="BtnStrTrain">Strength Training</string>
     <string name="BtnYoga">Yoga and stretching</string>
     <string name="TBFasting">Fasting Planner</string>
+    <string name="TVPro1">Adam Smith</string>
+    <string name="TVDescPro1">\u25CF  NASM Certified Trainer\n\u25CF  Helps find the right exercise for you based on your fitness level</string>
+    <string name="TVPro2">Timothy Skartin</string>
+    <string name="TVDescPro2">\u25CF  HITT Certified Trainer\n\u25CF  Advises on the focus on training different muscle groups</string>
+    <string name="TVPro3">Sarah Fierro</string>
+    <string name="TVDescPro3">\u25CF  Nutrition specialist\n\u25CF  Dietary assessment to provide the best nutrition intake for you!</string>
+
+
+
 </resources>
