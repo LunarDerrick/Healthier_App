@@ -97,5 +97,15 @@ public class HomeFragment extends Fragment {
             }
         };
         BtnPlanner.setOnClickListener(OCLPlanner);
+
+        //Test Register page
+        Button BtnRegister = view.findViewById(R.id.BtnRegister);
+        View.OnClickListener OCLRegister = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.DestGeneral);
+            }
+        };
+        BtnRegister.setOnClickListener(OCLRegister);
     }
 }
