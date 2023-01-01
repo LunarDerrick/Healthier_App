@@ -1,14 +1,253 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CLFasting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D9F2D5"
+    android:scrollbarSize="50dp"
     tools:context=".FastingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <android.widget.Toolbar
+        android:id="@+id/TBFasting"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#36872c"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:title="@string/TBFasting"
+        android:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/TVStatusFast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="You're fasting!"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBFasting" />
+
+    <EditText
+        android:id="@+id/ETDurationFast"
+        android:layout_width="73dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="20dp"
+        android:drawableEnd="@drawable/pen"
+        android:ems="10"
+        android:hint="@string/ETHintHrMin"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="14:10"
+        android:textColor="#14ABFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVStatusFast"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <ProgressBar
+        android:id="@+id/PBProgressFast"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETDurationFast" />
+
+    <TextView
+        android:id="@+id/TVProgComp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="72% completed"
+        app:layout_constraintEnd_toEndOf="@+id/PBProgressFast"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/PBProgressFast"
+        app:layout_constraintTop_toTopOf="@+id/PBProgressFast" />
+
+    <TextView
+        android:id="@+id/TVTimeCountDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7:54:21"
+        android:textColor="@color/black"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/PBProgressFast"
+        app:layout_constraintStart_toStartOf="@+id/PBProgressFast"
+        app:layout_constraintTop_toBottomOf="@+id/TVProgComp" />
+
+    <TextView
+        android:id="@+id/TVProgDur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2hrs remaining"
+        app:layout_constraintEnd_toEndOf="@+id/PBProgressFast"
+        app:layout_constraintStart_toStartOf="@+id/PBProgressFast"
+        app:layout_constraintTop_toBottomOf="@+id/TVTimeCountDown" />
+
+    <TableLayout
+        android:id="@+id/TLStatusFast"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PBProgressFast">
+
+        <TableRow
+            android:id="@+id/TRStatusFast1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TVTitleStart"
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:background="#B9E9B6"
+                android:padding="10dp"
+                android:text="@string/TVTitleStart"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/TVTitleEnd"
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:background="#B9E9B6"
+                android:padding="10dp"
+                android:text="@string/TVTitleEnd"
+                android:textAllCaps="true" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRStatusFast2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TVTimeStart"
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:background="#B9E9B6"
+                android:padding="10dp"
+                android:text="Today at 9:00 PM"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/TVTimeEnd"
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:background="#B9E9B6"
+                android:padding="10dp"
+                android:text="Tomorrow at 11:00 AM"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRStatusFast3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#B9E9B6">
+
+            <Button
+                android:id="@+id/BtnEditStart"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="164dp"
+                android:layout_height="35dp"
+                android:backgroundTint="#B9E9B6"
+                android:drawableEnd="@drawable/pen"
+                android:text="@string/BtnEditStart"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:onClick="BtnEditStartOnClick"
+                android:textColor="#14ABFF"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/BtnPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#36872c"
+        android:text="@string/BtnPause"
+        android:onClick="BtnPauseOnClick"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TLStatusFast" />
+
+    <Button
+        android:id="@+id/BtnEnd"
+        android:layout_width="110dp"
+        android:onClick="BtnStopOnClick"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#36872c"
+        android:text="End fast"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@+id/BtnPause"
+        app:layout_constraintTop_toBottomOf="@+id/TLStatusFast" />
+
+    <TextView
+        android:id="@+id/TVPracticeFast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/TVPracticeFast"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnPause" />
+
+    <Button
+        android:id="@+id/Btn52Diet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:onClick="Btn52DietOnClick"
+        android:backgroundTint="#36872c"
+        android:text="@string/Btn52Diet"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVPracticeFast" />
+
+    <Button
+        android:id="@+id/BtnEatStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#36872c"
+        android:onClick="BtnEatStopOnClick"
+        android:text="@string/BtnEatStop"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@+id/Btn52Diet"
+        app:layout_constraintTop_toBottomOf="@+id/TVPracticeFast" />
+
+    <Button
+        android:id="@+id/Btn168Method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#36872c"
+        android:onClick="Btn168MethodOnClick"
+        android:text="@string/Btn168Method"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@+id/BtnEatStop"
+        app:layout_constraintTop_toBottomOf="@+id/TVPracticeFast" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

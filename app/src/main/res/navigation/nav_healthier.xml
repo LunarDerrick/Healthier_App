@@ -3,31 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_healthier"
-    app:startDestination="@id/DestMain">
-
+    app:startDestination="@id/DestHome">
+    <fragment
+        android:id="@+id/DestHome"
+        android:name="wia2007.example.healthier_app.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
     <activity
-        android:id="@+id/DestMain"
-        android:name="wia2007.example.healthier_app.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
-    <activity
-        android:id="@+id/DestActPlanner"
+        android:id="@id/DestPlanner"
         android:name="wia2007.example.healthier_app.PlannerActivity"
         android:label="activity_planner"
         tools:layout="@layout/activity_planner" />
+    <activity
+        android:id="@id/DestCalculator"
+        android:name="wia2007.example.healthier_app.CalculatorActivity"
+        android:label="activity_calculator"
+        tools:layout="@layout/activity_calculator" />
+    <activity
+        android:id="@id/DestGeneral"
+        android:name="wia2007.example.healthier_app.GeneralActivity"
+        android:label="activity_general"
+        tools:layout="@layout/activity_general" />
     <fragment
-        android:id="@+id/DestFragBMIMacroCalc"
-        android:name="wia2007.example.healthier_app.BMIMacroCalc"
-        android:label="fragment_bmi_macro"
-        tools:layout="@layout/fragment_bmi_macro" />
-    <fragment
-        android:id="@+id/DestFragCalorieCalc"
-        android:name="wia2007.example.healthier_app.CalorieCalc"
-        android:label="fragment_calorie"
-        tools:layout="@layout/fragment_calorie" />
-    <fragment
-        android:id="@+id/DestBlank"
-        android:name="wia2007.example.healthier_app.BlankFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" />
+        android:id="@+id/DestFinder"
+        android:name="wia2007.example.healthier_app.FinderFragment"
+        android:label="fragment_finder"
+        tools:layout="@layout/fragment_finder" />
 </navigation>
