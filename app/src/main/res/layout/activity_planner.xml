@@ -8,6 +8,17 @@
     tools:context=".PlannerActivity">
 
     <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/FCVFast"
+        android:name="wia2007.example.healthier_app.FastingFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDiet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_fasting" />
+
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVExercise"
         android:name="wia2007.example.healthier_app.ExerciseFragment"
         android:layout_width="0dp"
@@ -34,8 +45,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:onClick="BtnDietOnClick"
         android:layout_marginBottom="10dp"
+        android:onClick="BtnDietOnClick"
         android:text="Diet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -45,9 +56,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:onClick="BtnExerciseOnClick"
         android:layout_marginBottom="10dp"
+        android:onClick="BtnExerciseOnClick"
         android:text="Exercise"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/BtnDiet" />
+
+    <Button
+        android:id="@+id/BtnFast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="BtnFastOnClick"
+        android:text="Fasting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BtnExercise" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

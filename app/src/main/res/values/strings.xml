@@ -88,13 +88,19 @@
     <string name="BtnStrTrain">Strength Training</string>
     <string name="BtnYoga">Yoga and stretching</string>
     <string name="TBFasting">Fasting Planner</string>
+    <string name="TVTitleStart">Started</string>
+    <string name="TVTitleEnd">Ending</string>
+    <string name="BtnEditStart">Edit start</string>
+    <string name="BtnPause">Pause fast</string>
+    <string name="TVPracticeFast">Intermittent Fasting Practice:</string>
+    <string name="Btn52Diet">5:2 Diet</string>
+    <string name="Btn168Method">16/8 Method</string>
+    <string name="BtnEatStop">Eat-Stop-Eat</string>
+    <string name="ETHintHrMin">hr:min</string>
     <string name="TVPro1">Adam Smith</string>
     <string name="TVDescPro1">\u25CF  NASM Certified Trainer\n\u25CF  Helps find the right exercise for you based on your fitness level</string>
     <string name="TVPro2">Timothy Skartin</string>
     <string name="TVDescPro2">\u25CF  HITT Certified Trainer\n\u25CF  Advises on the focus on training different muscle groups</string>
     <string name="TVPro3">Sarah Fierro</string>
     <string name="TVDescPro3">\u25CF  Nutrition specialist\n\u25CF  Dietary assessment to provide the best nutrition intake for you!</string>
-
-
-
 </resources>
