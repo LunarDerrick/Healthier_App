@@ -7,6 +7,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,12 +65,18 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
 
     }
 
+    TextInputEditText height, weight;
+    TextView result;
+    Button calculate;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bmi_macro, container, false);
+        View view = inflater.inflate(R.layout.fragment_bmi_macro, container, false);
 
+
+        return view;
     }
 
     @Override

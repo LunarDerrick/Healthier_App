@@ -37,12 +37,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Calories"
+        android:id="@+id/HeightTI"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="60dp"
-        android:layout_height="48dp"
+        android:layout_width="65dp"
+        android:layout_height="55dp"
         android:layout_marginTop="92dp"
         android:layout_marginEnd="278dp"
+        android:gravity="start"
         app:boxBackgroundColor="#DDEBFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
@@ -50,9 +51,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/HeightTIE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:foregroundTint="#FFFFFF"
+            android:gravity="start"
             android:shadowColor="#FFFFFF"
             android:textColor="#5465FF"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck"
@@ -83,17 +86,18 @@
         android:textColor="#000000"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/WeightTI"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="60dp"
-        android:layout_height="48dp"
+        android:layout_width="65dp"
+        android:layout_height="55dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="92dp"
+        android:gravity="start"
         app:boxBackgroundColor="#DDEBFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -101,9 +105,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/WeightTIE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:foregroundTint="#FFFFFF"
+            android:gravity="start"
             android:shadowColor="#FFFFFF"
             android:textColor="#5465FF"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
@@ -139,7 +145,7 @@
 
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/toggleMWG"
-        android:layout_width="wrap_content"
+        android:layout_width="345dp"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="180dp"
@@ -149,13 +155,13 @@
         app:singleSelection="true">
 
         <Button
-            android:id="@+id/BTMaintain"
+            android:id="@+id/BTGain"
             style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="115dp"
             android:layout_height="38dp"
             android:backgroundTint="#FFFFFF"
             android:letterSpacing="0"
-            android:text="@string/maintain"
+            android:text="Gain"
             android:textAllCaps="false"
             android:textColor="#8B8B8B"
             android:textSize="12sp"
@@ -165,13 +171,13 @@
             tools:layout_editor_absoluteY="164dp" />
 
         <Button
-            android:id="@+id/BTMLoss"
+            android:id="@+id/BTMaintain"
             style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="115dp"
             android:layout_height="38dp"
             android:backgroundTint="#FFFFFF"
             android:letterSpacing="0"
-            android:text="@string/mild_loss"
+            android:text="Maintain"
             android:textAllCaps="false"
             android:textColor="#8B8B8B"
             android:textSize="12sp"
@@ -183,7 +189,7 @@
         <Button
             android:id="@+id/BTLoss"
             style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="115dp"
             android:layout_height="38dp"
             android:backgroundTint="#FFFFFF"
             android:letterSpacing="0"
@@ -194,22 +200,6 @@
             app:cornerRadius="5dp"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck"
             tools:layout_editor_absoluteX="210dp"
-            tools:layout_editor_absoluteY="164dp" />
-
-        <Button
-            android:id="@+id/BTELoss"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:backgroundTint="#FFFFFF"
-            android:letterSpacing="0"
-            android:text="@string/extra_loss"
-            android:textAllCaps="false"
-            android:textColor="#8B8B8B"
-            android:textSize="12sp"
-            app:cornerRadius="5dp"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck"
-            tools:layout_editor_absoluteX="297dp"
             tools:layout_editor_absoluteY="164dp" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
