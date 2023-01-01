@@ -103,4 +103,8 @@
     <string name="TVDescPro2">\u25CF  HITT Certified Trainer\n\u25CF  Advises on the focus on training different muscle groups</string>
     <string name="TVPro3">Sarah Fierro</string>
     <string name="TVDescPro3">\u25CF  Nutrition specialist\n\u25CF  Dietary assessment to provide the best nutrition intake for you!</string>
+    <string name="Login">Log In</string>
+    <string name="LoginDesc">Let’s get to tracking progress and plan ahead.</string>
+    <string name="Forgot">Forgot Password?</string>
+    <string name="dont_have">I don\'t have an account yet</string>
 </resources>
