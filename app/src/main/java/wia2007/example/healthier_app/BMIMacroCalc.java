@@ -65,7 +65,7 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
 
     }
 
-    TextInputEditText height, weight;
+    EditText tinggi, berat;
     TextView result;
     Button calculate;
 
@@ -75,12 +75,31 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bmi_macro, container, false);
 
+        tinggi = view.findViewById(R.id.height);
+        berat = view.findViewById(R.id.weight);
+        result = view.findViewById(R.id.bminum);
+        calculate = view.findViewById(R.id.CalcButton);
+
+        calculate.setOnClickListener(bmi -> calculateBMI());
 
         return view;
     }
 
+    private void calculateBMI() {
+        String heightStr = tinggi.getText().toString();
+        String weightStr = berat.getText().toString();
+
+            float heightValue = Float.parseFloat(heightStr) / 100;
+            float weightValue = Float.parseFloat(weightStr);
+            float bmi = weightValue / (heightValue * heightValue);
+
+            result.setText((int) bmi);
+    }
     @Override
     public void onClick(View view) {
 
+    }
+
+    public void OnClickCalculate(View view) {
     }
 }

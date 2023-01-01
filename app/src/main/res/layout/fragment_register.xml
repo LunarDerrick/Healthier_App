@@ -221,7 +221,7 @@
         android:layout_marginTop="544dp"
         android:checked="true"
         android:fontFamily="@font/inter"
-        android:text="@string/agreewith"
+        android:text="Agree with"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.247"
         app:layout_constraintStart_toStartOf="parent"
