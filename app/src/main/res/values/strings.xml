@@ -88,4 +88,13 @@
     <string name="BtnStrTrain">Strength Training</string>
     <string name="BtnYoga">Yoga and stretching</string>
     <string name="TBFasting">Fasting Planner</string>
+    <string name="TVTitleStart">Started</string>
+    <string name="TVTitleEnd">Ending</string>
+    <string name="BtnEditStart">Edit start</string>
+    <string name="BtnPause">Pause fast</string>
+    <string name="TVPracticeFast">Intermittent Fasting Practice:</string>
+    <string name="Btn52Diet">5:2 Diet</string>
+    <string name="Btn168Method">16/8 Method</string>
+    <string name="BtnEatStop">Eat-Stop-Eat</string>
+    <string name="ETHintHrMin">hr:min</string>
 </resources>

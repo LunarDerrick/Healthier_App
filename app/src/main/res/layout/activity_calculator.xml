@@ -8,22 +8,47 @@
     tools:context=".CalculatorActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/FCVCalc"
-        android:name="wia2007.example.healthier_app.BMIMacroCalc"
-        android:layout_width="412dp"
-        android:layout_height="675dp"
+        android:id="@+id/FCVCalorie"
+        android:name="wia2007.example.healthier_app.CalorieCalc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnBMIMacro"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_calorie" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/FCVBMIMacro"
+        android:name="wia2007.example.healthier_app.BMIMacroCalc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnBMIMacro"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_bmi_macro" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav_view"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/BtnBMIMacro"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:onClick="BtnBMIMacroOnClick"
+        android:layout_marginBottom="10dp"
+        android:text="BMI &amp; Macro"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_bottom" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/BtnCalorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="BtnCalorieOnClick"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Calorie"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BtnBMIMacro" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
