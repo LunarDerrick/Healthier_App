@@ -10,7 +10,7 @@
     tools:context=".FastingFragment">
 
     <android.widget.Toolbar
-        android:id="@+id/TBFasting"
+        android:id="@+id/TBHome"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="#36872c"
@@ -34,7 +34,7 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBFasting" />
+        app:layout_constraintTop_toBottomOf="@+id/TBHome" />
 
     <EditText
         android:id="@+id/ETDurationFast"
