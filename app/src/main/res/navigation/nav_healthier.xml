@@ -9,11 +9,6 @@
         android:name="wia2007.example.healthier_app.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
-    <fragment
-        android:id="@+id/DestDiet"
-        android:name="wia2007.example.healthier_app.DietFragment"
-        android:label="fragment_diet"
-        tools:layout="@layout/fragment_diet" />
     <activity
         android:id="@id/DestPlanner"
         android:name="wia2007.example.healthier_app.PlannerActivity"
@@ -29,4 +24,9 @@
         android:name="wia2007.example.healthier_app.GeneralActivity"
         android:label="activity_general"
         tools:layout="@layout/activity_general" />
+    <fragment
+        android:id="@+id/DestFinder"
+        android:name="wia2007.example.healthier_app.FinderFragment"
+        android:label="fragment_finder"
+        tools:layout="@layout/fragment_finder" />
 </navigation>

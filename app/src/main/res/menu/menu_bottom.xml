@@ -15,6 +15,7 @@
         android:title="@string/tracker" />
 
     <item
+        android:id="@+id/DestFinder"
         android:icon="@drawable/coach_icon"
         android:title="@string/coaching" />
 
