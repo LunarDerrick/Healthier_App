@@ -189,6 +189,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="593dp"
         android:backgroundTint="#F0C869"
+        android:fontFamily="@font/inter_bold"
         android:letterSpacing="0"
         android:text="@string/register"
         android:onClick="RegBtnOnClick"
