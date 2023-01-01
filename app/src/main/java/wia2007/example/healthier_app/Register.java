@@ -20,7 +20,7 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+/*
         final EditText Uname = findViewById(R.id.userName);
         final EditText Mail = findViewById(R.id.email);
         final EditText Pass = findViewById(R.id.pass);
@@ -35,16 +35,16 @@ public class Register extends AppCompatActivity {
                 User user = new User(Uname.getText().toString(),Mail.getText().toString(),
                         Pass.getText().toString(), ConfirmPass.getText().toString());
 
-                /*
+
                 dao.add(user).addOnSuccessListener(suc->{
-                    Toast.makeText(this, "Account created successfully", Toast.LENGTH_SHORT.).show();
+                    Toast.makeText(Register.this, "Account created successfully", Toast.LENGTH_SHORT).show();
 
                 }).addOnFailureListener(er->{
-                    Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, er.getMessage(), Toast.LENGTH_SHORT).show();
                 });
-                 */
+
 
             }
-        });
+        }); */
     }
 }
