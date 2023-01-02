@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#C1ACE6"
-    android:fillViewport="true"
-    tools:context=".FinderFragment">
-
-
-    <!--    <ScrollView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content">-->
+    tools:context=".LessonsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,32 +13,32 @@
         android:background="#C1ACE6">
 
         <SurfaceView
-            android:id="@+id/surfaceView"
+            android:id="@+id/surfaceView2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#FEFEFE"
-            android:backgroundTint="#FEFEFE"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/BTFilterProHelpFinder"
+            android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:backgroundTint="#FFFFFF"
-            android:drawableRight="@drawable/ic_baseline_filter_alt_24"
+            android:drawableEnd="@drawable/ic_baseline_filter_alt_24"
             android:text="@string/BTFilter"
             android:textColor="#000000"
             app:cornerRadius="15dp"
-            app:layout_constraintBottom_toBottomOf="@+id/surfaceView"
-            app:layout_constraintStart_toEndOf="@+id/SVProHelpFinder"
-            app:layout_constraintTop_toTopOf="@+id/surfaceView"
+            app:layout_constraintBottom_toBottomOf="@+id/surfaceView2"
+            app:layout_constraintStart_toEndOf="@+id/searchView"
+            app:layout_constraintTop_toTopOf="parent"
             app:strokeColor="#000000"
             app:strokeWidth="1dp" />
 
         <SearchView
-            android:id="@+id/SVProHelpFinder"
+            android:id="@+id/searchView"
             android:layout_width="265dp"
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
@@ -56,143 +49,60 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/CVProHelpFinder1"
+            android:id="@+id/CVLessonBooking1"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/surfaceView">
+            app:layout_constraintTop_toBottomOf="@+id/surfaceView2">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/BTChat1"
+                    android:id="@+id/BTMore1"
                     android:layout_width="80dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="10dp"
                     android:backgroundTint="#9B66F8"
-                    android:text="@string/BTChat"
+                    android:text="@string/BTMore"
                     app:cornerRadius="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/TVDescPro1" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/CVPro1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    app:cardCornerRadius="50dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/IVPro1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerCrop"
-                        tools:src="@drawable/pro_1" />
-
-                </androidx.cardview.widget.CardView>
+                    app:layout_constraintTop_toBottomOf="@+id/TVDescTrainer1" />
 
                 <TextView
-                    android:id="@+id/TVPro1"
+                    android:id="@+id/TVDescTrainer1"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/TVDescTrainer1"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toEndOf="@+id/CVTrainer1"
+                    app:layout_constraintTop_toBottomOf="@+id/TVTrainer1" />
+
+                <TextView
+                    android:id="@+id/TVTrainer1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="20dp"
                     android:drawableEnd="@drawable/ic_baseline_verified_24"
-
-
-                    android:text="@string/TVPro1"
+                    android:text="@string/TVTrainer1"
                     android:textColor="#000000"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/CVPro1"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/TVDescPro1"
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/TVDescPro1"
-                    android:textStyle="italic"
-                    app:layout_constraintStart_toEndOf="@+id/CVPro1"
-                    app:layout_constraintTop_toBottomOf="@+id/TVPro1" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/CVProHelpFinder2"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:outlineProvider="background"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CVProHelpFinder1">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/BTChat2"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#9B66F8"
-                    android:text="@string/BTChat"
-                    android:textSize="14sp"
-                    app:cornerRadius="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/TVDescPro2" />
-
-                <TextView
-                    android:id="@+id/TVDescPro2"
-                    android:layout_width="180dp"
-                    android:layout_height="0dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/TVDescPro2"
-                    android:textStyle="italic"
-                    app:layout_constraintStart_toEndOf="@+id/CVPro2"
-                    app:layout_constraintTop_toBottomOf="@+id/TVPro2" />
-
-                <TextView
-                    android:id="@+id/TVPro2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="20dp"
-                    android:drawableEnd="@drawable/ic_baseline_verified_24"
-                    android:text="@string/TVPro2"
-                    android:textColor="#050505"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/CVPro2"
+                    app:layout_constraintStart_toEndOf="@+id/CVTrainer1"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/CVPro2"
+                    android:id="@+id/CVTrainer1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -202,22 +112,20 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/IVPro2"
+                        android:id="@+id/imageView2"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
-                        tools:src="@drawable/pro_2" />
+                        tools:src="@drawable/trainer_1" />
 
                 </androidx.cardview.widget.CardView>
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/CVProHelpFinder3"
+            android:id="@+id/CVLessonBooking2"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -225,73 +133,146 @@
             app:cardElevation="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CVProHelpFinder2">
+            app:layout_constraintTop_toBottomOf="@+id/CVLessonBooking1">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/BTChat3"
+                    android:id="@+id/BTMore2"
                     android:layout_width="80dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="10dp"
                     android:backgroundTint="#9B66F8"
-                    android:text="@string/BTChat"
+                    android:text="@string/BTMore"
                     app:cornerRadius="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/TVDescPro3" />
+                    app:layout_constraintTop_toBottomOf="@+id/TVDescTrainer2" />
 
                 <TextView
-                    android:id="@+id/TVDescPro3"
+                    android:id="@+id/TVDescTrainer2"
                     android:layout_width="180dp"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="10dp"
-                    android:text="@string/TVDescPro3"
+                    android:text="@string/TVDescTrainer2"
                     android:textStyle="italic"
-                    app:layout_constraintStart_toEndOf="@+id/CVPro3"
-                    app:layout_constraintTop_toBottomOf="@+id/TVPro3" />
+                    app:layout_constraintStart_toEndOf="@+id/CVTrainer2"
+                    app:layout_constraintTop_toBottomOf="@+id/TVTrainer2" />
 
                 <TextView
-                    android:id="@+id/TVPro3"
+                    android:id="@+id/TVTrainer2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="20dp"
                     android:drawableEnd="@drawable/ic_baseline_verified_24"
-                    android:text="@string/TVPro3"
-                    android:textColor="#050505"
+                    android:text="@string/TVTrainer2"
+                    android:textColor="#000000"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/CVPro3"
+                    app:layout_constraintStart_toEndOf="@+id/CVTrainer2"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/CVPro3"
+                    android:id="@+id/CVTrainer2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
-                    app:cardCornerRadius="40dp"
+                    app:cardCornerRadius="50dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/IVPro3"
+                        android:id="@+id/imageView4"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
-                        tools:src="@drawable/pro_3" />
+                        tools:src="@drawable/trainer_2" />
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CVLessonBooking3"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CVLessonBooking2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#9B66F8"
+                    android:text="@string/BTMore"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/TVDescTrainer3" />
+
+                <TextView
+                    android:id="@+id/TVDescTrainer3"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/TVDescTrainer3"
+                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toBottomOf="@+id/TVTrainer3" />
+
+                <TextView
+                    android:id="@+id/TVTrainer3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:drawableEnd="@drawable/ic_baseline_verified_24"
+                    android:text="@string/TVTrainer3"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="50dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/IVTrainer3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        tools:src="@drawable/trainer_3" />
                 </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <!--    </ScrollView>-->
-
 </ScrollView>
