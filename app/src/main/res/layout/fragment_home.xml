@@ -25,41 +25,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <Button
-        android:id="@+id/BtnGeneral"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="684dp"
-        android:onClick="BtnGeneralOnClick"
-        android:text="General"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/BtnCalculator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:onClick="BtnCalculatorOnClick"
-        android:text="@string/calculator"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/BtnGeneral" />
-
-    <Button
-        android:id="@+id/BtnPlanner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="BtnPlannerOnClick"
-        android:text="@string/planner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/BtnCalculator" />
-
     <TextView
         android:id="@+id/TVHome"
         android:layout_width="wrap_content"
