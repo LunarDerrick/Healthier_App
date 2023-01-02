@@ -65,37 +65,4 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstancesState) {
-        // General navigation
-        Button BtnGeneral = view.findViewById(R.id.BtnGeneral);
-        View.OnClickListener OCLGeneral = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.DestGeneral);
-            }
-        };
-        BtnGeneral.setOnClickListener(OCLGeneral);
-
-        // Calculator navigation
-        Button BtnCalculator = view.findViewById(R.id.BtnCalculator);
-        View.OnClickListener OCLCalculator = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.DestCalculator);
-            }
-        };
-        BtnCalculator.setOnClickListener(OCLCalculator);
-
-        // Planner navigation
-        Button BtnPlanner = view.findViewById(R.id.BtnPlanner);
-        View.OnClickListener OCLPlanner = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.DestPlanner);
-            }
-        };
-        BtnPlanner.setOnClickListener(OCLPlanner);
-    }
 }

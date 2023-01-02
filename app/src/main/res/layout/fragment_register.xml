@@ -172,32 +172,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="558dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="65dp"
         android:clickable="true"
         android:fontFamily="@font/inter"
         android:text="@string/terms"
         android:textColor="#33B6FF"
         app:layout_constraintEnd_toEndOf="@+id/whiterec"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/AgreeBtn"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmpass"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/RegBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="593dp"
         android:backgroundTint="#F0C869"
         android:fontFamily="@font/inter_bold"
         android:letterSpacing="0"
-        android:text="@string/register"
         android:onClick="RegBtnOnClick"
+        android:text="@string/register"
         android:textAllCaps="false"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/whiterec"
         app:layout_constraintStart_toStartOf="@+id/whiterec"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/AgreeBtn" />
 
     <TextView
         android:id="@+id/signin"
@@ -206,6 +206,7 @@
         android:layout_marginTop="8dp"
         android:clickable="true"
         android:fontFamily="@font/inter"
+        android:onClick="BtnHasAccOnClick"
         android:text="@string/already_have"
         android:textColor="#33B6FF"
         android:textSize="12sp"
@@ -218,13 +219,13 @@
         android:id="@+id/AgreeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="544dp"
+        android:layout_marginTop="10dp"
         android:checked="true"
         android:fontFamily="@font/inter"
         android:text="Agree with"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.247"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmpass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
