@@ -80,26 +80,20 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
         result = view.findViewById(R.id.bminum);
         calculate = view.findViewById(R.id.CalcButton);
 
-        calculate.setOnClickListener(bmi -> calculateBMI());
+        calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Double test = Double.parseDouble(berat.getText().toString())/
+                        ((Double.parseDouble(tinggi.getText().toString())/100)*(Double.parseDouble(tinggi.getText().toString())/100));
+                result.setText(String.format("%.2f", test));
+            }
+        });
 
         return view;
     }
 
-    private void calculateBMI() {
-        String heightStr = tinggi.getText().toString();
-        String weightStr = berat.getText().toString();
-
-            float heightValue = Float.parseFloat(heightStr) / 100;
-            float weightValue = Float.parseFloat(weightStr);
-            float bmi = weightValue / (heightValue * heightValue);
-
-            result.setText((int) bmi);
-    }
     @Override
     public void onClick(View view) {
 
-    }
-
-    public void OnClickCalculate(View view) {
     }
 }
