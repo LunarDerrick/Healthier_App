@@ -106,8 +106,8 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                 }
                 else if(test >= 25 && test < 30){
                     category.setText("Overweight");
-                    category.setTextColor(Color.YELLOW);
-                    category.setButtonTintList(ColorStateList.valueOf(Color.YELLOW));
+                    category.setTextColor(Color.rgb(255,200, 0));
+                    category.setButtonTintList(ColorStateList.valueOf(Color.rgb(255,200,0)));
                 }
                 else if(test >= 30) {
                     category.setText("Obese");
