@@ -1,5 +1,7 @@
 package wia2007.example.healthier_app;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -66,8 +69,9 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
     }
 
     EditText tinggi, berat;
-    TextView result;
+    TextView result, range;
     Button calculate;
+    RadioButton category;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -78,6 +82,8 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
         tinggi = view.findViewById(R.id.height);
         berat = view.findViewById(R.id.weight);
         result = view.findViewById(R.id.bminum);
+        range = view.findViewById(R.id.range);
+        category = view.findViewById(R.id.WeightClass);
         calculate = view.findViewById(R.id.CalcButton);
 
         calculate.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +91,50 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
             public void onClick(View view) {
                 Double test = Double.parseDouble(berat.getText().toString())/
                         ((Double.parseDouble(tinggi.getText().toString())/100)*(Double.parseDouble(tinggi.getText().toString())/100));
-                result.setText(String.format("%.2f", test));
+                result.setText(String.format("%.1f", test));
+                Integer heig = Integer.parseInt(tinggi.getText().toString());
+
+                if(test < 18.5) {
+                    category.setText("Underweight");
+                    category.setTextColor(Color.BLUE);
+                    category.setButtonTintList(ColorStateList.valueOf(Color.BLUE));
+                }
+                else if(test >= 18.5 && test < 25) {
+                    category.setText("Normal");
+                    category.setTextColor(Color.GREEN);
+                    category.setButtonTintList(ColorStateList.valueOf(Color.GREEN));
+                }
+                else if(test >= 25 && test < 30){
+                    category.setText("Overweight");
+                    category.setTextColor(Color.YELLOW);
+                    category.setButtonTintList(ColorStateList.valueOf(Color.YELLOW));
+                }
+                else if(test >= 30) {
+                    category.setText("Obese");
+                    category.setTextColor(Color.RED);
+                    category.setButtonTintList(ColorStateList.valueOf(Color.RED));
+                }
+
+                if(heig < 150){
+                    range.setText("Your healthy weight range: 37-50kg");
+                }
+                else if(heig >= 150 && heig < 160){
+                    range.setText("Your healthy weight range: 43-58kg");
+                }
+                else if(heig >= 160 && heig < 170){
+                    range.setText("Your healthy weight range: 49-65kg");
+                }
+                else if(heig >= 170 && heig < 180){
+                    range.setText("Your healthy weight range: 55-74kg");
+                }
+                else if(heig >= 180 && heig <= 190){
+                    range.setText("Your healthy weight range: 62-82kg");
+                }
+                else if(heig > 190){
+                    range.setText("Your healthy weight range: 72-96kg");
+                }
+
+
             }
         });
 
