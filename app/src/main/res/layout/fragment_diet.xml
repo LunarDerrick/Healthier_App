@@ -12,7 +12,7 @@
         android:id="@+id/TBDiet"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="#36872c"
+        android:background="#70BF69"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:title="@string/TBDiet"
@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter"
         android:text="@string/TVToday"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -41,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter"
         android:text="Monday"
         android:textColor="#0C9600"
         android:textStyle="bold"
@@ -52,33 +54,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter"
         android:text="5 December 2022"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/IVCalendar"
-        app:layout_constraintTop_toBottomOf="@+id/TBDiet" />
-
-    <ImageView
-        android:id="@+id/IVCalendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="3dp"
-        android:contentDescription="calendar icon"
-        android:src="@android:drawable/ic_menu_my_calendar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBDiet" />
+        app:layout_constraintTop_toBottomOf="@+id/TBDiet"
+        tools:layout_editor_absoluteX="256dp" />
 
     <TableLayout
         android:id="@+id/TLToday"
         android:layout_width="405dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:stretchColumns="*"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IVCalendar">
+        tools:layout_editor_absoluteY="107dp">
 
         <TableRow
             android:id="@+id/TRToday1"
@@ -89,28 +80,34 @@
                 android:id="@+id/TVTable1TitleBF"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border_green"
+                android:background="@drawable/border_green_topleft"
+                android:padding="5dp"
                 android:text="@string/TVTableTitleBF"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTable1TitleL"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border_green"
+                android:padding="5dp"
                 android:text="@string/TVTableTitleL"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTable1TitleD"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border_green"
+                android:background="@drawable/border_green_topright"
+                android:padding="5dp"
                 android:text="@string/TVTableTitleD"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="12sp" />
         </TableRow>
 
         <TableRow
@@ -122,10 +119,10 @@
                 android:id="@+id/TVTable1BF"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
+                android:background="@drawable/border_white_bottomleft"
                 android:text="Cereal, toast,\njam, tea"
                 android:textAlignment="center"
-                android:textColor="#36872C"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -135,17 +132,17 @@
                 android:background="@drawable/border_white"
                 android:text="Pasta salad, hot\nchocolate, meatballs"
                 android:textAlignment="center"
-                android:textColor="#36872C"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/TVTable1D"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
+                android:background="@drawable/border_white_bottomright"
                 android:text="Chicken katsu, rice,\norange juice, cake"
                 android:textAlignment="center"
-                android:textColor="#36872C"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
         </TableRow>
 
@@ -157,12 +154,13 @@
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="3dp"
-        android:backgroundTint="#36872c"
+        android:backgroundTint="#70BF69"
+        android:fontFamily="@font/inter"
         android:letterSpacing="0"
         android:onClick="BtnCompleteOnClick"
         android:text="@string/BtnComplete"
         android:textAllCaps="false"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TLToday" />
 
@@ -172,6 +170,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="269dp"
+        android:fontFamily="@font/inter"
         android:text="@string/TVWeekly"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -183,17 +182,17 @@
         style="?attr/borderlessButtonStyle"
         android:layout_width="75dp"
         android:layout_height="35dp"
-        android:layout_marginStart="221dp"
-        android:layout_marginTop="269dp"
-        android:onClick="BtnEditOnClick"
+        android:layout_marginTop="265dp"
         android:layout_marginEnd="3dp"
         android:drawableEnd="@drawable/pen"
+        android:fontFamily="@font/inter"
         android:letterSpacing="0"
+        android:onClick="BtnEditOnClick"
         android:text="Edit"
         android:textAllCaps="false"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/TLWeekly"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/TVWeekly"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
@@ -222,31 +221,34 @@
                 android:id="@+id/TVTable2TitleBF"
                 android:layout_width="95dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border_green"
+                android:background="@drawable/border_green_topleft"
+                android:padding="5dp"
                 android:text="@string/TVTableTitleBF"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTable2TitleL"
                 android:layout_width="95dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border_green"
+                android:padding="5dp"
                 android:text="@string/TVTableTitleL"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTable2TitleD"
                 android:layout_width="95dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border_green"
+                android:background="@drawable/border_green_topright"
+                android:padding="5dp"
                 android:text="@string/TVTableTitleD"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
         </TableRow>
 
         <TableRow
@@ -258,10 +260,11 @@
                 android:id="@+id/TVTable2DayM"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
                 android:text="@string/TVTableDayM"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTable2BFDayM"
@@ -270,7 +273,7 @@
                 android:background="@drawable/border_white"
                 android:text="Cereal, toast,\njam, tea"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -280,7 +283,7 @@
                 android:background="@drawable/border_white"
                 android:text="Pasta salad, hot\nchocolate"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -290,7 +293,7 @@
                 android:background="@drawable/border_white"
                 android:text="Chicken katsu, rice,\norange juice"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
         </TableRow>
 
@@ -303,10 +306,11 @@
                 android:id="@+id/TVTable2DayT"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
                 android:text="@string/TVTableDayT"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTable2BFDayT"
@@ -315,7 +319,7 @@
                 android:background="@drawable/border_white"
                 android:text="Banana,\nmilk, sausage"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -325,7 +329,7 @@
                 android:background="@drawable/border_white"
                 android:text="Grilled chicken\nsalad, green tea"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -335,7 +339,7 @@
                 android:background="@drawable/border_white"
                 android:text="Lasagna, sweet\nparfait, water"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
         </TableRow>
 
@@ -348,10 +352,11 @@
                 android:id="@+id/TVTable2DayW"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
                 android:text="@string/TVTableDayW"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTable2BFDayW"
@@ -360,7 +365,7 @@
                 android:background="@drawable/border_white"
                 android:text="Sandwich,\nmilk, sausage"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -370,7 +375,7 @@
                 android:background="@drawable/border_white"
                 android:text="Grilled cheese,\ntomato soup, soda"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -380,7 +385,7 @@
                 android:background="@drawable/border_white"
                 android:text="Spicy salmon\nbowl, coca cola"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
         </TableRow>
 
@@ -393,10 +398,11 @@
                 android:id="@+id/TVTable2DayTh"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
                 android:text="@string/TVTableDayTh"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTable2BFDayTh"
@@ -405,7 +411,7 @@
                 android:background="@drawable/border_white"
                 android:text="Scrambled eggs,\nmuffins, water"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -415,7 +421,7 @@
                 android:background="@drawable/border_white"
                 android:text="Speghetti, lemon\nwater, cookie"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -425,7 +431,7 @@
                 android:background="@drawable/border_white"
                 android:text="Vegan meatballs,\nmint tea, pudding"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
         </TableRow>
 
@@ -438,10 +444,11 @@
                 android:id="@+id/TVTable2DayF"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
                 android:text="@string/TVTableDayF"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTable2BFDayF"
@@ -450,7 +457,7 @@
                 android:background="@drawable/border_white"
                 android:text="Oats, croissant,\nmilkshake"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -460,7 +467,7 @@
                 android:background="@drawable/border_white"
                 android:text="Mac &amp; cheese, kiwi\nsmoothie"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -470,7 +477,7 @@
                 android:background="@drawable/border_white"
                 android:text="Orange chicken,\nrice, yogurt drink"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
         </TableRow>
 
@@ -483,10 +490,11 @@
                 android:id="@+id/TVTable2DayS"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
                 android:text="@string/TVTableDayS"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTable2BFDayS"
@@ -495,7 +503,7 @@
                 android:background="@drawable/border_white"
                 android:text="Pancake, boiled\neggs, chai tea"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -505,7 +513,7 @@
                 android:background="@drawable/border_white"
                 android:text="Chicken fried rice,\nmango juice"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -515,7 +523,7 @@
                 android:background="@drawable/border_white"
                 android:text="Spaghetti tomato,\nwatermelon juice"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
         </TableRow>
 
@@ -528,19 +536,20 @@
                 android:id="@+id/TVTable2DaySu"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
                 android:text="@string/TVTableDaySu"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTable2BFDaySu"
                 android:layout_width="95dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
+                android:background="@drawable/border_white_bottomleft"
                 android:text="Butter bread, fruit\nsalad, soy milk"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
@@ -550,19 +559,29 @@
                 android:background="@drawable/border_white"
                 android:text="Ramen, mochi,\ngreen tea, sushi"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/TVTable2DDaySu"
                 android:layout_width="95dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
+                android:background="@drawable/border_white_bottomright"
                 android:text="Buttermilk chicken,\nrice, pie, water"
                 android:textAlignment="center"
-                android:textColor="#36872c"
+                android:textColor="#0B8600"
                 android:textSize="14sp" />
         </TableRow>
     </TableLayout>
+
+    <ImageView
+        android:id="@+id/IVCalendar"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="7dp"
+        android:src="@drawable/calendar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBDiet" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

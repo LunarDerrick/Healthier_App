@@ -7,12 +7,13 @@ import com.google.firebase.database.FirebaseDatabase;
 public class DAOUser {
 
     private DatabaseReference databaseReference;
-    public DAOUser(){
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
+
+    public DAOUser() {
+        FirebaseDatabase db = FirebaseDatabase.getInstance("https://healthier-app-aed74-default-rtdb.asia-southeast1.firebasedatabase.app");
         databaseReference = db.getReference(User.class.getSimpleName());
     }
-    public Task<Void> add(User us){
 
-       return databaseReference.push().setValue(us);
+    public Task<Void> add(User us) {
+        return databaseReference.push().setValue(us);
     }
 }

@@ -127,7 +127,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/RegBtn"
+        android:id="@+id/loginBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="544dp"
@@ -156,6 +156,6 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/whiterec_login"
         app:layout_constraintStart_toStartOf="@+id/whiterec_login"
-        app:layout_constraintTop_toBottomOf="@+id/RegBtn"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn"
         tools:ignore="TouchTargetSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
