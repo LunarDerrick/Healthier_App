@@ -12,11 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
-
-import com.google.android.material.button.MaterialButtonToggleGroup;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -71,8 +68,9 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
 
     EditText tinggi, berat;
     TextView result, range, circle;
-    Button calculate, sedentary;
-    RadioButton category;
+    Button calculate;
+    RadioButton category, rbal;
+    RadioGroup rgal;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -86,63 +84,53 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
         range = view.findViewById(R.id.range);
         category = view.findViewById(R.id.WeightClass);
         calculate = view.findViewById(R.id.CalcButton);
-        sedentary = view.findViewById(R.id.Sedentary);
+        //sedentary = view.findViewById(R.id.Sedentary);
         circle = view.findViewById(R.id.Circular);
+        rgal = view.findViewById(R.id.RGAL);
 
-                sedentary.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String test = sedentary.getText().toString();
-                        sedentary.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(84,101, 255)));
-                        sedentary.setTextColor(Color.WHITE);
-                        circle.setText("1500");
-                    }
-                });
+        calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Double test = Double.parseDouble(berat.getText().toString()) /
+                        ((Double.parseDouble(tinggi.getText().toString()) / 100) * (Double.parseDouble(tinggi.getText().toString()) / 100));
+                result.setText(String.format("%.1f", test));
+                Integer heig = Integer.parseInt(tinggi.getText().toString());
 
+                if (test < 18.5) {
+                    category.setText("Underweight");
+                    category.setTextColor(Color.BLUE);
+                    category.setButtonTintList(ColorStateList.valueOf(Color.BLUE));
+                } else if (test >= 18.5 && test < 25) {
+                    category.setText("Normal");
+                    category.setTextColor(Color.GREEN);
+                    category.setButtonTintList(ColorStateList.valueOf(Color.GREEN));
+                } else if (test >= 25 && test < 30) {
+                    category.setText("Overweight");
+                    category.setTextColor(Color.rgb(255, 200, 0));
+                    category.setButtonTintList(ColorStateList.valueOf(Color.rgb(255, 200, 0)));
+                } else if (test >= 30) {
+                    category.setText("Obese");
+                    category.setTextColor(Color.RED);
+                    category.setButtonTintList(ColorStateList.valueOf(Color.RED));
+                }
 
-                calculate.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Double test = Double.parseDouble(berat.getText().toString()) /
-                                ((Double.parseDouble(tinggi.getText().toString()) / 100) * (Double.parseDouble(tinggi.getText().toString()) / 100));
-                        result.setText(String.format("%.1f", test));
-                        Integer heig = Integer.parseInt(tinggi.getText().toString());
+                if (heig < 150) {
+                    range.setText("Your healthy weight range: 37-50kg");
+                } else if (heig >= 150 && heig < 160) {
+                    range.setText("Your healthy weight range: 43-58kg");
+                } else if (heig >= 160 && heig < 170) {
+                    range.setText("Your healthy weight range: 49-65kg");
+                } else if (heig >= 170 && heig < 180) {
+                    range.setText("Your healthy weight range: 55-74kg");
+                } else if (heig >= 180 && heig <= 190) {
+                    range.setText("Your healthy weight range: 62-82kg");
+                } else if (heig > 190) {
+                    range.setText("Your healthy weight range: 72-96kg");
+                }
+                //todo radio button...
 
-                        if (test < 18.5) {
-                            category.setText("Underweight");
-                            category.setTextColor(Color.BLUE);
-                            category.setButtonTintList(ColorStateList.valueOf(Color.BLUE));
-                        } else if (test >= 18.5 && test < 25) {
-                            category.setText("Normal");
-                            category.setTextColor(Color.GREEN);
-                            category.setButtonTintList(ColorStateList.valueOf(Color.GREEN));
-                        } else if (test >= 25 && test < 30) {
-                            category.setText("Overweight");
-                            category.setTextColor(Color.rgb(255, 200, 0));
-                            category.setButtonTintList(ColorStateList.valueOf(Color.rgb(255, 200, 0)));
-                        } else if (test >= 30) {
-                            category.setText("Obese");
-                            category.setTextColor(Color.RED);
-                            category.setButtonTintList(ColorStateList.valueOf(Color.RED));
-                        }
-
-                        if (heig < 150) {
-                            range.setText("Your healthy weight range: 37-50kg");
-                        } else if (heig >= 150 && heig < 160) {
-                            range.setText("Your healthy weight range: 43-58kg");
-                        } else if (heig >= 160 && heig < 170) {
-                            range.setText("Your healthy weight range: 49-65kg");
-                        } else if (heig >= 170 && heig < 180) {
-                            range.setText("Your healthy weight range: 55-74kg");
-                        } else if (heig >= 180 && heig <= 190) {
-                            range.setText("Your healthy weight range: 62-82kg");
-                        } else if (heig > 190) {
-                            range.setText("Your healthy weight range: 72-96kg");
-                        }
-
-
-                    }
-                });
+            }
+        });
 
         return view;
     }

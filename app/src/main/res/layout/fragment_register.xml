@@ -191,7 +191,6 @@
         android:backgroundTint="#F0C869"
         android:fontFamily="@font/inter_bold"
         android:letterSpacing="0"
-        android:onClick="RegBtnOnClick"
         android:text="@string/register"
         android:textAllCaps="false"
         android:textColor="#000000"

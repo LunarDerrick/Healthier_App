@@ -52,7 +52,7 @@ public class LoginFragment extends Fragment {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(requireContext(), "Register Failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(requireContext(), "Login Failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
     }
