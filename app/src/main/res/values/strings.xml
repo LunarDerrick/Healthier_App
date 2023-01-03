@@ -124,4 +124,16 @@
     <string name="TVLatest">Latest news</string>
     <string name="TVNewsDesc">Healthy Diet - WHO</string>
     <string name="TVHomeGo">Go to</string>
+    <string name="Manage">Manage Profile</string>
+    <string name="sample_name">Ariana Venti</string>
+    <string name="sample_username">\@arianaventi.17</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="edit_profiledesc">Username, Phone, Address, Password...</string>
+    <string name="user_info">User info</string>
+    <string name="user_infodesc">Name, Age, Gender, Height, Weight...</string>
+    <string name="Manage_payment">Manage payment</string>
+    <string name="Manage_paymentdesc">Credit/debit card, e-Wallet...</string>
+    <string name="help">Help</string>
+    <string name="helpdesc">About, FAQ, Customer service...</string>
+    <string name="Logout">Logout</string>
 </resources>
