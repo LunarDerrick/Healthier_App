@@ -17,14 +17,27 @@ public class CoachingActivity extends AppCompatActivity {
     public void BtnFinderOnClick(View view) {
         FragmentContainerView FCVFinder = findViewById(R.id.FCVFinder);
         FragmentContainerView FCVLesson = findViewById(R.id.FCVLesson);
+        FragmentContainerView FCVLocator = findViewById(R.id.FCVLocator);
         FCVFinder.setVisibility(View.VISIBLE);
         FCVLesson.setVisibility(View.GONE);
+        FCVLocator.setVisibility(View.GONE);
     }
 
     public void BtnLessonOnClick(View view) {
         FragmentContainerView FCVFinder = findViewById(R.id.FCVFinder);
         FragmentContainerView FCVLesson = findViewById(R.id.FCVLesson);
+        FragmentContainerView FCVLocator = findViewById(R.id.FCVLocator);
         FCVFinder.setVisibility(View.GONE);
         FCVLesson.setVisibility(View.VISIBLE);
+        FCVLocator.setVisibility(View.GONE);
+    }
+
+    public void BtnLocatorOnClick(View view) {
+        FragmentContainerView FCVFinder = findViewById(R.id.FCVFinder);
+        FragmentContainerView FCVLesson = findViewById(R.id.FCVLesson);
+        FragmentContainerView FCVLocator = findViewById(R.id.FCVLocator);
+        FCVFinder.setVisibility(View.GONE);
+        FCVLesson.setVisibility(View.GONE);
+        FCVLocator.setVisibility(View.VISIBLE);
     }
 }

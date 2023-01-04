@@ -20,11 +20,22 @@
         android:background="#C1ACE6">
 
         <SurfaceView
-            android:id="@+id/surfaceView"
+            android:id="@+id/SVFinder"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#FEFEFE"
             android:backgroundTint="#FEFEFE"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SearchView
+            android:id="@+id/SVProHelpFinder"
+            android:layout_width="265dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#000000"
+            android:backgroundTint="#BAB8B8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,22 +49,11 @@
             android:text="@string/BTFilter"
             android:textColor="#000000"
             app:cornerRadius="15dp"
-            app:layout_constraintBottom_toBottomOf="@+id/surfaceView"
+            app:layout_constraintBottom_toBottomOf="@+id/SVFinder"
             app:layout_constraintStart_toEndOf="@+id/SVProHelpFinder"
-            app:layout_constraintTop_toTopOf="@+id/surfaceView"
+            app:layout_constraintTop_toTopOf="@+id/SVFinder"
             app:strokeColor="#000000"
             app:strokeWidth="1dp" />
-
-        <SearchView
-            android:id="@+id/SVProHelpFinder"
-            android:layout_width="265dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:background="#000000"
-            android:backgroundTint="#BAB8B8"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/CVProHelpFinder1"
@@ -65,7 +65,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/surfaceView">
+            app:layout_constraintTop_toBottomOf="@+id/SVFinder">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
