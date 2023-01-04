@@ -121,66 +121,60 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/toggleMWG"
-        android:layout_width="345dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="180dp"
+    <RadioGroup
+        android:id="@+id/RGMWG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="187dp"
+        android:layout_marginEnd="27dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:singleSelection="true">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/BTGain"
-            style="?attr/materialButtonOutlinedStyle"
+        <RadioButton
+            android:id="@+id/Gain"
             android:layout_width="115dp"
-            android:layout_height="38dp"
-            android:backgroundTint="#FFFFFF"
-            android:letterSpacing="0"
+            android:layout_height="30dp"
+            android:background="@drawable/edit_text_white"
+            android:button="@null"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:text="Gain"
-            android:textAllCaps="false"
             android:textColor="#8B8B8B"
             android:textSize="12sp"
-            app:cornerRadius="5dp"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck"
-            tools:layout_editor_absoluteX="36dp"
-            tools:layout_editor_absoluteY="164dp" />
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-        <Button
-            android:id="@+id/BTMaintain"
-            style="?attr/materialButtonOutlinedStyle"
+        <RadioButton
+            android:id="@+id/Maintain"
             android:layout_width="115dp"
-            android:layout_height="38dp"
-            android:backgroundTint="#FFFFFF"
-            android:letterSpacing="0"
+            android:layout_height="30dp"
+            android:background="@drawable/edit_text_white"
+            android:button="@null"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:text="Maintain"
-            android:textAllCaps="false"
             android:textColor="#8B8B8B"
             android:textSize="12sp"
-            app:cornerRadius="5dp"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck"
-            tools:layout_editor_absoluteX="123dp"
-            tools:layout_editor_absoluteY="164dp" />
+            android:translationX="-5dp"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-        <Button
-            android:id="@+id/BTLoss"
-            style="?attr/materialButtonOutlinedStyle"
+        <RadioButton
+            android:id="@+id/Loss"
             android:layout_width="115dp"
-            android:layout_height="38dp"
-            android:backgroundTint="#FFFFFF"
-            android:letterSpacing="0"
-            android:text="@string/loss"
-            android:textAllCaps="false"
+            android:layout_height="30dp"
+            android:background="@drawable/edit_text_white"
+            android:button="@null"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Loss"
             android:textColor="#8B8B8B"
             android:textSize="12sp"
-            app:cornerRadius="5dp"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck"
-            tools:layout_editor_absoluteX="210dp"
-            tools:layout_editor_absoluteY="164dp" />
+            android:translationX="-10dp"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    </com.google.android.material.button.MaterialButtonToggleGroup>
+    </RadioGroup>
 
 
     <RadioGroup
@@ -412,7 +406,7 @@
             android:textColor="#8B8B8B"
             android:textSize="12sp"
             android:textStyle="bold"
-            android:translationX="20dp"
+            android:translationX="17dp"
             android:translationY="10dp"
             tools:ignore="TextContrastCheck,TextContrastCheck"
             tools:layout_editor_absoluteX="53dp"
@@ -428,8 +422,8 @@
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:translationX="20dp"
-            android:translationY="30dp"
+            android:translationX="17dp"
+            android:translationY="27dp"
             tools:layout_editor_absoluteX="53dp"
             tools:layout_editor_absoluteY="514dp" />
 
@@ -438,10 +432,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Total \n0.25kg/week\n\n\nCalories/day"
+            android:text="Total\n\n\nkcal"
             android:textSize="10sp"
-            android:translationX="42.5dp"
-            android:translationY="50dp"
+            android:translationX="58dp"
+            android:translationY="56dp"
             tools:layout_editor_absoluteX="75dp"
             tools:layout_editor_absoluteY="533dp" />
 
