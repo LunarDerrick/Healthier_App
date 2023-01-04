@@ -7,13 +7,14 @@
     android:layout_height="match_parent"
     android:background="#D9F2D5"
     android:scrollbarSize="50dp"
+    android:textAlignment="viewStart"
     tools:context=".FastingFragment">
 
     <android.widget.Toolbar
         android:id="@+id/TBHome"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="#36872c"
+        android:background="#70BF69"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:title="@string/TBFasting"
@@ -30,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter"
         android:text="You're fasting!"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -111,19 +113,23 @@
                 android:id="@+id/TVTitleStart"
                 android:layout_width="164dp"
                 android:layout_height="wrap_content"
-                android:background="#B9E9B6"
+                android:background="@drawable/border_lightgreen_topleft"
+                android:fontFamily="@font/inter"
                 android:padding="10dp"
                 android:text="@string/TVTitleStart"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTitleEnd"
                 android:layout_width="164dp"
                 android:layout_height="wrap_content"
-                android:background="#B9E9B6"
+                android:background="@drawable/border_lightgreen_topright"
+                android:fontFamily="@font/inter"
                 android:padding="10dp"
                 android:text="@string/TVTitleEnd"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textSize="12sp" />
         </TableRow>
 
         <TableRow
@@ -136,25 +142,29 @@
                 android:layout_width="164dp"
                 android:layout_height="wrap_content"
                 android:background="#B9E9B6"
+                android:fontFamily="@font/inter"
                 android:padding="10dp"
                 android:text="Today at 9:00 PM"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/TVTimeEnd"
                 android:layout_width="164dp"
                 android:layout_height="wrap_content"
                 android:background="#B9E9B6"
+                android:fontFamily="@font/inter"
                 android:padding="10dp"
                 android:text="Tomorrow at 11:00 AM"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="12sp" />
         </TableRow>
 
         <TableRow
             android:id="@+id/TRStatusFast3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#B9E9B6">
+            android:background="@drawable/border_lightgreen_bottom">
 
             <Button
                 android:id="@+id/BtnEditStart"
@@ -163,10 +173,10 @@
                 android:layout_height="35dp"
                 android:backgroundTint="#B9E9B6"
                 android:drawableEnd="@drawable/pen"
+                android:onClick="BtnEditStartOnClick"
                 android:text="@string/BtnEditStart"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:onClick="BtnEditStartOnClick"
                 android:textColor="#14ABFF"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </TableRow>
@@ -179,9 +189,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="5dp"
-        android:backgroundTint="#36872c"
-        android:text="@string/BtnPause"
+        android:backgroundTint="#70BF69"
+        android:fontFamily="@font/inter"
         android:onClick="BtnPauseOnClick"
+        android:text="@string/BtnPause"
         android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TLStatusFast" />
@@ -189,11 +200,12 @@
     <Button
         android:id="@+id/BtnEnd"
         android:layout_width="110dp"
-        android:onClick="BtnStopOnClick"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="5dp"
-        android:backgroundTint="#36872c"
+        android:backgroundTint="#70BF69"
+        android:fontFamily="@font/inter"
+        android:onClick="BtnStopOnClick"
         android:text="End fast"
         android:textAllCaps="false"
         app:layout_constraintStart_toEndOf="@+id/BtnPause"
@@ -205,6 +217,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/inter"
         android:text="@string/TVPracticeFast"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -217,8 +230,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
+        android:backgroundTint="#70BF69"
+        android:fontFamily="@font/inter"
         android:onClick="Btn52DietOnClick"
-        android:backgroundTint="#36872c"
         android:text="@string/Btn52Diet"
         android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
@@ -230,7 +244,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
         android:layout_marginTop="5dp"
-        android:backgroundTint="#36872c"
+        android:backgroundTint="#70BF69"
         android:onClick="BtnEatStopOnClick"
         android:text="@string/BtnEatStop"
         android:textAllCaps="false"
@@ -243,7 +257,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
         android:layout_marginTop="5dp"
-        android:backgroundTint="#36872c"
+        android:backgroundTint="#70BF69"
+        android:fontFamily="@font/inter"
         android:onClick="Btn168MethodOnClick"
         android:text="@string/Btn168Method"
         android:textAllCaps="false"
