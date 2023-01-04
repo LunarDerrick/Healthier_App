@@ -15,12 +15,12 @@
         android:title="@string/tracker" />
 
     <item
-        android:id="@+id/DestFinder"
+        android:id="@+id/DestCoaching"
         android:icon="@drawable/coach_icon"
         android:title="@string/coaching" />
 
     <item
-        android:id="@+id/DestGeneral"
+        android:id="@+id/DestSettings"
         android:icon="@drawable/settings_icon"
         android:title="@string/settings" />
 </menu>

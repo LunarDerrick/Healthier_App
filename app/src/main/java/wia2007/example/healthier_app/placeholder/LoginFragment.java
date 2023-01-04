@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,12 +33,12 @@ public class LoginFragment extends Fragment {
         EditText passwordET = view.findViewById(R.id.pass);
         Button loginButton = view.findViewById(R.id.loginBtn);
 
-        loginButton.setOnClickListener(view1 -> register(emailET.getText().toString(), passwordET.getText().toString()));
+        loginButton.setOnClickListener(view1 -> register(emailET.getText().toString(), passwordET.getText().toString(), view1));
 
         return view;
     }
 
-    private void register(String email, String password) {
+    private void register(String email, String password, View view) {
         if (email.isEmpty() || password.isEmpty()){
             Toast.makeText(requireContext(), "Please fill in both of the text fields", Toast.LENGTH_SHORT).show();
             return;
@@ -48,6 +49,8 @@ public class LoginFragment extends Fragment {
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(requireContext(), "Login successfully!", Toast.LENGTH_SHORT).show();
                         // todo navigate to home page
+                        // phang: hopefully this works, since I can't get login to work for me
+                        Navigation.findNavController(view).navigate(R.id.DestHome);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

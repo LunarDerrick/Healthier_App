@@ -20,13 +20,18 @@
         android:label="activity_calculator"
         tools:layout="@layout/activity_calculator" />
     <activity
-        android:id="@id/DestGeneral"
+        android:id="@+id/DestCoaching"
+        android:name="wia2007.example.healthier_app.CoachingActivity"
+        android:label="activity_coaching"
+        tools:layout="@layout/activity_coaching" />
+    <fragment
+        android:id="@+id/DestSettings"
+        android:name="wia2007.example.healthier_app.SettingsFragment"
+        android:label="fragment_manage_profile_"
+        tools:layout="@layout/fragment_settings" />
+    <activity
+        android:id="@+id/DestGeneral"
         android:name="wia2007.example.healthier_app.GeneralActivity"
         android:label="activity_general"
         tools:layout="@layout/activity_general" />
-    <fragment
-        android:id="@+id/DestFinder"
-        android:name="wia2007.example.healthier_app.FinderFragment"
-        android:label="fragment_finder"
-        tools:layout="@layout/fragment_finder" />
 </navigation>
