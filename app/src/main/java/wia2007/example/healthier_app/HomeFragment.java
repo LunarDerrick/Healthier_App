@@ -1,6 +1,5 @@
 package wia2007.example.healthier_app;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -10,7 +9,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -64,5 +63,38 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        // Calculator Navigation
+        ImageView BtnCalculator = view.findViewById(R.id.calculator_btn);
+        View.OnClickListener OCLCalculator = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.DestCalculator);
+            }
+        };
+        BtnCalculator.setOnClickListener(OCLCalculator);
+
+        // Planner Navigation
+        ImageView BtnPlanner = view.findViewById(R.id.planner_btn);
+        View.OnClickListener OCLPlanner = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.DestPlanner);
+            }
+        };
+        BtnPlanner.setOnClickListener(OCLPlanner);
+
+        // Coaching Navigation
+        ImageView BtnCoaching = view.findViewById(R.id.coach_btn);
+        View.OnClickListener OCLCoaching = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.DestCoaching);
+            }
+        };
+        BtnCoaching.setOnClickListener(OCLCoaching);
     }
 }
