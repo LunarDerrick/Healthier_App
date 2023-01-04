@@ -29,6 +29,17 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_lessons" />
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/FCVLocator"
+        android:name="wia2007.example.healthier_app.LocatorFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnFinder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_locator" />
+
     <Button
         android:id="@+id/BtnFinder"
         android:layout_width="wrap_content"
@@ -50,4 +61,16 @@
         android:text="Lesson"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/BtnFinder" />
+
+    <Button
+        android:id="@+id/BtnLocator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Locator"
+        android:onClick="BtnLocatorOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BtnLesson" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
