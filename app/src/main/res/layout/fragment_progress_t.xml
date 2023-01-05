@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text_taken"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_tracker_activity">
+
+
+    <TextView
+        android:id="@+id/daily_calorie_tracker"
+        style="@style/small_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="21dp"
+        android:text="@string/daily_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/daily_calorie_taken"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border_black_fill_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/daily_calorie_tracker"/>
+
+    <View
+        android:id="@+id/daily_calorie_burnt"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="31dp"
+        android:background="@drawable/border_black_fill_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/daily_calorie_tracker"/>
+
+    <Button
+        android:id="@+id/submit_button_progress_tracker"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="31dp"
+        android:backgroundTint="@color/tracker_submit_darkerPink"
+        android:text="@string/submit"
+        android:textAllCaps="false"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/daily_calorie_burnt" />
+
+    <TextView
+        android:id="@id/text_taken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="@string/taken"
+        android:textSize="13sp"
+        android:textColor="#686868"
+        app:layout_constraintBottom_toBottomOf="@+id/daily_calorie_taken"
+        app:layout_constraintStart_toStartOf="@+id/daily_calorie_taken"
+        app:layout_constraintTop_toTopOf="@+id/daily_calorie_taken" />
+
+    <TextView
+        android:id="@+id/text_burnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="@string/burnt"
+        android:textSize="13sp"
+        android:textColor="#686868"
+        app:layout_constraintBottom_toBottomOf="@+id/daily_calorie_burnt"
+        app:layout_constraintStart_toStartOf="@+id/daily_calorie_burnt"
+        app:layout_constraintTop_toTopOf="@+id/daily_calorie_burnt" />
+
+    <TextView
+        android:id="@+id/weekly_calorie_tracker"
+        style="@style/small_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="120dp"
+        android:text="@string/weekly_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/daily_calorie_tracker" />
+
+    <View
+        android:id="@+id/daily_average_result_container"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="130dp"
+        android:background="@drawable/border_black_fill_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/your_daily_average_calorie"
+        android:textColor="#686868"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/daily_average_result_container"
+        app:layout_constraintTop_toTopOf="@+id/daily_average_result_container" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/keep_it_up"
+        android:textColor="#686868"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/daily_average_result_container"
+        app:layout_constraintStart_toStartOf="@+id/daily_average_result_container"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+
+    <!--    not running yet-->
+    <!--    still need to code the behaviour/-->
+    <RadioGroup
+        android:id="@+id/weeklyCaloriesForm"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:background="@drawable/radio_group_bg"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="31dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weekly_calorie_tracker">
+
+        <RadioButton
+            android:background="@drawable/radio_off"
+            android:id="@+id/graph_form"
+            style="@style/radioButtonStyle"
+            android:text="@string/graph_form" />
+
+        <RadioButton
+            android:background="@drawable/radio_off"
+            android:id="@+id/list_form"
+            style="@style/radioButtonStyle"
+            android:text="@string/list_form" />
+
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
