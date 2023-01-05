@@ -36,32 +36,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/Calories"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="175dp"
         android:layout_height="48dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="165dp"
-        app:boxBackgroundColor="#DDEBFF"
+        android:background="@drawable/edittext"
+        android:ems="10"
+        android:gravity="center|start"
+        android:hint="Calories"
+        android:inputType="numberDecimal"
+        android:paddingStart="15dp"
+        android:textColor="#5465FF"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ETCalories"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foregroundTint="#FFFFFF"
-            android:hint="@string/calories"
-            android:shadowColor="#FFFFFF"
-            android:textColor="#5465FF"
-            android:textSize="14sp"
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck"
-            tools:layout_editor_absoluteX="36dp"
-            tools:layout_editor_absoluteY="109dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/kcalday"
@@ -78,46 +70,31 @@
         app:layout_constraintStart_toEndOf="@+id/Calories"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Quantity"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+    <Spinner
+        android:id="@+id/mealsperday"
         android:layout_width="175dp"
         android:layout_height="48dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="165dp"
-        app:boxBackgroundColor="#DDEBFF"
+        android:layout_marginTop="156dp"
+        android:background="@drawable/bgspinner"
+        android:contentDescription="spinner"
+        android:paddingStart="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ETQuantity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foregroundTint="#FFFFFF"
-            android:hint="@string/meals_per_day"
-            android:shadowColor="#FFFFFF"
-            android:textColor="#5465FF"
-            android:textSize="14sp"
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TextContrastCheck"
-            tools:layout_editor_absoluteX="36dp"
-            tools:layout_editor_absoluteY="169dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="128dp"
         android:text="@string/quantity"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/Quantity"
+        app:layout_constraintStart_toEndOf="@+id/mealsperday"
         app:layout_constraintTop_toBottomOf="@+id/kcalday" />
 
     <Button
@@ -170,7 +147,7 @@
             android:id="@+id/TVDinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dinner          550 kcal"
+            android:text="Dinner\t\t\t\t\t550 kcal"
             android:textColor="#000000"
             android:translationX="15dp"
             android:translationY="90dp"
@@ -181,7 +158,7 @@
             android:id="@+id/TVLunch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lunch           750 kcal"
+            android:text="Lunch\t\t\t\t\t\t750 kcal"
             android:textColor="#000000"
             android:translationX="15dp"
             android:translationY="65dp"
@@ -192,7 +169,7 @@
             android:id="@+id/TVMornSnack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Morning snack           150 kcal"
+            android:text="Morning snack\t\t\t\t\t150 kcal"
             android:textColor="#000000"
             android:translationX="15dp"
             android:translationY="40dp"
@@ -203,7 +180,7 @@
             android:id="@+id/TVBreakfast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Breakfast           550 kcal"
+            android:text="Breakfast\t\t\t\t\t\t550 kcal"
             android:textColor="#000000"
             android:translationX="15dp"
             android:translationY="15dp"
@@ -581,16 +558,29 @@
 
     <TextView
         android:id="@+id/TVTarget"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="596dp"
         android:background="#FFFFFF"
+        android:gravity="center"
         android:includeFontPadding="true"
         android:padding="5dp"
-        android:text="@string/_1487_2000_kcal"
+        android:text="0"
         android:textColor="#2B40FF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/percalories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:text=" /2000 kcal"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
