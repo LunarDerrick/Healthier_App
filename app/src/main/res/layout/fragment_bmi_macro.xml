@@ -44,13 +44,14 @@
         android:background="@drawable/edittext"
         android:ems="10"
         android:gravity="center"
-        android:hint="test"
         android:inputType="numberDecimal"
+        android:text="0"
         android:textColor="#5465FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/cm"
@@ -87,13 +88,14 @@
         android:background="@drawable/edittext"
         android:ems="10"
         android:gravity="center"
-        android:hint="test"
         android:inputType="numberDecimal"
+        android:text="0"
         android:textColor="#5465FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.569"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/kg"
@@ -510,7 +512,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="ramen"
             android:src="@drawable/ramen"
-            android:translationX="210dp"
+            android:translationX="208dp"
             android:translationY="45dp"
             tools:layout_editor_absoluteX="243dp"
             tools:layout_editor_absoluteY="528dp" />

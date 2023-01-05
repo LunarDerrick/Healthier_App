@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -192,59 +193,63 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Double test = Double.parseDouble(berat.getText().toString()) /
-                        ((Double.parseDouble(tinggi.getText().toString()) / 100) * (Double.parseDouble(tinggi.getText().toString()) / 100));
-                result.setText(String.format("%.1f", test));
-                Integer heig = Integer.parseInt(tinggi.getText().toString());
+                double heinput = Double.valueOf(tinggi.getText().toString());
+                if (berat.getText().toString().trim().isEmpty() || tinggi.getText().toString().trim().isEmpty() || heinput <= 0){
+                    Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
+                }else {
+                    Double test = Double.parseDouble(berat.getText().toString()) /
+                            ((Double.parseDouble(tinggi.getText().toString()) / 100) * (Double.parseDouble(tinggi.getText().toString()) / 100));
+                    result.setText(String.format("%.1f", test));
+                    Integer heig = Integer.parseInt(tinggi.getText().toString());
 
-                if (test < 18.5) {
-                    category.setText("Underweight");
-                    category.setTextColor(Color.BLUE);
-                    category.setButtonTintList(ColorStateList.valueOf(Color.BLUE));
-                } else if (test >= 18.5 && test < 25) {
-                    category.setText("Normal");
-                    category.setTextColor(Color.GREEN);
-                    category.setButtonTintList(ColorStateList.valueOf(Color.GREEN));
-                } else if (test >= 25 && test < 30) {
-                    category.setText("Overweight");
-                    category.setTextColor(Color.rgb(255, 200, 0));
-                    category.setButtonTintList(ColorStateList.valueOf(Color.rgb(255, 200, 0)));
-                } else if (test >= 30) {
-                    category.setText("Obese");
-                    category.setTextColor(Color.RED);
-                    category.setButtonTintList(ColorStateList.valueOf(Color.RED));
+                    if (test < 18.5) {
+                        category.setText("Underweight");
+                        category.setTextColor(Color.BLUE);
+                        category.setButtonTintList(ColorStateList.valueOf(Color.BLUE));
+                    } else if (test >= 18.5 && test < 25) {
+                        category.setText("Normal");
+                        category.setTextColor(Color.GREEN);
+                        category.setButtonTintList(ColorStateList.valueOf(Color.GREEN));
+                    } else if (test >= 25 && test < 30) {
+                        category.setText("Overweight");
+                        category.setTextColor(Color.rgb(255, 200, 0));
+                        category.setButtonTintList(ColorStateList.valueOf(Color.rgb(255, 200, 0)));
+                    } else if (test >= 30) {
+                        category.setText("Obese");
+                        category.setTextColor(Color.RED);
+                        category.setButtonTintList(ColorStateList.valueOf(Color.RED));
+                    }
+
+                    if (heig < 150) {
+                        range.setText("Your healthy weight range: 37-50kg");
+                    } else if (heig >= 150 && heig < 160) {
+                        range.setText("Your healthy weight range: 43-58kg");
+                    } else if (heig >= 160 && heig < 170) {
+                        range.setText("Your healthy weight range: 49-65kg");
+                    } else if (heig >= 170 && heig < 180) {
+                        range.setText("Your healthy weight range: 55-74kg");
+                    } else if (heig >= 180 && heig <= 190) {
+                        range.setText("Your healthy weight range: 62-82kg");
+                    } else if (heig > 190) {
+                        range.setText("Your healthy weight range: 72-96kg");
+                    }
+
+                    //men
+                    Double men = (10 * Double.parseDouble(berat.getText().toString())) +
+                            (6.25 * ((Double.parseDouble(tinggi.getText().toString())))) - (5 * 20) + 5;
+                    men = men * activityLevel;
+                    men = (men * mainweightgoal) + men;
+                    circle.setText(String.format("%.0f", men));
+                    Double pro = men * 0.2;
+                    pro = pro / 4;
+                    protein.setText(String.format("%.0fg", pro));
+                    Double fats = men * 0.3;
+                    fats = fats / 9;
+                    fat.setText(String.format("%.0fg", fats));
+                    Double car = men * 0.50;
+                    car = car / 4;
+                    carbs.setText(String.format("%.0fg", car));
                 }
-
-                if (heig < 150) {
-                    range.setText("Your healthy weight range: 37-50kg");
-                } else if (heig >= 150 && heig < 160) {
-                    range.setText("Your healthy weight range: 43-58kg");
-                } else if (heig >= 160 && heig < 170) {
-                    range.setText("Your healthy weight range: 49-65kg");
-                } else if (heig >= 170 && heig < 180) {
-                    range.setText("Your healthy weight range: 55-74kg");
-                } else if (heig >= 180 && heig <= 190) {
-                    range.setText("Your healthy weight range: 62-82kg");
-                } else if (heig > 190) {
-                    range.setText("Your healthy weight range: 72-96kg");
-                }
-
-                //men
-                Double men = (10*Double.parseDouble(berat.getText().toString())) +
-                        (6.25*((Double.parseDouble(tinggi.getText().toString()))))-(5*20) + 5;
-                men =  men*activityLevel;
-                men = (men*mainweightgoal) + men;
-                circle.setText(String.format("%.0f", men));
-                Double pro = men*0.2;
-                pro = pro/4;
-                protein.setText(String.format("%.0fg", pro));
-                Double fats = men*0.3;
-                fats = fats/9;
-                fat.setText(String.format("%.0fg", fats));
-                Double car = men*0.50;
-                car = car/4;
-                carbs.setText(String.format("%.0fg", car));
-
             }
         });
 

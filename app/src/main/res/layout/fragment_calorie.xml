@@ -339,12 +339,11 @@
     <TableLayout
         android:layout_width="346dp"
         android:layout_height="114dp"
-        android:layout_marginStart="33dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="472dp"
-        android:layout_marginEnd="33dp"
+        android:layout_marginEnd="35dp"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -410,7 +409,7 @@
             tools:layout_editor_absoluteX="37dp"
             tools:layout_editor_absoluteY="510dp">
 
-            <TextView
+            <EditText
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -421,10 +420,11 @@
                 android:textAlignment="center"
                 android:textColor="#0019FF"
                 android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="37dp"
                 tools:layout_editor_absoluteY="510dp" />
 
-            <TextView
+            <EditText
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -435,10 +435,11 @@
                 android:textAlignment="center"
                 android:textColor="#0019FF"
                 android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="126dp"
                 tools:layout_editor_absoluteY="510dp" />
 
-            <TextView
+            <EditText
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -449,6 +450,7 @@
                 android:textAlignment="center"
                 android:textColor="#0019FF"
                 android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="294dp"
                 tools:layout_editor_absoluteY="510dp" />
 
@@ -461,7 +463,7 @@
             tools:layout_editor_absoluteX="37dp"
             tools:layout_editor_absoluteY="538dp">
 
-            <TextView
+            <EditText
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -472,10 +474,11 @@
                 android:textAlignment="center"
                 android:textColor="#0019FF"
                 android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="37dp"
                 tools:layout_editor_absoluteY="538dp" />
 
-            <TextView
+            <EditText
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -486,10 +489,11 @@
                 android:textAlignment="center"
                 android:textColor="#0019FF"
                 android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="126dp"
                 tools:layout_editor_absoluteY="538dp" />
 
-            <TextView
+            <EditText
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -500,6 +504,7 @@
                 android:textAlignment="center"
                 android:textColor="#0019FF"
                 android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="294dp"
                 tools:layout_editor_absoluteY="538dp" />
 
@@ -512,7 +517,7 @@
             tools:layout_editor_absoluteX="37dp"
             tools:layout_editor_absoluteY="567dp">
 
-            <TextView
+            <EditText
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -523,10 +528,11 @@
                 android:textAlignment="center"
                 android:textColor="#0019FF"
                 android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="37dp"
                 tools:layout_editor_absoluteY="567dp" />
 
-            <TextView
+            <EditText
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -537,10 +543,11 @@
                 android:textAlignment="center"
                 android:textColor="#0019FF"
                 android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="126dp"
                 tools:layout_editor_absoluteY="567dp" />
 
-            <TextView
+            <EditText
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -551,6 +558,7 @@
                 android:textAlignment="center"
                 android:textColor="#0019FF"
                 android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="294dp"
                 tools:layout_editor_absoluteY="567dp" />
 
@@ -575,17 +583,15 @@
         android:id="@+id/TVTarget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="596dp"
-        android:layout_marginEnd="165dp"
         android:background="#FFFFFF"
         android:includeFontPadding="true"
         android:padding="5dp"
         android:text="@string/_1487_2000_kcal"
         android:textColor="#2B40FF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/TVCalTotal"
+        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
