@@ -10,7 +10,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <SurfaceView
-        android:id="@+id/SVGymLocator"
+        android:id="@+id/SVLocator"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:backgroundTint="#FFFFFF"
@@ -25,9 +25,9 @@
         android:layout_marginStart="10dp"
         android:background="#000000"
         android:backgroundTint="#BAB8B8"
-        app:layout_constraintBottom_toBottomOf="@+id/SVGymLocator"
+        app:layout_constraintBottom_toBottomOf="@+id/SVLocator"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/SVGymLocator" />
+        app:layout_constraintTop_toTopOf="@+id/SVLocator" />
 
     <Button
         android:id="@+id/BTFilterGymLocator"
