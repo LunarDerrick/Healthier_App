@@ -67,10 +67,13 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
     }
 
     EditText tinggi, berat;
-    TextView result, range, circle;
+    TextView result, range, circle, protein, carbs, fat;
     Button calculate;
-    RadioButton category, rbal;
-    RadioGroup rgal;
+    RadioButton category, sedentary, moderate, active, gain, maintain, loss;
+    RadioGroup rgal, rgmwg;
+
+    double activityLevel, mainweightgoal;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -78,15 +81,113 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bmi_macro, container, false);
 
+        //height & weight input text
         tinggi = view.findViewById(R.id.height);
         berat = view.findViewById(R.id.weight);
+        //text view
         result = view.findViewById(R.id.bminum);
         range = view.findViewById(R.id.range);
-        category = view.findViewById(R.id.WeightClass);
-        calculate = view.findViewById(R.id.CalcButton);
-        //sedentary = view.findViewById(R.id.Sedentary);
         circle = view.findViewById(R.id.Circular);
+        protein = view.findViewById(R.id.protein);
+        carbs = view.findViewById(R.id.carbs);
+        fat = view.findViewById(R.id.fat);
+        //radio button
+        category = view.findViewById(R.id.WeightClass);
+        moderate = view.findViewById(R.id.Moderate);
+        sedentary = view.findViewById(R.id.Sedentary);
+        active = view.findViewById(R.id.Active);
+        gain = view.findViewById(R.id.Gain);
+        maintain = view.findViewById(R.id.Maintain);
+        loss = view.findViewById(R.id.Loss);
+        //calculate button
+        calculate = view.findViewById(R.id.CalcButton);
+        //radio group
         rgal = view.findViewById(R.id.RGAL);
+        rgmwg = view.findViewById(R.id.RGMWG);
+
+        gain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rgmwg.clearCheck();
+                maintain.setBackgroundResource(R.drawable.edit_text_white);
+                gain.setBackgroundResource(R.drawable.edit_text_purple);
+                loss.setBackgroundResource(R.drawable.edit_text_white);
+                gain.setTextColor(Color.WHITE);
+                maintain.setTextColor(Color.rgb(139,139,139));
+                loss.setTextColor(Color.rgb(139,139,139));
+                mainweightgoal = (+0.2);
+            }
+        });
+
+        maintain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rgmwg.clearCheck();
+                gain.setBackgroundResource(R.drawable.edit_text_white);
+                maintain.setBackgroundResource(R.drawable.edit_text_purple);
+                loss.setBackgroundResource(R.drawable.edit_text_white);
+                maintain.setTextColor(Color.WHITE);
+                gain.setTextColor(Color.rgb(139,139,139));
+                loss.setTextColor(Color.rgb(139,139,139));
+                mainweightgoal = 0;
+            }
+        });
+
+        loss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rgmwg.clearCheck();
+                maintain.setBackgroundResource(R.drawable.edit_text_white);
+                loss.setBackgroundResource(R.drawable.edit_text_purple);
+                gain.setBackgroundResource(R.drawable.edit_text_white);
+                loss.setTextColor(Color.WHITE);
+                maintain.setTextColor(Color.rgb(139,139,139));
+                gain.setTextColor(Color.rgb(139,139,139));
+                mainweightgoal = (-0.2);
+            }
+        });
+
+        sedentary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rgal.clearCheck();
+                moderate.setBackgroundResource(R.drawable.edit_text_white);
+                sedentary.setBackgroundResource(R.drawable.edit_text_purple);
+                active.setBackgroundResource(R.drawable.edit_text_white);
+                sedentary.setTextColor(Color.WHITE);
+                moderate.setTextColor(Color.rgb(139,139,139));
+                active.setTextColor(Color.rgb(139,139,139));
+                activityLevel = 1.2;
+            }
+        });
+
+        moderate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rgal.clearCheck();
+                sedentary.setBackgroundResource(R.drawable.edit_text_white);
+                moderate.setBackgroundResource(R.drawable.edit_text_purple);
+                active.setBackgroundResource(R.drawable.edit_text_white);
+                moderate.setTextColor(Color.WHITE);
+                sedentary.setTextColor(Color.rgb(139,139,139));
+                active.setTextColor(Color.rgb(139,139,139));
+                activityLevel = 1.5;
+            }
+        });
+
+        active.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rgal.clearCheck();
+                moderate.setBackgroundResource(R.drawable.edit_text_white);
+                active.setBackgroundResource(R.drawable.edit_text_purple);
+                sedentary.setBackgroundResource(R.drawable.edit_text_white);
+                active.setTextColor(Color.WHITE);
+                sedentary.setTextColor(Color.rgb(139,139,139));
+                moderate.setTextColor(Color.rgb(139,139,139));
+                activityLevel = 1.75;
+            }
+        });
 
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,7 +228,22 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                 } else if (heig > 190) {
                     range.setText("Your healthy weight range: 72-96kg");
                 }
-                //todo radio button...
+
+                //men
+                Double men = (10*Double.parseDouble(berat.getText().toString())) +
+                        (6.25*((Double.parseDouble(tinggi.getText().toString()))))-(5*20) + 5;
+                men =  men*activityLevel;
+                men = (men*mainweightgoal) + men;
+                circle.setText(String.format("%.0f", men));
+                Double pro = men*0.2;
+                pro = pro/4;
+                protein.setText(String.format("%.0fg", pro));
+                Double fats = men*0.3;
+                fats = fats/9;
+                fat.setText(String.format("%.0fg", fats));
+                Double car = men*0.50;
+                car = car/4;
+                carbs.setText(String.format("%.0fg", car));
 
             }
         });
