@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/bg_tracker_activity"
     tools:context=".FoodInventoryTFragment">
-
+<!--
 
     <TextView
         android:id="@+id/current_progress_TV2"
@@ -527,5 +527,5 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
         </ScrollView>
     </TableLayout>
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>

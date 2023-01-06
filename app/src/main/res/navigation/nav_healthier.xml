@@ -7,31 +7,41 @@
     <fragment
         android:id="@+id/DestHome"
         android:name="wia2007.example.healthier_app.HomeFragment"
-        android:label="fragment_home"
+        android:label="@string/Home"
         tools:layout="@layout/fragment_home" />
     <activity
         android:id="@id/DestPlanner"
         android:name="wia2007.example.healthier_app.PlannerActivity"
-        android:label="activity_planner"
+        android:label="@string/planner"
         tools:layout="@layout/activity_planner" />
     <activity
         android:id="@id/DestCalculator"
         android:name="wia2007.example.healthier_app.CalculatorActivity"
-        android:label="activity_calculator"
+        android:label="@string/calculator"
         tools:layout="@layout/activity_calculator" />
     <activity
         android:id="@+id/DestCoaching"
         android:name="wia2007.example.healthier_app.CoachingActivity"
-        android:label="activity_coaching"
+        android:label="@string/coaching"
         tools:layout="@layout/activity_coaching" />
     <fragment
         android:id="@+id/DestSettings"
         android:name="wia2007.example.healthier_app.SettingsFragment"
-        android:label="fragment_manage_profile_"
+        android:label="Manage profile"
         tools:layout="@layout/fragment_settings" />
     <activity
         android:id="@+id/DestGeneral"
         android:name="wia2007.example.healthier_app.GeneralActivity"
         android:label="activity_general"
         tools:layout="@layout/activity_general" />
+    <fragment
+        android:id="@+id/DestDiet"
+        android:name="wia2007.example.healthier_app.DietFragment"
+        android:label="@string/TBDiet"
+        tools:layout="@layout/fragment_diet" />
+    <fragment
+        android:id="@+id/DestBMIMacro"
+        android:name="wia2007.example.healthier_app.BMIMacroCalc"
+        android:label="BMI &amp; Macro Calculator"
+        tools:layout="@layout/fragment_bmi_macro" />
 </navigation>
