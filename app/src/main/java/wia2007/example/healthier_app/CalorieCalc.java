@@ -92,7 +92,7 @@ public class CalorieCalc extends Fragment {
         msminmax = view.findViewById(R.id.TVMSMinMax);
         lcminmax = view.findViewById(R.id.TVLMinMax);
         dnminmax = view.findViewById(R.id.TVDMinMax);
-        //perclr = view.findViewById(R.id.percalories);
+        perclr = view.findViewById(R.id.percalories);
         calo = view.findViewById(R.id.Calories);
         spinner = view.findViewById(R.id.mealsperday);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
@@ -128,7 +128,7 @@ public class CalorieCalc extends Fragment {
                             Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
                         } else {
                             Integer clr = Integer.parseInt(calo.getText().toString());
-                            //perclr.setText(String.format(" /%d kcal", clr));
+                            perclr.setText(String.format(" /%d kcal", clr));
                             if(qty == 3){
                                 Double dmin = clr*0.25;
                                 Double dn = clr*0.3;
@@ -175,32 +175,6 @@ public class CalorieCalc extends Fragment {
                         Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
                     }
                 }
-                /*
-                Integer clr = Integer.parseInt(calo.getText().toString());
-                if(qty == 3){
-                    Double bkf = clr*0.325;
-                    Double lc = clr*0.375;
-                    Double dn = clr*0.3;
-                    brkfst.setText(String.format("Breakfast\t\t\t\t\t\t%.0f kcal", bkf));
-                    mngsnk.setText("Morning snack\t\t\t\t\t 0 kcal");
-                    lnch.setText(String.format("Lunch\t\t\t\t\t\t%.0f kcal", lc));
-                    dnr.setText(String.format("Dinner\t\t\t\t\t%.0f kcal",dn));
-                }
-                else if(qty == 4){
-                    Double bkf = clr*0.275;
-                    Double mgsk = clr*0.075;
-                    Double lc = clr*0.375;
-                    Double dn = clr*0.275;
-                    brkfst.setText(String.format("Breakfast\t\t\t\t\t\t%.0f kcal", bkf));
-                    mngsnk.setText(String.format("Morning snack\t\t\t\t\t%.0f kcal", mgsk));
-                    lnch.setText(String.format("Lunch\t\t\t\t\t\t%.0f kcal", lc));
-                    dnr.setText(String.format("Dinner\t\t\t\t\t%.0f kcal",dn));
-                }
-
-                 */
-
-
-
             }
         });
 
