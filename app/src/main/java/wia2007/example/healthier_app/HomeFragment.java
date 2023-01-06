@@ -1,5 +1,7 @@
 package wia2007.example.healthier_app;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -10,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -82,7 +85,9 @@ public class HomeFragment extends Fragment {
         View.OnClickListener OCLPlanner = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.DestPlanner);
+                Navigation.findNavController(view).navigate(R.id.DestDiet);
+                // WIP: attempt to change top actionbar color when navigate to different modules
+                ((AppCompatActivity)getActivity()).getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#F0C869")));
             }
         };
         BtnPlanner.setOnClickListener(OCLPlanner);
