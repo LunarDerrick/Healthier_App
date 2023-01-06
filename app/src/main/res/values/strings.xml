@@ -135,4 +135,22 @@
     <string name="helpdesc">About, FAQ, Customer service...</string>
     <string name="Logout">Logout</string>
     <string name="toastError">Please input both text fields</string>
+    <string name="reward">Reward:</string>
+    <string name="level">Level</string>
+    <string name="current_progress">Current Progress:</string>
+    <string name="sticker_chat">Sticker chat</string>
+    <string name="next_level">Next level</string>
+    <string name="grocery_items">Grocery Items:</string>
+    <string name="you_have">You Have:</string>
+    <string name="daily_calories">Daily Calories</string>
+    <string name="submit">Submit</string>
+    <string name="taken">Taken</string>
+    <string name="burnt">Burnt</string>
+    <string name="weekly_calories">Weekly Calories</string>
+    <string name="your_daily_average_calorie">Your daily average calorie</string>
+    <string name="keep_it_up">Keep it up!</string>
+    <string name="graph_form">Graph Form</string>
+    <string name="list_form">List Form</string>
+    <string name="expert_dietitian">Expert Dietitian</string>
+    <string name="profile_title">Profile Title</string>
 </resources>
