@@ -6,7 +6,7 @@
             android:thicknessRatio="9"
             android:innerRadiusRatio="2.75">
             <gradient android:startColor="#5465FF"
-                android:endColor="#FFFFFF" android:angle="18"/>
+                android:endColor="#FFFFFF" android:angle="90"/>
             <size android:width="100dp" android:height="100dp"/>
         </shape>
     </item>
