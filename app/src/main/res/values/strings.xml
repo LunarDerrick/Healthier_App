@@ -41,9 +41,7 @@
     <string name="quantity">quantity</string>
     <string name="recommendation_daily_calories_intake">Recommendation daily calories intake</string>
     <string name="lunch">Lunch</string>
-    <string name="min_100_max_200">(min: 100, max: 200)</string>
-    <string name="min_500_max_600">(min: 500, max: 600)</string>
-    <string name="min_700_max_800">(min: 700, max: 800)</string>
+    <string name="minmax">(min: 0, max: 0)</string>
     <string name="what_have_you_eaten_today">What have you eaten today?</string>
     <string name="foods">Foods</string>
     <string name="meals">Meals</string>
