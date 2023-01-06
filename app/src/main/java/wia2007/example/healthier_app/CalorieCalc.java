@@ -1,9 +1,11 @@
 package wia2007.example.healthier_app;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,9 +66,11 @@ public class CalorieCalc extends Fragment {
         }
     }
 
-    EditText calo;
+    EditText calo, etms, etsnack, etmscal;
     TextView brkfst, mngsnk, lnch, dnr, brminmax, msminmax, lcminmax, dnminmax, perclr;
-    Button calculate;
+    TableLayout tbleat;
+    TableRow tbladd;
+    Button calculate, add;
     Spinner spinner;
     String[] mealsperday = {"3", "4"};
     int qty;
@@ -76,6 +82,8 @@ public class CalorieCalc extends Fragment {
         View view = inflater.inflate(R.layout.fragment_calorie, container, false);
 
         calculate = view.findViewById(R.id.calcButton);
+        add = view.findViewById(R.id.BTEditEat);
+        tbleat = view.findViewById(R.id.TBLEaten);
         mngsnk = view.findViewById(R.id.TVMornSnack);
         lnch = view.findViewById(R.id.TVLunch);
         dnr = view.findViewById(R.id.TVDinner);
@@ -84,7 +92,7 @@ public class CalorieCalc extends Fragment {
         msminmax = view.findViewById(R.id.TVMSMinMax);
         lcminmax = view.findViewById(R.id.TVLMinMax);
         dnminmax = view.findViewById(R.id.TVDMinMax);
-        perclr = view.findViewById(R.id.percalories);
+        //perclr = view.findViewById(R.id.percalories);
         calo = view.findViewById(R.id.Calories);
         spinner = view.findViewById(R.id.mealsperday);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
@@ -120,7 +128,7 @@ public class CalorieCalc extends Fragment {
                             Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
                         } else {
                             Integer clr = Integer.parseInt(calo.getText().toString());
-                            perclr.setText(String.format(" /%d kcal", clr));
+                            //perclr.setText(String.format(" /%d kcal", clr));
                             if(qty == 3){
                                 Double dmin = clr*0.25;
                                 Double dn = clr*0.3;
@@ -134,7 +142,7 @@ public class CalorieCalc extends Fragment {
                                 brkfst.setText(String.format("Breakfast\t\t\t\t\t\t%.0f kcal", bkf));
                                 mngsnk.setText("Morning snack\t\t\t\t\t 0 kcal");
                                 lnch.setText(String.format("Lunch\t\t\t\t\t\t%.0f kcal", lc));
-                                dnr.setText(String.format("Dinner\t\t\t\t\t%.0f kcal", dn));
+                                dnr.setText(String.format("Dinner\t\t\t\t\t\t%.0f kcal", dn));
                                 brminmax.setText(String.format("(min: %.0f, max: %.0f)", bmin, bmax));
                                 msminmax.setText("(min: 0, max: 0)");
                                 lcminmax.setText(String.format("(min: %.0f, max: %.0f)", lmin, lmax));
@@ -156,7 +164,7 @@ public class CalorieCalc extends Fragment {
                                 brkfst.setText(String.format("Breakfast\t\t\t\t\t\t%.0f kcal", bkf));
                                 mngsnk.setText(String.format("Morning snack\t\t\t\t\t%.0f kcal", mgsk));
                                 lnch.setText(String.format("Lunch\t\t\t\t\t\t%.0f kcal", lc));
-                                dnr.setText(String.format("Dinner\t\t\t\t\t%.0f kcal",dn));
+                                dnr.setText(String.format("Dinner\t\t\t\t\t\t%.0f kcal",dn));
                                 brminmax.setText(String.format("(min: %.0f, max: %.0f)", bmin, bmax));
                                 msminmax.setText(String.format("(min: %.0f, max: %.0f)", msmin, msmax));
                                 lcminmax.setText(String.format("(min: %.0f, max: %.0f)", lmin, lmax));
@@ -193,6 +201,48 @@ public class CalorieCalc extends Fragment {
 
 
 
+            }
+        });
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(requireContext(), "Morning snack row added", Toast.LENGTH_SHORT).show();
+                tbladd = new TableRow(getContext());
+                etms = new EditText(getContext());
+                etsnack = new EditText(getContext());
+                etmscal = new EditText(getContext());
+                //etms
+                etms.setTextSize(12);
+                etms.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                        TableRow.LayoutParams.WRAP_CONTENT, 1f));
+                etms.setText("M. snack");
+                etms.setGravity(Gravity.CENTER);
+                etms.setBackgroundResource(R.drawable.cell_shape);
+                etms.setPadding(6,18,6,18);
+                etms.setTextColor(Color.rgb(0, 25, 255));
+                //etsnack
+                etsnack.setTextSize(12);
+                etsnack.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                        TableRow.LayoutParams.WRAP_CONTENT, 2f));
+                etsnack.setText("Foods");
+                etsnack.setGravity(Gravity.CENTER);
+                etsnack.setBackgroundResource(R.drawable.cell_shape);
+                etsnack.setPadding(6,18,6,18);
+                etsnack.setTextColor(Color.rgb(0, 25, 255));
+                //etmscal
+                etmscal.setTextSize(12);
+                etmscal.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                        TableRow.LayoutParams.WRAP_CONTENT, 1f));
+                etmscal.setText("0 kcal");
+                etmscal.setGravity(Gravity.CENTER);
+                etmscal.setBackgroundResource(R.drawable.cell_shape);
+                etmscal.setPadding(6,18,6,18);
+                etmscal.setTextColor(Color.rgb(0, 25, 255));
+                tbladd.addView(etms);
+                tbladd.addView(etsnack);
+                tbladd.addView(etmscal);
+                tbleat.addView(tbladd);
             }
         });
 

@@ -45,13 +45,13 @@
     <string name="what_have_you_eaten_today">What have you eaten today?</string>
     <string name="foods">Foods</string>
     <string name="meals">Meals</string>
-    <string name="fried_rice_and_green_tea">Fried rice and green tea</string>
+    <string name="fried_rice_and_green_tea">Fried rice &amp; coffee</string>
     <string name="net_calories">Net calories</string>
     <string name="dinner">Dinner</string>
-    <string name="noodle_cake_and_apple_juice">Noodle, cake and apple juice</string>
+    <string name="noodle_cake_and_apple_juice">Pasta, cake &amp; diet soda</string>
     <string name="_1487_2000_kcal">1487/2000 kcal</string>
     <string name="breakfast">Breakfast</string>
-    <string name="sandwich_eggs_and_milk">Sandwich, eggs and milk</string>
+    <string name="sandwich_eggs_and_milk">Egg sandwich &amp; tea</string>
     <string name="_540_kcal">540 kcal</string>
     <string name="total_calories">Total calories:</string>
     <string name="bread">bread</string>

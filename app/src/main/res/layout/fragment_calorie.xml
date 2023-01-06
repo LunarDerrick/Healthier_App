@@ -314,8 +314,9 @@
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <TableLayout
+        android:id="@+id/TBLEaten"
         android:layout_width="346dp"
-        android:layout_height="114dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="472dp"
         android:layout_marginEnd="35dp"
@@ -325,6 +326,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
+            android:id="@+id/TBRHeader"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#5465FF"
@@ -333,9 +335,9 @@
             tools:layout_editor_absoluteY="481dp">
 
             <TextView
-                android:layout_width="1dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:padding="6dp"
@@ -348,7 +350,7 @@
                 tools:layout_editor_absoluteY="481dp" />
 
             <TextView
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:background="@drawable/cell_shape"
@@ -363,9 +365,9 @@
                 tools:layout_editor_absoluteY="481dp" />
 
             <TextView
-                android:layout_width="1dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:padding="6dp"
@@ -380,6 +382,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/TBRBr"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textAlignment="center"
@@ -387,9 +390,9 @@
             tools:layout_editor_absoluteY="510dp">
 
             <EditText
-                android:layout_width="1dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:padding="6dp"
@@ -402,7 +405,7 @@
                 tools:layout_editor_absoluteY="510dp" />
 
             <EditText
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:background="@drawable/cell_shape"
@@ -417,9 +420,9 @@
                 tools:layout_editor_absoluteY="510dp" />
 
             <EditText
-                android:layout_width="1dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:padding="6dp"
@@ -434,6 +437,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/TBRLu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textAlignment="center"
@@ -441,9 +445,9 @@
             tools:layout_editor_absoluteY="538dp">
 
             <EditText
-                android:layout_width="1dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:padding="6dp"
@@ -456,7 +460,7 @@
                 tools:layout_editor_absoluteY="538dp" />
 
             <EditText
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:background="@drawable/cell_shape"
@@ -471,9 +475,9 @@
                 tools:layout_editor_absoluteY="538dp" />
 
             <EditText
-                android:layout_width="1dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:padding="6dp"
@@ -488,6 +492,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/TBRDi"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textAlignment="center"
@@ -495,9 +500,9 @@
             tools:layout_editor_absoluteY="567dp">
 
             <EditText
-                android:layout_width="1dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:padding="6dp"
@@ -510,7 +515,7 @@
                 tools:layout_editor_absoluteY="567dp" />
 
             <EditText
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:background="@drawable/cell_shape"
@@ -525,9 +530,9 @@
                 tools:layout_editor_absoluteY="567dp" />
 
             <EditText
-                android:layout_width="1dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center_horizontal"
                 android:padding="6dp"
@@ -538,8 +543,6 @@
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="294dp"
                 tools:layout_editor_absoluteY="567dp" />
-
-
         </TableRow>
     </TableLayout>
 
@@ -547,20 +550,20 @@
         android:id="@+id/TVCalTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="14dp"
         android:text="@string/total_calories"
         android:textColor="#000000"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TBLEaten" />
 
     <TextView
         android:id="@+id/TVTarget"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="596dp"
+        android:layout_marginTop="10dp"
         android:background="#FFFFFF"
         android:gravity="center"
         android:includeFontPadding="true"
@@ -568,21 +571,21 @@
         android:text="0"
         android:textColor="#2B40FF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintHorizontal_bias="0.351"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TBLEaten" />
 
     <TextView
         android:id="@+id/percalories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="14dp"
         android:text=" /2000 kcal"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TBLEaten" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
