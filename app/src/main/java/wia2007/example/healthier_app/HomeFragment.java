@@ -92,6 +92,16 @@ public class HomeFragment extends Fragment {
         };
         BtnPlanner.setOnClickListener(OCLPlanner);
 
+        // Tracker Navigation
+        ImageView BtnTracker = view.findViewById(R.id.tracker_btn);
+        View.OnClickListener OCLTracker = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.DestTracker);
+            }
+        };
+        BtnTracker.setOnClickListener(OCLTracker);
+
         // Coaching Navigation
         ImageView BtnCoaching = view.findViewById(R.id.coach_btn);
         View.OnClickListener OCLCoaching = new View.OnClickListener() {

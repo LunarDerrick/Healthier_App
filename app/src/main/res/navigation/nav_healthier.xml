@@ -44,4 +44,9 @@
         android:name="wia2007.example.healthier_app.BMIMacroCalc"
         android:label="BMI &amp; Macro Calculator"
         tools:layout="@layout/fragment_bmi_macro" />
+    <activity
+        android:id="@+id/DestTracker"
+        android:name="wia2007.example.healthier_app.TrackerActivity"
+        android:label="activity_tracker"
+        tools:layout="@layout/activity_tracker" />
 </navigation>
