@@ -1,10 +1,12 @@
 package wia2007.example.healthier_app;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,9 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,14 +71,15 @@ public class CalorieCalc extends Fragment {
         }
     }
 
-    EditText calo, etms, etsnack, etmscal;
-    TextView brkfst, mngsnk, lnch, dnr, brminmax, msminmax, lcminmax, dnminmax, perclr;
+    EditText calo, etsnack, etmscal, brefoods, lunfoods, dinfoods, brecal, luncal, dincal;
+    TextView brkfst, mngsnk, lnch, dnr, brminmax, msminmax, lcminmax, dnminmax, perclr, etms;
     TableLayout tbleat;
     TableRow tbladd;
-    Button calculate, add;
+    Button calculate, add, edit;
     Spinner spinner;
     String[] mealsperday = {"3", "4"};
-    int qty;
+    int qty, calinput;
+    String bfd, lfd, dfd, bcl, lcl, dcl;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -82,7 +88,8 @@ public class CalorieCalc extends Fragment {
         View view = inflater.inflate(R.layout.fragment_calorie, container, false);
 
         calculate = view.findViewById(R.id.calcButton);
-        add = view.findViewById(R.id.BTEditEat);
+        add = view.findViewById(R.id.BTPlus);
+        edit = view.findViewById(R.id.BTEditEat);
         tbleat = view.findViewById(R.id.TBLEaten);
         mngsnk = view.findViewById(R.id.TVMornSnack);
         lnch = view.findViewById(R.id.TVLunch);
@@ -93,6 +100,12 @@ public class CalorieCalc extends Fragment {
         lcminmax = view.findViewById(R.id.TVLMinMax);
         dnminmax = view.findViewById(R.id.TVDMinMax);
         perclr = view.findViewById(R.id.percalories);
+        brefoods = view.findViewById(R.id.brfoods);
+        lunfoods = view.findViewById(R.id.lufoods);
+        dinfoods = view.findViewById(R.id.difoods);
+        brecal = view.findViewById(R.id.brcal);
+        luncal = view.findViewById(R.id.lucal);
+        dincal = view.findViewById(R.id.dical);
         calo = view.findViewById(R.id.Calories);
         spinner = view.findViewById(R.id.mealsperday);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
@@ -123,7 +136,7 @@ public class CalorieCalc extends Fragment {
                     Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
                 } else {
                     try {
-                        int calinput = Integer.parseInt(input);
+                        calinput = Integer.parseInt(input);
                         if (calinput <= 0) {
                             Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
                         } else {
@@ -183,14 +196,14 @@ public class CalorieCalc extends Fragment {
             public void onClick(View view) {
                 Toast.makeText(requireContext(), "Morning snack row added", Toast.LENGTH_SHORT).show();
                 tbladd = new TableRow(getContext());
-                etms = new EditText(getContext());
+                etms = new TextView(getContext());
                 etsnack = new EditText(getContext());
                 etmscal = new EditText(getContext());
                 //etms
                 etms.setTextSize(12);
                 etms.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
                         TableRow.LayoutParams.WRAP_CONTENT, 1f));
-                etms.setText("M. snack");
+                etms.setText("Morning snack");
                 etms.setGravity(Gravity.CENTER);
                 etms.setBackgroundResource(R.drawable.cell_shape);
                 etms.setPadding(6,18,6,18);
@@ -217,6 +230,57 @@ public class CalorieCalc extends Fragment {
                 tbladd.addView(etsnack);
                 tbladd.addView(etmscal);
                 tbleat.addView(tbladd);
+            }
+        });
+
+        SharedPreferences calprefs = PreferenceManager.getDefaultSharedPreferences(requireContext());
+        int calinput1 = calprefs.getInt("", calinput);
+        calo.setText("" + calinput1);
+
+        String bfdd = calprefs.getString("bfd", bfd);
+        if(brefoods != null) {
+            brefoods.setText("" + bfdd);
+        }
+        String lfdd = calprefs.getString("lfd", lfd);
+        if(lunfoods != null) {
+            lunfoods.setText("" + lfdd);
+        }
+        String dfdd = calprefs.getString("dfd", dfd);
+        if(dinfoods != null) {
+            dinfoods.setText("" + dfdd);
+        }
+        //continue tomorrow
+        //reference
+        //https://www.youtube.com/watch?v=e7NXFbIrYqI&ab_channel=Hemnkarim%DA%86%DB%95%D9%86%D8%A7%DA%B5%DB%8C%D9%81%DB%8E%D8%B1%D8%A8%D9%88%D9%86
+
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(requireContext(), "Saved successfully", Toast.LENGTH_SHORT).show();
+                //String bfd, lfd, dfd, bcl, lcl, dcl;
+                //EditText brefoods, lunfoods, dinfoods, brecal, luncal, dincal;
+                String input = calo.getText().toString();
+                bfd = brefoods.getText().toString();
+                lfd = lunfoods.getText().toString();
+                dfd = dinfoods.getText().toString();
+                //bcl = brecal.getText().toString();
+                //lcl = luncal.getText().toString();
+                //dcl = dincal.getText().toString();
+                calinput = Integer.parseInt(input);
+
+                SharedPreferences precal = PreferenceManager.getDefaultSharedPreferences(requireContext());
+                SharedPreferences.Editor edtcal = precal.edit();
+
+                edtcal.putInt("", calinput);
+                edtcal.putString("bfd", bfd);
+                edtcal.putString("lfd", lfd);
+                edtcal.putString("dfd", dfd);
+                //edtcal.putString("bcl", bcl);
+                //edtcal.putString("lcl", lcl);
+                //edtcal.putString("dcl", dcl);
+                edtcal.apply();
+
             }
         });
 
