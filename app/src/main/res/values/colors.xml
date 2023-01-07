@@ -12,8 +12,8 @@
     <color name="YELLOW">#FFF500</color>
     <color name="RED">#FF0000</color>
     <color name="bg_tracker_activity">#F5E0E0</color>
-    <color name="tracker_submit_darkerPink">#F58C8C</color>
+    <color name="tracker_submit_darker_pink">#F58C8C</color>
     <color name="red">#DF0000</color>
     <color name="grey">#bdbdbd</color>
-    <color name="TBGreen">#F0C869</color>
+    <color name="TBGreen">#70BF69</color>
 </resources>
