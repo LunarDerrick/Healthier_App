@@ -2,8 +2,90 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CLTracker"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TrackerActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/TBTracker"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/tracker_submit_darkerPink"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:title="Tracker Activity"
+        android:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/FCVFood"
+        android:name="wia2007.example.healthier_app.FoodInventoryTFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnProgress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBTracker"
+        tools:layout="@layout/fragment_food_inventory_t" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/FCVReward"
+        android:name="wia2007.example.healthier_app.EarnRewardTFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnProgress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBTracker"
+        tools:layout="@layout/fragment_earn_reward_t" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/FCVProgress"
+        android:name="wia2007.example.healthier_app.ProgressTFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnProgress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBTracker"
+        tools:layout="@layout/fragment_progress_t" />
+
+    <Button
+        android:id="@+id/BtnProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="BtnProgressOnClick"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Progress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/BtnReward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="BtnRewardOnClick"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Reward"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BtnProgress" />
+
+    <Button
+        android:id="@+id/BtnFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="BtnFoodOnClick"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Food"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BtnReward" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

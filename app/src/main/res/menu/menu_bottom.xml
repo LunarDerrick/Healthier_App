@@ -11,6 +11,7 @@
         android:title="@string/planner" />
 
     <item
+        android:id="@+id/DestTracker"
         android:icon="@drawable/tracker_icon"
         android:title="@string/tracker" />
 
