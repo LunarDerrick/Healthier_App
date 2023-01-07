@@ -7,27 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".CoachingActivity">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/FCVFinder"
-        android:name="wia2007.example.healthier_app.FinderFragment"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/TBCoaching"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/BtnFinder"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#9874FF"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:title="Professional Help Finder"
+        android:titleTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_finder" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/FCVLesson"
-        android:name="wia2007.example.healthier_app.LessonsFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/BtnFinder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_lessons" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVLocator"
@@ -37,8 +30,30 @@
         app:layout_constraintBottom_toTopOf="@+id/BtnFinder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBCoaching"
         tools:layout="@layout/fragment_locator" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/FCVLesson"
+        android:name="wia2007.example.healthier_app.LessonsFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnFinder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBCoaching"
+        tools:layout="@layout/fragment_lessons" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/FCVFinder"
+        android:name="wia2007.example.healthier_app.FinderFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnFinder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBCoaching"
+        tools:layout="@layout/fragment_finder" />
 
     <Button
         android:id="@+id/BtnFinder"

@@ -1,621 +1,636 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/CLDiet"
+    android:id="@+id/SVDiet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D9F2D5"
     tools:context=".DietFragment">
 
-    <TextView
-        android:id="@+id/TVToday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="13dp"
-        android:fontFamily="@font/inter"
-        android:text="@string/TVToday"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLDiet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/TVDay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="13dp"
-        android:fontFamily="@font/inter"
-        android:text="Monday"
-        android:textColor="#0C9600"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/TVToday"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/TVToday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="13dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/TVToday"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/TVDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="3dp"
-        android:fontFamily="@font/inter"
-        android:text="5 December 2022"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/IVCalendar"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/TVDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="13dp"
+            android:fontFamily="@font/inter"
+            android:text="Monday"
+            android:textColor="#0C9600"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/TVToday"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/IVCalendar"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="7dp"
-        android:src="@drawable/calendar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/TVDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="3dp"
+            android:fontFamily="@font/inter"
+            android:text="5 December 2022"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/IVCalendar"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TableLayout
-        android:id="@+id/TLToday"
-        android:layout_width="405dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:stretchColumns="*"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IVCalendar">
+        <ImageView
+            android:id="@+id/IVCalendar"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="7dp"
+            android:src="@drawable/calendar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TableRow
-            android:id="@+id/TRToday1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TableLayout
+            android:id="@+id/TLToday"
+            android:layout_width="405dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:stretchColumns="*"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/IVCalendar">
 
-            <TextView
-                android:id="@+id/TVTable1TitleBF"
-                android:layout_width="135dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_green_topleft"
-                android:padding="5dp"
-                android:text="@string/TVTableTitleBF"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
+            <TableRow
+                android:id="@+id/TRToday1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/TVTable1TitleL"
-                android:layout_width="135dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_green"
-                android:padding="5dp"
-                android:text="@string/TVTableTitleL"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable1TitleBF"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_green_topleft"
+                    android:padding="5dp"
+                    android:text="@string/TVTableTitleBF"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable1TitleD"
-                android:layout_width="135dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_green_topright"
-                android:padding="5dp"
-                android:text="@string/TVTableTitleD"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/TVTable1TitleL"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_green"
+                    android:padding="5dp"
+                    android:text="@string/TVTableTitleL"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
 
-        <TableRow
-            android:id="@+id/TRToday2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/TVTable1TitleD"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_green_topright"
+                    android:padding="5dp"
+                    android:text="@string/TVTableTitleD"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/TVTable1BF"
-                android:layout_width="135dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white_bottomleft"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Cereal, toast,\njam, tea"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+            <TableRow
+                android:id="@+id/TRToday2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/TVTable1L"
-                android:layout_width="135dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Pasta salad, hot\nchocolate, meatballs"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable1BF"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white_bottomleft"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Cereal, toast,\njam, tea"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable1D"
-                android:layout_width="135dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white_bottomright"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Chicken katsu, rice,\norange juice, cake"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/TVTable1L"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Pasta salad, hot\nchocolate, meatballs"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-    </TableLayout>
+                <TextView
+                    android:id="@+id/TVTable1D"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white_bottomright"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Chicken katsu, rice,\norange juice, cake"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
+            </TableRow>
 
-    <Button
-        android:id="@+id/BtnComplete"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="3dp"
-        android:backgroundTint="#70BF69"
-        android:fontFamily="@font/inter"
-        android:letterSpacing="0"
-        android:onClick="BtnCompleteOnClick"
-        android:text="@string/BtnComplete"
-        android:textAllCaps="false"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TLToday" />
+        </TableLayout>
 
-    <TextView
-        android:id="@+id/TVWeekly"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/inter"
-        android:text="@string/TVWeekly"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BtnComplete" />
+        <Button
+            android:id="@+id/BtnComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="#70BF69"
+            android:fontFamily="@font/inter"
+            android:letterSpacing="0"
+            android:onClick="BtnCompleteOnClick"
+            android:text="@string/BtnComplete"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TLToday" />
 
-    <Button
-        android:id="@+id/BTEditPlan"
-        style="?attr/borderlessButtonStyle"
-        android:layout_width="75dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="4dp"
-        android:drawableEnd="@drawable/pen"
-        android:fontFamily="@font/inter"
-        android:letterSpacing="0"
-        android:onClick="BtnEditOnClick"
-        android:text="Edit"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BtnComplete"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        <TextView
+            android:id="@+id/TVWeekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/TVWeekly"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BtnComplete" />
 
-    <TableLayout
-        android:id="@+id/TLWeekly"
-        android:layout_width="405dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:stretchColumns="*"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TVWeekly">
+        <Button
+            android:id="@+id/BTEditPlan"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="75dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="4dp"
+            android:drawableEnd="@drawable/pen"
+            android:fontFamily="@font/inter"
+            android:letterSpacing="0"
+            android:onClick="BtnEditOnClick"
+            android:text="Edit"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BtnComplete"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-        <TableRow
-            android:id="@+id/TRWeekly1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TableLayout
+            android:id="@+id/TLWeekly"
+            android:layout_width="405dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:stretchColumns="*"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TVWeekly">
 
-            <TextView
-                android:id="@+id/TVBlank"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content" />
+            <TableRow
+                android:id="@+id/TRWeekly1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/TVTable2TitleBF"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_green_topleft"
-                android:padding="5dp"
-                android:text="@string/TVTableTitleBF"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVBlank"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/TVTable2TitleL"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_green"
-                android:padding="5dp"
-                android:text="@string/TVTableTitleL"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2TitleBF"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_green_topleft"
+                    android:padding="5dp"
+                    android:text="@string/TVTableTitleBF"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2TitleD"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_green_topright"
-                android:padding="5dp"
-                android:text="@string/TVTableTitleD"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/TVTable2TitleL"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_green"
+                    android:padding="5dp"
+                    android:text="@string/TVTableTitleL"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
 
-        <TableRow
-            android:id="@+id/TRWeekly2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/TVTable2TitleD"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_green_topright"
+                    android:padding="5dp"
+                    android:text="@string/TVTableTitleD"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/TVTable2DayM"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter"
-                android:text="@string/TVTableDayM"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
+            <TableRow
+                android:id="@+id/TRWeekly2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/TVTable2BFDayM"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Cereal, toast,\njam, tea"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2DayM"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDayM"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2LDayM"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Pasta salad, hot\nchocolate"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2BFDayM"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Cereal, toast,\njam, tea"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2DDayM"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Chicken katsu, rice,\norange juice"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/TVTable2LDayM"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Pasta salad, hot\nchocolate"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-        <TableRow
-            android:id="@+id/TRWeekly3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/TVTable2DDayM"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Chicken katsu, rice,\norange juice"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/TVTable2DayT"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter"
-                android:text="@string/TVTableDayT"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
+            <TableRow
+                android:id="@+id/TRWeekly3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/TVTable2BFDayT"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Banana,\nmilk, sausage"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2DayT"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDayT"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2LDayT"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Grilled chicken\nsalad, green tea"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2BFDayT"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Banana,\nmilk, sausage"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2DDayT"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Lasagna, sweet\nparfait, water"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/TVTable2LDayT"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Grilled chicken\nsalad, green tea"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-        <TableRow
-            android:id="@+id/TRWeekly4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/TVTable2DDayT"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Lasagna, sweet\nparfait, water"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/TVTable2DayW"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter"
-                android:text="@string/TVTableDayW"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
+            <TableRow
+                android:id="@+id/TRWeekly4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/TVTable2BFDayW"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Sandwich,\nmilk, sausage"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2DayW"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDayW"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2LDayW"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Grilled cheese,\ntomato soup, soda"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2BFDayW"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Sandwich,\nmilk, sausage"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2DDayW"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Spicy salmon\nbowl, coca cola"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/TVTable2LDayW"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Grilled cheese,\ntomato soup, soda"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-        <TableRow
-            android:id="@+id/TRWeekly5"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/TVTable2DDayW"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Spicy salmon\nbowl, coca cola"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/TVTable2DayTh"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter"
-                android:text="@string/TVTableDayTh"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
+            <TableRow
+                android:id="@+id/TRWeekly5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/TVTable2BFDayTh"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Scrambled eggs,\nmuffins, water"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2DayTh"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDayTh"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2LDayTh"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Speghetti, lemon\nwater, cookie"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2BFDayTh"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Scrambled eggs,\nmuffins, water"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2DDayTh"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Vegan meatballs,\nmint tea, pudding"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/TVTable2LDayTh"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Speghetti, lemon\nwater, cookie"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-        <TableRow
-            android:id="@+id/TRWeekly6"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/TVTable2DDayTh"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Vegan meatballs,\nmint tea, pudding"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/TVTable2DayF"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter"
-                android:text="@string/TVTableDayF"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
+            <TableRow
+                android:id="@+id/TRWeekly6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/TVTable2BFDayF"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Oats, croissant,\nmilkshake"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2DayF"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDayF"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2LDayF"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Mac &amp; cheese, kiwi\nsmoothie"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2BFDayF"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Oats, croissant,\nmilkshake"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2DDayF"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Orange chicken,\nrice, yogurt drink"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/TVTable2LDayF"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Mac &amp; cheese, kiwi\nsmoothie"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-        <TableRow
-            android:id="@+id/TRWeekly7"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/TVTable2DDayF"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Orange chicken,\nrice, yogurt drink"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/TVTable2DayS"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter"
-                android:text="@string/TVTableDayS"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
+            <TableRow
+                android:id="@+id/TRWeekly7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/TVTable2BFDayS"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Pancake, boiled\neggs, chai tea"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2DayS"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDayS"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2LDayS"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Chicken fried rice,\nmango juice"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2BFDayS"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Pancake, boiled\neggs, chai tea"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2DDayS"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Spaghetti tomato,\nwatermelon juice"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/TVTable2LDayS"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Chicken fried rice,\nmango juice"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-        <TableRow
-            android:id="@+id/TRWeekly8"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/TVTable2DDayS"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Spaghetti tomato,\nwatermelon juice"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/TVTable2DaySu"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter"
-                android:text="@string/TVTableDaySu"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
+            <TableRow
+                android:id="@+id/TRWeekly8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/TVTable2BFDaySu"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white_bottomleft"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Butter bread, fruit\nsalad, soy milk"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2DaySu"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDaySu"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2LDaySu"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Ramen, mochi,\ngreen tea, sushi"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/TVTable2BFDaySu"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white_bottomleft"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Butter bread, fruit\nsalad, soy milk"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/TVTable2DDaySu"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_white_bottomright"
-                android:fontFamily="@font/inter"
-                android:padding="5dp"
-                android:text="Buttermilk chicken,\nrice, pie, water"
-                android:textAlignment="center"
-                android:textColor="#0B8600"
-                android:textSize="12sp" />
-        </TableRow>
-    </TableLayout>
+                <TextView
+                    android:id="@+id/TVTable2LDaySu"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Ramen, mochi,\ngreen tea, sushi"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/TVTable2DDaySu"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white_bottomright"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Buttermilk chicken,\nrice, pie, water"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp" />
+            </TableRow>
+        </TableLayout>
+
+        <View
+            android:id="@+id/ViewBlank"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TLWeekly" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

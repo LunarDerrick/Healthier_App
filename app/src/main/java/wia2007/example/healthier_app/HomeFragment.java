@@ -75,7 +75,7 @@ public class HomeFragment extends Fragment {
         View.OnClickListener OCLCalculator = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.DestCalculator);
+                Navigation.findNavController(view).navigate(R.id.DestBMIMacro);
             }
         };
         BtnCalculator.setOnClickListener(OCLCalculator);
@@ -97,7 +97,7 @@ public class HomeFragment extends Fragment {
         View.OnClickListener OCLCoaching = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.DestCoaching);
+                Navigation.findNavController(view).navigate(R.id.DestFinder);
             }
         };
         BtnCoaching.setOnClickListener(OCLCoaching);
