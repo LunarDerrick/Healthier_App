@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -26,10 +27,10 @@ public class RegisterFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_register, container, false);
 
-        final EditText Uname = view.findViewById(R.id.userName);
-        final EditText Mail = view.findViewById(R.id.email);
-        final EditText Pass = view.findViewById(R.id.pass);
-        final EditText ConfirmPass = view.findViewById(R.id.confirmpass);
+        final TextInputEditText Uname = view.findViewById(R.id.userName);
+        final TextInputEditText Mail = view.findViewById(R.id.email);
+        final TextInputEditText Pass = view.findViewById(R.id.pass);
+        final TextInputEditText ConfirmPass = view.findViewById(R.id.confirmPass);
         Button RegBtn = view.findViewById(R.id.RegBtn);
 
         DAOUser dao = new DAOUser();
