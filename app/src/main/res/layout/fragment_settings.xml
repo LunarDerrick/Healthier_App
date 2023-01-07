@@ -1,228 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/CLManage"
+    android:id="@+id/SVSettings"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFAEA"
     tools:context=".SettingsFragment">
 
-    <ImageView
-        android:id="@+id/profile"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/profile_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLManage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/sample_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/sample_name"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile" />
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/profile_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/sample_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter"
-        android:text="@string/sample_username"
-        android:textColor="#6D6D6D"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sample_name" />
+        <TextView
+            android:id="@+id/sample_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/sample_name"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile" />
 
-    <ImageView
-        android:id="@+id/edit_btn"
-        android:layout_width="322dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:src="@drawable/manage_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sample_username"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <TextView
+            android:id="@+id/sample_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:text="@string/sample_username"
+            android:textColor="#6D6D6D"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_name" />
 
-    <ImageView
-        android:id="@+id/user_btn"
-        android:layout_width="322dp"
-        android:layout_height="75dp"
-        android:clickable="true"
-        android:src="@drawable/manage_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_btn"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <ImageView
+            android:id="@+id/edit_btn"
+            android:layout_width="322dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:src="@drawable/manage_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sample_username"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/managepay_btn"
-        android:layout_width="322dp"
-        android:layout_height="75dp"
-        android:clickable="true"
-        android:src="@drawable/manage_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_btn"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <ImageView
+            android:id="@+id/user_btn"
+            android:layout_width="322dp"
+            android:layout_height="75dp"
+            android:clickable="true"
+            android:src="@drawable/manage_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_btn"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/help_btn"
-        android:layout_width="322dp"
-        android:layout_height="75dp"
-        android:clickable="true"
-        android:src="@drawable/manage_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/managepay_btn"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <ImageView
+            android:id="@+id/managepay_btn"
+            android:layout_width="322dp"
+            android:layout_height="75dp"
+            android:clickable="true"
+            android:src="@drawable/manage_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_btn"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/logout_btn"
-        android:layout_width="322dp"
-        android:layout_height="75dp"
-        android:clickable="true"
-        android:src="@drawable/manage_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/help_btn"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <ImageView
+            android:id="@+id/help_btn"
+            android:layout_width="322dp"
+            android:layout_height="75dp"
+            android:clickable="true"
+            android:src="@drawable/manage_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/managepay_btn"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
-        android:id="@+id/TVEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/edit_profile"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/edit_btn"
-        app:layout_constraintTop_toTopOf="@+id/edit_btn" />
+        <ImageView
+            android:id="@+id/logout_btn"
+            android:layout_width="322dp"
+            android:layout_height="75dp"
+            android:clickable="true"
+            android:src="@drawable/manage_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/help_btn"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
-        android:id="@+id/TVUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/user_info"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/user_btn"
-        app:layout_constraintTop_toBottomOf="@+id/edit_btn" />
+        <TextView
+            android:id="@+id/TVEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/edit_profile"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@+id/edit_btn"
+            app:layout_constraintTop_toTopOf="@+id/edit_btn" />
 
-    <TextView
-        android:id="@+id/TVManage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/Manage_payment"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/managepay_btn"
-        app:layout_constraintTop_toBottomOf="@+id/user_btn" />
+        <TextView
+            android:id="@+id/TVUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/user_info"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@+id/user_btn"
+            app:layout_constraintTop_toBottomOf="@+id/edit_btn" />
 
-    <TextView
-        android:id="@+id/TVHelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/help"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/help_btn"
-        app:layout_constraintTop_toBottomOf="@+id/managepay_btn" />
+        <TextView
+            android:id="@+id/TVManage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/Manage_payment"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@+id/managepay_btn"
+            app:layout_constraintTop_toBottomOf="@+id/user_btn" />
 
-    <TextView
-        android:id="@+id/TVLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/Logout"
-        android:textColor="#FF0000"
-        app:layout_constraintBottom_toBottomOf="@+id/logout_btn"
-        app:layout_constraintStart_toStartOf="@+id/logout_btn"
-        app:layout_constraintTop_toBottomOf="@+id/help_btn" />
+        <TextView
+            android:id="@+id/TVHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/help"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@+id/help_btn"
+            app:layout_constraintTop_toBottomOf="@+id/managepay_btn" />
 
-    <TextView
-        android:id="@+id/edit_profiledesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/inter"
-        android:text="@string/edit_profiledesc"
-        android:textColor="#7A7A7A"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/edit_btn"
-        app:layout_constraintStart_toStartOf="@+id/edit_btn" />
+        <TextView
+            android:id="@+id/TVLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/Logout"
+            android:textColor="#FF0000"
+            app:layout_constraintBottom_toBottomOf="@+id/logout_btn"
+            app:layout_constraintStart_toStartOf="@+id/logout_btn"
+            app:layout_constraintTop_toBottomOf="@+id/help_btn" />
 
-    <TextView
-        android:id="@+id/user_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/inter"
-        android:text="@string/user_infodesc"
-        android:textColor="#7A7A7A"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/user_btn"
-        app:layout_constraintStart_toStartOf="@+id/user_btn" />
+        <TextView
+            android:id="@+id/edit_profiledesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/edit_profiledesc"
+            android:textColor="#7A7A7A"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_btn"
+            app:layout_constraintStart_toStartOf="@+id/edit_btn" />
 
-    <TextView
-        android:id="@+id/manage_paydesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/inter"
-        android:text="@string/Manage_paymentdesc"
-        android:textColor="#7A7A7A"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/managepay_btn"
-        app:layout_constraintStart_toStartOf="@+id/managepay_btn" />
+        <TextView
+            android:id="@+id/user_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/user_infodesc"
+            android:textColor="#7A7A7A"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/user_btn"
+            app:layout_constraintStart_toStartOf="@+id/user_btn" />
 
-    <TextView
-        android:id="@+id/help_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/inter"
-        android:text="@string/helpdesc"
-        android:textColor="#7A7A7A"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/help_btn"
-        app:layout_constraintStart_toStartOf="@+id/help_btn" />
+        <TextView
+            android:id="@+id/manage_paydesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/Manage_paymentdesc"
+            android:textColor="#7A7A7A"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/managepay_btn"
+            app:layout_constraintStart_toStartOf="@+id/managepay_btn" />
 
-    <ImageView
-        android:id="@+id/editprofile_icon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="88dp"
-        android:src="@drawable/editprofile_icon"
-        app:layout_constraintEnd_toEndOf="@+id/profile"
-        app:layout_constraintTop_toTopOf="@+id/profile" />
+        <TextView
+            android:id="@+id/help_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/helpdesc"
+            android:textColor="#7A7A7A"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/help_btn"
+            app:layout_constraintStart_toStartOf="@+id/help_btn" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/editprofile_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="88dp"
+            android:src="@drawable/editprofile_icon"
+            app:layout_constraintEnd_toEndOf="@+id/profile"
+            app:layout_constraintTop_toTopOf="@+id/profile" />
+
+        <View
+            android:id="@+id/ViewBlank"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logout_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
