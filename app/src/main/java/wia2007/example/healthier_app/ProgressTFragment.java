@@ -1,14 +1,23 @@
 package wia2007.example.healthier_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
+
+import java.util.function.IntToDoubleFunction;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +36,8 @@ public class ProgressTFragment extends Fragment {
     private String mParam2;
 
     GraphView graphView;
+    EditText calorieTaken, calorieBurnt;
+    Button submitCalories;
 
     public ProgressTFragment() {
         // Required empty public constructor
@@ -54,8 +65,6 @@ public class ProgressTFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        graphView = findViewById(R.id.idGraphView);
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -66,8 +75,36 @@ public class ProgressTFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_register, container, false);
+        View view = inflater.inflate(R.layout.fragment_progress_t, container, false);
 
+        graphView = view.findViewById(R.id.line_graph_view);
+        calorieBurnt = view.findViewById(R.id.calorieBurnt);
+        calorieTaken = view.findViewById(R.id.calorieTaken);
+        submitCalories = (Button) view.findViewById(R.id.submit_button_progress_tracker);
+
+        String takenValue = calorieTaken.getText().toString();
+        String burntValue = calorieBurnt.getText().toString();
+
+        Integer takenValueInt = Integer.parseInt(takenValue);
+        Integer burntValueInt = Integer.parseInt(burntValue);
+
+        submitCalories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(0, 1),
+                new DataPoint(1, 5),
+                new DataPoint(2, 3),
+                new DataPoint(3, 2),
+                new DataPoint(4, 6)
+        });
+
+
+        graphView.addSeries(series);
         return view;
     }
 }
