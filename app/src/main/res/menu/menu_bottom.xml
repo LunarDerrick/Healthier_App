@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/DestCalculator"
+        android:id="@+id/DestBMIMacro"
         android:icon="@drawable/calculator_icon"
         android:title="@string/calculator" />
 
     <item
-        android:id="@+id/DestPlanner"
+        android:id="@+id/DestDiet"
         android:icon="@drawable/planner_icon"
         android:title="@string/planner" />
 
@@ -15,7 +15,7 @@
         android:title="@string/tracker" />
 
     <item
-        android:id="@+id/DestCoaching"
+        android:id="@+id/DestFinder"
         android:icon="@drawable/coach_icon"
         android:title="@string/coaching" />
 

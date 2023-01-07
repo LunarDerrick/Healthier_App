@@ -46,16 +46,14 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVDiet"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:name="wia2007.example.healthier_app.DietFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/BtnDiet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TBDiet"
-        app:navGraph="@navigation/nav_healthier"
         tools:layout="@layout/fragment_diet" />
-    <!--android:name="wia2007.example.healthier_app.DietFragment"-->
 
     <Button
         android:id="@+id/BtnDiet"
