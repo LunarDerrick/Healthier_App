@@ -31,8 +31,8 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        EditText emailET = view.findViewById(R.id.email);
-        EditText passwordET = view.findViewById(R.id.pass);
+        TextInputEditText emailET = view.findViewById(R.id.email);
+        TextInputEditText passwordET = view.findViewById(R.id.pass);
         Button loginButton = view.findViewById(R.id.loginBtn);
 
         TextView dontHave= view.findViewById(R.id.signin);

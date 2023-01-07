@@ -55,61 +55,64 @@
         app:layout_constraintStart_toStartOf="@+id/whiterec_login"
         app:layout_constraintTop_toBottomOf="@+id/TV_logdesc" />
 
-    <TextView
-        android:id="@+id/TVemail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/inter"
-        android:text="@string/email"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/whiterec_login"
-        app:layout_constraintTop_toBottomOf="@+id/login_pic" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TIMail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="280dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="45dp"
+        android:hint="E-mail"
+        android:textColor="#000"
+        app:boxBackgroundColor="#FFF3D2"
+        app:boxCornerRadiusBottomEnd="5dp"
+        app:boxCornerRadiusBottomStart="5dp"
+        app:boxCornerRadiusTopEnd="5dp"
+        app:boxCornerRadiusTopStart="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_pic"
+        app:startIconDrawable="@drawable/email_icon">
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="275dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/edit_text_lightyellow"
-        android:drawableStart="@drawable/email_icon"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:paddingStart="10dp"
-        app:layout_constraintStart_toStartOf="@+id/whiterec_login"
-        app:layout_constraintTop_toBottomOf="@+id/TVemail"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textSize="16sp"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,DuplicateClickableBoundsCheck,DuplicateClickableBoundsCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/TVPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/inter"
-        android:text="@string/password"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/whiterec_login"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TIPassW"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="280dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="45dp"
+        android:hint="Password"
+        android:textColor="#000"
+        app:boxBackgroundColor="#FFF3D2"
+        app:boxCornerRadiusBottomEnd="5dp"
+        app:boxCornerRadiusBottomStart="5dp"
+        app:boxCornerRadiusTopEnd="5dp"
+        app:boxCornerRadiusTopStart="5dp"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TIMail"
+        app:startIconDrawable="@drawable/lock_icon">
 
-    <EditText
-        android:id="@+id/pass"
-        android:layout_width="275dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/edit_text_lightyellow"
-        android:drawableStart="@drawable/lock_icon"
-        android:drawableEnd="@drawable/not_visible_icon"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        app:layout_constraintStart_toStartOf="@+id/whiterec_login"
-        app:layout_constraintTop_toBottomOf="@+id/TVPass"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textSize="16sp"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,DuplicateClickableBoundsCheck,DuplicateClickableBoundsCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/TVforgot"
@@ -122,8 +125,10 @@
         android:text="@string/Forgot"
         android:textColor="#ECAD18"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/whiterec_login"
-        app:layout_constraintTop_toBottomOf="@+id/pass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TIPassW"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
