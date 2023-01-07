@@ -34,6 +34,10 @@ public class RegisterFragment extends Fragment {
 
         DAOUser dao = new DAOUser();
         RegBtn.setOnClickListener(v -> {
+            if (Uname.getText().toString().isEmpty() || Mail.getText().toString().isEmpty() || Pass.getText().toString().isEmpty() || ConfirmPass.getText().toString().isEmpty()) {
+                Toast.makeText(requireContext(), "Please fill in the text fields", Toast.LENGTH_SHORT).show();
+                return;
+            }
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(Mail.getText().toString(), Pass.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                 @Override
                 public void onSuccess(AuthResult authResult) {
