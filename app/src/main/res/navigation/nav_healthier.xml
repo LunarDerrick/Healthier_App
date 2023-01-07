@@ -49,4 +49,28 @@
         android:name="wia2007.example.healthier_app.FinderFragment"
         android:label="Professional Help Finder"
         tools:layout="@layout/fragment_finder" />
+    <fragment
+        android:id="@+id/DestExercise"
+        android:name="wia2007.example.healthier_app.ExerciseFragment"
+        android:label="@string/TBExercise"
+        tools:layout="@layout/fragment_exercise" />
+    <fragment
+        android:id="@+id/DestFast"
+        android:name="wia2007.example.healthier_app.FastingFragment"
+        android:label="@string/TBFasting"
+        tools:layout="@layout/fragment_fasting" />
+    <fragment
+        android:id="@+id/DestLesson"
+        android:name="wia2007.example.healthier_app.LessonsFragment"
+        android:label="Lesson Booking"
+        tools:layout="@layout/fragment_lessons" />
+    <fragment
+        android:id="@+id/DestLocator"
+        android:name="wia2007.example.healthier_app.LocatorFragment"
+        android:label="Gym Locator"
+        tools:layout="@layout/fragment_locator" />
+    <fragment
+        android:id="@+id/DestCalorie"
+        android:name="wia2007.example.healthier_app.CalorieCalc"
+        android:label="Calorie Calculator" />
 </navigation>

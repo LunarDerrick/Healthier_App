@@ -75,7 +75,7 @@ public class HomeFragment extends Fragment {
         View.OnClickListener OCLCalculator = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.DestBMIMacro);
+                Navigation.findNavController(view).navigate(R.id.DestCalculator);
             }
         };
         BtnCalculator.setOnClickListener(OCLCalculator);
@@ -85,7 +85,7 @@ public class HomeFragment extends Fragment {
         View.OnClickListener OCLPlanner = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.DestDiet);
+                Navigation.findNavController(view).navigate(R.id.DestPlanner);
                 // WIP: attempt to change top actionbar color when navigate to different modules
                 ((AppCompatActivity)getActivity()).getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#F0C869")));
             }
@@ -97,7 +97,7 @@ public class HomeFragment extends Fragment {
         View.OnClickListener OCLCoaching = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.DestFinder);
+                Navigation.findNavController(view).navigate(R.id.DestCoaching);
             }
         };
         BtnCoaching.setOnClickListener(OCLCoaching);
