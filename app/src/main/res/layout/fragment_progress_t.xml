@@ -164,7 +164,7 @@
             android:textSize="12sp"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
     </RadioGroup>
-<!--
+
     <com.jjoe64.graphview.GraphView
         android:id="@+id/idGraphView"
         android:layout_width="match_parent"
@@ -177,5 +177,5 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_choices" />
--->
+
 </androidx.constraintlayout.widget.ConstraintLayout>
