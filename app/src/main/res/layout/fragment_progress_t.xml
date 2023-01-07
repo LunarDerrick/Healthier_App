@@ -6,16 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_tracker_activity">
-<!--
 
     <TextView
         android:id="@+id/daily_calorie_tracker"
-        style="@style/small_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginTop="21dp"
         android:text="@string/daily_calories"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,7 +28,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/border_black_fill_white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/daily_calorie_tracker"/>
+        app:layout_constraintTop_toBottomOf="@+id/daily_calorie_tracker" />
 
     <View
         android:id="@+id/daily_calorie_burnt"
@@ -37,7 +38,7 @@
         android:layout_marginEnd="31dp"
         android:background="@drawable/border_black_fill_white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/daily_calorie_tracker"/>
+        app:layout_constraintTop_toBottomOf="@+id/daily_calorie_tracker" />
 
     <Button
         android:id="@+id/submit_button_progress_tracker"
@@ -58,8 +59,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:text="@string/taken"
-        android:textSize="13sp"
         android:textColor="#686868"
+        android:textSize="13sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/daily_calorie_taken"
         app:layout_constraintStart_toStartOf="@+id/daily_calorie_taken"
         app:layout_constraintTop_toTopOf="@+id/daily_calorie_taken" />
@@ -70,20 +72,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:text="@string/burnt"
-        android:textSize="13sp"
         android:textColor="#686868"
+        android:textSize="13sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/daily_calorie_burnt"
         app:layout_constraintStart_toStartOf="@+id/daily_calorie_burnt"
         app:layout_constraintTop_toTopOf="@+id/daily_calorie_burnt" />
 
     <TextView
         android:id="@+id/weekly_calorie_tracker"
-        style="@style/small_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginTop="120dp"
         android:text="@string/weekly_calories"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/daily_calorie_tracker" />
 
@@ -95,7 +100,7 @@
         android:background="@drawable/border_black_fill_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
@@ -122,34 +127,55 @@
         app:layout_constraintStart_toStartOf="@+id/daily_average_result_container"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
--->
+
     <!--    not running yet-->
     <!--    still need to code the behaviour/-->
-    <!--
+
     <RadioGroup
-        android:id="@+id/weeklyCaloriesForm"
-        android:layout_width="150dp"
-        android:layout_height="25dp"
-        android:background="@drawable/radio_group_bg"
-        android:layout_marginTop="10dp"
+        android:id="@+id/view_choices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="31dp"
+        android:background="@drawable/radio_group_bg"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weekly_calorie_tracker">
 
         <RadioButton
-            android:background="@drawable/radio_off"
-            android:id="@+id/graph_form"
-            style="@style/radioButtonStyle"
-            android:text="@string/graph_form" />
+            android:id="@+id/graphForm"
+            android:layout_width="115dp"
+            android:layout_height="30dp"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Graph Form"
+            android:textColor="#8B8B8B"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <RadioButton
-            android:background="@drawable/radio_off"
-            android:id="@+id/list_form"
-            style="@style/radioButtonStyle"
-            android:text="@string/list_form" />
-
+            android:id="@+id/listForm"
+            android:layout_width="115dp"
+            android:layout_height="30dp"
+            android:button="@null"
+            android:gravity="center"
+            android:text="List Form"
+            android:textColor="#8B8B8B"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
     </RadioGroup>
-
+<!--
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/idGraphView"
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_choices" />
 -->
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+//import com.jjoe64.graphview.GraphView;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ProgressTFragment#newInstance} factory method to
@@ -23,6 +25,8 @@ public class ProgressTFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+//    GraphView graphView;
 
     public ProgressTFragment() {
         // Required empty public constructor
@@ -49,6 +53,9 @@ public class ProgressTFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        graphView = findViewById(R.id.idGraphView);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -59,6 +66,8 @@ public class ProgressTFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_progress_t, container, false);
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
+
+        return view;
     }
 }

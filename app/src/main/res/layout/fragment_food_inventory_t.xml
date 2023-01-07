@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     android:background="@color/bg_tracker_activity"
     tools:context=".FoodInventoryTFragment">
-<!--
 
     <TextView
         android:id="@+id/current_progress_TV2"
-        style="@style/small_font"
+        android:textStyle="normal"
+        android:textSize="12sp"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
@@ -37,7 +38,9 @@
 
         <TextView
             android:id="@+id/groc_item"
-            style="@style/small_font"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -104,7 +107,9 @@
 
     <TextView
         android:id="@+id/current_progress_TV3"
-        style="@style/small_font"
+        android:textStyle="normal"
+        android:textSize="12sp"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -390,7 +395,9 @@
 
     <TextView
         android:id="@+id/recipe_recomm_TV"
-        style="@style/small_font"
+        android:textStyle="normal"
+        android:textSize="12sp"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
@@ -527,5 +534,4 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
         </ScrollView>
     </TableLayout>
--->
 </androidx.constraintlayout.widget.ConstraintLayout>
