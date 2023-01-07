@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="@color/bg_tracker_activity">
 <!--
-
     <TextView
         android:id="@+id/daily_calorie_tracker"
         style="@style/small_font"
