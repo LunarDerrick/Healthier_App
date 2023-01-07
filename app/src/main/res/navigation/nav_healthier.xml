@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_healthier"
-    app:startDestination="@id/DestHome">
+    app:startDestination="@id/DestLogin">
     <fragment
         android:id="@+id/DestHome"
         android:name="wia2007.example.healthier_app.HomeFragment"
@@ -73,4 +73,14 @@
         android:id="@+id/DestCalorie"
         android:name="wia2007.example.healthier_app.CalorieCalc"
         android:label="Calorie Calculator" />
+    <fragment
+        android:id="@+id/DestLogin"
+        android:name="wia2007.example.healthier_app.placeholder.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/DestRegister"
+        android:name="wia2007.example.healthier_app.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
 </navigation>

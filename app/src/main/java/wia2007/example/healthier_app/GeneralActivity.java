@@ -2,6 +2,8 @@ package wia2007.example.healthier_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentContainerView;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,19 +18,19 @@ public class GeneralActivity extends AppCompatActivity {
         setContentView(R.layout.activity_general);
     }
 
-    public void BtnNoAccOnClick(View view) {
-        FragmentContainerView FCVRegister = findViewById(R.id.FCVRegister);
-        FragmentContainerView FCVLogin = findViewById(R.id.FCVLogin);
-        FCVRegister.setVisibility(View.VISIBLE);
-        FCVLogin.setVisibility(View.GONE);
-    }
+//    public void BtnNoAccOnClick(View view) {
+//        FragmentContainerView FCVRegister = findViewById(R.id.FCVRegister);
+//        FragmentContainerView FCVLogin = findViewById(R.id.FCVLogin);
+//        FCVRegister.setVisibility(View.VISIBLE);
+//        FCVLogin.setVisibility(View.GONE);
+//    }
 
-    public void BtnHasAccOnClick(View view) {
-        FragmentContainerView FCVRegister = findViewById(R.id.FCVRegister);
-        FragmentContainerView FCVLogin = findViewById(R.id.FCVLogin);
-        FCVRegister.setVisibility(View.GONE);
-        FCVLogin.setVisibility(View.VISIBLE);
-    }
+//    public void BtnHasAccOnClick(View view) {
+//        FragmentContainerView FCVRegister = findViewById(R.id.FCVRegister);
+//        FragmentContainerView FCVLogin = findViewById(R.id.FCVLogin);
+//        FCVRegister.setVisibility(View.GONE);
+//        FCVLogin.setVisibility(View.VISIBLE);
+//    }
 
     public void BtnLoginOnClick(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);

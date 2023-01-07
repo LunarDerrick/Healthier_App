@@ -4,12 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -31,6 +33,16 @@ public class RegisterFragment extends Fragment {
         final TextInputEditText Mail = view.findViewById(R.id.email);
         final TextInputEditText Pass = view.findViewById(R.id.pass);
         final TextInputEditText ConfirmPass = view.findViewById(R.id.confirmPass);
+
+        TextView alreadyHave= view.findViewById(R.id.signin);
+        View.OnClickListener BtnNoAccOnClick= new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.DestLogin);
+            }
+        };
+        alreadyHave.setOnClickListener(BtnNoAccOnClick);
+
         Button RegBtn = view.findViewById(R.id.RegBtn);
 
         DAOUser dao = new DAOUser();
@@ -46,7 +58,7 @@ public class RegisterFragment extends Fragment {
 
                     dao.add(user).addOnSuccessListener(suc -> {
                         Toast.makeText(requireContext(), "Account created successfully", Toast.LENGTH_SHORT).show();
-
+                        Navigation.findNavController(view).navigate(R.id.DestLogin);
                     }).addOnFailureListener(er -> {
                         Toast.makeText(requireContext(), "" + er.getMessage(), Toast.LENGTH_SHORT).show();
                     });

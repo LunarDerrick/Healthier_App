@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,6 +34,15 @@ public class LoginFragment extends Fragment {
         TextInputEditText emailET = view.findViewById(R.id.email);
         TextInputEditText passwordET = view.findViewById(R.id.pass);
         Button loginButton = view.findViewById(R.id.loginBtn);
+
+        TextView dontHave= view.findViewById(R.id.signin);
+        View.OnClickListener BtnNoAccOnClick= new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.DestRegister);
+            }
+        };
+        dontHave.setOnClickListener(BtnNoAccOnClick);
 
         loginButton.setOnClickListener(view1 -> register(emailET.getText().toString(), passwordET.getText().toString(), view1));
 
