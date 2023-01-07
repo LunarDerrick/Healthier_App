@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_tracker_activity">
-    <!--
 
         <TextView
             android:id="@+id/level_TV"
-            style="@style/small_font"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
@@ -20,7 +21,9 @@
 
         <TextView
             android:id="@+id/which_level_TV"
-            style="@style/small_font"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -31,7 +34,9 @@
 
         <TextView
             android:id="@+id/reward_TV"
-            style="@style/small_font"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -42,7 +47,8 @@
 
         <TextView
             android:id="@+id/reward_type"
-            style="@style/small_font"
+            android:textStyle="normal"
+            android:textSize="12sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -54,7 +60,10 @@
 
         <TextView
             android:id="@+id/the_reward"
-            style="@style/reward_style"
+            android:background="@drawable/tracker_gradient"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="12sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -66,7 +75,9 @@
 
         <TextView
             android:id="@+id/current_progress_TV"
-            style="@style/small_font"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
@@ -123,7 +134,8 @@
 
             <TextView
                 android:id="@+id/level_TV_2"
-                style="@style/small_font_italic"
+                android:textSize="12sp"
+                android:textStyle="italic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2.5dp"
@@ -133,7 +145,8 @@
 
             <TextView
                 android:id="@+id/which_level_TV_2"
-                style="@style/small_font_italic"
+                android:textSize="12sp"
+                android:textStyle="italic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2.5dp"
@@ -143,7 +156,8 @@
 
             <TextView
                 android:id="@+id/reward_TV_2"
-                style="@style/small_font_italic"
+                android:textSize="12sp"
+                android:textStyle="italic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2.5dp"
@@ -153,7 +167,8 @@
 
             <TextView
                 android:id="@+id/reward_type_2"
-                style="@style/small_font_italic"
+                android:textSize="12sp"
+                android:textStyle="italic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2.5dp"
@@ -166,7 +181,9 @@
 
         <TextView
             android:id="@+id/reward_activity_TV"
-            style="@style/small_font"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
@@ -300,7 +317,7 @@
             android:src="@drawable/ic_baseline_add_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/reward_activity_item_3" />
-
+<!--
         <TableLayout
             android:id="@+id/TL_reward_history"
             android:layout_width="350dp"
@@ -452,13 +469,8 @@
                             android:textSize="12sp"
                             android:textStyle="italic" />
                     </TableRow>
-
                 </androidx.appcompat.widget.LinearLayoutCompat>
-
             </ScrollView>
-
         </TableLayout>
-
-
-    -->
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -31,8 +30,8 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        TextInputEditText emailET = view.findViewById(R.id.email);
-        TextInputEditText passwordET = view.findViewById(R.id.pass);
+        EditText emailET = view.findViewById(R.id.email);
+        EditText passwordET = view.findViewById(R.id.pass);
         Button loginButton = view.findViewById(R.id.loginBtn);
 
         TextView dontHave= view.findViewById(R.id.signin);

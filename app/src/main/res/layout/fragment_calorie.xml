@@ -1,606 +1,591 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/SVCalorie"
+    android:id="@+id/CSCalLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#C6DDFF"
-    tools:context=".BMIMacroCalc">
+    tools:context=".CalorieCalc">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/CSCalLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <android.widget.Toolbar
+        android:id="@+id/TBCalculator"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#5465FF"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:title="Calorie Calculator"
+        android:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <android.widget.Toolbar
-            android:id="@+id/TBCalculator"
-            android:layout_width="0dp"
-            android:layout_height="?attr/actionBarSize"
+    <TextView
+        android:id="@+id/TVMCCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="@string/meal_calorie_calculator"
+        android:textColor="#000000"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Calories"
+        android:layout_width="175dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/edittext"
+        android:ems="10"
+        android:gravity="center|start"
+        android:hint="Calories"
+        android:inputType="numberDecimal"
+        android:paddingStart="15dp"
+        android:textColor="#5465FF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/kcalday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="128dp"
+        android:text="@string/kcal_day"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Calories"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/mealsperday"
+        android:layout_width="175dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="156dp"
+        android:background="@drawable/bgspinner"
+        android:contentDescription="spinner"
+        android:paddingStart="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="128dp"
+        android:text="@string/quantity"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mealsperday"
+        app:layout_constraintTop_toBottomOf="@+id/kcalday" />
+
+    <Button
+        android:id="@+id/calcButton"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:backgroundTint="#FFFFFF"
+        android:elevation="10dp"
+        android:letterSpacing="0"
+        android:stateListAnimator="@null"
+        android:text="@string/calculate"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TVRecommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="272dp"
+        android:text="@string/recommendation_daily_calories_intake"
+        android:textColor="#000000"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CVRecommend"
+        android:layout_width="346dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="304dp"
+        android:layout_marginEnd="29dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/TVDinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dinner\t\t\t\t\t0 kcal"
+            android:textColor="#000000"
+            android:translationX="15dp"
+            android:translationY="90dp"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="402dp" />
+
+        <TextView
+            android:id="@+id/TVLunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lunch\t\t\t\t\t\t0 kcal"
+            android:textColor="#000000"
+            android:translationX="15dp"
+            android:translationY="65dp"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="377dp" />
+
+        <TextView
+            android:id="@+id/TVMornSnack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Morning snack\t\t\t\t\t0 kcal"
+            android:textColor="#000000"
+            android:translationX="15dp"
+            android:translationY="40dp"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="352dp" />
+
+        <TextView
+            android:id="@+id/TVBreakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Breakfast\t\t\t\t\t\t0 kcal"
+            android:textColor="#000000"
+            android:translationX="15dp"
+            android:translationY="15dp"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="327dp" />
+
+        <TextView
+            android:id="@+id/TVBMinMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minmax"
+            android:textSize="12sp"
+            android:translationX="225dp"
+            android:translationY="15dp"
+            tools:layout_editor_absoluteX="262dp"
+            tools:layout_editor_absoluteY="327dp" />
+
+        <TextView
+            android:id="@+id/TVMSMinMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minmax"
+            android:textSize="12sp"
+            android:translationX="225dp"
+            android:translationY="40dp"
+            tools:layout_editor_absoluteX="262dp"
+            tools:layout_editor_absoluteY="352dp" />
+
+        <TextView
+            android:id="@+id/TVLMinMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minmax"
+            android:textSize="12sp"
+            android:translationX="225dp"
+            android:translationY="65dp"
+            tools:layout_editor_absoluteX="262dp"
+            tools:layout_editor_absoluteY="377dp" />
+
+        <TextView
+            android:id="@+id/TVDMinMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minmax"
+            android:textSize="12sp"
+            android:translationX="225dp"
+            android:translationY="90dp"
+            tools:layout_editor_absoluteX="262dp"
+            tools:layout_editor_absoluteY="402dp" />
+
+        <ImageView
+            android:id="@+id/IVBreakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/bread"
+            android:src="@drawable/bread"
+            android:translationX="82.5dp"
+            android:translationY="13dp"
+            tools:ignore="ImageContrastCheck,ImageContrastCheck"
+            tools:layout_editor_absoluteX="119dp"
+            tools:layout_editor_absoluteY="325dp" />
+
+        <ImageView
+            android:id="@+id/IVSnack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/croissant"
+            android:src="@drawable/croissant"
+            android:translationX="115dp"
+            android:translationY="40dp"
+            tools:ignore="ImageContrastCheck,ImageContrastCheck"
+            tools:layout_editor_absoluteX="152dp"
+            tools:layout_editor_absoluteY="352dp" />
+
+        <ImageView
+            android:id="@+id/IVLunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/plate"
+            android:src="@drawable/plate"
+            android:translationX="58dp"
+            android:translationY="63dp"
+            tools:ignore="ImageContrastCheck,ImageContrastCheck"
+            tools:layout_editor_absoluteX="94dp"
+            tools:layout_editor_absoluteY="375dp" />
+
+        <ImageView
+            android:id="@+id/IVDinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/pasta"
+            android:src="@drawable/spaghetti"
+            android:translationX="60dp"
+            android:translationY="90dp"
+            tools:ignore="ImageContrastCheck,ImageContrastCheck"
+            tools:layout_editor_absoluteX="97dp"
+            tools:layout_editor_absoluteY="402dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/TVEat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="440dp"
+        android:text="@string/what_have_you_eaten_today"
+        android:textColor="#000000"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BTEditEat"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="436dp"
+        android:layout_marginEnd="24dp"
+        android:drawableEnd="@drawable/pen"
+        android:letterSpacing="0"
+        android:text="Edit"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/TVEat"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <TableLayout
+        android:id="@+id/TBLEaten"
+        android:layout_width="346dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="472dp"
+        android:layout_marginEnd="35dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:id="@+id/TBRHeader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="#5465FF"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            android:title="Calorie Calculator"
-            android:titleTextColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-        <TextView
-            android:id="@+id/TVMCCalc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
-            android:text="@string/meal_calorie_calculator"
-            android:textColor="#000000"
-            android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.139"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/Calories"
-            android:layout_width="175dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/edittext"
-            android:ems="10"
-            android:gravity="center|start"
-            android:hint="Calories"
-            android:inputType="numberDecimal"
-            android:paddingStart="15dp"
-            android:textColor="#5465FF"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.156"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/kcalday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="11dp"
-            android:layout_marginTop="112dp"
-            android:layout_marginEnd="128dp"
-            android:text="@string/kcal_day"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/Calories"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Spinner
-            android:id="@+id/mealsperday"
-            android:layout_width="175dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="156dp"
-            android:background="@drawable/bgspinner"
-            android:contentDescription="spinner"
-            android:paddingStart="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.156"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="11dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="128dp"
-            android:text="@string/quantity"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/mealsperday"
-            app:layout_constraintTop_toBottomOf="@+id/kcalday" />
-
-        <Button
-            android:id="@+id/calcButton"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="216dp"
-            android:backgroundTint="#FFFFFF"
-            android:elevation="10dp"
-            android:letterSpacing="0"
-            android:stateListAnimator="@null"
-            android:text="@string/calculate"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="14sp"
-            app:cornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.112"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/TVRecommend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="272dp"
-            android:text="@string/recommendation_daily_calories_intake"
-            android:textColor="#000000"
-            android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.208"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/CVRecommend"
-            android:layout_width="346dp"
-            android:layout_height="125dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="304dp"
-            android:layout_marginEnd="29dp"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="481dp">
 
             <TextView
-                android:id="@+id/TVDinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dinner\t\t\t\t\t0 kcal"
-                android:textColor="#000000"
-                android:translationX="15dp"
-                android:translationY="90dp"
-                tools:layout_editor_absoluteX="51dp"
-                tools:layout_editor_absoluteY="402dp" />
-
-            <TextView
-                android:id="@+id/TVLunch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lunch\t\t\t\t\t\t0 kcal"
-                android:textColor="#000000"
-                android:translationX="15dp"
-                android:translationY="65dp"
-                tools:layout_editor_absoluteX="51dp"
-                tools:layout_editor_absoluteY="377dp" />
-
-            <TextView
-                android:id="@+id/TVMornSnack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Morning snack\t\t\t\t\t0 kcal"
-                android:textColor="#000000"
-                android:translationX="15dp"
-                android:translationY="40dp"
-                tools:layout_editor_absoluteX="51dp"
-                tools:layout_editor_absoluteY="352dp" />
-
-            <TextView
-                android:id="@+id/TVBreakfast"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Breakfast\t\t\t\t\t\t0 kcal"
-                android:textColor="#000000"
-                android:translationX="15dp"
-                android:translationY="15dp"
-                tools:layout_editor_absoluteX="51dp"
-                tools:layout_editor_absoluteY="327dp" />
-
-            <TextView
-                android:id="@+id/TVBMinMax"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/minmax"
-                android:textSize="12sp"
-                android:translationX="225dp"
-                android:translationY="15dp"
-                tools:layout_editor_absoluteX="262dp"
-                tools:layout_editor_absoluteY="327dp" />
-
-            <TextView
-                android:id="@+id/TVMSMinMax"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/minmax"
-                android:textSize="12sp"
-                android:translationX="225dp"
-                android:translationY="40dp"
-                tools:layout_editor_absoluteX="262dp"
-                tools:layout_editor_absoluteY="352dp" />
-
-            <TextView
-                android:id="@+id/TVLMinMax"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/minmax"
-                android:textSize="12sp"
-                android:translationX="225dp"
-                android:translationY="65dp"
-                tools:layout_editor_absoluteX="262dp"
-                tools:layout_editor_absoluteY="377dp" />
-
-            <TextView
-                android:id="@+id/TVDMinMax"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/minmax"
-                android:textSize="12sp"
-                android:translationX="225dp"
-                android:translationY="90dp"
-                tools:layout_editor_absoluteX="262dp"
-                tools:layout_editor_absoluteY="402dp" />
-
-            <ImageView
-                android:id="@+id/IVBreakfast"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/bread"
-                android:src="@drawable/bread"
-                android:translationX="82.5dp"
-                android:translationY="13dp"
-                tools:ignore="ImageContrastCheck,ImageContrastCheck"
-                tools:layout_editor_absoluteX="119dp"
-                tools:layout_editor_absoluteY="325dp" />
-
-            <ImageView
-                android:id="@+id/IVSnack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/croissant"
-                android:src="@drawable/croissant"
-                android:translationX="115dp"
-                android:translationY="40dp"
-                tools:ignore="ImageContrastCheck,ImageContrastCheck"
-                tools:layout_editor_absoluteX="152dp"
-                tools:layout_editor_absoluteY="352dp" />
-
-            <ImageView
-                android:id="@+id/IVLunch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/plate"
-                android:src="@drawable/plate"
-                android:translationX="58dp"
-                android:translationY="63dp"
-                tools:ignore="ImageContrastCheck,ImageContrastCheck"
-                tools:layout_editor_absoluteX="94dp"
-                tools:layout_editor_absoluteY="375dp" />
-
-            <ImageView
-                android:id="@+id/IVDinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/pasta"
-                android:src="@drawable/spaghetti"
-                android:translationX="60dp"
-                android:translationY="90dp"
-                tools:ignore="ImageContrastCheck,ImageContrastCheck"
-                tools:layout_editor_absoluteX="97dp"
-                tools:layout_editor_absoluteY="402dp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/TVEat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="440dp"
-            android:text="@string/what_have_you_eaten_today"
-            android:textColor="#000000"
-            android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.151"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/BTEditEat"
-            style="?attr/borderlessButtonStyle"
-            android:layout_width="75dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="436dp"
-            android:layout_marginEnd="24dp"
-            android:drawableEnd="@drawable/pen"
-            android:letterSpacing="0"
-            android:text="Edit"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/TVEat"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-        <TableLayout
-            android:id="@+id/TBLEaten"
-            android:layout_width="346dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="472dp"
-            android:layout_marginEnd="35dp"
-            android:background="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TableRow
-                android:id="@+id/TBRHeader"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#5465FF"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/meals"
                 android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                tools:ignore="TextContrastCheck"
                 tools:layout_editor_absoluteX="37dp"
-                tools:layout_editor_absoluteY="481dp">
+                tools:layout_editor_absoluteY="481dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="@string/meals"
-                    android:textAlignment="center"
-                    android:textColor="#FFFFFF"
-                    android:textSize="12sp"
-                    tools:ignore="TextContrastCheck"
-                    tools:layout_editor_absoluteX="37dp"
-                    tools:layout_editor_absoluteY="481dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="@string/foods"
-                    android:textAlignment="center"
-                    android:textColor="#FFFFFF"
-                    android:textSize="12sp"
-                    tools:ignore="TextContrastCheck,TextContrastCheck"
-                    tools:layout_editor_absoluteX="126dp"
-                    tools:layout_editor_absoluteY="481dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="@string/net_calories"
-                    android:textAlignment="center"
-                    android:textColor="#FFFFFF"
-                    android:textSize="12sp"
-                    tools:ignore="TextContrastCheck,TextContrastCheck"
-                    tools:layout_editor_absoluteX="294dp"
-                    tools:layout_editor_absoluteY="481dp" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/TBRBr"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@drawable/cell_shape"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/foods"
                 android:textAlignment="center"
-                tools:layout_editor_absoluteX="37dp"
-                tools:layout_editor_absoluteY="510dp">
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                tools:ignore="TextContrastCheck,TextContrastCheck"
+                tools:layout_editor_absoluteX="126dp"
+                tools:layout_editor_absoluteY="481dp" />
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="@string/breakfast"
-                    android:textAlignment="center"
-                    android:textColor="#0019FF"
-                    android:textSize="12sp"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="37dp"
-                    tools:layout_editor_absoluteY="510dp" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="@string/sandwich_eggs_and_milk"
-                    android:textAlignment="center"
-                    android:textColor="#0019FF"
-                    android:textSize="12sp"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="126dp"
-                    tools:layout_editor_absoluteY="510dp" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="@string/_540_kcal"
-                    android:textAlignment="center"
-                    android:textColor="#0019FF"
-                    android:textSize="12sp"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="294dp"
-                    tools:layout_editor_absoluteY="510dp" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/TBRLu"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/net_calories"
                 android:textAlignment="center"
-                tools:layout_editor_absoluteX="37dp"
-                tools:layout_editor_absoluteY="538dp">
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                tools:ignore="TextContrastCheck,TextContrastCheck"
+                tools:layout_editor_absoluteX="294dp"
+                tools:layout_editor_absoluteY="481dp" />
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="@string/lunch"
-                    android:textAlignment="center"
-                    android:textColor="#0019FF"
-                    android:textSize="12sp"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="37dp"
-                    tools:layout_editor_absoluteY="538dp" />
+        </TableRow>
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="@string/fried_rice_and_green_tea"
-                    android:textAlignment="center"
-                    android:textColor="#0019FF"
-                    android:textSize="12sp"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="126dp"
-                    tools:layout_editor_absoluteY="538dp" />
+        <TableRow
+            android:id="@+id/TBRBr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="510dp">
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="@string/_762_kcal"
-                    android:textAlignment="center"
-                    android:textColor="#0019FF"
-                    android:textSize="12sp"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="294dp"
-                    tools:layout_editor_absoluteY="538dp" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/TBRDi"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/breakfast"
                 android:textAlignment="center"
+                android:textColor="#0019FF"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="37dp"
-                tools:layout_editor_absoluteY="567dp">
+                tools:layout_editor_absoluteY="510dp" />
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="@string/dinner"
-                    android:textAlignment="center"
-                    android:textColor="#0019FF"
-                    android:textSize="12sp"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="37dp"
-                    tools:layout_editor_absoluteY="567dp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@drawable/cell_shape"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/sandwich_eggs_and_milk"
+                android:textAlignment="center"
+                android:textColor="#0019FF"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="126dp"
+                tools:layout_editor_absoluteY="510dp" />
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="@string/noodle_cake_and_apple_juice"
-                    android:textAlignment="center"
-                    android:textColor="#0019FF"
-                    android:textSize="12sp"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="126dp"
-                    tools:layout_editor_absoluteY="567dp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/_540_kcal"
+                android:textAlignment="center"
+                android:textColor="#0019FF"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="294dp"
+                tools:layout_editor_absoluteY="510dp" />
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="6dp"
-                    android:text="@string/_564_kcal"
-                    android:textAlignment="center"
-                    android:textColor="#0019FF"
-                    android:textSize="12sp"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="294dp"
-                    tools:layout_editor_absoluteY="567dp" />
-            </TableRow>
-        </TableLayout>
+        </TableRow>
 
-        <TextView
-            android:id="@+id/TVCalTotal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:text="@string/total_calories"
-            android:textColor="#000000"
-            android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.092"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TBLEaten" />
+        <TableRow
+            android:id="@+id/TBRLu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="538dp">
 
-        <TextView
-            android:id="@+id/TVTarget"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="#FFFFFF"
-            android:gravity="center"
-            android:includeFontPadding="true"
-            android:padding="5dp"
-            android:text="0"
-            android:textColor="#2B40FF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.351"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TBLEaten" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/lunch"
+                android:textAlignment="center"
+                android:textColor="#0019FF"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="538dp" />
 
-        <TextView
-            android:id="@+id/percalories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:text=" /2000 kcal"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.519"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TBLEaten" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@drawable/cell_shape"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/fried_rice_and_green_tea"
+                android:textAlignment="center"
+                android:textColor="#0019FF"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="126dp"
+                tools:layout_editor_absoluteY="538dp" />
 
-        <View
-            android:id="@+id/ViewBlank"
-            android:layout_width="0dp"
-            android:layout_height="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TVTarget" />
-        <!--for scrolling to have some padding below-->
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/_762_kcal"
+                android:textAlignment="center"
+                android:textColor="#0019FF"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="294dp"
+                tools:layout_editor_absoluteY="538dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </TableRow>
 
-</ScrollView>
+        <TableRow
+            android:id="@+id/TBRDi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="567dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/dinner"
+                android:textAlignment="center"
+                android:textColor="#0019FF"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="567dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@drawable/cell_shape"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/noodle_cake_and_apple_juice"
+                android:textAlignment="center"
+                android:textColor="#0019FF"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="126dp"
+                tools:layout_editor_absoluteY="567dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/_564_kcal"
+                android:textAlignment="center"
+                android:textColor="#0019FF"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="294dp"
+                tools:layout_editor_absoluteY="567dp" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/TVCalTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/total_calories"
+        android:textColor="#000000"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBLEaten" />
+
+    <TextView
+        android:id="@+id/TVTarget"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:includeFontPadding="true"
+        android:padding="5dp"
+        android:text="0"
+        android:textColor="#2B40FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBLEaten" />
+
+    <TextView
+        android:id="@+id/percalories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text=" /2000 kcal"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TBLEaten" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
