@@ -8,7 +8,7 @@
     tools:context=".PlannerActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/TBDiet"
+        android:id="@+id/TBPlanner"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="#70BF69"
@@ -30,7 +30,7 @@
         app:layout_constraintBottom_toTopOf="@+id/BtnDiet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBDiet"
+        app:layout_constraintTop_toBottomOf="@+id/TBPlanner"
         tools:layout="@layout/fragment_fasting" />
 
     <androidx.fragment.app.FragmentContainerView
@@ -41,7 +41,7 @@
         app:layout_constraintBottom_toTopOf="@+id/BtnDiet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBDiet"
+        app:layout_constraintTop_toBottomOf="@+id/TBPlanner"
         tools:layout="@layout/fragment_exercise" />
 
     <androidx.fragment.app.FragmentContainerView
@@ -52,7 +52,7 @@
         app:layout_constraintBottom_toTopOf="@+id/BtnDiet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBDiet"
+        app:layout_constraintTop_toBottomOf="@+id/TBPlanner"
         tools:layout="@layout/fragment_diet" />
 
     <Button

@@ -1,534 +1,549 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/CSBMILayout"
+    android:id="@+id/SVBMIMacro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#C6DDFF"
     tools:context=".BMIMacroCalc">
 
-    <android.widget.Toolbar
-        android:id="@+id/TBCalculator"
-        android:layout_width="0dp"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#5465FF"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:title="BMI &amp; Macro Calculator"
-        android:titleTextColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CSBMILayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/Height"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="@string/height"
-        android:textColor="#000000"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/height"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="92dp"
-        android:background="@drawable/edittext"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="numberDecimal"
-        android:text="0"
-        android:textColor="#5465FF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/cm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:text="@string/cm"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.293"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/Weight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="@string/weight"
-        android:textColor="#000000"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/weight"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="92dp"
-        android:background="@drawable/edittext"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="numberDecimal"
-        android:text="0"
-        android:textColor="#5465FF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/kg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:text="@string/kg"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.692"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/MWG"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:text="@string/main_weight_goal"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioGroup
-        android:id="@+id/RGMWG"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="187dp"
-        android:layout_marginEnd="27dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RadioButton
-            android:id="@+id/Gain"
-            android:layout_width="115dp"
-            android:layout_height="30dp"
-            android:background="@drawable/edit_text_white"
-            android:button="@null"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:text="Gain"
-            android:textColor="#8B8B8B"
-            android:textSize="12sp"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-        <RadioButton
-            android:id="@+id/Maintain"
-            android:layout_width="115dp"
-            android:layout_height="30dp"
-            android:background="@drawable/edit_text_white"
-            android:button="@null"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:text="Maintain"
-            android:textColor="#8B8B8B"
-            android:textSize="12sp"
-            android:translationX="-5dp"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-        <RadioButton
-            android:id="@+id/Loss"
-            android:layout_width="115dp"
-            android:layout_height="30dp"
-            android:background="@drawable/edit_text_white"
-            android:button="@null"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:text="Loss"
-            android:textColor="#8B8B8B"
-            android:textSize="12sp"
-            android:translationX="-10dp"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-    </RadioGroup>
-
-
-    <RadioGroup
-        android:id="@+id/RGAL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="250dp"
-        android:layout_marginEnd="27dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RadioButton
-            android:id="@+id/Sedentary"
-            android:layout_width="115dp"
-            android:layout_height="40dp"
-            android:background="@drawable/edit_text_white"
-            android:button="@null"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:text="Sedentary\n(no exercises)"
-            android:textColor="#8B8B8B"
-            android:textSize="11sp"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="654dp" />
-
-        <RadioButton
-            android:id="@+id/Moderate"
-            android:layout_width="115dp"
-            android:layout_height="40dp"
-            android:background="@drawable/edit_text_white"
-            android:button="@null"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:text="Moderate\n(3x - 4x per week)"
-            android:textColor="#8B8B8B"
-            android:textSize="11sp"
-            android:translationX="-5dp"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="654dp" />
-
-        <RadioButton
-            android:id="@+id/Active"
-            android:layout_width="115dp"
-            android:layout_height="40dp"
-            android:background="@drawable/edit_text_white"
-            android:button="@null"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:text="Active\n(5x+ per week)"
-            android:textColor="#8B8B8B"
-            android:textSize="11sp"
-            android:translationX="-10dp"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="654dp" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/AL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
-        android:text="@string/activity_level"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/CalcButton"
-        style="?attr/materialButtonOutlinedStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="292dp"
-        android:backgroundTint="#FFFFFF"
-        android:elevation="10dp"
-        android:letterSpacing="0"
-        android:onClick="OnClickCalculate"
-        android:text="@string/calculate"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:cornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/CVBMI"
-        android:layout_width="346dp"
-        android:layout_height="137dp"
-        android:layout_marginTop="350dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <android.widget.Toolbar
+            android:id="@+id/TBCalculator"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#5465FF"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:title="BMI &amp; Macro Calculator"
+            android:titleTextColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <TextView
-            android:id="@+id/Category"
+            android:id="@+id/Height"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/your_category"
-            android:textColor="#8B8B8B"
-            android:textSize="12sp"
-            android:translationX="130dp"
-            android:translationY="35dp"
-            tools:ignore="TextContrastCheck,TextContrastCheck"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="364dp" />
-
-        <TextView
-            android:id="@+id/BMIScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/your_bmi_score"
-            android:textColor="#8B8B8B"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:translationX="20dp"
-            android:translationY="10dp"
-            tools:ignore="TextContrastCheck,TextContrastCheck"
-            tools:layout_editor_absoluteX="53dp"
-            tools:layout_editor_absoluteY="339dp" />
-
-        <TextView
-            android:id="@+id/bminum"
-            android:layout_width="95dp"
-            android:layout_height="45dp"
-            android:background="@drawable/bg_rounded"
-            android:gravity="center"
-            android:text="@string/_0_0"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:translationX="20sp"
-            android:translationY="35dp"
-            tools:layout_editor_absoluteX="53dp"
-            tools:layout_editor_absoluteY="364dp" />
-
-        <RadioButton
-            android:id="@+id/WeightClass"
-            android:layout_width="wrap_content"
-            android:layout_height="29dp"
-            android:buttonTint="#818181"
-            android:checked="true"
-            android:text="@string/weight_class"
+            android:layout_marginTop="68dp"
+            android:text="@string/height"
             android:textColor="#000000"
-            android:translationX="125dp"
-            android:translationY="50dp"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-            tools:layout_editor_absoluteX="158dp"
-            tools:layout_editor_absoluteY="379dp" />
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.103"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/range"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/your_healthy_weight_range_0kg"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            android:translationX="20sp"
-            android:translationY="111sp"
-            tools:layout_editor_absoluteX="53dp"
-            tools:layout_editor_absoluteY="440dp" />
-
-        <ImageView
-            android:id="@+id/IVIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="colored_indicator"
-            android:src="@drawable/indicator"
-            android:translationX="19sp"
-            android:translationY="85sp"
-            tools:layout_editor_absoluteX="52dp"
-            tools:layout_editor_absoluteY="414dp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/CVMacro"
-        android:layout_width="346dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="12dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CVBMI">
-
-        <TextView
-            android:id="@+id/fat"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:background="@drawable/bg_rounded"
-            android:backgroundTint="#C6DDFF"
+        <EditText
+            android:id="@+id/height"
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="92dp"
+            android:background="@drawable/edittext"
+            android:ems="10"
             android:gravity="center"
-            android:text="0g"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:translationX="260dp"
-            android:translationY="60dp"
-            tools:layout_editor_absoluteX="293dp"
-            tools:layout_editor_absoluteY="544dp" />
-
-        <TextView
-            android:id="@+id/tvfat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fat"
-            android:textSize="9sp"
-            android:translationX="275dp"
-            android:translationY="90dp"
-            tools:layout_editor_absoluteX="308dp"
-            tools:layout_editor_absoluteY="573dp" />
-
-        <TextView
-            android:id="@+id/MacroScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Your daily macro goals"
-            android:textColor="#8B8B8B"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:translationX="17dp"
-            android:translationY="10dp"
-            tools:ignore="TextContrastCheck,TextContrastCheck"
-            tools:layout_editor_absoluteX="53dp"
-            tools:layout_editor_absoluteY="493dp" />
-
-        <TextView
-            android:id="@+id/Circular"
-            android:layout_width="105dp"
-            android:layout_height="105dp"
-            android:background="@drawable/circleshape"
-            android:gravity="center"
+            android:inputType="numberDecimal"
             android:text="0"
+            android:textColor="#5465FF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.106"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/cm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="112dp"
+            android:text="@string/cm"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:translationX="17dp"
-            android:translationY="27dp"
-            tools:layout_editor_absoluteX="53dp"
-            tools:layout_editor_absoluteY="514dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.293"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/circulartotal"
+            android:id="@+id/Weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Total\n\n\nkcal"
-            android:textSize="10sp"
-            android:translationX="58dp"
-            android:translationY="56dp"
-            tools:layout_editor_absoluteX="75dp"
-            tools:layout_editor_absoluteY="533dp" />
-
-        <TextView
-            android:id="@+id/protein"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:background="@drawable/bg_rounded"
-            android:backgroundTint="#C6DDFF"
-            android:gravity="center"
-            android:text="0g"
+            android:layout_marginTop="68dp"
+            android:text="@string/weight"
             android:textColor="#000000"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:translationX="140dp"
-            android:translationY="60dp"
-            tools:layout_editor_absoluteX="173dp"
-            tools:layout_editor_absoluteY="544dp" />
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.541"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvprotein"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Protein"
-            android:textSize="9sp"
-            android:translationX="148dp"
-            android:translationY="90dp"
-            tools:layout_editor_absoluteX="181dp"
-            tools:layout_editor_absoluteY="573dp" />
-
-        <TextView
-            android:id="@+id/carbs"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:background="@drawable/bg_rounded"
-            android:backgroundTint="#C6DDFF"
+        <EditText
+            android:id="@+id/weight"
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="92dp"
+            android:background="@drawable/edittext"
+            android:ems="10"
             android:gravity="center"
-            android:text="0g"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:translationX="200dp"
-            android:translationY="60dp"
-            tools:layout_editor_absoluteX="233dp"
-            tools:layout_editor_absoluteY="544dp" />
+            android:inputType="numberDecimal"
+            android:text="0"
+            android:textColor="#5465FF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.569"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/tvcarbs"
+            android:id="@+id/kg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Carbs"
-            android:textSize="9sp"
-            android:translationX="210dp"
-            android:translationY="90dp"
-            tools:layout_editor_absoluteX="243dp"
-            tools:layout_editor_absoluteY="573dp" />
+            android:layout_marginTop="112dp"
+            android:text="@string/kg"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.692"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/IVegg"
+        <TextView
+            android:id="@+id/MWG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="egg"
-            android:src="@drawable/egg"
-            android:translationX="147.5dp"
-            android:translationY="45dp"
-            tools:layout_editor_absoluteX="180dp"
-            tools:layout_editor_absoluteY="528dp" />
+            android:layout_marginTop="160dp"
+            android:text="@string/main_weight_goal"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.127"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/IVRamen"
+        <RadioGroup
+            android:id="@+id/RGMWG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="ramen"
-            android:src="@drawable/ramen"
-            android:translationX="208dp"
-            android:translationY="45dp"
-            tools:layout_editor_absoluteX="243dp"
-            tools:layout_editor_absoluteY="528dp" />
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="187dp"
+            android:layout_marginEnd="27dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/IVicecream"
+            <RadioButton
+                android:id="@+id/Gain"
+                android:layout_width="115dp"
+                android:layout_height="30dp"
+                android:background="@drawable/edit_text_white"
+                android:button="@null"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Gain"
+                android:textColor="#8B8B8B"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/Maintain"
+                android:layout_width="115dp"
+                android:layout_height="30dp"
+                android:background="@drawable/edit_text_white"
+                android:button="@null"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Maintain"
+                android:textColor="#8B8B8B"
+                android:textSize="12sp"
+                android:translationX="-5dp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/Loss"
+                android:layout_width="115dp"
+                android:layout_height="30dp"
+                android:background="@drawable/edit_text_white"
+                android:button="@null"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Loss"
+                android:textColor="#8B8B8B"
+                android:textSize="12sp"
+                android:translationX="-10dp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/RGAL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="ice cream"
-            android:src="@drawable/icecream"
-            android:translationX="270dp"
-            android:translationY="45dp"
-            tools:layout_editor_absoluteX="303dp"
-            tools:layout_editor_absoluteY="528dp" />
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginEnd="27dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.cardview.widget.CardView>
+            <RadioButton
+                android:id="@+id/Sedentary"
+                android:layout_width="115dp"
+                android:layout_height="40dp"
+                android:background="@drawable/edit_text_white"
+                android:button="@null"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Sedentary\n(no exercises)"
+                android:textColor="#8B8B8B"
+                android:textSize="11sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="54dp"
+                tools:layout_editor_absoluteY="654dp" />
 
+            <RadioButton
+                android:id="@+id/Moderate"
+                android:layout_width="115dp"
+                android:layout_height="40dp"
+                android:background="@drawable/edit_text_white"
+                android:button="@null"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Moderate\n(3x - 4x per week)"
+                android:textColor="#8B8B8B"
+                android:textSize="11sp"
+                android:translationX="-5dp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="54dp"
+                tools:layout_editor_absoluteY="654dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <RadioButton
+                android:id="@+id/Active"
+                android:layout_width="115dp"
+                android:layout_height="40dp"
+                android:background="@drawable/edit_text_white"
+                android:button="@null"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Active\n(5x+ per week)"
+                android:textColor="#8B8B8B"
+                android:textSize="11sp"
+                android:translationX="-10dp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="54dp"
+                tools:layout_editor_absoluteY="654dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/AL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="224dp"
+            android:text="@string/activity_level"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/CalcButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="292dp"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="10dp"
+            android:letterSpacing="0"
+            android:onClick="OnClickCalculate"
+            android:text="@string/calculate"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CVBMI"
+            android:layout_width="346dp"
+            android:layout_height="137dp"
+            android:layout_marginTop="350dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/Category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_category"
+                android:textColor="#8B8B8B"
+                android:textSize="12sp"
+                android:translationX="130dp"
+                android:translationY="35dp"
+                tools:ignore="TextContrastCheck,TextContrastCheck"
+                tools:layout_editor_absoluteX="163dp"
+                tools:layout_editor_absoluteY="364dp" />
+
+            <TextView
+                android:id="@+id/BMIScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_bmi_score"
+                android:textColor="#8B8B8B"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:translationX="20dp"
+                android:translationY="10dp"
+                tools:ignore="TextContrastCheck,TextContrastCheck"
+                tools:layout_editor_absoluteX="53dp"
+                tools:layout_editor_absoluteY="339dp" />
+
+            <TextView
+                android:id="@+id/bminum"
+                android:layout_width="95dp"
+                android:layout_height="45dp"
+                android:background="@drawable/bg_rounded"
+                android:gravity="center"
+                android:text="@string/_0_0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:translationX="20sp"
+                android:translationY="35dp"
+                tools:layout_editor_absoluteX="53dp"
+                tools:layout_editor_absoluteY="364dp" />
+
+            <RadioButton
+                android:id="@+id/WeightClass"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:buttonTint="#818181"
+                android:checked="true"
+                android:text="@string/weight_class"
+                android:textColor="#000000"
+                android:translationX="125dp"
+                android:translationY="50dp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="158dp"
+                tools:layout_editor_absoluteY="379dp" />
+
+            <TextView
+                android:id="@+id/range"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_healthy_weight_range_0kg"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:translationX="20sp"
+                android:translationY="111sp"
+                tools:layout_editor_absoluteX="53dp"
+                tools:layout_editor_absoluteY="440dp" />
+
+            <ImageView
+                android:id="@+id/IVIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="colored_indicator"
+                android:src="@drawable/indicator"
+                android:translationX="19sp"
+                android:translationY="85sp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="414dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CVMacro"
+            android:layout_width="346dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CVBMI">
+
+            <TextView
+                android:id="@+id/fat"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/bg_rounded"
+                android:backgroundTint="#C6DDFF"
+                android:gravity="center"
+                android:text="0g"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:translationX="260dp"
+                android:translationY="60dp"
+                tools:layout_editor_absoluteX="293dp"
+                tools:layout_editor_absoluteY="544dp" />
+
+            <TextView
+                android:id="@+id/tvfat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fat"
+                android:textSize="9sp"
+                android:translationX="275dp"
+                android:translationY="90dp"
+                tools:layout_editor_absoluteX="308dp"
+                tools:layout_editor_absoluteY="573dp" />
+
+            <TextView
+                android:id="@+id/MacroScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your daily macro goals"
+                android:textColor="#8B8B8B"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:translationX="17dp"
+                android:translationY="10dp"
+                tools:ignore="TextContrastCheck,TextContrastCheck"
+                tools:layout_editor_absoluteX="53dp"
+                tools:layout_editor_absoluteY="493dp" />
+
+            <TextView
+                android:id="@+id/Circular"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:background="@drawable/circleshape"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:translationX="17dp"
+                android:translationY="27dp"
+                tools:layout_editor_absoluteX="53dp"
+                tools:layout_editor_absoluteY="514dp" />
+
+            <TextView
+                android:id="@+id/circulartotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Total\n\n\nkcal"
+                android:textSize="10sp"
+                android:translationX="58dp"
+                android:translationY="56dp"
+                tools:layout_editor_absoluteX="75dp"
+                tools:layout_editor_absoluteY="533dp" />
+
+            <TextView
+                android:id="@+id/protein"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/bg_rounded"
+                android:backgroundTint="#C6DDFF"
+                android:gravity="center"
+                android:text="0g"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:translationX="140dp"
+                android:translationY="60dp"
+                tools:layout_editor_absoluteX="173dp"
+                tools:layout_editor_absoluteY="544dp" />
+
+            <TextView
+                android:id="@+id/tvprotein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Protein"
+                android:textSize="9sp"
+                android:translationX="148dp"
+                android:translationY="90dp"
+                tools:layout_editor_absoluteX="181dp"
+                tools:layout_editor_absoluteY="573dp" />
+
+            <TextView
+                android:id="@+id/carbs"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/bg_rounded"
+                android:backgroundTint="#C6DDFF"
+                android:gravity="center"
+                android:text="0g"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:translationX="200dp"
+                android:translationY="60dp"
+                tools:layout_editor_absoluteX="233dp"
+                tools:layout_editor_absoluteY="544dp" />
+
+            <TextView
+                android:id="@+id/tvcarbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carbs"
+                android:textSize="9sp"
+                android:translationX="210dp"
+                android:translationY="90dp"
+                tools:layout_editor_absoluteX="243dp"
+                tools:layout_editor_absoluteY="573dp" />
+
+            <ImageView
+                android:id="@+id/IVegg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="egg"
+                android:src="@drawable/egg"
+                android:translationX="147.5dp"
+                android:translationY="45dp"
+                tools:layout_editor_absoluteX="180dp"
+                tools:layout_editor_absoluteY="528dp" />
+
+            <ImageView
+                android:id="@+id/IVRamen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="ramen"
+                android:src="@drawable/ramen"
+                android:translationX="208dp"
+                android:translationY="45dp"
+                tools:layout_editor_absoluteX="243dp"
+                tools:layout_editor_absoluteY="528dp" />
+
+            <ImageView
+                android:id="@+id/IVicecream"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="ice cream"
+                android:src="@drawable/icecream"
+                android:translationX="270dp"
+                android:translationY="45dp"
+                tools:layout_editor_absoluteX="303dp"
+                tools:layout_editor_absoluteY="528dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/ViewBlank"
+            android:layout_width="411dp"
+            android:layout_height="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CVMacro" />
+        <!--for scrolling to have some padding below-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

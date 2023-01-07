@@ -10,12 +10,12 @@
         android:label="@string/Home"
         tools:layout="@layout/fragment_home" />
     <activity
-        android:id="@id/DestPlanner"
+        android:id="@+id/DestPlanner"
         android:name="wia2007.example.healthier_app.PlannerActivity"
         android:label="@string/planner"
         tools:layout="@layout/activity_planner" />
     <activity
-        android:id="@id/DestCalculator"
+        android:id="@+id/DestCalculator"
         android:name="wia2007.example.healthier_app.CalculatorActivity"
         android:label="@string/calculator"
         tools:layout="@layout/activity_calculator" />
@@ -44,4 +44,38 @@
         android:name="wia2007.example.healthier_app.BMIMacroCalc"
         android:label="BMI &amp; Macro Calculator"
         tools:layout="@layout/fragment_bmi_macro" />
+    <fragment
+        android:id="@+id/DestFinder"
+        android:name="wia2007.example.healthier_app.FinderFragment"
+        android:label="Professional Help Finder"
+        tools:layout="@layout/fragment_finder" />
+    <fragment
+        android:id="@+id/DestExercise"
+        android:name="wia2007.example.healthier_app.ExerciseFragment"
+        android:label="@string/TBExercise"
+        tools:layout="@layout/fragment_exercise" />
+    <fragment
+        android:id="@+id/DestFast"
+        android:name="wia2007.example.healthier_app.FastingFragment"
+        android:label="@string/TBFasting"
+        tools:layout="@layout/fragment_fasting" />
+    <fragment
+        android:id="@+id/DestLesson"
+        android:name="wia2007.example.healthier_app.LessonsFragment"
+        android:label="Lesson Booking"
+        tools:layout="@layout/fragment_lessons" />
+    <fragment
+        android:id="@+id/DestLocator"
+        android:name="wia2007.example.healthier_app.LocatorFragment"
+        android:label="Gym Locator"
+        tools:layout="@layout/fragment_locator" />
+    <fragment
+        android:id="@+id/DestCalorie"
+        android:name="wia2007.example.healthier_app.CalorieCalc"
+        android:label="Calorie Calculator" />
+    <activity
+        android:id="@+id/DestTracker"
+        android:name="wia2007.example.healthier_app.TrackerActivity"
+        android:label="activity_tracker"
+        tools:layout="@layout/activity_tracker" />
 </navigation>
