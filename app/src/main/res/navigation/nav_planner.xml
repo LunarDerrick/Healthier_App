@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_planner"
+    app:startDestination="@id/DestDiet">
+    <fragment
+        android:id="@+id/DestDiet"
+        android:name="wia2007.example.healthier_app.DietFragment"
+        tools:layout="@layout/fragment_diet"
+        android:label="@string/TBDiet" />
+    <fragment
+        android:id="@+id/DestExercise"
+        android:name="wia2007.example.healthier_app.ExerciseFragment"
+        tools:layout="@layout/fragment_exercise"
+        android:label="@string/TBExercise" />
+    <fragment
+        android:id="@+id/DestFast"
+        android:name="wia2007.example.healthier_app.FastingFragment"
+        tools:layout="@layout/fragment_fasting"
+        android:label="@string/TBFasting" />
+</navigation>
