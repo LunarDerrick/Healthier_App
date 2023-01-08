@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.preference.PreferenceManager;
@@ -72,7 +73,8 @@ public class CalorieCalc extends Fragment {
     }
 
     EditText calo, etsnack, etmscal, brefoods, lunfoods, dinfoods, brecal, luncal, dincal;
-    TextView brkfst, mngsnk, lnch, dnr, brminmax, msminmax, lcminmax, dnminmax, perclr, etms, totcal;
+    TextView brkfst, mngsnk, lnch, dnr, brminmax, msminmax, lcminmax, dnminmax, perclr, etms, totcal, tvrec;
+    CardView cvrec;
     TableLayout tbleat;
     TableRow tbladd;
     Button calculate, add, edit;
@@ -100,6 +102,8 @@ public class CalorieCalc extends Fragment {
         lcminmax = view.findViewById(R.id.TVLMinMax);
         dnminmax = view.findViewById(R.id.TVDMinMax);
         totcal = view.findViewById(R.id.TVTarget);
+        tvrec = view.findViewById(R.id.TVRecommend);
+        cvrec = view.findViewById(R.id.CVRecommend);
         perclr = view.findViewById(R.id.percalories);
         brefoods = view.findViewById(R.id.brfoods);
         lunfoods = view.findViewById(R.id.lufoods);
@@ -113,6 +117,9 @@ public class CalorieCalc extends Fragment {
                 android.R.layout.simple_spinner_item, mealsperday);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        cvrec.setVisibility(View.INVISIBLE);
+        tvrec.setVisibility(View.INVISIBLE);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -184,6 +191,8 @@ public class CalorieCalc extends Fragment {
                                 lcminmax.setText(String.format("(min: %.0f, max: %.0f)", lmin, lmax));
                                 dnminmax.setText(String.format("(min: %.0f, max: %.0f)", dmin, dmax));
                             }
+                            tvrec.setVisibility(View.VISIBLE);
+                            cvrec.setVisibility(View.VISIBLE);
                         }
                     } catch (NumberFormatException e) {
                         Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
@@ -235,7 +244,7 @@ public class CalorieCalc extends Fragment {
         });
 
         SharedPreferences calprefs = PreferenceManager.getDefaultSharedPreferences(requireContext());
-        int calinput1 = calprefs.getInt("", calinput);
+        int calinput1 = calprefs.getInt("calories", calinput);
         calo.setText("" + calinput1);
 
         String bfdd = calprefs.getString("bfd", bfd);
@@ -293,7 +302,7 @@ public class CalorieCalc extends Fragment {
                 SharedPreferences precal = PreferenceManager.getDefaultSharedPreferences(requireContext());
                 SharedPreferences.Editor edtcal = precal.edit();
 
-                edtcal.putInt("", calinput);
+                edtcal.putInt("calories", calinput);
                 edtcal.putString("bfd", bfd);
                 edtcal.putString("lfd", lfd);
                 edtcal.putString("dfd", dfd);
@@ -307,7 +316,13 @@ public class CalorieCalc extends Fragment {
 
                 String brcl = brecal.getText().toString();
                 brcl = brcl.replaceAll("[^\\d]", "");
-                Integer brclnum = Integer.parseInt(brcl);
+                Integer brclnum = 0;
+                if (!brcl.trim().isEmpty()) {
+                    brclnum = Integer.parseInt(brcl);
+                } else {
+                    brcl = "0 kcal";
+                    Toast.makeText(requireContext(), "Please enter again", Toast.LENGTH_SHORT).show();
+                }
 
                 String lucl = luncal.getText().toString();
                 lucl = lucl.replaceAll("[^\\d]", "");
@@ -318,14 +333,14 @@ public class CalorieCalc extends Fragment {
                 Integer diclnum = Integer.parseInt(dicl);
                 Integer totclr = diclnum + brclnum + luclnum;
 
-                if(etmscal!=null){
+                if (etmscal != null) {
                     String mscal = etmscal.getText().toString();
                     mscal = mscal.replaceAll("[^\\d]", "");
                     Integer mscalnum = Integer.parseInt(mscal);
                     totclr = totclr + mscalnum;
                 }
 
-                totcal.setText(String.format("%d",totclr));
+                totcal.setText(String.format("%d", totclr));
 
             }
         });

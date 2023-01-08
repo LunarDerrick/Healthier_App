@@ -1,20 +1,26 @@
 package wia2007.example.healthier_app;
 
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,10 +76,14 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
     EditText tinggi, berat;
     TextView result, range, circle, protein, carbs, fat;
     Button calculate;
+    ImageButton edit;
     RadioButton category, sedentary, moderate, active, gain, maintain, loss;
     RadioGroup rgal, rgmwg;
+    CardView cardbmi, cardmacro;
 
     double activityLevel, mainweightgoal;
+    int high, wigh;
+    private DatabaseReference dbref;
 
 
     @Override
@@ -102,9 +112,16 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
         loss = view.findViewById(R.id.Loss);
         //calculate button
         calculate = view.findViewById(R.id.CalcButton);
+        edit = view.findViewById(R.id.BTEdit);
         //radio group
         rgal = view.findViewById(R.id.RGAL);
         rgmwg = view.findViewById(R.id.RGMWG);
+        //card view
+        cardbmi = view.findViewById(R.id.CVBMI);
+        cardmacro = view.findViewById(R.id.CVMacro);
+
+        cardbmi.setVisibility(View.INVISIBLE);
+        cardmacro.setVisibility(View.INVISIBLE);
 
         gain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -193,6 +210,7 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 double heinput = Double.valueOf(tinggi.getText().toString());
                 if (berat.getText().toString().trim().isEmpty() || tinggi.getText().toString().trim().isEmpty() || heinput <= 0){
                     Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
@@ -249,7 +267,36 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                     Double car = men * 0.50;
                     car = car / 4;
                     carbs.setText(String.format("%.0fg", car));
+
+                    cardbmi.setVisibility(View.VISIBLE);
+                    cardmacro.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+
+        SharedPreferences bmiprefs = PreferenceManager.getDefaultSharedPreferences(requireContext());
+        int high1 = bmiprefs.getInt("height", high);
+        tinggi.setText("" + high1);
+        int wigh1 = bmiprefs.getInt("weight", wigh);
+        berat.setText("" + wigh1);
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(requireContext(), "Saved successfully", Toast.LENGTH_SHORT).show();
+                String height = tinggi.getText().toString();
+                high = Integer.parseInt(height);
+                String weight = berat.getText().toString();
+                wigh = Integer.parseInt(weight);
+
+                SharedPreferences prebmi = PreferenceManager.getDefaultSharedPreferences(requireContext());
+                SharedPreferences.Editor edtbmi = prebmi.edit();
+
+                edtbmi.putInt("height", high);
+                edtbmi.putInt("weight", wigh);
+                edtbmi.apply();
+
+
             }
         });
 
