@@ -73,6 +73,7 @@
         android:layout_height="44dp"
         android:layout_marginTop="3dp"
         android:layout_marginStart="5dp"
+        android:text="1187"
         android:background="@android:color/transparent"
         app:layout_constraintStart_toEndOf="@+id/text_taken"
         app:layout_constraintTop_toTopOf="@+id/daily_calorie_taken" />
@@ -83,6 +84,7 @@
         android:layout_height="44dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="3dp"
+        android:text="490"
         android:background="@android:color/transparent"
         app:layout_constraintStart_toEndOf="@+id/text_burnt"
         app:layout_constraintTop_toTopOf="@+id/daily_calorie_burnt" />
