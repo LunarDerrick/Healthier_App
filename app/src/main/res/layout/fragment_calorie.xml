@@ -22,6 +22,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             android:title="Calorie Calculator"
             android:titleTextColor="@color/white"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +33,7 @@
             android:id="@+id/TVMCCalc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="24dp"
             android:text="@string/meal_calorie_calculator"
             android:textColor="#000000"
             android:textStyle="normal"
@@ -45,7 +46,7 @@
             android:id="@+id/Calories"
             android:layout_width="175dp"
             android:layout_height="48dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="52dp"
             android:background="@drawable/edittext"
             android:ems="10"
             android:gravity="center|start"
@@ -65,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="11dp"
-            android:layout_marginTop="112dp"
+            android:layout_marginTop="64dp"
             android:layout_marginEnd="128dp"
             android:text="@string/kcal_day"
             android:textColor="#000000"
@@ -79,7 +80,7 @@
             android:id="@+id/mealsperday"
             android:layout_width="175dp"
             android:layout_height="48dp"
-            android:layout_marginTop="156dp"
+            android:layout_marginTop="108dp"
             android:background="@drawable/bgspinner"
             android:contentDescription="spinner"
             android:paddingStart="5dp"
@@ -93,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="11dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="128dp"
             android:text="@string/quantity"
             android:textColor="#000000"
@@ -107,7 +108,7 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="216dp"
+            android:layout_marginTop="168dp"
             android:backgroundTint="#FFFFFF"
             android:elevation="10dp"
             android:letterSpacing="0"
@@ -126,7 +127,7 @@
             android:id="@+id/TVRecommend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="272dp"
+            android:layout_marginTop="224dp"
             android:text="@string/recommendation_daily_calories_intake"
             android:textColor="#000000"
             android:textStyle="normal"
@@ -140,7 +141,7 @@
             android:layout_width="346dp"
             android:layout_height="125dp"
             android:layout_marginStart="36dp"
-            android:layout_marginTop="304dp"
+            android:layout_marginTop="256dp"
             android:layout_marginEnd="29dp"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -157,7 +158,7 @@
                 android:translationX="15dp"
                 android:translationY="90dp"
                 tools:layout_editor_absoluteX="51dp"
-                tools:layout_editor_absoluteY="402dp" />
+                tools:layout_editor_absoluteY="348dp" />
 
             <TextView
                 android:id="@+id/TVLunch"
@@ -168,7 +169,7 @@
                 android:translationX="15dp"
                 android:translationY="65dp"
                 tools:layout_editor_absoluteX="51dp"
-                tools:layout_editor_absoluteY="377dp" />
+                tools:layout_editor_absoluteY="323dp" />
 
             <TextView
                 android:id="@+id/TVMornSnack"
@@ -179,7 +180,7 @@
                 android:translationX="15dp"
                 android:translationY="40dp"
                 tools:layout_editor_absoluteX="51dp"
-                tools:layout_editor_absoluteY="352dp" />
+                tools:layout_editor_absoluteY="298dp" />
 
             <TextView
                 android:id="@+id/TVBreakfast"
@@ -190,7 +191,7 @@
                 android:translationX="15dp"
                 android:translationY="15dp"
                 tools:layout_editor_absoluteX="51dp"
-                tools:layout_editor_absoluteY="327dp" />
+                tools:layout_editor_absoluteY="273dp" />
 
             <TextView
                 android:id="@+id/TVBMinMax"
@@ -201,7 +202,7 @@
                 android:translationX="225dp"
                 android:translationY="15dp"
                 tools:layout_editor_absoluteX="262dp"
-                tools:layout_editor_absoluteY="327dp" />
+                tools:layout_editor_absoluteY="273dp" />
 
             <TextView
                 android:id="@+id/TVMSMinMax"
@@ -212,7 +213,7 @@
                 android:translationX="225dp"
                 android:translationY="40dp"
                 tools:layout_editor_absoluteX="262dp"
-                tools:layout_editor_absoluteY="352dp" />
+                tools:layout_editor_absoluteY="298dp" />
 
             <TextView
                 android:id="@+id/TVLMinMax"
@@ -223,7 +224,7 @@
                 android:translationX="225dp"
                 android:translationY="65dp"
                 tools:layout_editor_absoluteX="262dp"
-                tools:layout_editor_absoluteY="377dp" />
+                tools:layout_editor_absoluteY="323dp" />
 
             <TextView
                 android:id="@+id/TVDMinMax"
@@ -234,7 +235,7 @@
                 android:translationX="225dp"
                 android:translationY="90dp"
                 tools:layout_editor_absoluteX="262dp"
-                tools:layout_editor_absoluteY="402dp" />
+                tools:layout_editor_absoluteY="348dp" />
 
             <ImageView
                 android:id="@+id/IVBreakfast"
@@ -246,7 +247,7 @@
                 android:translationY="13dp"
                 tools:ignore="ImageContrastCheck,ImageContrastCheck"
                 tools:layout_editor_absoluteX="119dp"
-                tools:layout_editor_absoluteY="325dp" />
+                tools:layout_editor_absoluteY="271dp" />
 
             <ImageView
                 android:id="@+id/IVSnack"
@@ -258,7 +259,7 @@
                 android:translationY="40dp"
                 tools:ignore="ImageContrastCheck,ImageContrastCheck"
                 tools:layout_editor_absoluteX="152dp"
-                tools:layout_editor_absoluteY="352dp" />
+                tools:layout_editor_absoluteY="298dp" />
 
             <ImageView
                 android:id="@+id/IVLunch"
@@ -270,7 +271,7 @@
                 android:translationY="63dp"
                 tools:ignore="ImageContrastCheck,ImageContrastCheck"
                 tools:layout_editor_absoluteX="94dp"
-                tools:layout_editor_absoluteY="375dp" />
+                tools:layout_editor_absoluteY="321dp" />
 
             <ImageView
                 android:id="@+id/IVDinner"
@@ -282,7 +283,7 @@
                 android:translationY="90dp"
                 tools:ignore="ImageContrastCheck,ImageContrastCheck"
                 tools:layout_editor_absoluteX="97dp"
-                tools:layout_editor_absoluteY="402dp" />
+                tools:layout_editor_absoluteY="348dp" />
 
         </androidx.cardview.widget.CardView>
 
@@ -290,14 +291,14 @@
             android:id="@+id/TVEat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="440dp"
+            android:layout_marginTop="152dp"
             android:text="@string/what_have_you_eaten_today"
             android:textColor="#000000"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.151"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/TVRecommend" />
 
         <Button
             android:id="@+id/BTEditEat"
@@ -305,7 +306,7 @@
             android:layout_width="75dp"
             android:layout_height="35dp"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="436dp"
+            android:layout_marginTop="388dp"
             android:layout_marginEnd="24dp"
             android:drawableEnd="@drawable/pen"
             android:letterSpacing="0"
@@ -323,7 +324,7 @@
             style="?attr/borderlessButtonStyle"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginTop="431dp"
+            android:layout_marginTop="384dp"
             android:layout_marginEnd="100dp"
             android:contentDescription="plus button"
             android:drawableEnd="@drawable/ic_baseline_add_24_black"
@@ -336,10 +337,11 @@
             android:layout_width="346dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="472dp"
+            android:layout_marginTop="424dp"
             android:layout_marginEnd="35dp"
             android:background="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -349,8 +351,8 @@
                 android:layout_height="match_parent"
                 android:background="#5465FF"
                 android:textAlignment="center"
-                tools:layout_editor_absoluteX="37dp"
-                tools:layout_editor_absoluteY="481dp">
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="426dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -364,8 +366,8 @@
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     tools:ignore="TextContrastCheck"
-                    tools:layout_editor_absoluteX="37dp"
-                    tools:layout_editor_absoluteY="481dp" />
+                    tools:layout_editor_absoluteX="30dp"
+                    tools:layout_editor_absoluteY="426dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -379,8 +381,8 @@
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     tools:ignore="TextContrastCheck,TextContrastCheck"
-                    tools:layout_editor_absoluteX="126dp"
-                    tools:layout_editor_absoluteY="481dp" />
+                    tools:layout_editor_absoluteX="111dp"
+                    tools:layout_editor_absoluteY="426dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -394,8 +396,8 @@
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     tools:ignore="TextContrastCheck,TextContrastCheck"
-                    tools:layout_editor_absoluteX="294dp"
-                    tools:layout_editor_absoluteY="481dp" />
+                    tools:layout_editor_absoluteX="282dp"
+                    tools:layout_editor_absoluteY="426dp" />
 
             </TableRow>
 
@@ -404,8 +406,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
-                tools:layout_editor_absoluteX="37dp"
-                tools:layout_editor_absoluteY="510dp">
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="455dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -419,8 +421,8 @@
                     android:textColor="#0019FF"
                     android:textSize="12sp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="37dp"
-                    tools:layout_editor_absoluteY="510dp" />
+                    tools:layout_editor_absoluteX="30dp"
+                    tools:layout_editor_absoluteY="455dp" />
 
                 <EditText
                     android:id="@+id/brfoods"
@@ -435,8 +437,8 @@
                     android:textColor="#0019FF"
                     android:textSize="12sp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="126dp"
-                    tools:layout_editor_absoluteY="510dp" />
+                    tools:layout_editor_absoluteX="111dp"
+                    tools:layout_editor_absoluteY="455dp" />
 
                 <EditText
                     android:id="@+id/brcal"
@@ -451,8 +453,8 @@
                     android:textColor="#0019FF"
                     android:textSize="12sp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="294dp"
-                    tools:layout_editor_absoluteY="510dp" />
+                    tools:layout_editor_absoluteX="282dp"
+                    tools:layout_editor_absoluteY="455dp" />
 
             </TableRow>
 
@@ -461,8 +463,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
-                tools:layout_editor_absoluteX="37dp"
-                tools:layout_editor_absoluteY="538dp">
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="483dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -476,8 +478,8 @@
                     android:textColor="#0019FF"
                     android:textSize="12sp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="37dp"
-                    tools:layout_editor_absoluteY="538dp" />
+                    tools:layout_editor_absoluteX="30dp"
+                    tools:layout_editor_absoluteY="483dp" />
 
                 <EditText
                     android:id="@+id/lufoods"
@@ -492,8 +494,8 @@
                     android:textColor="#0019FF"
                     android:textSize="12sp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="126dp"
-                    tools:layout_editor_absoluteY="538dp" />
+                    tools:layout_editor_absoluteX="111dp"
+                    tools:layout_editor_absoluteY="483dp" />
 
                 <EditText
                     android:id="@+id/lucal"
@@ -508,8 +510,8 @@
                     android:textColor="#0019FF"
                     android:textSize="12sp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="294dp"
-                    tools:layout_editor_absoluteY="538dp" />
+                    tools:layout_editor_absoluteX="282dp"
+                    tools:layout_editor_absoluteY="483dp" />
 
             </TableRow>
 
@@ -518,8 +520,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
-                tools:layout_editor_absoluteX="37dp"
-                tools:layout_editor_absoluteY="567dp">
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="512dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -533,8 +535,8 @@
                     android:textColor="#0019FF"
                     android:textSize="12sp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="37dp"
-                    tools:layout_editor_absoluteY="567dp" />
+                    tools:layout_editor_absoluteX="30dp"
+                    tools:layout_editor_absoluteY="512dp" />
 
                 <EditText
                     android:id="@+id/difoods"
@@ -549,8 +551,8 @@
                     android:textColor="#0019FF"
                     android:textSize="12sp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="126dp"
-                    tools:layout_editor_absoluteY="567dp" />
+                    tools:layout_editor_absoluteX="111dp"
+                    tools:layout_editor_absoluteY="512dp" />
 
                 <EditText
                     android:id="@+id/dical"
@@ -565,8 +567,8 @@
                     android:textColor="#0019FF"
                     android:textSize="12sp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="294dp"
-                    tools:layout_editor_absoluteY="567dp" />
+                    tools:layout_editor_absoluteX="282dp"
+                    tools:layout_editor_absoluteY="512dp" />
             </TableRow>
         </TableLayout>
 
@@ -574,7 +576,7 @@
             android:id="@+id/TVCalTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="16dp"
             android:text="@string/total_calories"
             android:textColor="#000000"
             android:textStyle="normal"
@@ -587,7 +589,7 @@
             android:id="@+id/TVTarget"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:background="#FFFFFF"
             android:gravity="center"
             android:includeFontPadding="true"
@@ -603,7 +605,7 @@
             android:id="@+id/percalories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="16dp"
             android:text=" /2000 kcal"
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
@@ -615,9 +617,12 @@
             android:id="@+id/ViewBlank"
             android:layout_width="0dp"
             android:layout_height="15dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TVTarget" />
+
         <!--for scrolling to have some padding below-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>

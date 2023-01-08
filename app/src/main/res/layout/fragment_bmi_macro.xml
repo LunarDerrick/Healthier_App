@@ -101,11 +101,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Weight" />
 
+        <ImageButton
+            android:id="@+id/BTEdit"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:backgroundTint="#5465FF"
+            android:contentDescription="Edit button"
+            android:src="@drawable/ic_baseline_edit_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.851"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
         <TextView
             android:id="@+id/MWG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="@string/main_weight_goal"
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
@@ -117,8 +131,8 @@
             android:id="@+id/RGMWG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="39dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="27dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -169,12 +183,24 @@
         </RadioGroup>
 
 
+        <TextView
+            android:id="@+id/AL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/activity_level"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RGMWG" />
+
         <RadioGroup
             android:id="@+id/RGAL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="39dp"
+            android:layout_marginTop="7dp"
             android:layout_marginEnd="27dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -229,24 +255,12 @@
                 tools:layout_editor_absoluteY="654dp" />
         </RadioGroup>
 
-        <TextView
-            android:id="@+id/AL"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/activity_level"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.12"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/RGMWG" />
-
         <Button
             android:id="@+id/CalcButton"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="7dp"
             android:backgroundTint="#FFFFFF"
             android:elevation="10dp"
             android:letterSpacing="0"
@@ -265,7 +279,7 @@
             android:id="@+id/CVBMI"
             android:layout_width="346dp"
             android:layout_height="137dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
@@ -355,7 +369,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/CVMacro"
             android:layout_width="346dp"
-            android:layout_height="140dp"
+            android:layout_height="137dp"
             android:layout_marginTop="12dp"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -527,6 +541,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CVMacro" />
+
         <!--for scrolling to have some padding below-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
