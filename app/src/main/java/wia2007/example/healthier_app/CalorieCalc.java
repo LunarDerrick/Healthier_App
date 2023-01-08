@@ -72,14 +72,14 @@ public class CalorieCalc extends Fragment {
     }
 
     EditText calo, etsnack, etmscal, brefoods, lunfoods, dinfoods, brecal, luncal, dincal;
-    TextView brkfst, mngsnk, lnch, dnr, brminmax, msminmax, lcminmax, dnminmax, perclr, etms;
+    TextView brkfst, mngsnk, lnch, dnr, brminmax, msminmax, lcminmax, dnminmax, perclr, etms, totcal;
     TableLayout tbleat;
     TableRow tbladd;
     Button calculate, add, edit;
     Spinner spinner;
     String[] mealsperday = {"3", "4"};
     int qty, calinput;
-    String bfd, lfd, dfd, bcl, lcl, dcl;
+    String bfd, lfd, dfd, bcl, lcl, dcl, mfd, mcl;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -99,6 +99,7 @@ public class CalorieCalc extends Fragment {
         msminmax = view.findViewById(R.id.TVMSMinMax);
         lcminmax = view.findViewById(R.id.TVLMinMax);
         dnminmax = view.findViewById(R.id.TVDMinMax);
+        totcal = view.findViewById(R.id.TVTarget);
         perclr = view.findViewById(R.id.percalories);
         brefoods = view.findViewById(R.id.brfoods);
         lunfoods = view.findViewById(R.id.lufoods);
@@ -249,24 +250,44 @@ public class CalorieCalc extends Fragment {
         if(dinfoods != null) {
             dinfoods.setText("" + dfdd);
         }
-        //continue tomorrow
-        //reference
-        //https://www.youtube.com/watch?v=e7NXFbIrYqI&ab_channel=Hemnkarim%DA%86%DB%95%D9%86%D8%A7%DA%B5%DB%8C%D9%81%DB%8E%D8%B1%D8%A8%D9%88%D9%86
-
+        String bcll = calprefs.getString("bcl", bcl);
+        if(brecal != null){
+            brecal.setText("" + bcll);
+        }
+        String lcll = calprefs.getString("lcl", lcl);
+        if(luncal != null){
+            luncal.setText("" + lcll);
+        }
+        String dcll = calprefs.getString("dcl", dcl);
+        if(dincal != null){
+            dincal.setText("" + dcll);
+        }
+        String mfdd = calprefs.getString("mfd", mfd);
+        if(etsnack != null){
+            etsnack.setText("" + mfdd);
+        }
+        String mcll = calprefs.getString("mcl", mcl);
+        if(etmscal != null){
+            etmscal.setText("" + mcll);
+        }
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(requireContext(), "Saved successfully", Toast.LENGTH_SHORT).show();
-                //String bfd, lfd, dfd, bcl, lcl, dcl;
-                //EditText brefoods, lunfoods, dinfoods, brecal, luncal, dincal;
                 String input = calo.getText().toString();
                 bfd = brefoods.getText().toString();
                 lfd = lunfoods.getText().toString();
                 dfd = dinfoods.getText().toString();
-                //bcl = brecal.getText().toString();
-                //lcl = luncal.getText().toString();
-                //dcl = dincal.getText().toString();
+                bcl = brecal.getText().toString();
+                lcl = luncal.getText().toString();
+                dcl = dincal.getText().toString();
+                if(etsnack != null){
+                    mfd = etsnack.getText().toString();
+                }
+                if(etmscal != null){
+                    mcl = etmscal.getText().toString();
+                }
                 calinput = Integer.parseInt(input);
 
                 SharedPreferences precal = PreferenceManager.getDefaultSharedPreferences(requireContext());
@@ -276,10 +297,35 @@ public class CalorieCalc extends Fragment {
                 edtcal.putString("bfd", bfd);
                 edtcal.putString("lfd", lfd);
                 edtcal.putString("dfd", dfd);
-                //edtcal.putString("bcl", bcl);
-                //edtcal.putString("lcl", lcl);
-                //edtcal.putString("dcl", dcl);
+                edtcal.putString("bcl", bcl);
+                edtcal.putString("lcl", lcl);
+                edtcal.putString("dcl", dcl);
+                //check
+                edtcal.putString("mfd", mfd);
+                edtcal.putString("mcl", mcl);
                 edtcal.apply();
+
+                String brcl = brecal.getText().toString();
+                brcl = brcl.replaceAll("[^\\d]", "");
+                Integer brclnum = Integer.parseInt(brcl);
+
+                String lucl = luncal.getText().toString();
+                lucl = lucl.replaceAll("[^\\d]", "");
+                Integer luclnum = Integer.parseInt(lucl);
+
+                String dicl = dincal.getText().toString();
+                dicl = dicl.replaceAll("[^\\d]", "");
+                Integer diclnum = Integer.parseInt(dicl);
+                Integer totclr = diclnum + brclnum + luclnum;
+
+                if(etmscal!=null){
+                    String mscal = etmscal.getText().toString();
+                    mscal = mscal.replaceAll("[^\\d]", "");
+                    Integer mscalnum = Integer.parseInt(mscal);
+                    totclr = totclr + mscalnum;
+                }
+
+                totcal.setText(String.format("%d",totclr));
 
             }
         });
