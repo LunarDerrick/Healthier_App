@@ -318,6 +318,19 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
+        <Button
+            android:id="@+id/BTPlus"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="431dp"
+            android:layout_marginEnd="100dp"
+            android:contentDescription="plus button"
+            android:drawableEnd="@drawable/ic_baseline_add_24_black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
         <TableLayout
             android:id="@+id/TBLEaten"
             android:layout_width="346dp"
@@ -394,7 +407,7 @@
                 tools:layout_editor_absoluteX="37dp"
                 tools:layout_editor_absoluteY="510dp">
 
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -410,6 +423,7 @@
                     tools:layout_editor_absoluteY="510dp" />
 
                 <EditText
+                    android:id="@+id/brfoods"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -425,6 +439,7 @@
                     tools:layout_editor_absoluteY="510dp" />
 
                 <EditText
+                    android:id="@+id/brcal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -449,7 +464,7 @@
                 tools:layout_editor_absoluteX="37dp"
                 tools:layout_editor_absoluteY="538dp">
 
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -465,6 +480,7 @@
                     tools:layout_editor_absoluteY="538dp" />
 
                 <EditText
+                    android:id="@+id/lufoods"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -480,6 +496,7 @@
                     tools:layout_editor_absoluteY="538dp" />
 
                 <EditText
+                    android:id="@+id/lucal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -504,7 +521,7 @@
                 tools:layout_editor_absoluteX="37dp"
                 tools:layout_editor_absoluteY="567dp">
 
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -520,6 +537,7 @@
                     tools:layout_editor_absoluteY="567dp" />
 
                 <EditText
+                    android:id="@+id/difoods"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -535,6 +553,7 @@
                     tools:layout_editor_absoluteY="567dp" />
 
                 <EditText
+                    android:id="@+id/dical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

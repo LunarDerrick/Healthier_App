@@ -13,26 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.widget.Toolbar
-            android:id="@+id/TBCalculator"
-            android:layout_width="0dp"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#5465FF"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            android:title="BMI &amp; Macro Calculator"
-            android:titleTextColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
         <TextView
             android:id="@+id/Height"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="10dp"
             android:text="@string/height"
             android:textColor="#000000"
             android:textStyle="normal"
@@ -45,7 +30,7 @@
             android:id="@+id/height"
             android:layout_width="65dp"
             android:layout_height="55dp"
-            android:layout_marginTop="92dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/edittext"
             android:ems="10"
             android:gravity="center"
@@ -55,14 +40,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.106"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Height"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/cm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="112dp"
+            android:layout_marginTop="25dp"
             android:text="@string/cm"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -70,13 +55,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.293"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/Height" />
 
         <TextView
             android:id="@+id/Weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="10dp"
             android:text="@string/weight"
             android:textColor="#000000"
             android:textStyle="normal"
@@ -89,7 +74,7 @@
             android:id="@+id/weight"
             android:layout_width="65dp"
             android:layout_height="55dp"
-            android:layout_marginTop="92dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/edittext"
             android:ems="10"
             android:gravity="center"
@@ -99,14 +84,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.569"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Weight"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/kg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="112dp"
+            android:layout_marginTop="25dp"
             android:text="@string/kg"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -114,31 +99,31 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.692"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/Weight" />
 
         <TextView
             android:id="@+id/MWG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="20dp"
             android:text="@string/main_weight_goal"
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.127"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/height" />
 
         <RadioGroup
             android:id="@+id/RGMWG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="39dp"
-            android:layout_marginTop="187dp"
             android:layout_marginEnd="27dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/MWG">
 
             <RadioButton
                 android:id="@+id/Gain"
@@ -188,13 +173,13 @@
             android:id="@+id/RGAL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="39dp"
-            android:layout_marginTop="250dp"
             android:layout_marginEnd="27dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/AL">
 
             <RadioButton
                 android:id="@+id/Sedentary"
@@ -248,20 +233,20 @@
             android:id="@+id/AL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="224dp"
+            android:layout_marginTop="20dp"
             android:text="@string/activity_level"
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.12"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/RGMWG" />
 
         <Button
             android:id="@+id/CalcButton"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="292dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="#FFFFFF"
             android:elevation="10dp"
             android:letterSpacing="0"
@@ -274,18 +259,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.115"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/RGAL" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/CVBMI"
             android:layout_width="346dp"
             android:layout_height="137dp"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="20dp"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/CalcButton">
 
             <TextView
                 android:id="@+id/Category"

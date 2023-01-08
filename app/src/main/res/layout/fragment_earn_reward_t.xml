@@ -1,88 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SVReward"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_tracker_activity">
+    android:background="@color/bg_tracker_activity"
+    tools:context=".EarnRewardTFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/level_TV"
-            android:textStyle="normal"
-            android:textSize="12sp"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
             android:layout_marginTop="21dp"
             android:text="@string/level"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/which_level_TV"
-            android:textStyle="normal"
-            android:textSize="12sp"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="21dp"
             android:text="20"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@id/level_TV"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/reward_TV"
-            android:textStyle="normal"
-            android:textSize="12sp"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="21dp"
             android:text="@string/reward"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@id/which_level_TV"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/reward_type"
-            android:textStyle="normal"
-            android:textSize="12sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="21dp"
             android:text="@string/profile_title"
             android:textColor="@color/red"
+            android:textSize="12sp"
+            android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@+id/reward_TV"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/the_reward"
-            android:background="@drawable/tracker_gradient"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="12sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
+            android:background="@drawable/tracker_gradient"
             android:padding="5dp"
             android:text="@string/expert_dietitian"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/reward_type"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/current_progress_TV"
-            android:textStyle="normal"
-            android:textSize="12sp"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
             android:layout_marginTop="20dp"
             android:text="@string/current_progress"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/which_level_TV" />
 
@@ -134,46 +140,46 @@
 
             <TextView
                 android:id="@+id/level_TV_2"
-                android:textSize="12sp"
-                android:textStyle="italic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2.5dp"
                 android:text="@string/next_level"
+                android:textSize="12sp"
+                android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/which_level_TV_2"
-                android:textSize="12sp"
-                android:textStyle="italic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2.5dp"
                 android:text="21"
+                android:textSize="12sp"
+                android:textStyle="italic"
                 app:layout_constraintStart_toEndOf="@id/level_TV"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/reward_TV_2"
-                android:textSize="12sp"
-                android:textStyle="italic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2.5dp"
                 android:text="@string/reward"
+                android:textSize="12sp"
+                android:textStyle="italic"
                 app:layout_constraintStart_toEndOf="@id/which_level_TV"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/reward_type_2"
-                android:textSize="12sp"
-                android:textStyle="italic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2.5dp"
                 android:text="@string/sticker_chat"
                 android:textColor="@color/red"
+                android:textSize="12sp"
+                android:textStyle="italic"
                 app:layout_constraintStart_toEndOf="@+id/reward_TV"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -181,14 +187,14 @@
 
         <TextView
             android:id="@+id/reward_activity_TV"
-            android:textStyle="normal"
-            android:textSize="12sp"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
             android:layout_marginTop="150dp"
             android:text="Reward Activity:"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/which_level_TV" />
 
@@ -317,160 +323,171 @@
             android:src="@drawable/ic_baseline_add_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/reward_activity_item_3" />
-<!--
-        <TableLayout
-            android:id="@+id/TL_reward_history"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="31dp"
-            android:stretchColumns="*"
+        <!--
+                <TableLayout
+                    android:id="@+id/TL_reward_history"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="31dp"
+                    android:stretchColumns="*"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/appCompatImageButton">
+
+
+                    <TableRow
+                        android:id="@+id/TRExercise1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/TVTable3TitleName"
+                            android:layout_width="172dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/tracker_submit_darkerPink"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="See Rewards History"
+                            android:textStyle="bold"
+                            android:textColor="@color/white" />
+
+                    </TableRow>
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TableRow
+                                android:id="@+id/TRExercise2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/border_white">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="10dp"
+                                        android:text="Profile icon"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/profile_tracker_reward" />
+
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/TVTable3Time1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:background="@drawable/border_white"
+                                    android:padding="10dp"
+                                    android:text="Level. 19 Reward"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    android:textStyle="italic" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/TRExercise3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/border_white">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="10dp"
+                                        android:text="Sticker chat"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/lunges_tracker_reward" />
+
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/TVTable3Time2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:background="@drawable/border_white"
+                                    android:padding="10dp"
+                                    android:text="Level. 18 Reward"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    android:textStyle="italic" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/TRExercise4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/TVTable3Name3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/border_white"
+                                    android:padding="10dp"
+                                    android:text="Free coaching subscription (1 DAY) "
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/TVTable3Time3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:background="@drawable/border_white"
+                                    android:padding="10dp"
+                                    android:text="Level. 17 Reward"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    android:textStyle="italic" />
+                            </TableRow>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </ScrollView>
+                </TableLayout>
+        -->
+
+        <View
+            android:id="@+id/ViewBlank"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatImageButton">
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageButton" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TableRow
-                android:id="@+id/TRExercise1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/TVTable3TitleName"
-                    android:layout_width="172dp"
-                    android:layout_height="wrap_content"
-                    android:background="@color/tracker_submit_darkerPink"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="See Rewards History"
-                    android:textStyle="bold"
-                    android:textColor="@color/white" />
-
-            </TableRow>
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TableRow
-                        android:id="@+id/TRExercise2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/border_white">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="10dp"
-                                android:text="Profile icon"
-                                android:textColor="@color/black"
-                                android:textSize="12sp" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:src="@drawable/profile_tracker_reward" />
-
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/TVTable3Time1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:background="@drawable/border_white"
-                            android:padding="10dp"
-                            android:text="Level. 19 Reward"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:textStyle="italic" />
-                    </TableRow>
-
-                    <TableRow
-                        android:id="@+id/TRExercise3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/border_white">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="10dp"
-                                android:text="Sticker chat"
-                                android:textColor="@color/black"
-                                android:textSize="12sp" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:src="@drawable/lunges_tracker_reward" />
-
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/TVTable3Time2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:background="@drawable/border_white"
-                            android:padding="10dp"
-                            android:text="Level. 18 Reward"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:textStyle="italic" />
-                    </TableRow>
-
-                    <TableRow
-                        android:id="@+id/TRExercise4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/TVTable3Name3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/border_white"
-                            android:padding="10dp"
-                            android:text="Free coaching subscription (1 DAY) "
-                            android:textColor="@color/black"
-                            android:textSize="12sp" />
-
-                        <TextView
-                            android:id="@+id/TVTable3Time3"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:background="@drawable/border_white"
-                            android:padding="10dp"
-                            android:text="Level. 17 Reward"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:textStyle="italic" />
-                    </TableRow>
-                </androidx.appcompat.widget.LinearLayoutCompat>
-            </ScrollView>
-        </TableLayout>
--->
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
