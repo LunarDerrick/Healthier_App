@@ -8,7 +8,7 @@
         android:id="@+id/DestDiet"
         android:name="wia2007.example.healthier_app.DietFragment"
         tools:layout="@layout/fragment_diet"
-        android:label="@string/TBDiet"></fragment>
+        android:label="@string/TBDiet" />
     <fragment
         android:id="@+id/DestExercise"
         android:name="wia2007.example.healthier_app.ExerciseFragment"
