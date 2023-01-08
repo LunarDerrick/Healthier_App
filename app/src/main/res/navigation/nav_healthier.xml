@@ -88,4 +88,9 @@
         android:name="wia2007.example.healthier_app.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/DestProgress"
+        android:name="wia2007.example.healthier_app.ProgressTFragment"
+        android:label="Progress Tracker"
+        tools:layout="@layout/fragment_progress_t" />
 </navigation>
