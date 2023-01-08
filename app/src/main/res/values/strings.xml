@@ -153,5 +153,14 @@
     <string name="profile_title">Profile Title</string>
     <string name="address">Address</string>
     <string name="confirm">Confirm</string>
+    <string name="age">Age</string>
+    <string name="card_info">Card Info</string>
+    <string name="ewallet">E-wallet</string>
+    <string name="choose_ewallet">Choose preferred E-wallet</string>
+    <string name="phone">Phone number</string>
+    <string name="card_num">Card number</string>
+    <string name="sample_cardnum">1234 5678 8765 4321</string>
+    <string name="expiry">Expiry date</string>
+    <string name="sample_expiry">04/20</string>
 
 </resources>
