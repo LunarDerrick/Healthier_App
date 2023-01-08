@@ -314,6 +314,14 @@
             app:layout_constraintStart_toStartOf="@+id/BtnYoga"
             app:layout_constraintTop_toBottomOf="@+id/BtnStrTrain" />
 
+        <View
+            android:id="@+id/ViewBlank"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BtnYoga" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
