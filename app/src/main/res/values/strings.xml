@@ -151,4 +151,7 @@
     <string name="list_form">List Form</string>
     <string name="expert_dietitian">Expert Dietitian</string>
     <string name="profile_title">Profile Title</string>
+    <string name="address">Address</string>
+    <string name="confirm">Confirm</string>
+
 </resources>

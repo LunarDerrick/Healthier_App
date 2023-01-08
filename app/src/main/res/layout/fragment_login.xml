@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/TV_logdesc" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TIMail"
+        android:id="@+id/TIEmail"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="280dp"
         android:layout_height="65dp"
@@ -102,7 +102,7 @@
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TIMail"
+        app:layout_constraintTop_toBottomOf="@+id/TIEmail"
         app:startIconDrawable="@drawable/lock_icon">
 
         <com.google.android.material.textfield.TextInputEditText
