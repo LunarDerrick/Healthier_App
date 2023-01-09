@@ -7,6 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".TrackerActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/ABLTracker"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/TBTracker2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/TabTracker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/TIProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progress Tracker" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/TIReward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Earn Reward Points" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/TIFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage Food Inventory" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/VP2Tracker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.viewpager2.widget.ViewPager2>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/TBTracker"
         android:layout_width="0dp"
@@ -27,10 +75,10 @@
         android:name="wia2007.example.healthier_app.FoodInventoryTFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/BtnProgress"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBTracker"
+        app:layout_constraintTop_toBottomOf="@+id/ABLTracker"
         tools:layout="@layout/fragment_food_inventory_t" />
 
     <androidx.fragment.app.FragmentContainerView
@@ -38,54 +86,23 @@
         android:name="wia2007.example.healthier_app.EarnRewardTFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/BtnProgress"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBTracker"
+        app:layout_constraintTop_toBottomOf="@+id/ABLTracker"
         tools:layout="@layout/fragment_earn_reward_t" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVProgress"
-        android:name="wia2007.example.healthier_app.ProgressTFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/BtnProgress"
+        app:defaultNavHost="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBTracker"
+        app:layout_constraintTop_toBottomOf="@+id/ABLTracker"
+        app:navGraph="@navigation/nav_tracker"
         tools:layout="@layout/fragment_progress_t" />
-
-    <Button
-        android:id="@+id/BtnProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="BtnProgressOnClick"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="Progress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/BtnReward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="BtnRewardOnClick"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="Reward"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BtnProgress" />
-
-    <Button
-        android:id="@+id/BtnFood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="BtnFoodOnClick"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="Food"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BtnReward" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

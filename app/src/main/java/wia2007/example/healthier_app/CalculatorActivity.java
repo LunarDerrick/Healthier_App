@@ -2,7 +2,6 @@ package wia2007.example.healthier_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentContainerView;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -10,7 +9,6 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
-import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -59,19 +57,5 @@ public class CalculatorActivity extends AppCompatActivity {
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-    }
-
-    public void BtnBMIMacroOnClick(View view) {
-        FragmentContainerView FCVBMIMacro = findViewById(R.id.FCVBMIMacro);
-        FragmentContainerView FCVCalorie = findViewById(R.id.FCVCalorie);
-        FCVBMIMacro.setVisibility(View.VISIBLE);
-        FCVCalorie.setVisibility(View.GONE);
-    }
-
-    public void BtnCalorieOnClick(View view) {
-        FragmentContainerView FCVBMIMacro = findViewById(R.id.FCVBMIMacro);
-        FragmentContainerView FCVCalorie = findViewById(R.id.FCVCalorie);
-        FCVBMIMacro.setVisibility(View.GONE);
-        FCVCalorie.setVisibility(View.VISIBLE);
     }
 }

@@ -25,8 +25,8 @@ public class PlannerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planner);
 
-        tabLayout = findViewById(R.id.TabDiet);
-        viewPager2 = findViewById(R.id.VP2DietFrag);
+        tabLayout = findViewById(R.id.TabPlanner);
+        viewPager2 = findViewById(R.id.VP2Planner);
         viewPagerAdapter = new ViewPagerAdapterPlanner(this);
         viewPager2.setAdapter(viewPagerAdapter);
 
