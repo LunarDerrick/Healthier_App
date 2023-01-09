@@ -44,11 +44,11 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/edit_text_lightyellow"
         android:gravity="center_horizontal|center_vertical"
-        android:prompt="E-wallet"
         android:spinnerMode="dialog"
         app:layout_constraintEnd_toEndOf="@+id/white_bg"
         app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/choose_ewallet" />
+        app:layout_constraintTop_toBottomOf="@+id/choose_ewallet"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/CardInfo"
@@ -123,7 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="MM/YY"
-            android:inputType="text"
+            android:inputType="datetime"
             android:maxLength="5" />
     </com.google.android.material.textfield.TextInputLayout>
 
