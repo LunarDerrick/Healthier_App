@@ -7,6 +7,48 @@
     android:layout_height="match_parent"
     tools:context=".CalculatorActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/ABCalculator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/TBCalculator2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/TabCalculator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/TIBMIMacro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diet" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/TICalorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exercise" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/VP2Calculator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.viewpager2.widget.ViewPager2>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/TBCalculator"
         android:layout_width="0dp"
@@ -27,43 +69,24 @@
         android:name="wia2007.example.healthier_app.CalorieCalc"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/BtnBMIMacro"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBCalculator"
+        app:layout_constraintTop_toBottomOf="@+id/ABCalculator"
         tools:layout="@layout/fragment_calorie" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVBMIMacro"
-        android:name="wia2007.example.healthier_app.BMIMacroCalc"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/BtnBMIMacro"
+        app:defaultNavHost="false"
+        app:layout_constraintBottom_toBottomOf="@+id/FCVCalorie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBCalculator"
+        app:layout_constraintTop_toBottomOf="@+id/ABCalculator"
+        app:navGraph="@navigation/nav_calculator"
         tools:layout="@layout/fragment_bmi_macro" />
-
-    <Button
-        android:id="@+id/BtnBMIMacro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:onClick="BtnBMIMacroOnClick"
-        android:layout_marginBottom="10dp"
-        android:text="BMI &amp; Macro"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/BtnCalorie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="BtnCalorieOnClick"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="Calorie"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BtnBMIMacro" />
+<!--    android:name="wia2007.example.healthier_app.BMIMacroCalc"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

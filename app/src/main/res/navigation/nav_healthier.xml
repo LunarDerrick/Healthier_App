@@ -53,36 +53,6 @@
         android:name="wia2007.example.healthier_app.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
-<!--    <navigation android:id="@+id/nav_planner"
-        app:startDestination="@id/DestDiet">
-        <fragment
-            android:id="@+id/DestDiet"
-            android:name="wia2007.example.healthier_app.DietFragment"
-            android:label="@string/TBDiet"
-            tools:layout="@layout/fragment_diet"></fragment>
-        <fragment
-            android:id="@+id/DestExercise"
-            android:name="wia2007.example.healthier_app.ExerciseFragment"
-            android:label="@string/TBExercise"
-            tools:layout="@layout/fragment_exercise" />
-        <fragment
-            android:id="@+id/DestFast"
-            android:name="wia2007.example.healthier_app.FastingFragment"
-            android:label="@string/TBFasting"
-            tools:layout="@layout/fragment_fasting" />
-    </navigation>-->
-    <navigation android:id="@+id/nav_calculator"
-        app:startDestination="@id/DestBMIMacro">
-        <fragment
-            android:id="@+id/DestBMIMacro"
-            android:name="wia2007.example.healthier_app.BMIMacroCalc"
-            android:label="BMI &amp; Macro Calculator"
-            tools:layout="@layout/fragment_bmi_macro" />
-        <fragment
-            android:id="@+id/DestCalorie"
-            android:name="wia2007.example.healthier_app.CalorieCalc"
-            android:label="Calorie Calculator" />
-    </navigation>
     <navigation android:id="@+id/nav_coaching"
         app:startDestination="@id/DestFinder">
         <fragment
@@ -120,4 +90,5 @@
             tools:layout="@layout/fragment_food_inventory_t" />
     </navigation>
     <include app:graph="@navigation/nav_planner"/>
+    <include app:graph="@navigation/nav_calculator"/>
 </navigation>

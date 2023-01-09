@@ -105,12 +105,4 @@
         tools:layout="@layout/fragment_diet" />
 <!--    android:name="wia2007.example.healthier_app.DietFragment"-->
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/BNVPlanner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_planner" />
 </androidx.constraintlayout.widget.ConstraintLayout>
