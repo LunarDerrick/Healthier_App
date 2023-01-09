@@ -8,7 +8,6 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupBottomNavMenu(NavController navController) {
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_view);
+        BottomNavigationView bottomNav = findViewById(R.id.BNVHome);
         NavigationUI.setupWithNavController(bottomNav, navController);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_bottom, menu);
+        getMenuInflater().inflate(R.menu.menu_home, menu);
         return true;
     }
 
