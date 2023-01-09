@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_calculator"
+    app:startDestination="@id/DestBMIMacro">
+    <fragment
+        android:id="@+id/DestBMIMacro"
+        android:name="wia2007.example.healthier_app.BMIMacroCalc"
+        android:label="@string/calculator"
+        tools:layout="@layout/fragment_bmi_macro" />
+    <fragment
+        android:id="@+id/DestCalorie"
+        android:name="wia2007.example.healthier_app.CalorieCalc"
+        android:label="Calorie Calculator"
+        tools:layout="@layout/fragment_calorie"/>
+</navigation>

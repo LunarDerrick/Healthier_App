@@ -1,7 +1,11 @@
 package wia2007.example.healthier_app;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentContainerView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
@@ -14,16 +18,16 @@ public class PlannerActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager2 viewPager2;
-    ViewPagerAdapter viewPagerAdapter;
+    ViewPagerAdapterPlanner viewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planner);
 
-        tabLayout = findViewById(R.id.tabs);
-        viewPager2 = findViewById(R.id.VP2Diet);
-        viewPagerAdapter = new ViewPagerAdapter(this);
+        tabLayout = findViewById(R.id.TabPlanner);
+        viewPager2 = findViewById(R.id.VP2Planner);
+        viewPagerAdapter = new ViewPagerAdapterPlanner(this);
         viewPager2.setAdapter(viewPagerAdapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -46,6 +50,15 @@ public class PlannerActivity extends AppCompatActivity {
                 tabLayout.getTabAt(position).select();
             }
         });
+
+        Toolbar toolbar = findViewById(R.id.TBPlanner);
+        setSupportActionBar(toolbar);
+
+        NavHostFragment host = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.FCVDiet);
+        NavController navController = host.getNavController();
+
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     }
 
     public void BtnCompleteOnClick(View view) {

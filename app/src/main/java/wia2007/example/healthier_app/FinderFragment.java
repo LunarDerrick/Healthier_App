@@ -1,12 +1,17 @@
 package wia2007.example.healthier_app;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +28,8 @@ public class FinderFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
 
     public FinderFragment() {
         // Required empty public constructor
@@ -60,5 +67,47 @@ public class FinderFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_finder, container, false);
+    }
+
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
+        ImageView imageViewPro1 = getView().findViewById(R.id.IVPro1);
+        ImageView imageViewPro2 = getView().findViewById(R.id.IVPro2);
+        ImageView imageViewPro3 = getView().findViewById(R.id.IVPro3);
+
+        Button BtChat1 = view.findViewById(R.id.BTChat1);
+        BtChat1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String wpurl = "https://wa.me/+60102041882?text=Hi, is Adam Smith available?";
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(wpurl));
+                startActivity(intent);
+            }
+        });
+
+        Button BtChat2 = view.findViewById(R.id.BTChat2);
+        BtChat2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String wpurl = "https://wa.me/+60102041882?text=Hi, is Timothy Skartin available?";
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(wpurl));
+                startActivity(intent);
+            }
+        });
+
+        Button BtChat3 = view.findViewById(R.id.BTChat3);
+        BtChat3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String wpurl = "https://wa.me/+60102041882?text=Hi, is Sarah Fierro available?";
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(wpurl));
+                startActivity(intent);
+            }
+        });
     }
 }

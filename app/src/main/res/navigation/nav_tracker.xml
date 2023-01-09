@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_tracker"
+    app:startDestination="@id/DestProgress">
+    <fragment
+        android:id="@+id/DestProgress"
+        android:name="wia2007.example.healthier_app.ProgressTFragment"
+        android:label="@string/tracker"
+        tools:layout="@layout/fragment_progress_t" />
+    <fragment
+        android:id="@+id/DestReward"
+        android:name="wia2007.example.healthier_app.EarnRewardTFragment"
+        android:label="Earn Reward Points"
+        tools:layout="@layout/fragment_earn_reward_t" />
+    <fragment
+        android:id="@+id/DestFood"
+        android:name="wia2007.example.healthier_app.FoodInventoryTFragment"
+        android:label="Manage Food Inventory"
+        tools:layout="@layout/fragment_food_inventory_t" />
+</navigation>
