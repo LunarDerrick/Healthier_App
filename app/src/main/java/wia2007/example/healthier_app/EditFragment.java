@@ -3,65 +3,47 @@ package wia2007.example.healthier_app;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link EditFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Objects;
+
 public class EditFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    TextInputEditText etusername, etname, etage, height, weight, phone;
+    Button confirm;
+    FirebaseDatabase db = FirebaseDatabase.getInstance("https://healthier-app-aed74-default-rtdb.asia-southeast1.firebasedatabase.app");
+    DatabaseReference root = db.getInstance().getReference();
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public EditFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment EditFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static EditFragment newInstance(String param1, String param2) {
-        EditFragment fragment = new EditFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_edit, container, false);
+        View view = inflater.inflate(R.layout.fragment_edit, container, false);
+
+        etusername = view.findViewById(R.id.userName);
+        etname = view.findViewById(R.id.name);
+        etage = view.findViewById(R.id.age);
+        height = view.findViewById(R.id.height);
+        weight = view.findViewById(R.id.etweight);
+        phone = view.findViewById(R.id.phone);
+        confirm = view.findViewById(R.id.confirmBtn);
 
         //get the spinner from the xml.
         Spinner dropdown = view.findViewById(R.id.gender);
@@ -72,6 +54,38 @@ public class EditFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, items);
         //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
+
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (etusername.getText().toString().isEmpty() || etname.getText().toString().isEmpty() ||
+                        etage.getText().toString().isEmpty() || phone.getText().toString().isEmpty()) {
+                    Toast.makeText(requireContext(), "Please fill in the text fields", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    Toast.makeText(requireContext(), "Saved successfully", Toast.LENGTH_SHORT).show();
+                    String username = etusername.getText().toString();
+                    String name = etname.getText().toString();
+                    int age = Integer.parseInt(etage.getText().toString());
+                    double high = Double.parseDouble(Objects.requireNonNull(height.getText()).toString());
+                    double wigh = Double.parseDouble(Objects.requireNonNull(weight.getText()).toString());
+                    String nump = phone.getText().toString();
+
+                    HashMap<String, Object> userMap = new HashMap<>();
+                    userMap.put("username", username);
+                    userMap.put("name", name);
+                    userMap.put("age", age);
+                    userMap.put("height", high);
+                    userMap.put("weight", wigh);
+                    userMap.put("phoneNumber", nump);
+
+                    root.child("User").child(Objects.requireNonNull(firebaseAuth.getUid())).updateChildren(userMap);
+
+                    Navigation.findNavController(view).navigate(R.id.DestInfo);
+                }
+
+            }
+        });
 
 
         return view;

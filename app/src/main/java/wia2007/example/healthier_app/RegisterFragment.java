@@ -19,6 +19,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 public class RegisterFragment extends Fragment {
 
 
@@ -53,21 +55,16 @@ public class RegisterFragment extends Fragment {
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(Mail.getText().toString(), Pass.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                 @Override
                 public void onSuccess(AuthResult authResult) {
+                    String id = Objects.requireNonNull(authResult.getUser()).getUid();
                     User user = new User(Uname.getText().toString(), Mail.getText().toString());
-
-                    dao.add(user).addOnSuccessListener(suc -> {
+                    dao.addWithId(user, id).addOnSuccessListener(suc -> {
                         Toast.makeText(requireContext(), "Account created successfully", Toast.LENGTH_SHORT).show();
                         Navigation.findNavController(view).navigate(R.id.DestLogin);
                     }).addOnFailureListener(er -> {
                         Toast.makeText(requireContext(), "" + er.getMessage(), Toast.LENGTH_SHORT).show();
                     });
                 }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(requireContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
+            }).addOnFailureListener(e -> Toast.makeText(requireContext(), e.getMessage(), Toast.LENGTH_SHORT).show());
         });
 
 

@@ -16,4 +16,8 @@ public class DAOUser {
     public Task<Void> add(User us) {
         return databaseReference.push().setValue(us);
     }
+
+    public Task<Void> addWithId(User us, String id) {
+        return databaseReference.child(id).setValue(us);
+    }
 }

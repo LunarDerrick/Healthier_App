@@ -1,9 +1,13 @@
 package wia2007.example.healthier_app;
 
 public class User {
-
     private String username;
     private String email;
+    private int age;
+    private double height;
+    private double weight;
+    private String phoneNumber;
+    private String name;
 
     public User() {
     }
@@ -11,6 +15,16 @@ public class User {
     public User(String username, String email) {
         this.username = username;
         this.email = email;
+    }
+
+    public User(String username, String email, int age, double height, double weight, String phoneNumber, String name) {
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getUsername() {
@@ -27,5 +41,45 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

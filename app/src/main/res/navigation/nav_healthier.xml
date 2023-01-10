@@ -50,4 +50,9 @@
     <include app:graph="@navigation/nav_tracker"/>
     <include app:graph="@navigation/nav_coaching"/>
     <include app:graph="@navigation/nav_general"/>
+    <fragment
+        android:id="@+id/DestInfo"
+        android:name="wia2007.example.healthier_app.InfoFragment"
+        android:label="Profile Info"
+        tools:layout="@layout/fragment_info" />
 </navigation>
