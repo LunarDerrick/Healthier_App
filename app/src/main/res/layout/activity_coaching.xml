@@ -7,6 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".CoachingActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/ABLCoaching"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/TBCoaching2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/TabCoaching"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/TIFinder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Professional Help Finder" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/TILesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lesson Booking" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/TILocator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gym Locator" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/VP2Coaching"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.viewpager2.widget.ViewPager2>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/TBCoaching"
         android:layout_width="0dp"
@@ -27,7 +75,7 @@
         android:name="wia2007.example.healthier_app.LocatorFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/BtnFinder"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TBCoaching"
@@ -38,7 +86,7 @@
         android:name="wia2007.example.healthier_app.LessonsFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/BtnFinder"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TBCoaching"
@@ -46,46 +94,15 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVFinder"
-        android:name="wia2007.example.healthier_app.FinderFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/BtnFinder"
+        app:defaultNavHost="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TBCoaching"
+        app:navGraph="@navigation/nav_coaching"
         tools:layout="@layout/fragment_finder" />
-
-    <Button
-        android:id="@+id/BtnFinder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:onClick="BtnFinderOnClick"
-        android:text="Finder"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/BtnLesson"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:onClick="BtnLessonOnClick"
-        android:text="Lesson"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BtnFinder" />
-
-    <Button
-        android:id="@+id/BtnLocator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="Locator"
-        android:onClick="BtnLocatorOnClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BtnLesson" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -48,6 +48,7 @@
         app:layout_constraintEnd_toEndOf="@+id/white_bg"
         app:layout_constraintStart_toStartOf="@+id/white_bg"
         app:layout_constraintTop_toBottomOf="@+id/choose_ewallet" />
+<!--    android:prompt="E-wallet"-->
 
     <TextView
         android:id="@+id/CardInfo"

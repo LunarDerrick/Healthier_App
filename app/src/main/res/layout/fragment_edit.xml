@@ -56,9 +56,10 @@
         android:layout_marginEnd="66dp"
         android:background="@drawable/edit_text_lightyellow"
         android:gravity="center_horizontal|center_vertical"
-        android:spinnerMode="dropdown"
+        android:spinnerMode="dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TIName" />
+<!--    android:prompt="Gender"-->
 
     <ImageView
         android:id="@+id/dropdown"

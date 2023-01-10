@@ -86,8 +86,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.DestPlanner);
-                // WIP: attempt to change top actionbar color when navigate to different modules
-                ((AppCompatActivity)getActivity()).getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#F0C869")));
             }
         };
         BtnPlanner.setOnClickListener(OCLPlanner);
