@@ -1,177 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/SVEditPayment"
+    android:id="@+id/CLEditPay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0C869"
-    tools:context=".EditPaymentFragment">
+    tools:context=".EditPaymentFragment" >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/CLEditPay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/white_bg2"
+        android:layout_width="340dp"
+        android:layout_height="600dp"
+        android:background="@drawable/white_rectangle_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496" />
 
-        <TextView
-            android:id="@+id/white_bg2"
-            android:layout_width="340dp"
-            android:layout_height="600dp"
-            android:background="@drawable/white_rectangle_rounded"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.583" />
+    <Button
+        android:id="@+id/confirmbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F0C869"
+        android:fontFamily="@font/inter_bold"
+        android:letterSpacing="0"
+        android:text="@string/BtnEdit"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/white_bg2"
+        app:layout_constraintEnd_toEndOf="@+id/white_bg2"
+        app:layout_constraintStart_toStartOf="@+id/white_bg2"
+        app:layout_constraintTop_toBottomOf="@+id/choose_ewallet4" />
 
-        <Button
-            android:id="@+id/confrimBtn2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#F0C869"
-            android:fontFamily="@font/inter_bold"
-            android:letterSpacing="0"
-            android:text="@string/BtnEdit"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            app:layout_constraintBottom_toBottomOf="@+id/white_bg2"
-            app:layout_constraintEnd_toEndOf="@+id/white_bg2"
-            app:layout_constraintStart_toStartOf="@+id/white_bg2"
-            app:layout_constraintTop_toBottomOf="@+id/choose_ewallet4" />
+    <TextView
+        android:id="@+id/choose_ewallet3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/inter"
+        android:text="Preferred E-wallet"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/white_bg2"
+        app:layout_constraintTop_toBottomOf="@+id/ewallet2" />
 
-        <TextView
-            android:id="@+id/choose_ewallet3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/inter"
-            android:text="Preferred E-wallet"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/white_bg2"
-            app:layout_constraintTop_toBottomOf="@+id/ewallet2" />
+    <TextView
+        android:id="@+id/choose_ewallet4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/inter"
+        android:text="GrabPay"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/white_bg2"
+        app:layout_constraintTop_toBottomOf="@+id/choose_ewallet3" />
 
-        <TextView
-            android:id="@+id/choose_ewallet4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:fontFamily="@font/inter"
-            android:text="GrabPay"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/white_bg2"
-            app:layout_constraintTop_toBottomOf="@+id/choose_ewallet3" />
+    <TextView
+        android:id="@+id/ewallet2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/ewallet"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/white_bg2"
+        app:layout_constraintTop_toBottomOf="@+id/cardnum_content2" />
 
-        <TextView
-            android:id="@+id/ewallet2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/inter_bold"
-            android:text="@string/ewallet"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/white_bg2"
-            app:layout_constraintTop_toBottomOf="@+id/cardnum_content2" />
+    <TextView
+        android:id="@+id/card_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/card_num"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/white_bg2"
+        app:layout_constraintTop_toBottomOf="@+id/cardInfo" />
 
-        <TextView
-            android:id="@+id/card_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/inter"
-            android:text="@string/card_num"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/white_bg2"
-            app:layout_constraintTop_toBottomOf="@+id/cardInfo" />
+    <TextView
+        android:id="@+id/expiry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/expiry"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/white_bg2"
+        app:layout_constraintTop_toBottomOf="@+id/cardnum_content" />
 
-        <TextView
-            android:id="@+id/expiry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/inter"
-            android:text="@string/expiry"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/white_bg2"
-            app:layout_constraintTop_toBottomOf="@+id/cardnum_content" />
+    <TextView
+        android:id="@+id/cvv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter"
+        android:text="CVV"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/expiry"
+        app:layout_constraintTop_toBottomOf="@+id/cardnum_content" />
 
-        <TextView
-            android:id="@+id/cvv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/inter"
-            android:text="CVV"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/expiry"
-            app:layout_constraintTop_toBottomOf="@+id/cardnum_content" />
+    <TextView
+        android:id="@+id/cardnum_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/sample_cardnum"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/white_bg2"
+        app:layout_constraintTop_toBottomOf="@+id/card_num" />
 
-        <TextView
-            android:id="@+id/cardnum_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:fontFamily="@font/inter"
-            android:text="@string/sample_cardnum"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/white_bg2"
-            app:layout_constraintTop_toBottomOf="@+id/card_num" />
+    <TextView
+        android:id="@+id/cardnum_content2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/sample_expiry"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/white_bg2"
+        app:layout_constraintTop_toBottomOf="@+id/expiry" />
 
-        <TextView
-            android:id="@+id/cardnum_content2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:fontFamily="@font/inter"
-            android:text="@string/sample_expiry"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/white_bg2"
-            app:layout_constraintTop_toBottomOf="@+id/expiry" />
+    <TextView
+        android:id="@+id/cardnum_content3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:fontFamily="@font/inter"
+        android:text="069"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/expiry"
+        app:layout_constraintTop_toBottomOf="@+id/cvv" />
 
-        <TextView
-            android:id="@+id/cardnum_content3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:fontFamily="@font/inter"
-            android:text="069"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/expiry"
-            app:layout_constraintTop_toBottomOf="@+id/cvv" />
+    <TextView
+        android:id="@+id/cardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/card_info"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/white_bg2"
+        app:layout_constraintTop_toBottomOf="@+id/payment_icon" />
 
-        <TextView
-            android:id="@+id/cardInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/inter_bold"
-            android:text="@string/card_info"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/white_bg2"
-            app:layout_constraintTop_toBottomOf="@+id/payment_icon" />
-
-        <ImageView
-            android:id="@+id/payment_icon"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/payment_page"
-            app:layout_constraintEnd_toEndOf="@+id/white_bg2"
-            app:layout_constraintStart_toStartOf="@+id/white_bg2"
-            app:layout_constraintTop_toTopOf="@+id/white_bg2" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
+    <ImageView
+        android:id="@+id/payment_icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/payment_page"
+        app:layout_constraintEnd_toEndOf="@+id/white_bg2"
+        app:layout_constraintStart_toStartOf="@+id/white_bg2"
+        app:layout_constraintTop_toTopOf="@+id/white_bg2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

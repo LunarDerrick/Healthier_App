@@ -1,15 +1,17 @@
 package wia2007.example.healthier_app;
 
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -56,13 +58,8 @@ public class SettingsFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-
-        ImageView BtnLogout = view.findViewById(R.id.logout_btn);
-        ImageView BtnUser = view.findViewById(R.id.user_btn);
-        ImageView BtnPayment = view.findViewById(R.id.managepay_btn);
-        ImageView BtnHelp = view.findViewById(R.id.help_btn);
-
         // Logout Navigation
+        ImageView BtnLogout = view.findViewById(R.id.logout_btn);
         View.OnClickListener OCLLogout = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,31 +68,22 @@ public class SettingsFragment extends Fragment {
         };
         BtnLogout.setOnClickListener(OCLLogout);
 
-        // User Profile Navigation
-        View.OnClickListener OCLUser = new View.OnClickListener() {
+        ImageView BtnEdit = view.findViewById(R.id.user_btn);
+        View.OnClickListener OCLEdit = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.DestInfo);
             }
         };
-        BtnUser.setOnClickListener(OCLUser);
+        BtnEdit.setOnClickListener(OCLEdit);
 
-        // Manage Payment Navigation
-        View.OnClickListener OCLPayment = new View.OnClickListener() {
+        ImageView BtnPayment = view.findViewById(R.id.managepay_btn);
+        View.OnClickListener OCLPay = new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.DestEditPay);
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.DestPayment);
             }
         };
-        BtnPayment.setOnClickListener(OCLPayment);
-
-        // Help Navigation
-        View.OnClickListener OCLHelp = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.DestHelp);
-            }
-        };
-        BtnHelp.setOnClickListener(OCLHelp);
+        BtnPayment.setOnClickListener(OCLPay);
     }
 }
