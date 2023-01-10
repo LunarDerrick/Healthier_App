@@ -120,4 +120,9 @@
             tools:layout="@layout/fragment_food_inventory_t" />
     </navigation>
     <include app:graph="@navigation/nav_planner"/>
+    <fragment
+        android:id="@+id/DestEdit"
+        android:name="wia2007.example.healthier_app.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" />
 </navigation>

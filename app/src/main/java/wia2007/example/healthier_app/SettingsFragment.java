@@ -76,5 +76,14 @@ public class SettingsFragment extends Fragment {
             }
         };
         BtnLogout.setOnClickListener(OCLLogout);
+
+        ImageView BtnEdit = view.findViewById(R.id.edit_btn);
+        View.OnClickListener OCLEdit = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.DestEdit);
+            }
+        };
+        BtnEdit.setOnClickListener(OCLEdit);
     }
 }
