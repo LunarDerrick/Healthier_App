@@ -36,6 +36,12 @@ public class InfoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_info, container, false);
 
         titleusername = view.findViewById(R.id.TVUsername);
+        titlename = view.findViewById(R.id.TVName);
+        age = view.findViewById(R.id.age);
+        numb = view.findViewById(R.id.number);
+        gender = view.findViewById(R.id.gender);
+        userweight = view.findViewById(R.id.weight);
+        userheight = view.findViewById(R.id.height);
 
         DatabaseReference dbuser = FirebaseDatabase
                 .getInstance("https://healthier-app-aed74-default-rtdb.asia-southeast1.firebasedatabase.app")
@@ -46,6 +52,12 @@ public class InfoFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);
                 titleusername.setText("@" + userProfile.getUsername());
+                titlename.setText(userProfile.getName());
+                age.setText(userProfile.getAge() + " years old");
+                numb.setText(userProfile.getPhoneNumber());
+                userweight.setText((int) userProfile.getWeight() + " kg");
+                userheight.setText((int) userProfile.getHeight() + " cm");
+                gender.setText("Female");
             }
 
             @Override
