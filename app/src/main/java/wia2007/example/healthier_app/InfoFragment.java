@@ -5,13 +5,16 @@ import android.icu.text.IDNA;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,6 +39,12 @@ public class InfoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_info, container, false);
 
         titleusername = view.findViewById(R.id.TVUsername);
+        titlename = view.findViewById(R.id.TVName);
+        age = view.findViewById(R.id.age);
+        numb = view.findViewById(R.id.number);
+        gender = view.findViewById(R.id.gender);
+        userweight = view.findViewById(R.id.weight);
+        userheight = view.findViewById(R.id.height);
 
         DatabaseReference dbuser = FirebaseDatabase
                 .getInstance("https://healthier-app-aed74-default-rtdb.asia-southeast1.firebasedatabase.app")
@@ -46,6 +55,12 @@ public class InfoFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);
                 titleusername.setText("@" + userProfile.getUsername());
+                titlename.setText(userProfile.getName());
+                age.setText(userProfile.getAge() + " years old");
+                numb.setText(userProfile.getPhoneNumber());
+                userweight.setText((int) userProfile.getWeight() + " kg");
+                userheight.setText((int) userProfile.getHeight() + " cm");
+                gender.setText("Female");
             }
 
             @Override
@@ -54,5 +69,21 @@ public class InfoFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Button BtnEdit = view.findViewById(R.id.EditButton);
+
+        // Edit Profile Navigation
+        View.OnClickListener OCLEdit = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.DestEdit);
+            }
+        };
+        BtnEdit.setOnClickListener(OCLEdit);
     }
 }

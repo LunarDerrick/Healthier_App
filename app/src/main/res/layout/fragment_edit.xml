@@ -1,229 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SVEdit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0C869"
+    tools:context=".EditFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/CLEdit"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#F0C869"
-        tools:context=".EditFragment">
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/white_bg"
-        android:layout_width="359dp"
-        android:layout_height="690dp"
-        android:background="@drawable/white_rectangle_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/white_bg"
+            android:layout_width="359dp"
+            android:layout_height="600dp"
+            android:background="@drawable/white_rectangle_rounded"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/confirmBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#F0C869"
-        android:fontFamily="@font/inter_bold"
-        android:letterSpacing="0"
-        android:text="@string/confirm"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/white_bg"
-        app:layout_constraintEnd_toEndOf="@+id/white_bg"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/TIPhone" />
-
-    <Spinner
-        android:id="@+id/gender"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="60dp"
-        android:background="@drawable/edit_text_lightyellow"
-        android:gravity="center_horizontal|center_vertical"
-        android:spinnerMode="dialog"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TIName"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TIHeight"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="130dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="60dp"
-        app:boxBackgroundColor="#FFF3D2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gender">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/height"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/confirmBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Height (cm)"
-            android:inputType="number"
-            tools:layout_editor_absoluteX="218dp"
-            tools:layout_editor_absoluteY="271dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:backgroundTint="#F0C869"
+            android:fontFamily="@font/inter_bold"
+            android:letterSpacing="0"
+            android:text="@string/confirm"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="@+id/white_bg"
+            app:layout_constraintEnd_toEndOf="@+id/white_bg"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/TIPhone" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TIWeight"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="130dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="12dp"
-        app:boxBackgroundColor="#FFF3D2"
-        app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/TIAge">
+        <Spinner
+            android:id="@+id/gender"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/edit_text_lightyellow"
+            android:gravity="center_horizontal|center_vertical"
+            android:spinnerMode="dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TIName"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etweight"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TIHeight"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="130dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="60dp"
+            app:boxBackgroundColor="#FFF3D2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gender">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Height (cm)"
+                android:inputType="numberDecimal"
+                tools:layout_editor_absoluteX="218dp"
+                tools:layout_editor_absoluteY="271dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TIWeight"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="130dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="12dp"
+            app:boxBackgroundColor="#FFF3D2"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/TIAge">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etweight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Weight (kg)"
+                android:inputType="numberDecimal"
+                tools:layout_editor_absoluteX="64dp"
+                tools:layout_editor_absoluteY="268dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/TVEditTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Weight (kg)"
-            android:inputType="number"
-            tools:layout_editor_absoluteX="64dp"
-            tools:layout_editor_absoluteY="268dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/edit_profile"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/white_bg" />
 
-    <TextView
-        android:id="@+id/TVEditTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/edit_profile"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/white_bg" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TIUname"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="280dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="45dp"
+            android:hint="Username"
+            android:textColor="#000"
+            app:boxBackgroundColor="#FFF3D2"
+            app:boxCornerRadiusBottomEnd="5dp"
+            app:boxCornerRadiusBottomStart="5dp"
+            app:boxCornerRadiusTopEnd="5dp"
+            app:boxCornerRadiusTopStart="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TIWeight"
+            app:startIconDrawable="@drawable/username_icon">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TIUname"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="280dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="45dp"
-        android:hint="Username"
-        android:textColor="#000"
-        app:boxBackgroundColor="#FFF3D2"
-        app:boxCornerRadiusBottomEnd="5dp"
-        app:boxCornerRadiusBottomStart="5dp"
-        app:boxCornerRadiusTopEnd="5dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TIWeight"
-        app:startIconDrawable="@drawable/username_icon">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="16sp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,DuplicateClickableBoundsCheck,DuplicateClickableBoundsCheck"
+                tools:layout_editor_absoluteX="65dp"
+                tools:layout_editor_absoluteY="341dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userName"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TIPhone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="280dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="4dp"
+            app:boxBackgroundColor="#FFF3D2"
+            app:boxCornerRadiusBottomEnd="5dp"
+            app:boxCornerRadiusBottomStart="5dp"
+            app:boxCornerRadiusTopEnd="5dp"
+            app:boxCornerRadiusTopStart="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TIUname"
+            app:startIconDrawable="@android:drawable/stat_sys_phone_call">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone"
+                android:inputType="phone"
+                tools:ignore="TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="65dp"
+                tools:layout_editor_absoluteY="418dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TIName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="280dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="8dp"
+            app:boxBackgroundColor="#FFF3D2"
+            app:boxCornerRadiusBottomEnd="5dp"
+            app:boxCornerRadiusBottomStart="5dp"
+            app:boxCornerRadiusTopEnd="5dp"
+            app:boxCornerRadiusTopStart="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/white_bg"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/TVEditTitle"
+            app:startIconDrawable="@drawable/username_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:inputType="text"
+                tools:layout_editor_absoluteX="65dp"
+                tools:layout_editor_absoluteY="121dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/dropdown"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textSize="16sp"
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,DuplicateClickableBoundsCheck,DuplicateClickableBoundsCheck"
-            tools:layout_editor_absoluteX="65dp"
-            tools:layout_editor_absoluteY="341dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginEnd="12dp"
+            android:src="@android:drawable/arrow_down_float"
+            app:layout_constraintBottom_toBottomOf="@+id/gender"
+            app:layout_constraintEnd_toEndOf="@+id/gender"
+            app:layout_constraintTop_toTopOf="@+id/gender"
+            app:layout_constraintVertical_bias="0.591" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TIPhone"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="280dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="4dp"
-        app:boxBackgroundColor="#FFF3D2"
-        app:boxCornerRadiusBottomEnd="5dp"
-        app:boxCornerRadiusBottomStart="5dp"
-        app:boxCornerRadiusTopEnd="5dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TIUname"
-        app:startIconDrawable="@android:drawable/stat_sys_phone_call">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TIAge"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="130dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="4dp"
+            app:boxBackgroundColor="#FFF3D2"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/TIName"
+            app:startIconDrawable="@android:drawable/ic_menu_my_calendar">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Phone"
-            android:inputType="phone"
-            tools:ignore="TouchTargetSizeCheck"
-            tools:layout_editor_absoluteX="65dp"
-            tools:layout_editor_absoluteY="418dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="64dp"
+                tools:layout_editor_absoluteY="194dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TIName"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="280dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="8dp"
-        app:boxBackgroundColor="#FFF3D2"
-        app:boxCornerRadiusBottomEnd="5dp"
-        app:boxCornerRadiusBottomStart="5dp"
-        app:boxCornerRadiusTopEnd="5dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/white_bg"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/TVEditTitle"
-        app:startIconDrawable="@drawable/username_icon">
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Name"
-            android:inputType="text"
-            tools:layout_editor_absoluteX="65dp"
-            tools:layout_editor_absoluteY="121dp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <ImageView
-        android:id="@+id/dropdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:src="@android:drawable/arrow_down_float"
-        app:layout_constraintBottom_toBottomOf="@+id/gender"
-        app:layout_constraintEnd_toEndOf="@+id/gender"
-        app:layout_constraintTop_toTopOf="@+id/gender"
-        app:layout_constraintVertical_bias="0.591" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TIAge"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="130dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="4dp"
-        app:boxBackgroundColor="#FFF3D2"
-        app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/TIName"
-        app:startIconDrawable="@android:drawable/ic_menu_my_calendar">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Age"
-            android:inputType="number"
-            tools:layout_editor_absoluteX="64dp"
-            tools:layout_editor_absoluteY="194dp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-
+</ScrollView>
