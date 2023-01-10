@@ -8,6 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.os.CountDownTimer;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link FastingFragment#newInstance} factory method to
@@ -23,6 +29,9 @@ public class FastingFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    public int counter;
+    public CountDownTimer countDownTimer;
 
     public FastingFragment() {
         // Required empty public constructor
@@ -58,7 +67,106 @@ public class FastingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_fasting, container, false);
+
+        Button BtnStart = view.findViewById(R.id.BtnStart);
+        Button BtnPause = view.findViewById(R.id.BtnPause);
+        Button BtnResume = view.findViewById(R.id.BtnResume);
+        Button BtnEnd = view.findViewById(R.id.BtnEnd);
+        TextView TVTimeCountDown = view.findViewById(R.id.TVTimeCountDown);
+        EditText ETDurationFast = view.findViewById(R.id.ETDurationFast);
+
+        BtnPause.setVisibility(view.GONE);
+        BtnResume.setVisibility(view.GONE);
+
+        BtnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String durationStr = ETDurationFast.getText().toString();
+                counter = Integer.parseInt(durationStr);
+
+                countDownTimer = new CountDownTimer(counter * 1000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        TVTimeCountDown.setText(String.valueOf(counter));
+                        counter--;
+                    }
+
+                    public void onFinish() {
+                        TVTimeCountDown.setText("COMPLETE");
+
+                        BtnPause.setVisibility(view.GONE);
+                        BtnResume.setVisibility(view.GONE);
+                        BtnStart.setVisibility(view.VISIBLE);
+
+                        String message = "Time's Up";
+                        Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                    }
+                }.start();
+
+                BtnStart.setVisibility(view.GONE);
+                BtnPause.setVisibility(view.VISIBLE);
+            }
+        });
+
+        BtnPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownTimer.cancel();
+
+                BtnPause.setVisibility(view.GONE);
+                BtnResume.setVisibility(view.VISIBLE);
+
+                String message = "Timer paused";
+                Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        BtnResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownTimer = new CountDownTimer(counter * 1000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        TVTimeCountDown.setText(String.valueOf(counter));
+                        counter--;
+                    }
+
+                    public void onFinish() {
+                        TVTimeCountDown.setText("COMPLETE");
+
+                        BtnPause.setVisibility(view.GONE);
+                        BtnResume.setVisibility(view.GONE);
+                        BtnStart.setVisibility(view.VISIBLE);
+
+                        String message = "Time's Up";
+                        Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                    }
+                }.start();
+
+                BtnResume.setVisibility(view.GONE);
+                BtnPause.setVisibility(view.VISIBLE);
+            }
+        });
+
+        BtnEnd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownTimer.cancel();
+
+                String durationStr = ETDurationFast.getText().toString();
+                counter = Integer.parseInt(durationStr);
+                TVTimeCountDown.setText(String.valueOf(counter));
+
+                BtnPause.setVisibility(view.GONE);
+                BtnResume.setVisibility(view.GONE);
+                BtnStart.setVisibility(view.VISIBLE);
+
+                String message = "Timer cancelled";
+                Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            }
+        });
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fasting, container, false);
+        //return inflater.inflate(R.layout.fragment_fasting, container, false);
+        return view;
     }
 }
