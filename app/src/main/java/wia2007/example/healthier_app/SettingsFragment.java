@@ -72,7 +72,7 @@ public class SettingsFragment extends Fragment {
         View.OnClickListener OCLEdit = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.DestEdit);
+                Navigation.findNavController(view).navigate(R.id.DestInfo);
             }
         };
         BtnEdit.setOnClickListener(OCLEdit);

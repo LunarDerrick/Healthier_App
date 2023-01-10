@@ -64,8 +64,8 @@ public class AddPaymentFragment extends Fragment {
 
                 HashMap<String, Object> paymentMap = new HashMap<>();
                 paymentMap.put("ewallet", ewallet);
-                paymentMap.put("card number", cardnum);
-                paymentMap.put("expiry date", expired);
+                paymentMap.put("cardnumber", cardnum);
+                paymentMap.put("expirydate", expired);
                 paymentMap.put("cvv", cvvcode);
 
                 root.child(cardnum).updateChildren(paymentMap);
