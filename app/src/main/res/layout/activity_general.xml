@@ -7,6 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".GeneralActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/TBGeneral"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#70BF69"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:title="@string/TBDiet"
+        android:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVRegister"
         android:name="wia2007.example.healthier_app.RegisterFragment"
@@ -20,10 +34,12 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVLogin"
-        android:name="wia2007.example.healthier_app.placeholder.LoginFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="false"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:navGraph="@navigation/nav_general"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>

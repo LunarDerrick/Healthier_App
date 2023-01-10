@@ -15,21 +15,6 @@
         android:scrollbarSize="50dp"
         android:textAlignment="viewStart">
 
-        <android.widget.Toolbar
-            android:id="@+id/TBHome"
-            android:layout_width="0dp"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#70BF69"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            android:title="@string/TBFasting"
-            android:titleTextColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
         <TextView
             android:id="@+id/TVStatusFast"
             android:layout_width="wrap_content"
@@ -41,7 +26,7 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TBHome" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/ETDurationFast"

@@ -8,11 +8,7 @@
         android:id="@+id/DestHome"
         android:name="wia2007.example.healthier_app.HomeFragment"
         android:label="@string/Home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/NextToPlanner"
-            app:destination="@id/nav_planner" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <activity
         android:id="@+id/DestPlanner"
         android:name="wia2007.example.healthier_app.PlannerActivity"
@@ -44,80 +40,14 @@
         android:label="activity_tracker"
         tools:layout="@layout/activity_tracker" />
     <fragment
-        android:id="@+id/DestLogin"
-        android:name="wia2007.example.healthier_app.placeholder.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
-    <fragment
-        android:id="@+id/DestRegister"
-        android:name="wia2007.example.healthier_app.RegisterFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
-<!--    <navigation android:id="@+id/nav_planner"
-        app:startDestination="@id/DestDiet">
-        <fragment
-            android:id="@+id/DestDiet"
-            android:name="wia2007.example.healthier_app.DietFragment"
-            android:label="@string/TBDiet"
-            tools:layout="@layout/fragment_diet"></fragment>
-        <fragment
-            android:id="@+id/DestExercise"
-            android:name="wia2007.example.healthier_app.ExerciseFragment"
-            android:label="@string/TBExercise"
-            tools:layout="@layout/fragment_exercise" />
-        <fragment
-            android:id="@+id/DestFast"
-            android:name="wia2007.example.healthier_app.FastingFragment"
-            android:label="@string/TBFasting"
-            tools:layout="@layout/fragment_fasting" />
-    </navigation>-->
-    <navigation android:id="@+id/nav_calculator"
-        app:startDestination="@id/DestBMIMacro">
-        <fragment
-            android:id="@+id/DestBMIMacro"
-            android:name="wia2007.example.healthier_app.BMIMacroCalc"
-            android:label="BMI &amp; Macro Calculator"
-            tools:layout="@layout/fragment_bmi_macro" />
-        <fragment
-            android:id="@+id/DestCalorie"
-            android:name="wia2007.example.healthier_app.CalorieCalc"
-            android:label="Calorie Calculator" />
-    </navigation>
-    <navigation android:id="@+id/nav_coaching"
-        app:startDestination="@id/DestFinder">
-        <fragment
-            android:id="@+id/DestFinder"
-            android:name="wia2007.example.healthier_app.FinderFragment"
-            android:label="Professional Help Finder"
-            tools:layout="@layout/fragment_finder" />
-        <fragment
-            android:id="@+id/DestLesson"
-            android:name="wia2007.example.healthier_app.LessonsFragment"
-            android:label="Lesson Booking"
-            tools:layout="@layout/fragment_lessons" />
-        <fragment
-            android:id="@+id/DestLocator"
-            android:name="wia2007.example.healthier_app.LocatorFragment"
-            android:label="Gym Locator"
-            tools:layout="@layout/fragment_locator" />
-    </navigation>
-    <navigation android:id="@+id/nav_tracker"
-        app:startDestination="@id/DestProgress">
-        <fragment
-            android:id="@+id/DestProgress"
-            android:name="wia2007.example.healthier_app.ProgressTFragment"
-            android:label="Progress Tracker"
-            tools:layout="@layout/fragment_progress_t" />
-        <fragment
-            android:id="@+id/DestReward"
-            android:name="wia2007.example.healthier_app.EarnRewardTFragment"
-            android:label="Earn Reward Points"
-            tools:layout="@layout/fragment_earn_reward_t" />
-        <fragment
-            android:id="@+id/DestFood"
-            android:name="wia2007.example.healthier_app.FoodInventoryTFragment"
-            android:label="Manage Food Inventory"
-            tools:layout="@layout/fragment_food_inventory_t" />
-    </navigation>
+        android:id="@+id/DestEdit"
+        android:name="wia2007.example.healthier_app.EditFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit" />
+
+    <include app:graph="@navigation/nav_calculator"/>
     <include app:graph="@navigation/nav_planner"/>
+    <include app:graph="@navigation/nav_tracker"/>
+    <include app:graph="@navigation/nav_coaching"/>
+    <include app:graph="@navigation/nav_general"/>
 </navigation>
