@@ -94,7 +94,7 @@
     <string name="Btn52Diet">5:2 Diet</string>
     <string name="Btn168Method">16/8 Method</string>
     <string name="BtnEatStop">Eat-Stop-Eat</string>
-    <string name="ETHintHrMin">hr:min</string>
+    <string name="ETHintHrMinSec">hr:min:sec</string>
     <string name="BTChat">Chat</string>
     <string name="BTFilter">Filter</string>
     <string name="TVPro1">Adam Smith</string>

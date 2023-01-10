@@ -35,10 +35,10 @@
             android:layout_marginStart="20dp"
             android:drawableEnd="@drawable/pen"
             android:ems="10"
-            android:hint="@string/ETHintHrMin"
+            android:hint="@string/ETHintHrMinSec"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="14:10"
+            android:text="3"
             android:textColor="#14ABFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TVStatusFast"
@@ -174,24 +174,37 @@
         </TableLayout>
 
         <Button
+            android:id="@+id/BtnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#70BF69"
+            android:fontFamily="@font/inter"
+            android:text="Start fast"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TLStatusFast" />
+
+        <Button
             android:id="@+id/BtnPause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="22dp"
             android:layout_marginTop="5dp"
             android:backgroundTint="#70BF69"
             android:fontFamily="@font/inter"
             android:onClick="BtnPauseOnClick"
             android:text="@string/BtnPause"
             android:textAllCaps="false"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/BtnStart"
             app:layout_constraintTop_toBottomOf="@+id/TLStatusFast" />
 
         <Button
             android:id="@+id/BtnEnd"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="22dp"
             android:layout_marginTop="5dp"
             android:backgroundTint="#70BF69"
             android:fontFamily="@font/inter"
