@@ -5,15 +5,15 @@
     android:id="@+id/BigCL"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0C869"
+    android:background="#FFFAEA"
     tools:context=".HelpFragment">
 
     <ScrollView
         android:id="@+id/SVHelp"
         android:layout_width="336dp"
         android:layout_height="650dp"
-        android:fillViewport="true"
         android:background="@drawable/white_rectangle_rounded"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
