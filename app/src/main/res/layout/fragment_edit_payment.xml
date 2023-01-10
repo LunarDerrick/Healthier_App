@@ -5,8 +5,8 @@
     android:id="@+id/CLEditPay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0C869"
-    tools:context=".EditPaymentFragment" >
+    android:background="#FFFAEA"
+    tools:context=".EditPaymentFragment">
 
     <TextView
         android:id="@+id/white_bg2"

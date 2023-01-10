@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.os.CountDownTimer;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class FastingFragment extends Fragment {
     private String mParam2;
 
     public int counter;
+    public int pauseCounter;
     public CountDownTimer countDownTimer;
 
     public FastingFragment() {
@@ -75,6 +77,7 @@ public class FastingFragment extends Fragment {
         Button BtnEnd = view.findViewById(R.id.BtnEnd);
         TextView TVTimeCountDown = view.findViewById(R.id.TVTimeCountDown);
         EditText ETDurationFast = view.findViewById(R.id.ETDurationFast);
+        ProgressBar progressBar = view.findViewById(R.id.PBProgressFast);
 
         BtnPause.setVisibility(view.GONE);
         BtnResume.setVisibility(view.GONE);
@@ -84,15 +87,19 @@ public class FastingFragment extends Fragment {
             public void onClick(View v) {
                 String durationStr = ETDurationFast.getText().toString();
                 counter = Integer.parseInt(durationStr);
+                progressBar.setProgress(0);
+                progressBar.setMax(counter+1);
 
                 countDownTimer = new CountDownTimer(counter * 1000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         TVTimeCountDown.setText(String.valueOf(counter));
                         counter--;
+                        progressBar.incrementProgressBy(1);
                     }
 
                     public void onFinish() {
                         TVTimeCountDown.setText("COMPLETE");
+                        progressBar.incrementProgressBy(1);
 
                         BtnPause.setVisibility(view.GONE);
                         BtnResume.setVisibility(view.GONE);
@@ -111,6 +118,7 @@ public class FastingFragment extends Fragment {
         BtnPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pauseCounter = counter+1;
                 countDownTimer.cancel();
 
                 BtnPause.setVisibility(view.GONE);
@@ -124,14 +132,18 @@ public class FastingFragment extends Fragment {
         BtnResume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setProgress(Integer.parseInt(ETDurationFast.getText().toString()) - pauseCounter + 1);
+
                 countDownTimer = new CountDownTimer(counter * 1000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         TVTimeCountDown.setText(String.valueOf(counter));
                         counter--;
+                        progressBar.incrementProgressBy(1);
                     }
 
                     public void onFinish() {
                         TVTimeCountDown.setText("COMPLETE");
+                        progressBar.incrementProgressBy(1);
 
                         BtnPause.setVisibility(view.GONE);
                         BtnResume.setVisibility(view.GONE);
@@ -155,6 +167,7 @@ public class FastingFragment extends Fragment {
                 String durationStr = ETDurationFast.getText().toString();
                 counter = Integer.parseInt(durationStr);
                 TVTimeCountDown.setText(String.valueOf(counter));
+                progressBar.setProgress(0);
 
                 BtnPause.setVisibility(view.GONE);
                 BtnResume.setVisibility(view.GONE);

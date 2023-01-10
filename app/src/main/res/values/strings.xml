@@ -162,5 +162,19 @@
     <string name="sample_cardnum">1234 5678 8765 4321</string>
     <string name="expiry">Expiry date</string>
     <string name="sample_expiry">04/20</string>
+    <string name="about">About</string>
+    <string name="aboutdesc">Our app aims to help you with all needs related to health! Wanna lose some weight? Wanna gain some muscle? Wondering what to do next to achieve your health goals? We\'ve got you covered!</string>
+    <string name="faq">FAQ</string>
+    <string name="ques1">What can I use this app for?</string>
+    <string name="ans1">Our app offers various functionalities to help you along your journey of achieving your health goals! Do try out all of them!</string>
+    <string name="ques2">Will I get charged by this app?</string>
+    <string name="ans2">Most of our functionalities are completely free! However, there are some that will require you to pay a fee.</string>
+    <string name="ques3">How is my data stored?</string>
+    <string name="ans3">Don\'t worry! Our app stores your data securely using Firebase.</string>
+    <string name="ques4">Who developed this app?</string>
+    <string name="ans4">This application was developed by 5 university students!</string>
+    <string name="customer_serv">Customer Service</string>
+    <string name="customer_servdesc">For any inquiries, contact us here!</string>
+    <string name="contact_info">derrickphb@gmail.com\nfrostedluna99@gmail.com\nchuwei1100@gmail.com\nnisyaqanita@gmail.com</string>
 
 </resources>

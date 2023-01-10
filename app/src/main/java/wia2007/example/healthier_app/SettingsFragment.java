@@ -85,5 +85,14 @@ public class SettingsFragment extends Fragment {
             }
         };
         BtnPayment.setOnClickListener(OCLPay);
+
+        ImageView BtnHelp= view.findViewById(R.id.help_btn);
+        View.OnClickListener OCLHelp=new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.DestHelp);
+            }
+        };
+        BtnHelp.setOnClickListener((OCLHelp));
     }
 }
