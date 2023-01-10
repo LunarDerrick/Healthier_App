@@ -177,7 +177,7 @@
             android:id="@+id/BtnStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="22dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="5dp"
             android:backgroundTint="#70BF69"
             android:fontFamily="@font/inter"
@@ -190,28 +190,41 @@
             android:id="@+id/BtnPause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="22dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="5dp"
             android:backgroundTint="#70BF69"
             android:fontFamily="@font/inter"
             android:onClick="BtnPauseOnClick"
             android:text="@string/BtnPause"
             android:textAllCaps="false"
-            app:layout_constraintStart_toEndOf="@+id/BtnStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TLStatusFast" />
+
+        <Button
+            android:id="@+id/BtnResume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#70BF69"
+            android:fontFamily="@font/inter"
+            android:text="Resume fast"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TLStatusFast" />
 
         <Button
             android:id="@+id/BtnEnd"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="22dp"
             android:layout_marginTop="5dp"
+            android:layout_marginEnd="60dp"
             android:backgroundTint="#70BF69"
             android:fontFamily="@font/inter"
             android:onClick="BtnStopOnClick"
             android:text="End fast"
             android:textAllCaps="false"
-            app:layout_constraintStart_toEndOf="@+id/BtnPause"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TLStatusFast" />
 
         <TextView
@@ -225,7 +238,7 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BtnPause" />
+            app:layout_constraintTop_toBottomOf="@+id/BtnEnd" />
 
         <Button
             android:id="@+id/Btn52Diet"

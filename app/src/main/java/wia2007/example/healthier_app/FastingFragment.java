@@ -70,9 +70,14 @@ public class FastingFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fasting, container, false);
 
         Button BtnStart = view.findViewById(R.id.BtnStart);
+        Button BtnPause = view.findViewById(R.id.BtnPause);
+        Button BtnResume = view.findViewById(R.id.BtnResume);
         Button BtnEnd = view.findViewById(R.id.BtnEnd);
         TextView TVTimeCountDown = view.findViewById(R.id.TVTimeCountDown);
         EditText ETDurationFast = view.findViewById(R.id.ETDurationFast);
+
+        BtnPause.setVisibility(view.GONE);
+        BtnResume.setVisibility(view.GONE);
 
         BtnStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,18 +85,65 @@ public class FastingFragment extends Fragment {
                 String durationStr = ETDurationFast.getText().toString();
                 counter = Integer.parseInt(durationStr);
 
-                countDownTimer = new CountDownTimer(counter*1000, 1000){
-                    public void onTick(long millisUntilFinished){
+                countDownTimer = new CountDownTimer(counter * 1000, 1000) {
+                    public void onTick(long millisUntilFinished) {
                         TVTimeCountDown.setText(String.valueOf(counter));
                         counter--;
                     }
-                    public void onFinish(){
+
+                    public void onFinish() {
                         TVTimeCountDown.setText("COMPLETE");
+
+                        BtnPause.setVisibility(view.GONE);
+                        BtnResume.setVisibility(view.GONE);
+                        BtnStart.setVisibility(view.VISIBLE);
 
                         String message = "Time's Up";
                         Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
                     }
                 }.start();
+
+                BtnStart.setVisibility(view.GONE);
+                BtnPause.setVisibility(view.VISIBLE);
+            }
+        });
+
+        BtnPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownTimer.cancel();
+
+                BtnPause.setVisibility(view.GONE);
+                BtnResume.setVisibility(view.VISIBLE);
+
+                String message = "Timer paused";
+                Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        BtnResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownTimer = new CountDownTimer(counter * 1000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        TVTimeCountDown.setText(String.valueOf(counter));
+                        counter--;
+                    }
+
+                    public void onFinish() {
+                        TVTimeCountDown.setText("COMPLETE");
+
+                        BtnPause.setVisibility(view.GONE);
+                        BtnResume.setVisibility(view.GONE);
+                        BtnStart.setVisibility(view.VISIBLE);
+
+                        String message = "Time's Up";
+                        Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                    }
+                }.start();
+
+                BtnResume.setVisibility(view.GONE);
+                BtnPause.setVisibility(view.VISIBLE);
             }
         });
 
@@ -103,6 +155,13 @@ public class FastingFragment extends Fragment {
                 String durationStr = ETDurationFast.getText().toString();
                 counter = Integer.parseInt(durationStr);
                 TVTimeCountDown.setText(String.valueOf(counter));
+
+                BtnPause.setVisibility(view.GONE);
+                BtnResume.setVisibility(view.GONE);
+                BtnStart.setVisibility(view.VISIBLE);
+
+                String message = "Timer cancelled";
+                Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
             }
         });
 
