@@ -2,6 +2,8 @@ package wia2007.example.healthier_app;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -30,5 +32,21 @@ public class EditPaymentFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Button BtnAddPay = view.findViewById(R.id.confrimBtn2);
+
+        // Add Payment Navigation
+        View.OnClickListener OCLAddPay = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.DestAddPay);
+            }
+        };
+        BtnAddPay.setOnClickListener(OCLAddPay);
     }
 }
