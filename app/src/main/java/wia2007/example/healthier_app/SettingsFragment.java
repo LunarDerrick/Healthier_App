@@ -70,6 +70,7 @@ public class SettingsFragment extends Fragment {
         };
         BtnLogout.setOnClickListener(OCLLogout);
 
+        // User Profile Navigation
         View.OnClickListener OCLUser = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +79,7 @@ public class SettingsFragment extends Fragment {
         };
         BtnUser.setOnClickListener(OCLUser);
 
+        // Manage Payment Navigation
         View.OnClickListener OCLPayment = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
