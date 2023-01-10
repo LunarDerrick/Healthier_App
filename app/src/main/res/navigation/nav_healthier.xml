@@ -40,18 +40,14 @@
         android:label="activity_tracker"
         tools:layout="@layout/activity_tracker" />
     <fragment
-        android:id="@+id/DestLogin"
-        android:name="wia2007.example.healthier_app.placeholder.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
-    <fragment
-        android:id="@+id/DestRegister"
-        android:name="wia2007.example.healthier_app.RegisterFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        android:id="@+id/DestEdit"
+        android:name="wia2007.example.healthier_app.EditFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit" />
 
     <include app:graph="@navigation/nav_calculator"/>
     <include app:graph="@navigation/nav_planner"/>
     <include app:graph="@navigation/nav_tracker"/>
     <include app:graph="@navigation/nav_coaching"/>
+    <include app:graph="@navigation/nav_general"/>
 </navigation>

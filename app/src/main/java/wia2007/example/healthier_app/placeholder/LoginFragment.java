@@ -59,7 +59,7 @@ public class LoginFragment extends Fragment {
                         Toast.makeText(requireContext(), "Login successfully!", Toast.LENGTH_SHORT).show();
                         // todo navigate to home page
                         // phang: hopefully this works, since I can't get login to work for me
-                        Navigation.findNavController(view).navigate(R.id.DestHome);
+                        Navigation.findNavController(view).navigate(R.id.DestMain);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
