@@ -2,12 +2,10 @@ package wia2007.example.healthier_app;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class SettingsFragment extends Fragment {
 
@@ -57,8 +50,12 @@ public class SettingsFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        // Logout Navigation
+
         ImageView BtnLogout = view.findViewById(R.id.logout_btn);
+        ImageView BtnUser = view.findViewById(R.id.user_btn);
+        ImageView BtnPayment = view.findViewById(R.id.managepay_btn);
+
+        // Logout Navigation
         View.OnClickListener OCLLogout = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,13 +64,20 @@ public class SettingsFragment extends Fragment {
         };
         BtnLogout.setOnClickListener(OCLLogout);
 
-        ImageView BtnEdit = view.findViewById(R.id.user_btn);
-        View.OnClickListener OCLEdit = new View.OnClickListener() {
+        View.OnClickListener OCLUser = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.DestEdit);
+                Navigation.findNavController(view).navigate(R.id.DestInfo);
             }
         };
-        BtnEdit.setOnClickListener(OCLEdit);
+        BtnUser.setOnClickListener(OCLUser);
+
+        View.OnClickListener OCLPayment = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.DestEditPay);
+            }
+        };
+        BtnPayment.setOnClickListener(OCLPayment);
     }
 }
