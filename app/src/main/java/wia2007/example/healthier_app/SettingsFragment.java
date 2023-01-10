@@ -60,6 +60,7 @@ public class SettingsFragment extends Fragment {
         ImageView BtnLogout = view.findViewById(R.id.logout_btn);
         ImageView BtnUser = view.findViewById(R.id.user_btn);
         ImageView BtnPayment = view.findViewById(R.id.managepay_btn);
+        ImageView BtnHelp = view.findViewById(R.id.help_btn);
 
         // Logout Navigation
         View.OnClickListener OCLLogout = new View.OnClickListener() {
@@ -87,5 +88,14 @@ public class SettingsFragment extends Fragment {
             }
         };
         BtnPayment.setOnClickListener(OCLPayment);
+
+        // Help Navigation
+        View.OnClickListener OCLHelp = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.DestHelp);
+            }
+        };
+        BtnHelp.setOnClickListener(OCLHelp);
     }
 }

@@ -66,4 +66,9 @@
         android:name="wia2007.example.healthier_app.AddPaymentFragment"
         android:label="Add Payment"
         tools:layout="@layout/fragment_addpayment" />
+    <fragment
+        android:id="@+id/DestHelp"
+        android:name="wia2007.example.healthier_app.HelpFragment"
+        android:label="Help"
+        tools:layout="@layout/fragment_help" />
 </navigation>
