@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -75,5 +76,14 @@ public class SettingsFragment extends Fragment {
             }
         };
         BtnEdit.setOnClickListener(OCLEdit);
+
+        ImageView BtnPayment = view.findViewById(R.id.managepay_btn);
+        View.OnClickListener OCLPay = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.DestPayment);
+            }
+        };
+        BtnPayment.setOnClickListener(OCLPay);
     }
 }

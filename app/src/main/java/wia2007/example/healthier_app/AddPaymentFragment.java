@@ -3,76 +3,76 @@ package wia2007.example.healthier_app;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddPaymentFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Objects;
+
 public class AddPaymentFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public AddPaymentFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PaymentFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AddPaymentFragment newInstance(String param1, String param2) {
-        AddPaymentFragment fragment = new AddPaymentFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    TextInputEditText cnum, expdate, cvv;
+    Button confirm;
+    FirebaseDatabase db = FirebaseDatabase.getInstance("https://healthier-app-aed74-default-rtdb.asia-southeast1.firebasedatabase.app");
+    DatabaseReference root = db.getReference().child("Payment");
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_addpayment, container, false);
+        View view = inflater.inflate(R.layout.fragment_addpayment, container, false);
 
         //get the spinner from the xml.
         Spinner dropdown = view.findViewById(R.id.e_wallet);
         //create a list of items for the spinner.
-        String[] items = new String[]{"Touch\'N\'Go", "GrabPay","Boost"};
+        String[] items = new String[]{"Touch\'N\'Go", "GrabPay", "Boost"};
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, items);
         //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
 
+        cnum = view.findViewById(R.id.cardno);
+        expdate = view.findViewById(R.id.cardexpire);
+        cvv = view.findViewById(R.id.cvv);
+        confirm = view.findViewById(R.id.confrimBtn);
 
-        return view;    }
+        confirm.setOnClickListener(v -> {
+            if (cnum.getText().toString().isEmpty() || expdate.getText().toString().isEmpty() || cvv.getText().toString().isEmpty()) {
+                Toast.makeText(requireContext(), "Please fill in the text fields", Toast.LENGTH_SHORT).show();
+                return;
+            }else {
+                Toast.makeText(requireContext(), "Saved successfully", Toast.LENGTH_SHORT).show();
+                String ewallet = dropdown.getSelectedItem().toString();
+                String cardnum = cnum.getText().toString();
+                String expired = expdate.getText().toString();
+                int cvvcode = Integer.parseInt(cvv.getText().toString());
+
+                HashMap<String, Object> paymentMap = new HashMap<>();
+                paymentMap.put("ewallet", ewallet);
+                paymentMap.put("card number", cardnum);
+                paymentMap.put("expiry date", expired);
+                paymentMap.put("cvv", cvvcode);
+
+                root.child(cardnum).updateChildren(paymentMap);
+
+                Navigation.findNavController(view).navigate(R.id.DestPayment);
+            }
+        });
+        return view;
+    }
 }

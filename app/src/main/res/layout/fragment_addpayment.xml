@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/white_bg"
         android:layout_width="340dp"
-        android:layout_height="660dp"
+        android:layout_height="600dp"
         android:background="@drawable/white_rectangle_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -152,7 +152,7 @@
         android:id="@+id/payment_icon"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/payment_page"
         app:layout_constraintEnd_toEndOf="@+id/white_bg"
         app:layout_constraintStart_toStartOf="@+id/white_bg"

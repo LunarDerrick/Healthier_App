@@ -53,6 +53,7 @@
         android:text="@string/age"
         android:textColor="#000000"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/white_bg"
         app:layout_constraintTop_toBottomOf="@+id/TVPhone" />
 
@@ -66,6 +67,7 @@
         android:text="Gender"
         android:textColor="#000000"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/white_bg"
         app:layout_constraintTop_toBottomOf="@+id/TVAge" />
 
@@ -79,6 +81,7 @@
         android:text="Weight"
         android:textColor="#000000"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/white_bg"
         app:layout_constraintTop_toBottomOf="@+id/TVGender" />
 
@@ -92,6 +95,7 @@
         android:text="Height"
         android:textColor="#000000"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/white_bg"
         app:layout_constraintTop_toBottomOf="@+id/TVWeight" />
 
@@ -105,6 +109,7 @@
         android:text="@string/phone"
         android:textColor="#000000"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/white_bg"
         app:layout_constraintTop_toBottomOf="@+id/TVUsername" />
 
