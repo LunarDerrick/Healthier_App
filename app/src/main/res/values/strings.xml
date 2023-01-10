@@ -122,7 +122,7 @@
     <string name="TVHomeGo">Go to</string>
     <string name="Manage">Manage Profile</string>
     <string name="sample_name">Ariana Venti</string>
-    <string name="sample_username">\@arianaventi.17</string>
+    <string name="sample_username">\@username</string>
     <string name="edit_profile">Edit profile</string>
     <string name="edit_profiledesc">Username, Phone, Address, Password...</string>
     <string name="user_info">User info</string>
