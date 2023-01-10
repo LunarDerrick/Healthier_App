@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);
-                hello.setText("Hello, " + userProfile.getName());
+                hello.setText(userProfile.getName());
             }
 
             @Override

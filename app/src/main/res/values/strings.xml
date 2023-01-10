@@ -115,7 +115,7 @@
     <string name="Forgot">Forgot Password?</string>
     <string name="dont_have">I don\'t have an account yet</string>
     <string name="Home">Home</string>
-    <string name="TVHome">Hello, User.</string>
+    <string name="TVHome">User</string>
     <string name="TVHomedesc">Begin your diet journey right away with our functions.</string>
     <string name="TVLatest">Latest news</string>
     <string name="TVNewsDesc">Healthy Diet - WHO</string>

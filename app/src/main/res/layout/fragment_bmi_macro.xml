@@ -538,8 +538,9 @@
             android:id="@+id/ViewBlank"
             android:layout_width="411dp"
             android:layout_height="15dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CVMacro" />
 
         <!--for scrolling to have some padding below-->

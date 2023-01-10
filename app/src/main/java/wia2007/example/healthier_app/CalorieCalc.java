@@ -247,27 +247,27 @@ public class CalorieCalc extends Fragment {
         int calinput1 = calprefs.getInt("calories", calinput);
         calo.setText("" + calinput1);
 
-        String bfdd = calprefs.getString("bfd", bfd);
+        String bfdd = calprefs.getString("bfd", "");
         if(brefoods != null) {
             brefoods.setText("" + bfdd);
         }
-        String lfdd = calprefs.getString("lfd", lfd);
+        String lfdd = calprefs.getString("lfd", "");
         if(lunfoods != null) {
             lunfoods.setText("" + lfdd);
         }
-        String dfdd = calprefs.getString("dfd", dfd);
+        String dfdd = calprefs.getString("dfd", "");
         if(dinfoods != null) {
             dinfoods.setText("" + dfdd);
         }
-        String bcll = calprefs.getString("bcl", bcl);
+        String bcll = calprefs.getString("bcl", "");
         if(brecal != null){
             brecal.setText("" + bcll);
         }
-        String lcll = calprefs.getString("lcl", lcl);
+        String lcll = calprefs.getString("lcl", "");
         if(luncal != null){
             luncal.setText("" + lcll);
         }
-        String dcll = calprefs.getString("dcl", dcl);
+        String dcll = calprefs.getString("dcl", "");
         if(dincal != null){
             dincal.setText("" + dcll);
         }
