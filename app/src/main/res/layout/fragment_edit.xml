@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/white_bg"
         android:layout_width="359dp"
-        android:layout_height="690dp"
+        android:layout_height="600dp"
         android:background="@drawable/white_rectangle_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

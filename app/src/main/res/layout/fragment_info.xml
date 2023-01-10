@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/white_bg"
         android:layout_width="340dp"
-        android:layout_height="660dp"
+        android:layout_height="600dp"
         android:background="@drawable/white_rectangle_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/inter_bold"
-        android:text="@string/sample_name"
+        android:text="Name"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/white_bg"
