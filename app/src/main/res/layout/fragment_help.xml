@@ -76,6 +76,7 @@
                 android:text="@string/ques1"
                 android:textColor="#000000"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TVfaq" />
 
@@ -89,6 +90,7 @@
                 android:text="@string/ques2"
                 android:textColor="#000000"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ans1" />
 
@@ -102,6 +104,7 @@
                 android:text="@string/ques3"
                 android:textColor="#000000"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ans2" />
 
@@ -115,6 +118,7 @@
                 android:text="@string/ques4"
                 android:textColor="#000000"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ans3" />
 
@@ -128,6 +132,7 @@
                 android:text="@string/customer_servdesc"
                 android:textColor="#000000"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TVCustServ" />
 
