@@ -4,66 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_healthier"
     app:startDestination="@id/DestHome">
-
-    <include app:graph="@navigation/nav_calculator"/>
-    <include app:graph="@navigation/nav_planner"/>
-    <include app:graph="@navigation/nav_tracker"/>
-    <include app:graph="@navigation/nav_coaching"/>
-    <include app:graph="@navigation/nav_general"/>
-
-    <activity
-        android:id="@+id/DestGeneral"
-        android:name="wia2007.example.healthier_app.GeneralActivity"
-        android:label="activity_general"
-        tools:layout="@layout/activity_general" />
-    <activity
-        android:id="@+id/DestCalculator"
-        android:name="wia2007.example.healthier_app.CalculatorActivity"
-        android:label="@string/calculator"
-        tools:layout="@layout/activity_calculator" />\
+    <fragment
+        android:id="@+id/DestHome"
+        android:name="wia2007.example.healthier_app.HomeFragment"
+        android:label="@string/Home"
+        tools:layout="@layout/fragment_home" />
     <activity
         android:id="@+id/DestPlanner"
         android:name="wia2007.example.healthier_app.PlannerActivity"
         android:label="@string/planner"
         tools:layout="@layout/activity_planner" />
     <activity
-        android:id="@+id/DestTracker"
-        android:name="wia2007.example.healthier_app.TrackerActivity"
-        android:label="activity_tracker"
-        tools:layout="@layout/activity_tracker" />
+        android:id="@+id/DestCalculator"
+        android:name="wia2007.example.healthier_app.CalculatorActivity"
+        android:label="@string/calculator"
+        tools:layout="@layout/activity_calculator" />
     <activity
         android:id="@+id/DestCoaching"
         android:name="wia2007.example.healthier_app.CoachingActivity"
         android:label="@string/coaching"
         tools:layout="@layout/activity_coaching" />
     <fragment
-        android:id="@+id/DestHome"
-        android:name="wia2007.example.healthier_app.HomeFragment"
-        android:label="@string/Home"
-        tools:layout="@layout/fragment_home" />
-    <fragment
         android:id="@+id/DestSettings"
         android:name="wia2007.example.healthier_app.SettingsFragment"
         android:label="Manage profile"
         tools:layout="@layout/fragment_settings" />
+    <activity
+        android:id="@+id/DestGeneral"
+        android:name="wia2007.example.healthier_app.GeneralActivity"
+        android:label="activity_general"
+        tools:layout="@layout/activity_general" />
+    <activity
+        android:id="@+id/DestTracker"
+        android:name="wia2007.example.healthier_app.TrackerActivity"
+        android:label="activity_tracker"
+        tools:layout="@layout/activity_tracker" />
+    <fragment
+        android:id="@+id/DestEdit"
+        android:name="wia2007.example.healthier_app.EditFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit" />
+
+    <include app:graph="@navigation/nav_calculator"/>
+    <include app:graph="@navigation/nav_planner"/>
+    <include app:graph="@navigation/nav_tracker"/>
+    <include app:graph="@navigation/nav_coaching"/>
+    <include app:graph="@navigation/nav_general"/>
     <fragment
         android:id="@+id/DestInfo"
         android:name="wia2007.example.healthier_app.InfoFragment"
         android:label="Profile Info"
         tools:layout="@layout/fragment_info" />
     <fragment
-        android:id="@+id/DestEdit"
-        android:name="wia2007.example.healthier_app.EditFragment"
-        android:label="Edit Profile"
-        tools:layout="@layout/fragment_edit" />
-    <fragment
-        android:id="@+id/DestEditPay"
-        android:name="wia2007.example.healthier_app.EditPaymentFragment"
-        android:label="Manage Payment"
-        tools:layout="@layout/fragment_edit_payment" />
-    <fragment
-        android:id="@+id/DestAddPay"
+        android:id="@+id/DestPaymentSettings"
         android:name="wia2007.example.healthier_app.AddPaymentFragment"
-        android:label="Add Payment"
+        android:label="Edit Payment"
         tools:layout="@layout/fragment_addpayment" />
+    <fragment
+        android:id="@+id/DestPayment"
+        android:name="wia2007.example.healthier_app.EditPaymentFragment"
+        android:label="Payment Info"
+        tools:layout="@layout/fragment_edit_payment" />
 </navigation>
