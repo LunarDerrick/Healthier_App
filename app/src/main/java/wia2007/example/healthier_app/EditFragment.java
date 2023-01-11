@@ -25,6 +25,7 @@ import java.util.Objects;
 public class EditFragment extends Fragment {
 
     TextInputEditText etusername, etname, etage, height, weight, phone;
+    Spinner gender;
     Button confirm;
     FirebaseDatabase db = FirebaseDatabase.getInstance("https://healthier-app-aed74-default-rtdb.asia-southeast1.firebasedatabase.app");
     DatabaseReference root = db.getInstance().getReference();
@@ -70,6 +71,7 @@ public class EditFragment extends Fragment {
                     double high = Double.parseDouble(Objects.requireNonNull(height.getText()).toString());
                     double wigh = Double.parseDouble(Objects.requireNonNull(weight.getText()).toString());
                     String nump = phone.getText().toString();
+                    String gender = dropdown.getSelectedItem().toString();
 
                     HashMap<String, Object> userMap = new HashMap<>();
                     userMap.put("username", username);
@@ -78,6 +80,7 @@ public class EditFragment extends Fragment {
                     userMap.put("height", high);
                     userMap.put("weight", wigh);
                     userMap.put("phoneNumber", nump);
+                    userMap.put("gender", gender);
 
                     root.child("User").child(Objects.requireNonNull(firebaseAuth.getUid())).updateChildren(userMap);
 
