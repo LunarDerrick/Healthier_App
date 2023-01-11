@@ -5,10 +5,13 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,70 +23,26 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BMIMacroCalc#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class BMIMacroCalc extends Fragment implements View.OnClickListener {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public BMIMacroCalc() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment BMIMacroCalc.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static BMIMacroCalc newInstance(String param1, String param2) {
-        BMIMacroCalc fragment = new BMIMacroCalc();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-
-        }
-
-
-    }
-
-    EditText tinggi, berat;
+    TextView tinggi, berat, umur, jantina;
     TextView result, range, circle, protein, carbs, fat;
     Button calculate;
-    ImageButton edit;
     RadioButton category, sedentary, moderate, active, gain, maintain, loss;
     RadioGroup rgal, rgmwg;
     CardView cardbmi, cardmacro;
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     double activityLevel, mainweightgoal;
-    int high, wigh;
-    private DatabaseReference dbref;
+    int high, wigh, age;
+    String gen;
 
 
     @Override
@@ -95,6 +54,8 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
         //height & weight input text
         tinggi = view.findViewById(R.id.height);
         berat = view.findViewById(R.id.weight);
+        umur = view.findViewById(R.id.agemac);
+        jantina = view.findViewById(R.id.gendermac);
         //text view
         result = view.findViewById(R.id.bminum);
         range = view.findViewById(R.id.range);
@@ -112,7 +73,6 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
         loss = view.findViewById(R.id.Loss);
         //calculate button
         calculate = view.findViewById(R.id.CalcButton);
-        edit = view.findViewById(R.id.BTEdit);
         //radio group
         rgal = view.findViewById(R.id.RGAL);
         rgmwg = view.findViewById(R.id.RGMWG);
@@ -122,6 +82,31 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
 
         cardbmi.setVisibility(View.INVISIBLE);
         cardmacro.setVisibility(View.INVISIBLE);
+
+        DatabaseReference dbuser = FirebaseDatabase
+                .getInstance("https://healthier-app-aed74-default-rtdb.asia-southeast1.firebasedatabase.app")
+                .getReference("User").child(firebaseAuth.getUid());
+
+        dbuser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
+                berat.setText((int) userProfile.getWeight() + "");
+                tinggi.setText((int) userProfile.getHeight() + "");
+                umur.setText(userProfile.getAge() + "");
+                jantina.setText(userProfile.getGender() + "");
+
+                high = Integer.parseInt(tinggi.getText().toString().replaceAll("[^\\d]", ""));
+                wigh = Integer.parseInt(berat.getText().toString().replaceAll("[^\\d]", ""));
+                gen = jantina.getText().toString();
+                age = Integer.parseInt(umur.getText().toString().replaceAll("[^\\d]", ""));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w("TAG", "Failed to read value.", error.toException());
+            }
+        });
 
         gain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -252,51 +237,43 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                         range.setText("Your healthy weight range: 72-96kg");
                     }
 
-                    //men
-                    Double men = (10 * Double.parseDouble(berat.getText().toString())) +
-                            (6.25 * ((Double.parseDouble(tinggi.getText().toString())))) - (5 * 20) + 5;
-                    men = men * activityLevel;
-                    men = (men * mainweightgoal) + men;
-                    circle.setText(String.format("%.0f", men));
-                    Double pro = men * 0.2;
-                    pro = pro / 4;
-                    protein.setText(String.format("%.0fg", pro));
-                    Double fats = men * 0.3;
-                    fats = fats / 9;
-                    fat.setText(String.format("%.0fg", fats));
-                    Double car = men * 0.50;
-                    car = car / 4;
-                    carbs.setText(String.format("%.0fg", car));
+                    if(gen.equalsIgnoreCase("Male")){
+                        Double men = (10 * Double.parseDouble(berat.getText().toString())) +
+                                (6.25 * ((Double.parseDouble(tinggi.getText().toString())))) - (5 * age) + 5;
+                        men = men * activityLevel;
+                        men = (men * mainweightgoal) + men;
+                        circle.setText(String.format("%.0f", men));
+                        Double pro = men * 0.2;
+                        pro = pro / 4;
+                        protein.setText(String.format("%.0fg", pro));
+                        Double fats = men * 0.3;
+                        fats = fats / 9;
+                        fat.setText(String.format("%.0fg", fats));
+                        Double car = men * 0.50;
+                        car = car / 4;
+                        carbs.setText(String.format("%.0fg", car));
+                    }else if(gen.equalsIgnoreCase("Female")){
+                        Double men = (10 * Double.parseDouble(berat.getText().toString())) +
+                                (6.25 * ((Double.parseDouble(tinggi.getText().toString())))) - (5 * age) - 161;
+                        men = men * activityLevel;
+                        men = (men * mainweightgoal) + men;
+                        circle.setText(String.format("%.0f", men));
+                        Double pro = men * 0.2;
+                        pro = pro / 4;
+                        protein.setText(String.format("%.0fg", pro));
+                        Double fats = men * 0.3;
+                        fats = fats / 9;
+                        fat.setText(String.format("%.0fg", fats));
+                        Double car = men * 0.50;
+                        car = car / 4;
+                        carbs.setText(String.format("%.0fg", car));
+                    }
+
+
 
                     cardbmi.setVisibility(View.VISIBLE);
                     cardmacro.setVisibility(View.VISIBLE);
                 }
-            }
-        });
-
-        SharedPreferences bmiprefs = PreferenceManager.getDefaultSharedPreferences(requireContext());
-        int high1 = bmiprefs.getInt("height", high);
-        tinggi.setText("" + high1);
-        int wigh1 = bmiprefs.getInt("weight", wigh);
-        berat.setText("" + wigh1);
-
-        edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(requireContext(), "Saved successfully", Toast.LENGTH_SHORT).show();
-                String height = tinggi.getText().toString();
-                high = Integer.parseInt(height);
-                String weight = berat.getText().toString();
-                wigh = Integer.parseInt(weight);
-
-                SharedPreferences prebmi = PreferenceManager.getDefaultSharedPreferences(requireContext());
-                SharedPreferences.Editor edtbmi = prebmi.edit();
-
-                edtbmi.putInt("height", high);
-                edtbmi.putInt("weight", wigh);
-                edtbmi.apply();
-
-
             }
         });
 

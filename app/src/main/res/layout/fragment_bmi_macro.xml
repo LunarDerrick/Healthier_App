@@ -26,7 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <TextView
             android:id="@+id/height"
             android:layout_width="65dp"
             android:layout_height="55dp"
@@ -34,9 +34,9 @@
             android:background="@drawable/edittext"
             android:ems="10"
             android:gravity="center"
-            android:inputType="numberDecimal"
             android:text="0"
             android:textColor="#5465FF"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.106"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +70,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <TextView
             android:id="@+id/weight"
             android:layout_width="65dp"
             android:layout_height="55dp"
@@ -78,9 +78,9 @@
             android:background="@drawable/edittext"
             android:ems="10"
             android:gravity="center"
-            android:inputType="numberDecimal"
             android:text="0"
             android:textColor="#5465FF"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.569"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,20 +100,6 @@
             app:layout_constraintHorizontal_bias="0.692"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Weight" />
-
-        <ImageButton
-            android:id="@+id/BTEdit"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:backgroundTint="#5465FF"
-            android:contentDescription="Edit button"
-            android:src="@drawable/ic_baseline_edit_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.851"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/MWG"
@@ -531,6 +517,22 @@
                 android:translationY="45dp"
                 tools:layout_editor_absoluteX="303dp"
                 tools:layout_editor_absoluteY="528dp" />
+
+            <TextView
+                android:id="@+id/gendermac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:translationX="140dp"
+                android:translationY="110dp" />
+
+            <TextView
+                android:id="@+id/agemac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:translationX="200dp"
+                android:translationY="110dp" />
 
         </androidx.cardview.widget.CardView>
 
