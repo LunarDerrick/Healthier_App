@@ -36,7 +36,7 @@
             android:drawableEnd="@drawable/pen"
             android:ems="10"
             android:hint="@string/ETHintHrMinSec"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:minHeight="48dp"
             android:text="3"
             android:textColor="#14ABFF"
