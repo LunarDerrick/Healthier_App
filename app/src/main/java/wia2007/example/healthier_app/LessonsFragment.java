@@ -1,5 +1,6 @@
 package wia2007.example.healthier_app;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -68,6 +69,7 @@ public class LessonsFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_lessons, container, false);
     }
 
+    @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         Button BtnMore1 = view.findViewById(R.id.BTMore1);
         View.OnClickListener OCLMore1 = new View.OnClickListener() {
@@ -95,4 +97,5 @@ public class LessonsFragment extends Fragment {
 //        transaction.addToBackStack(null);
 //        transaction.commit();
     }
+
 }
