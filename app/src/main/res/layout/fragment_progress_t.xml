@@ -79,7 +79,8 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="3dp"
             android:background="@android:color/transparent"
-            android:text="1187"
+            android:hint="type here"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/text_taken"
             app:layout_constraintTop_toTopOf="@+id/daily_calorie_taken" />
 
@@ -90,7 +91,8 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="3dp"
             android:background="@android:color/transparent"
-            android:text="490"
+            android:hint="type here"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/text_burnt"
             app:layout_constraintTop_toTopOf="@+id/daily_calorie_burnt" />
 
@@ -143,6 +145,18 @@
             app:layout_constraintTop_toTopOf="@+id/daily_average_result_container" />
 
         <TextView
+            android:id="@+id/daily_average_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="0 cal"
+            android:textColor="#686868"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="@+id/daily_average_result_container" />
+
+        <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -159,39 +173,39 @@
         <!--    not running yet-->
         <!--    still need to code the behaviour/-->
 
-        <RadioGroup
-            android:id="@+id/view_choices"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="31dp"
-            android:background="@drawable/radio_group_bg"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/weekly_calorie_tracker">
+<!--        <RadioGroup-->
+<!--            android:id="@+id/view_choices"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginEnd="31dp"-->
+<!--            android:background="@drawable/radio_group_bg"-->
+<!--            android:orientation="horizontal"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/weekly_calorie_tracker">-->
 
-            <RadioButton
-                android:id="@+id/graphForm"
-                android:layout_width="115dp"
-                android:layout_height="30dp"
-                android:button="@null"
-                android:gravity="center"
-                android:text="Graph Form"
-                android:textColor="#8B8B8B"
-                android:textSize="12sp"
-                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+<!--            <RadioButton-->
+<!--                android:id="@+id/graphForm"-->
+<!--                android:layout_width="115dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:button="@null"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Graph Form"-->
+<!--                android:textColor="#8B8B8B"-->
+<!--                android:textSize="12sp"-->
+<!--                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />-->
 
-            <RadioButton
-                android:id="@+id/listForm"
-                android:layout_width="115dp"
-                android:layout_height="30dp"
-                android:button="@null"
-                android:gravity="center"
-                android:text="List Form"
-                android:textColor="#8B8B8B"
-                android:textSize="12sp"
-                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
-        </RadioGroup>
+<!--            <RadioButton-->
+<!--                android:id="@+id/listForm"-->
+<!--                android:layout_width="115dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:button="@null"-->
+<!--                android:gravity="center"-->
+<!--                android:text="List Form"-->
+<!--                android:textColor="#8B8B8B"-->
+<!--                android:textSize="12sp"-->
+<!--                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />-->
+<!--        </RadioGroup>-->
         <!--
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/line_graph_view"
@@ -209,12 +223,14 @@
         <com.jjoe64.graphview.GraphView
             android:id="@+id/line_graph_view"
             android:layout_width="match_parent"
-            android:layout_height="200dip"
+            android:layout_height="250dip"
             android:layout_marginTop="15dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginEnd="31dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_choices" />
+            app:layout_constraintTop_toBottomOf="@id/weekly_calorie_tracker" />
 
         <View
             android:id="@+id/ViewBlank"
