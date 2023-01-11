@@ -42,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="Done"
                 android:textStyle="italic"
+                android:visibility="invisible"
                 android:textColor="@color/TBGreen"
                 android:layout_marginHorizontal="10dp"
                 app:layout_constraintTop_toTopOf="parent"

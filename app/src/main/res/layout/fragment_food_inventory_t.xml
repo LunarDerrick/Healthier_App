@@ -543,7 +543,7 @@
         <View
             android:id="@+id/ViewBlank"
             android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_height="400dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/list_of_recipe_table" />
