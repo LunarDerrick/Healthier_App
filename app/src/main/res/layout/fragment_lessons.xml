@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:backgroundTint="#FFFFFF"
+            android:clickable="true"
             android:drawableEnd="@drawable/ic_baseline_filter_alt_24"
             android:text="@string/BTFilter"
             android:textColor="#000000"
@@ -283,5 +284,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CVLessonBooking3" />
 
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>
