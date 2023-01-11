@@ -136,6 +136,7 @@ public class ProgressTFragment extends Fragment {
         ArrayList<Integer> dailyVal = new ArrayList<>();
 
         ArrayList<DataPoint> dataPoints = new ArrayList<>();
+        dataPoints.add(new DataPoint(2, 973));
 
         submitCalories.setOnClickListener(new View.OnClickListener() {
             @Override
