@@ -241,12 +241,10 @@
         <View
             android:id="@+id/ViewBlank"
             android:layout_width="0dp"
-            android:layout_height="15dp"
+            android:layout_height="250dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CVLessonBooking3" />
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

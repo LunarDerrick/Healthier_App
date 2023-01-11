@@ -68,7 +68,6 @@ public class EarnRewardTFragment extends Fragment {
     ImageButton addBtn;
     AlertDialog dialog;
     LinearLayout layout;
-    Context context;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

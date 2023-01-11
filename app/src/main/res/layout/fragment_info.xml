@@ -5,7 +5,7 @@
     android:id="@+id/CLInfo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFAEA"
+    android:background="#F6E7B6"
     tools:context=".InfoFragment">
 
     <TextView

@@ -8,7 +8,6 @@
     android:background="#C1ACE6"
     tools:context=".FinderFragment">
 
-
     <!--    <ScrollView-->
     <!--        android:layout_width="match_parent"-->
     <!--        android:layout_height="wrap_content">-->
@@ -257,7 +256,7 @@
         <View
             android:id="@+id/ViewBlank"
             android:layout_width="0dp"
-            android:layout_height="15dp"
+            android:layout_height="250dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CVProHelpFinder3" />
