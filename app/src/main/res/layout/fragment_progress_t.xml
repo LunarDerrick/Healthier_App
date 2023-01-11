@@ -80,6 +80,7 @@
             android:layout_marginTop="3dp"
             android:background="@android:color/transparent"
             android:hint="type here"
+            android:text="1187"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/text_taken"
             app:layout_constraintTop_toTopOf="@+id/daily_calorie_taken" />
@@ -92,6 +93,7 @@
             android:layout_marginTop="3dp"
             android:background="@android:color/transparent"
             android:hint="type here"
+            android:text="490"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/text_burnt"
             app:layout_constraintTop_toTopOf="@+id/daily_calorie_burnt" />
