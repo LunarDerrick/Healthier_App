@@ -12,10 +12,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import java.util.function.IntToDoubleFunction;
 
@@ -38,6 +46,10 @@ public class ProgressTFragment extends Fragment {
     GraphView graphView;
     EditText calorieTaken, calorieBurnt;
     Button submitCalories;
+    TextView daily_average_result;
+    int x, y;
+
+    final String [] daysInWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
     public ProgressTFragment() {
         // Required empty public constructor
@@ -77,6 +89,38 @@ public class ProgressTFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_progress_t, container, false);
 
+        //get days
+        Format f = new SimpleDateFormat("EEEE");
+        String whichDay = f.format(new Date());
+
+        //set point x based on days
+        switch (whichDay) {
+            case "Monday":
+                x = 1;
+                break;
+            case "Tuesday":
+                x = 2;
+                break;
+            case "Wednesday":
+                x = 3;
+                break;
+            case "Thursday":
+                x = 4;
+                break;
+            case "Friday":
+                x = 5;
+                break;
+            case "Saturday":
+                x = 6;
+                break;
+            default:
+                x = 7;
+                break;
+        }
+
+        daily_average_result = view.findViewById(R.id.daily_average_result);
+
+        //input burnt and taken calorie
         graphView = view.findViewById(R.id.line_graph_view);
         calorieBurnt = view.findViewById(R.id.calorieBurnt);
         calorieTaken = view.findViewById(R.id.calorieTaken);
@@ -88,23 +132,60 @@ public class ProgressTFragment extends Fragment {
         Integer takenValueInt = Integer.parseInt(takenValue);
         Integer burntValueInt = Integer.parseInt(burntValue);
 
+        int dailyIntake = takenValueInt - burntValueInt;
+        ArrayList<Integer> dailyVal = new ArrayList<>();
+
+        ArrayList<DataPoint> dataPoints = new ArrayList<>();
+
         submitCalories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int avgCalories = weeklyAvgCal(whichDay, dailyVal);
+                daily_average_result.setText(avgCalories + "cal");
 
+                if (whichDay == "Monday") {
+                    dailyVal.clear();
+                    dailyVal.add(dailyIntake);
+                } else {
+                    dailyVal.add(dailyIntake);
+                }
+
+                dataPoints.add(new DataPoint(x, dailyIntake));
             }
         });
 
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 6)
-        });
+        DataPoint[] dataPointsArr = new DataPoint[dataPoints.size()];
+        dataPointsArr = dataPoints.toArray(dataPointsArr);
 
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(dataPointsArr);
 
         graphView.addSeries(series);
+
+        graphView.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter()
+        {
+            @Override
+            public String formatLabel(double value, boolean isValueX) {
+                if(isValueX){
+                    int i = -1;
+                    i += 1;
+                    return daysInWeek[i] + super.formatLabel(value, isValueX);
+                }
+                return super.formatLabel(value, isValueX);
+            }
+        });
+
         return view;
+    }
+
+    private int weeklyAvgCal(String day, ArrayList<Integer> dailyVal) {
+        int avg = 0;
+        if (day == "Sunday") {
+            for (int dailyEachVal : dailyVal) {
+                avg += dailyEachVal;
+            }
+            return avg / 7;
+        } else {
+            return 0;
+        }
     }
 }

@@ -8,7 +8,6 @@
     android:background="#C1ACE6"
     tools:context=".FinderFragment">
 
-
     <!--    <ScrollView-->
     <!--        android:layout_width="match_parent"-->
     <!--        android:layout_height="wrap_content">-->
