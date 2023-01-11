@@ -9,47 +9,11 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <SurfaceView
-        android:id="@+id/SVLocator"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:backgroundTint="#FFFFFF"
-        android:background="#FEFEFE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <SearchView
-        android:id="@+id/SVGymLocator"
-        android:layout_width="265dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="10dp"
-        android:background="#000000"
-        android:backgroundTint="#BAB8B8"
-        app:layout_constraintBottom_toBottomOf="@+id/SVLocator"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/SVLocator" />
-
-    <Button
-        android:id="@+id/BTFilterGymLocator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:backgroundTint="#FFFFFF"
-        android:drawableRight="@drawable/ic_baseline_filter_alt_24"
-        android:text="@string/BTFilter"
-        android:textColor="#000000"
-        app:cornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/SVGymLocator"
-        app:layout_constraintStart_toEndOf="@+id/SVGymLocator"
-        app:layout_constraintTop_toTopOf="@+id/SVGymLocator"
-        app:strokeWidth="1dp" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:text="Gyms near you: "
         android:textColor="#000000"
         android:textSize="20sp"
