@@ -267,6 +267,8 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                         Double car = men * 0.50;
                         car = car / 4;
                         carbs.setText(String.format("%.0fg", car));
+                    }else{
+                        Toast.makeText(requireContext(), "Please input gender in user profile", Toast.LENGTH_SHORT).show();
                     }
 
 
