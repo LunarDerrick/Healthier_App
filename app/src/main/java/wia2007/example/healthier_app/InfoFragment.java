@@ -60,7 +60,7 @@ public class InfoFragment extends Fragment {
                 numb.setText(userProfile.getPhoneNumber());
                 userweight.setText((int) userProfile.getWeight() + " kg");
                 userheight.setText((int) userProfile.getHeight() + " cm");
-                gender.setText("Female");
+                gender.setText(userProfile.getGender());
             }
 
             @Override

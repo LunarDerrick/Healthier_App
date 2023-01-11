@@ -8,6 +8,7 @@ public class User {
     private double weight;
     private String phoneNumber;
     private String name;
+    private String gender;
 
     public User() {
     }
@@ -17,7 +18,7 @@ public class User {
         this.email = email;
     }
 
-    public User(String username, String email, int age, double height, double weight, String phoneNumber, String name) {
+    public User(String username, String email, int age, double height, double weight, String phoneNumber, String name, String gender) {
         this.name = name;
         this.username = username;
         this.email = email;
@@ -25,6 +26,7 @@ public class User {
         this.height = height;
         this.weight = weight;
         this.phoneNumber = phoneNumber;
+        this.gender = gender;
     }
 
     public String getUsername() {
@@ -81,5 +83,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
