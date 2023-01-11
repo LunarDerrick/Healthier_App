@@ -13,10 +13,19 @@
         android:id="@+id/DestLesson"
         android:name="wia2007.example.healthier_app.LessonsFragment"
         android:label="Lesson Booking"
-        tools:layout="@layout/fragment_lessons" />
+        tools:layout="@layout/fragment_lessons" >
+        <action
+            android:id="@+id/action_DestLesson_to_DestTrainer1"
+            app:destination="@id/DestTrainer1" />
+    </fragment>
     <fragment
         android:id="@+id/DestLocator"
         android:name="wia2007.example.healthier_app.LocatorFragment"
         android:label="Gym Locator"
         tools:layout="@layout/fragment_locator" />
+    <fragment
+        android:id="@+id/DestTrainer1"
+        android:name="wia2007.example.healthier_app.Trainer1Fragment"
+        android:label="fragment_trainer1"
+        tools:layout="@layout/fragment_trainer1" />
 </navigation>

@@ -2,11 +2,15 @@ package wia2007.example.healthier_app;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,4 +65,24 @@ public class LessonsFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_lessons, container, false);
     }
+
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
+        Button BtnMore1 = view.findViewById(R.id.BTMore1);
+        View.OnClickListener OCLMore1 = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Fragment fragment = null;
+//                fragment = new Trainer1Fragment();
+//                replaceFragment(fragment);
+                Navigation.findNavController(view).navigate(R.id.action_DestLesson_to_DestTrainer1);
+            }
+        };
+        BtnMore1.setOnClickListener(OCLMore1);
+    }
+//    public void replaceFragment(Fragment someFragment) {
+//        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+//        transaction.replace(R.id.DestTrainer1, someFragment);
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+
 }
