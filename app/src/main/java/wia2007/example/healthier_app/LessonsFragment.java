@@ -1,12 +1,15 @@
 package wia2007.example.healthier_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,13 +78,13 @@ public class LessonsFragment extends Fragment {
         View.OnClickListener OCLMore1 = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Fragment fragment = null;
-//                fragment = new Trainer1Fragment();
-//                replaceFragment(fragment);
-                Navigation.findNavController(view).navigate(R.id.DestTrainer1);
+//                Navigation.findNavController(view).navigate(R.id.DestTrainer1);
+                Intent intent = new Intent(getActivity().getApplicationContext(), TrainerActivity.class);
+                startActivity(intent);
             }
         };
         BtnMore1.setOnClickListener(OCLMore1);
+
 
 //        BtnMore1.setOnClickListener(new View.OnClickListener() {
 //            public void onClick(View v) {
