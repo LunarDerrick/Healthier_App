@@ -5,7 +5,7 @@
     android:id="@+id/CLAddPay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFAEA"
+    android:background="#F6E7B6"
     tools:context=".AddPaymentFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -44,7 +44,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/edit_text_lightyellow"
         android:gravity="center_horizontal|center_vertical"
-        android:spinnerMode="dialog"
+        android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="@+id/white_bg"
         app:layout_constraintStart_toStartOf="@+id/white_bg"
         app:layout_constraintTop_toBottomOf="@+id/choose_ewallet"

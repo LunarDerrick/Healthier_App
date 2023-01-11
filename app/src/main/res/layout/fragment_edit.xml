@@ -5,7 +5,7 @@
     android:id="@+id/SVEdit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFAEA"
+    android:background="#F6E7B6"
     tools:context=".EditFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -49,7 +49,7 @@
             android:layout_marginEnd="60dp"
             android:background="@drawable/edit_text_lightyellow"
             android:gravity="center_horizontal|center_vertical"
-            android:spinnerMode="dialog"
+            android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TIName"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
