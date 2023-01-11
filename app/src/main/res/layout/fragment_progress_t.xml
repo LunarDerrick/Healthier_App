@@ -237,7 +237,7 @@
         <View
             android:id="@+id/ViewBlank"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="200dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/daily_average_result_container" />
