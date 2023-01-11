@@ -118,9 +118,6 @@ public class CalorieCalc extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        cvrec.setVisibility(View.INVISIBLE);
-        tvrec.setVisibility(View.INVISIBLE);
-
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -191,8 +188,6 @@ public class CalorieCalc extends Fragment {
                                 lcminmax.setText(String.format("(min: %.0f, max: %.0f)", lmin, lmax));
                                 dnminmax.setText(String.format("(min: %.0f, max: %.0f)", dmin, dmax));
                             }
-                            tvrec.setVisibility(View.VISIBLE);
-                            cvrec.setVisibility(View.VISIBLE);
                         }
                     } catch (NumberFormatException e) {
                         Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
