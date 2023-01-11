@@ -2,9 +2,11 @@ package wia2007.example.healthier_app;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +18,11 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -55,6 +60,28 @@ public class EditFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, items);
         //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
+
+        DatabaseReference dbuser = FirebaseDatabase
+                .getInstance("https://healthier-app-aed74-default-rtdb.asia-southeast1.firebasedatabase.app")
+                .getReference("User").child(firebaseAuth.getUid());
+
+        dbuser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
+                etusername.setText(userProfile.getUsername());
+                etname.setText(userProfile.getName());
+                etage.setText(userProfile.getAge() + "");
+                phone.setText(userProfile.getPhoneNumber());
+                weight.setText((int) userProfile.getWeight() + "");
+                height.setText((int) userProfile.getHeight() + "");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w("TAG", "Failed to read value.", error.toException());
+            }
+        });
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
