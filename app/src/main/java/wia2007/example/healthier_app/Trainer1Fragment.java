@@ -23,16 +23,13 @@ import java.util.Calendar;
  */
 public class Trainer1Fragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    private TextView TVLessonBooking;
     Calendar calendar = Calendar.getInstance();
 
     DatePickerDialog datePickerDialog;
@@ -50,7 +47,6 @@ public class Trainer1Fragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment Trainer1Fragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static Trainer1Fragment newInstance(String param1, String param2) {
         Trainer1Fragment fragment = new Trainer1Fragment();
         Bundle args = new Bundle();
@@ -73,13 +69,12 @@ public class Trainer1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_trainer1, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_trainer1, container, false);
     }
 
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
-        Button BTBookLesson = (Button) view.findViewById(R.id.BTBookLessons);
-        TextView TVReservation = (TextView) view.findViewById(R.id.TVReservation);
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        Button BTBookLesson = view.findViewById(R.id.BTBookLessons);
+        TextView TVReservation = view.findViewById(R.id.TVReservation);
 
         dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -103,7 +98,7 @@ public class Trainer1Fragment extends Fragment {
                 currentMonth = calendar.get(Calendar.MONTH);
                 currentDayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
 
-                datePickerDialog = new DatePickerDialog(getActivity(), dateSetListener, currentYear,currentMonth,currentDayOfMonth);
+                datePickerDialog = new DatePickerDialog(getActivity(), dateSetListener, currentYear, currentMonth, currentDayOfMonth);
                 datePickerDialog.show();
             }
         });

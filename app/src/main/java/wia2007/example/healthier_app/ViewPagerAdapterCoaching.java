@@ -14,8 +14,6 @@ public class ViewPagerAdapterCoaching extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position) {
-            case 0:
-                return new FinderFragment();
             case 1:
                 return new LessonsFragment();
             case 2:

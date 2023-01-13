@@ -33,25 +33,25 @@
                 android:id="@+id/TIProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Progress Tracker" />
+                android:text="@string/TIProgress" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/TIReward"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Earn Reward Points" />
+                android:text="@string/TIReward" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/TIFood"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Manage Food Inventory" />
+                android:text="@string/TIFood" />
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/VP2Tracker"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></androidx.viewpager2.widget.ViewPager2>
+            android:layout_height="match_parent" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -62,7 +62,6 @@
         android:background="@color/tracker_submit_darkerPink"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:title="Tracker Activity"
         android:titleTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

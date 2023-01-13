@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0C869"
-    tools:context=".placeholder.LoginFragment" >
+    tools:context=".LoginFragment" >
 
     <TextView
         android:id="@+id/whiterec_login"

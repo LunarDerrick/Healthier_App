@@ -1,22 +1,15 @@
 package wia2007.example.healthier_app;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,12 +18,10 @@ import android.widget.Toast;
  */
 public class LessonsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -46,7 +37,6 @@ public class LessonsFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment Lessons.
      */
-    // TODO: Rename and change types and number of parameters
     public static LessonsFragment newInstance(String param1, String param2) {
         LessonsFragment fragment = new LessonsFragment();
         Bundle args = new Bundle();
@@ -78,27 +68,10 @@ public class LessonsFragment extends Fragment {
         View.OnClickListener OCLMore1 = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Navigation.findNavController(view).navigate(R.id.DestTrainer1);
                 Intent intent = new Intent(getActivity().getApplicationContext(), TrainerActivity.class);
                 startActivity(intent);
             }
         };
         BtnMore1.setOnClickListener(OCLMore1);
-
-
-//        BtnMore1.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                FragmentTransaction fragmentTransaction = getActivity()
-//                        .getSupportFragmentManager().beginTransaction();
-//                fragmentTransaction.replace(R.id.DestTrainer1, new Trainer1Fragment());
-//                fragmentTransaction.commit();
-//            }
-//        });
-//    public void replaceFragment(Fragment someFragment) {
-//        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-//        transaction.replace(R.id.DestTrainer1, someFragment);
-//        transaction.addToBackStack(null);
-//        transaction.commit();
     }
-
 }

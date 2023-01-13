@@ -33,25 +33,25 @@
                 android:id="@+id/TIDiet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Diet" />
+                android:text="@string/TIDiet" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/TIExercise"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Exercise" />
+                android:text="@string/TIExercise" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/TIFast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fasting" />
+                android:text="@string/TIFasting" />
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/VP2Planner"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></androidx.viewpager2.widget.ViewPager2>
+            android:layout_height="match_parent" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -103,6 +103,5 @@
         app:layout_constraintTop_toBottomOf="@+id/ABLPlanner"
         app:navGraph="@navigation/nav_planner"
         tools:layout="@layout/fragment_diet" />
-<!--    android:name="wia2007.example.healthier_app.DietFragment"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

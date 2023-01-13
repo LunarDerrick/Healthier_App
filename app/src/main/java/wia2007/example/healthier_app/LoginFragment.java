@@ -1,4 +1,4 @@
-package wia2007.example.healthier_app.placeholder;
+package wia2007.example.healthier_app;
 
 import android.os.Bundle;
 
@@ -19,9 +19,6 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import wia2007.example.healthier_app.R;
-
-
 public class LoginFragment extends Fragment {
 
     @Override
@@ -33,8 +30,8 @@ public class LoginFragment extends Fragment {
         TextInputEditText passwordET = view.findViewById(R.id.pass);
         Button loginButton = view.findViewById(R.id.loginBtn);
 
-        TextView dontHave= view.findViewById(R.id.signin);
-        View.OnClickListener BtnNoAccOnClick= new View.OnClickListener() {
+        TextView dontHave = view.findViewById(R.id.signin);
+        View.OnClickListener BtnNoAccOnClick = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.DestRegister);
@@ -48,7 +45,7 @@ public class LoginFragment extends Fragment {
     }
 
     private void register(String email, String password, View view) {
-        if (email.isEmpty() || password.isEmpty()){
+        if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(requireContext(), "Please fill in both of the text fields", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -57,8 +54,6 @@ public class LoginFragment extends Fragment {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(requireContext(), "Login successfully!", Toast.LENGTH_SHORT).show();
-                        // todo navigate to home page
-                        // phang: hopefully this works, since I can't get login to work for me
                         Navigation.findNavController(view).navigate(R.id.DestMain);
                     }
                 }).addOnFailureListener(new OnFailureListener() {

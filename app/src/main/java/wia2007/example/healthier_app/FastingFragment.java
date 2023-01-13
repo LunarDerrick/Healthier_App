@@ -22,12 +22,10 @@ import android.widget.Toast;
  */
 public class FastingFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -47,7 +45,6 @@ public class FastingFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment FastingFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static FastingFragment newInstance(String param1, String param2) {
         FastingFragment fragment = new FastingFragment();
         Bundle args = new Bundle();
@@ -79,8 +76,8 @@ public class FastingFragment extends Fragment {
         EditText ETDurationFast = view.findViewById(R.id.ETDurationFast);
         ProgressBar progressBar = view.findViewById(R.id.PBProgressFast);
 
-        BtnPause.setVisibility(view.GONE);
-        BtnResume.setVisibility(view.GONE);
+        BtnPause.setVisibility(View.GONE);
+        BtnResume.setVisibility(View.GONE);
 
         BtnStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +85,7 @@ public class FastingFragment extends Fragment {
                 String durationStr = ETDurationFast.getText().toString();
                 counter = Integer.parseInt(durationStr);
                 progressBar.setProgress(0);
-                progressBar.setMax(counter+1);
+                progressBar.setMax(counter + 1);
 
                 countDownTimer = new CountDownTimer(counter * 1000, 1000) {
                     public void onTick(long millisUntilFinished) {
@@ -101,28 +98,28 @@ public class FastingFragment extends Fragment {
                         TVTimeCountDown.setText("COMPLETE");
                         progressBar.incrementProgressBy(1);
 
-                        BtnPause.setVisibility(view.GONE);
-                        BtnResume.setVisibility(view.GONE);
-                        BtnStart.setVisibility(view.VISIBLE);
+                        BtnPause.setVisibility(View.GONE);
+                        BtnResume.setVisibility(View.GONE);
+                        BtnStart.setVisibility(View.VISIBLE);
 
                         String message = "Time's Up";
                         Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
                     }
                 }.start();
 
-                BtnStart.setVisibility(view.GONE);
-                BtnPause.setVisibility(view.VISIBLE);
+                BtnStart.setVisibility(View.GONE);
+                BtnPause.setVisibility(View.VISIBLE);
             }
         });
 
         BtnPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pauseCounter = counter+1;
+                pauseCounter = counter + 1;
                 countDownTimer.cancel();
 
-                BtnPause.setVisibility(view.GONE);
-                BtnResume.setVisibility(view.VISIBLE);
+                BtnPause.setVisibility(View.GONE);
+                BtnResume.setVisibility(View.VISIBLE);
 
                 String message = "Timer paused";
                 Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
@@ -145,17 +142,17 @@ public class FastingFragment extends Fragment {
                         TVTimeCountDown.setText("COMPLETE");
                         progressBar.incrementProgressBy(1);
 
-                        BtnPause.setVisibility(view.GONE);
-                        BtnResume.setVisibility(view.GONE);
-                        BtnStart.setVisibility(view.VISIBLE);
+                        BtnPause.setVisibility(View.GONE);
+                        BtnResume.setVisibility(View.GONE);
+                        BtnStart.setVisibility(View.VISIBLE);
 
                         String message = "Time's Up";
                         Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
                     }
                 }.start();
 
-                BtnResume.setVisibility(view.GONE);
-                BtnPause.setVisibility(view.VISIBLE);
+                BtnResume.setVisibility(View.GONE);
+                BtnPause.setVisibility(View.VISIBLE);
             }
         });
 
@@ -169,9 +166,9 @@ public class FastingFragment extends Fragment {
                 TVTimeCountDown.setText(String.valueOf(counter));
                 progressBar.setProgress(0);
 
-                BtnPause.setVisibility(view.GONE);
-                BtnResume.setVisibility(view.GONE);
-                BtnStart.setVisibility(view.VISIBLE);
+                BtnPause.setVisibility(View.GONE);
+                BtnResume.setVisibility(View.GONE);
+                BtnStart.setVisibility(View.VISIBLE);
 
                 String message = "Timer cancelled";
                 Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();

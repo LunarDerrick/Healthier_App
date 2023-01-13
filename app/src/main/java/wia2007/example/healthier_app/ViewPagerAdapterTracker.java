@@ -14,8 +14,6 @@ public class ViewPagerAdapterTracker extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position) {
-            case 0:
-                return new ProgressTFragment();
             case 1:
                 return new EarnRewardTFragment();
             case 2:

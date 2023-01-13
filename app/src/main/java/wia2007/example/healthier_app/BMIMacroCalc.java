@@ -1,6 +1,5 @@
 package wia2007.example.healthier_app;
 
-import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,16 +7,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -43,7 +38,6 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
     double activityLevel, mainweightgoal;
     int high, wigh, age;
     String gen;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -116,8 +110,8 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                 gain.setBackgroundResource(R.drawable.edit_text_purple);
                 loss.setBackgroundResource(R.drawable.edit_text_white);
                 gain.setTextColor(Color.WHITE);
-                maintain.setTextColor(Color.rgb(139,139,139));
-                loss.setTextColor(Color.rgb(139,139,139));
+                maintain.setTextColor(Color.rgb(139, 139, 139));
+                loss.setTextColor(Color.rgb(139, 139, 139));
                 mainweightgoal = (+0.2);
             }
         });
@@ -130,8 +124,8 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                 maintain.setBackgroundResource(R.drawable.edit_text_purple);
                 loss.setBackgroundResource(R.drawable.edit_text_white);
                 maintain.setTextColor(Color.WHITE);
-                gain.setTextColor(Color.rgb(139,139,139));
-                loss.setTextColor(Color.rgb(139,139,139));
+                gain.setTextColor(Color.rgb(139, 139, 139));
+                loss.setTextColor(Color.rgb(139, 139, 139));
                 mainweightgoal = 0;
             }
         });
@@ -144,8 +138,8 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                 loss.setBackgroundResource(R.drawable.edit_text_purple);
                 gain.setBackgroundResource(R.drawable.edit_text_white);
                 loss.setTextColor(Color.WHITE);
-                maintain.setTextColor(Color.rgb(139,139,139));
-                gain.setTextColor(Color.rgb(139,139,139));
+                maintain.setTextColor(Color.rgb(139, 139, 139));
+                gain.setTextColor(Color.rgb(139, 139, 139));
                 mainweightgoal = (-0.2);
             }
         });
@@ -158,8 +152,8 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                 sedentary.setBackgroundResource(R.drawable.edit_text_purple);
                 active.setBackgroundResource(R.drawable.edit_text_white);
                 sedentary.setTextColor(Color.WHITE);
-                moderate.setTextColor(Color.rgb(139,139,139));
-                active.setTextColor(Color.rgb(139,139,139));
+                moderate.setTextColor(Color.rgb(139, 139, 139));
+                active.setTextColor(Color.rgb(139, 139, 139));
                 activityLevel = 1.2;
             }
         });
@@ -172,8 +166,8 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                 moderate.setBackgroundResource(R.drawable.edit_text_purple);
                 active.setBackgroundResource(R.drawable.edit_text_white);
                 moderate.setTextColor(Color.WHITE);
-                sedentary.setTextColor(Color.rgb(139,139,139));
-                active.setTextColor(Color.rgb(139,139,139));
+                sedentary.setTextColor(Color.rgb(139, 139, 139));
+                active.setTextColor(Color.rgb(139, 139, 139));
                 activityLevel = 1.5;
             }
         });
@@ -186,8 +180,8 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                 active.setBackgroundResource(R.drawable.edit_text_purple);
                 sedentary.setBackgroundResource(R.drawable.edit_text_white);
                 active.setTextColor(Color.WHITE);
-                sedentary.setTextColor(Color.rgb(139,139,139));
-                moderate.setTextColor(Color.rgb(139,139,139));
+                sedentary.setTextColor(Color.rgb(139, 139, 139));
+                moderate.setTextColor(Color.rgb(139, 139, 139));
                 activityLevel = 1.75;
             }
         });
@@ -195,11 +189,10 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 double heinput = Double.valueOf(tinggi.getText().toString());
-                if (berat.getText().toString().trim().isEmpty() || tinggi.getText().toString().trim().isEmpty() || heinput <= 0){
+                if (berat.getText().toString().trim().isEmpty() || tinggi.getText().toString().trim().isEmpty() || heinput <= 0) {
                     Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     Double test = Double.parseDouble(berat.getText().toString()) /
                             ((Double.parseDouble(tinggi.getText().toString()) / 100) * (Double.parseDouble(tinggi.getText().toString()) / 100));
                     result.setText(String.format("%.1f", test));
@@ -237,7 +230,7 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                         range.setText("Your healthy weight range: 72-96kg");
                     }
 
-                    if(gen.equalsIgnoreCase("Male")){
+                    if (gen.equalsIgnoreCase("Male")) {
                         Double men = (10 * Double.parseDouble(berat.getText().toString())) +
                                 (6.25 * ((Double.parseDouble(tinggi.getText().toString())))) - (5 * age) + 5;
                         men = men * activityLevel;
@@ -252,7 +245,7 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                         Double car = men * 0.50;
                         car = car / 4;
                         carbs.setText(String.format("%.0fg", car));
-                    }else if(gen.equalsIgnoreCase("Female")){
+                    } else if (gen.equalsIgnoreCase("Female")) {
                         Double men = (10 * Double.parseDouble(berat.getText().toString())) +
                                 (6.25 * ((Double.parseDouble(tinggi.getText().toString())))) - (5 * age) - 161;
                         men = men * activityLevel;
@@ -267,11 +260,9 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
                         Double car = men * 0.50;
                         car = car / 4;
                         carbs.setText(String.format("%.0fg", car));
-                    }else{
+                    } else {
                         Toast.makeText(requireContext(), "Please input gender in user profile", Toast.LENGTH_SHORT).show();
                     }
-
-
 
                     cardbmi.setVisibility(View.VISIBLE);
                     cardmacro.setVisibility(View.VISIBLE);
@@ -284,6 +275,5 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-
     }
 }

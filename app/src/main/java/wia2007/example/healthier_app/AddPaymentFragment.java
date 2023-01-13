@@ -13,15 +13,11 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
-import java.util.Objects;
 
 public class AddPaymentFragment extends Fragment {
 
@@ -55,7 +51,7 @@ public class AddPaymentFragment extends Fragment {
             if (cnum.getText().toString().isEmpty() || expdate.getText().toString().isEmpty() || cvv.getText().toString().isEmpty()) {
                 Toast.makeText(requireContext(), "Please fill in the text fields", Toast.LENGTH_SHORT).show();
                 return;
-            }else {
+            } else {
                 Toast.makeText(requireContext(), "Saved successfully", Toast.LENGTH_SHORT).show();
                 String ewallet = dropdown.getSelectedItem().toString();
                 String cardnum = cnum.getText().toString();

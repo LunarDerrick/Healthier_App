@@ -22,9 +22,6 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link CalorieCalc#newInstance} factory method to
@@ -32,12 +29,10 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 public class CalorieCalc extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -53,7 +48,6 @@ public class CalorieCalc extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment CalorieCalc.
      */
-    // TODO: Rename and change types and number of parameters
     public static CalorieCalc newInstance(String param1, String param2) {
         CalorieCalc fragment = new CalorieCalc();
         Bundle args = new Bundle();
@@ -122,8 +116,7 @@ public class CalorieCalc extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selected = (String) parent.getItemAtPosition(position);
-                int number = Integer.parseInt(selected);
-                qty = number;
+                qty = Integer.parseInt(selected);
             }
 
             @Override
@@ -147,16 +140,16 @@ public class CalorieCalc extends Fragment {
                         } else {
                             Integer clr = Integer.parseInt(calo.getText().toString());
                             perclr.setText(String.format(" /%d kcal", clr));
-                            if(qty == 3){
-                                Double dmin = clr*0.25;
-                                Double dn = clr*0.3;
-                                Double bmin = clr*0.3;
-                                Double bkf = clr*0.325;
-                                Double bmax = clr*0.35;
-                                Double lmin = clr*0.35;
-                                Double dmax = clr*0.35;
-                                Double lc = clr*0.375;
-                                Double lmax = clr*0.4;
+                            if (qty == 3) {
+                                Double dmin = clr * 0.25;
+                                Double dn = clr * 0.3;
+                                Double bmin = clr * 0.3;
+                                Double bkf = clr * 0.325;
+                                Double bmax = clr * 0.35;
+                                Double lmin = clr * 0.35;
+                                Double dmax = clr * 0.35;
+                                Double lc = clr * 0.375;
+                                Double lmax = clr * 0.4;
                                 brkfst.setText(String.format("Breakfast\t\t\t\t\t\t%.0f kcal", bkf));
                                 mngsnk.setText("Morning snack\t\t\t\t\t 0 kcal");
                                 lnch.setText(String.format("Lunch\t\t\t\t\t\t%.0f kcal", lc));
@@ -165,24 +158,23 @@ public class CalorieCalc extends Fragment {
                                 msminmax.setText("(min: 0, max: 0)");
                                 lcminmax.setText(String.format("(min: %.0f, max: %.0f)", lmin, lmax));
                                 dnminmax.setText(String.format("(min: %.0f, max: %.0f)", dmin, dmax));
-                            }
-                            else if(qty == 4){
-                                Double msmin = clr*0.05;
-                                Double mgsk = clr*0.075;
-                                Double msmax = clr*0.1;
-                                Double bmin = clr*0.25;
-                                Double dmin = clr*0.25;
-                                Double bkf = clr*0.275;
-                                Double dn = clr*0.275;
-                                Double bmax = clr*0.3;
-                                Double dmax = clr*0.3;
-                                Double lmin = clr*0.35;
-                                Double lc = clr*0.375;
-                                Double lmax = clr*0.4;
+                            } else if (qty == 4) {
+                                Double msmin = clr * 0.05;
+                                Double mgsk = clr * 0.075;
+                                Double msmax = clr * 0.1;
+                                Double bmin = clr * 0.25;
+                                Double dmin = clr * 0.25;
+                                Double bkf = clr * 0.275;
+                                Double dn = clr * 0.275;
+                                Double bmax = clr * 0.3;
+                                Double dmax = clr * 0.3;
+                                Double lmin = clr * 0.35;
+                                Double lc = clr * 0.375;
+                                Double lmax = clr * 0.4;
                                 brkfst.setText(String.format("Breakfast\t\t\t\t\t\t%.0f kcal", bkf));
                                 mngsnk.setText(String.format("Morning snack\t\t\t\t\t%.0f kcal", mgsk));
                                 lnch.setText(String.format("Lunch\t\t\t\t\t\t%.0f kcal", lc));
-                                dnr.setText(String.format("Dinner\t\t\t\t\t\t%.0f kcal",dn));
+                                dnr.setText(String.format("Dinner\t\t\t\t\t\t%.0f kcal", dn));
                                 brminmax.setText(String.format("(min: %.0f, max: %.0f)", bmin, bmax));
                                 msminmax.setText(String.format("(min: %.0f, max: %.0f)", msmin, msmax));
                                 lcminmax.setText(String.format("(min: %.0f, max: %.0f)", lmin, lmax));
@@ -211,7 +203,7 @@ public class CalorieCalc extends Fragment {
                 etms.setText("Morning snack");
                 etms.setGravity(Gravity.CENTER);
                 etms.setBackgroundResource(R.drawable.cell_shape);
-                etms.setPadding(6,18,6,18);
+                etms.setPadding(6, 18, 6, 18);
                 etms.setTextColor(Color.rgb(0, 25, 255));
                 //etsnack
                 etsnack.setTextSize(12);
@@ -220,7 +212,7 @@ public class CalorieCalc extends Fragment {
                 etsnack.setText("Foods");
                 etsnack.setGravity(Gravity.CENTER);
                 etsnack.setBackgroundResource(R.drawable.cell_shape);
-                etsnack.setPadding(6,18,6,18);
+                etsnack.setPadding(6, 18, 6, 18);
                 etsnack.setTextColor(Color.rgb(0, 25, 255));
                 //etmscal
                 etmscal.setTextSize(12);
@@ -229,7 +221,7 @@ public class CalorieCalc extends Fragment {
                 etmscal.setText("0 kcal");
                 etmscal.setGravity(Gravity.CENTER);
                 etmscal.setBackgroundResource(R.drawable.cell_shape);
-                etmscal.setPadding(6,18,6,18);
+                etmscal.setPadding(6, 18, 6, 18);
                 etmscal.setTextColor(Color.rgb(0, 25, 255));
                 tbladd.addView(etms);
                 tbladd.addView(etsnack);
@@ -243,35 +235,35 @@ public class CalorieCalc extends Fragment {
         calo.setText("" + calinput1);
 
         String bfdd = calprefs.getString("bfd", "");
-        if(brefoods != null) {
+        if (brefoods != null) {
             brefoods.setText("" + bfdd);
         }
         String lfdd = calprefs.getString("lfd", "");
-        if(lunfoods != null) {
+        if (lunfoods != null) {
             lunfoods.setText("" + lfdd);
         }
         String dfdd = calprefs.getString("dfd", "");
-        if(dinfoods != null) {
+        if (dinfoods != null) {
             dinfoods.setText("" + dfdd);
         }
         String bcll = calprefs.getString("bcl", "");
-        if(brecal != null){
+        if (brecal != null) {
             brecal.setText("" + bcll);
         }
         String lcll = calprefs.getString("lcl", "");
-        if(luncal != null){
+        if (luncal != null) {
             luncal.setText("" + lcll);
         }
         String dcll = calprefs.getString("dcl", "");
-        if(dincal != null){
+        if (dincal != null) {
             dincal.setText("" + dcll);
         }
         String mfdd = calprefs.getString("mfd", mfd);
-        if(etsnack != null){
+        if (etsnack != null) {
             etsnack.setText("" + mfdd);
         }
         String mcll = calprefs.getString("mcl", mcl);
-        if(etmscal != null){
+        if (etmscal != null) {
             etmscal.setText("" + mcll);
         }
 
@@ -286,10 +278,10 @@ public class CalorieCalc extends Fragment {
                 bcl = brecal.getText().toString();
                 lcl = luncal.getText().toString();
                 dcl = dincal.getText().toString();
-                if(etsnack != null){
+                if (etsnack != null) {
                     mfd = etsnack.getText().toString();
                 }
-                if(etmscal != null){
+                if (etmscal != null) {
                     mcl = etmscal.getText().toString();
                 }
                 calinput = Integer.parseInt(input);
@@ -340,8 +332,6 @@ public class CalorieCalc extends Fragment {
             }
         });
 
-
         return view;
     }
 }
-

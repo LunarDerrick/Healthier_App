@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class VPAdapter extends RecyclerView.Adapter<VPAdapter.ViewHolder>{
+public class VPAdapter extends RecyclerView.Adapter<VPAdapter.ViewHolder> {
 
     ArrayList<ViewPagerItem> viewPagerItemArrayList;
 
@@ -23,15 +23,15 @@ public class VPAdapter extends RecyclerView.Adapter<VPAdapter.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view= LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.viewpager_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.viewpager_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        ViewPagerItem viewPagerItem=viewPagerItemArrayList.get(position);
+        ViewPagerItem viewPagerItem = viewPagerItemArrayList.get(position);
 
         holder.imageView.setImageResource(viewPagerItem.imageID);
         holder.tvHeading.setText(viewPagerItem.heading);
@@ -42,7 +42,7 @@ public class VPAdapter extends RecyclerView.Adapter<VPAdapter.ViewHolder>{
         return viewPagerItemArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
         TextView tvHeading;
@@ -50,8 +50,8 @@ public class VPAdapter extends RecyclerView.Adapter<VPAdapter.ViewHolder>{
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageView=itemView.findViewById(R.id.ivimage);
-            tvHeading=itemView.findViewById(R.id.tvHeading);
+            imageView = itemView.findViewById(R.id.ivimage);
+            tvHeading = itemView.findViewById(R.id.tvHeading);
         }
     }
 }

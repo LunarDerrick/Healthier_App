@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,16 +19,12 @@ import android.widget.ImageView;
  */
 public class FinderFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-
 
     public FinderFragment() {
         // Required empty public constructor
@@ -43,7 +38,6 @@ public class FinderFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment ProfessionalHelpFinder.
      */
-    // TODO: Rename and change types and number of parameters
     public static FinderFragment newInstance(String param1, String param2) {
         FinderFragment fragment = new FinderFragment();
         Bundle args = new Bundle();
@@ -69,11 +63,7 @@ public class FinderFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_finder, container, false);
     }
 
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
-        ImageView imageViewPro1 = getView().findViewById(R.id.IVPro1);
-        ImageView imageViewPro2 = getView().findViewById(R.id.IVPro2);
-        ImageView imageViewPro3 = getView().findViewById(R.id.IVPro3);
-
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         Button BtChat1 = view.findViewById(R.id.BTChat1);
         BtChat1.setOnClickListener(new View.OnClickListener() {
             @Override

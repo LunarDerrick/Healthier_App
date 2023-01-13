@@ -13,14 +13,10 @@ public class ViewPagerAdapterCalculator extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position) {
-            case 0:
-                return new BMIMacroCalc();
-            case 1:
-                return new CalorieCalc();
-            default:
-                return new BMIMacroCalc();
+        if (position == 1) {
+            return new CalorieCalc();
         }
+        return new BMIMacroCalc();
     }
 
     @Override

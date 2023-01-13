@@ -33,25 +33,25 @@
                 android:id="@+id/TIFinder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Professional Help Finder" />
+                android:text="@string/TIFinder" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/TILesson"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson Booking" />
+                android:text="@string/TILesson" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/TILocator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gym Locator" />
+                android:text="@string/TILocator" />
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/VP2Coaching"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></androidx.viewpager2.widget.ViewPager2>
+            android:layout_height="match_parent" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -62,7 +62,6 @@
         android:background="#9874FF"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:title="Professional Help Finder"
         android:titleTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

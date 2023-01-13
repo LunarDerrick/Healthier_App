@@ -8,7 +8,6 @@
     android:background="#F6E7B6"
     tools:context=".AddPaymentFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/white_bg"
         android:layout_width="340dp"
@@ -102,7 +101,7 @@
             android:id="@+id/cardno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Card Number"
+            android:hint="@string/cardnoHint"
             android:inputType="number"
             android:maxLength="16" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -122,7 +121,7 @@
             android:id="@+id/cardexpire"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="MM/YY"
+            android:hint="@string/cardexpireHint"
             android:inputType="datetime"
             android:maxLength="5" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -143,7 +142,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="CVV"
+            android:hint="@string/cvvHint"
             android:inputType="number"
             android:maxLength="3" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -156,7 +155,8 @@
         android:src="@drawable/payment_page"
         app:layout_constraintEnd_toEndOf="@+id/white_bg"
         app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toTopOf="@+id/white_bg" />
+        app:layout_constraintTop_toTopOf="@+id/white_bg"
+        android:contentDescription="@string/CDPayment" />
 
     <ImageView
         android:id="@+id/dropdown"
@@ -166,6 +166,7 @@
         android:src="@android:drawable/arrow_down_float"
         app:layout_constraintBottom_toBottomOf="@+id/e_wallet"
         app:layout_constraintEnd_toEndOf="@+id/e_wallet"
-        app:layout_constraintTop_toTopOf="@+id/e_wallet" />
+        app:layout_constraintTop_toTopOf="@+id/e_wallet"
+        android:contentDescription="@string/CDDownArrow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

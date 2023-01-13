@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -35,7 +34,6 @@ public class EditFragment extends Fragment {
     FirebaseDatabase db = FirebaseDatabase.getInstance("https://healthier-app-aed74-default-rtdb.asia-southeast1.firebasedatabase.app");
     DatabaseReference root = db.getInstance().getReference();
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -89,7 +87,6 @@ public class EditFragment extends Fragment {
                 if (etusername.getText().toString().isEmpty() || etname.getText().toString().isEmpty() ||
                         etage.getText().toString().isEmpty() || phone.getText().toString().isEmpty()) {
                     Toast.makeText(requireContext(), "Please fill in the text fields", Toast.LENGTH_SHORT).show();
-                    return;
                 } else {
                     Toast.makeText(requireContext(), "Saved successfully", Toast.LENGTH_SHORT).show();
                     String username = etusername.getText().toString();
@@ -113,10 +110,8 @@ public class EditFragment extends Fragment {
 
                     Navigation.findNavController(view).navigate(R.id.DestInfo);
                 }
-
             }
         });
-
 
         return view;
     }

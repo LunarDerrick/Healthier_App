@@ -7,7 +7,7 @@
     app:startDestination="@id/DestLogin">
     <fragment
         android:id="@+id/DestLogin"
-        android:name="wia2007.example.healthier_app.placeholder.LoginFragment"
+        android:name="wia2007.example.healthier_app.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment

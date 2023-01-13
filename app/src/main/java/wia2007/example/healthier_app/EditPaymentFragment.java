@@ -3,7 +3,6 @@ package wia2007.example.healthier_app;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -44,7 +43,7 @@ public class EditPaymentFragment extends Fragment {
         dbpay.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     Payment paymentProfile = dataSnapshot.getValue(Payment.class);
                     cnum.setText(paymentProfile.getCardnumber());
                     expdate.setText(paymentProfile.getExpirydate());

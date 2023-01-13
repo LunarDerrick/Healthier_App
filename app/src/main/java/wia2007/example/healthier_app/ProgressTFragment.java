@@ -1,11 +1,8 @@
 package wia2007.example.healthier_app;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,9 +20,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.text.Format;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
-import java.util.function.IntToDoubleFunction;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,12 +29,10 @@ import java.util.function.IntToDoubleFunction;
  */
 public class ProgressTFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -47,9 +40,9 @@ public class ProgressTFragment extends Fragment {
     EditText calorieTaken, calorieBurnt;
     Button submitCalories;
     TextView daily_average_result;
-    int x, y;
+    int x;
 
-    final String [] daysInWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    final String[] daysInWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
     public ProgressTFragment() {
         // Required empty public constructor
@@ -63,7 +56,6 @@ public class ProgressTFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment ProgressTFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static ProgressTFragment newInstance(String param1, String param2) {
         ProgressTFragment fragment = new ProgressTFragment();
         Bundle args = new Bundle();
@@ -115,7 +107,6 @@ public class ProgressTFragment extends Fragment {
                 break;
             default:
                 x = 7;
-                break;
         }
 
         daily_average_result = view.findViewById(R.id.daily_average_result);
@@ -124,7 +115,7 @@ public class ProgressTFragment extends Fragment {
         graphView = view.findViewById(R.id.line_graph_view);
         calorieBurnt = view.findViewById(R.id.calorieBurnt);
         calorieTaken = view.findViewById(R.id.calorieTaken);
-        submitCalories = (Button) view.findViewById(R.id.submit_button_progress_tracker);
+        submitCalories = view.findViewById(R.id.submit_button_progress_tracker);
 
         String takenValue = calorieTaken.getText().toString();
         String burntValue = calorieBurnt.getText().toString();
@@ -144,12 +135,10 @@ public class ProgressTFragment extends Fragment {
                 int avgCalories = weeklyAvgCal(whichDay, dailyVal);
                 daily_average_result.setText(avgCalories + "cal");
 
-                if (whichDay == "Monday") {
+                if (whichDay.equals("Monday")) {
                     dailyVal.clear();
-                    dailyVal.add(dailyIntake);
-                } else {
-                    dailyVal.add(dailyIntake);
                 }
+                dailyVal.add(dailyIntake);
 
                 dataPoints.add(new DataPoint(x, dailyIntake));
             }
@@ -158,15 +147,14 @@ public class ProgressTFragment extends Fragment {
         DataPoint[] dataPointsArr = new DataPoint[dataPoints.size()];
         dataPointsArr = dataPoints.toArray(dataPointsArr);
 
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(dataPointsArr);
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPointsArr);
 
         graphView.addSeries(series);
 
-        graphView.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter()
-        {
+        graphView.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
             @Override
             public String formatLabel(double value, boolean isValueX) {
-                if(isValueX){
+                if (isValueX) {
                     int i = -1;
                     i += 1;
                     return daysInWeek[i] + super.formatLabel(value, isValueX);
@@ -180,7 +168,8 @@ public class ProgressTFragment extends Fragment {
 
     private int weeklyAvgCal(String day, ArrayList<Integer> dailyVal) {
         int avg = 0;
-        if (day == "Sunday") {
+
+        if (Objects.equals(day, "Sunday")) {
             for (int dailyEachVal : dailyVal) {
                 avg += dailyEachVal;
             }

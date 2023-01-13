@@ -14,8 +14,6 @@ public class ViewPagerAdapterPlanner extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position) {
-            case 0:
-                return new DietFragment();
             case 1:
                 return new ExerciseFragment();
             case 2:

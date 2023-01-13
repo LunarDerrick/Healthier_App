@@ -2,17 +2,12 @@ package wia2007.example.healthier_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentContainerView;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
 
 public class GeneralActivity extends AppCompatActivity {
 
@@ -29,25 +24,5 @@ public class GeneralActivity extends AppCompatActivity {
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-    }
-
-//    public void BtnNoAccOnClick(View view) {
-//        FragmentContainerView FCVRegister = findViewById(R.id.FCVRegister);
-//        FragmentContainerView FCVLogin = findViewById(R.id.FCVLogin);
-//        FCVRegister.setVisibility(View.VISIBLE);
-//        FCVLogin.setVisibility(View.GONE);
-//    }
-
-//    public void BtnHasAccOnClick(View view) {
-//        FragmentContainerView FCVRegister = findViewById(R.id.FCVRegister);
-//        FragmentContainerView FCVLogin = findViewById(R.id.FCVLogin);
-//        FCVRegister.setVisibility(View.GONE);
-//        FCVLogin.setVisibility(View.VISIBLE);
-//    }
-
-    public void BtnLoginOnClick(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
     }
 }

@@ -17,10 +17,10 @@
         android:paddingHorizontal="20dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Run 2km"
+            android:text="@string/ProgressActivity"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -28,31 +28,31 @@
             android:id="@+id/doneText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Done"
+            android:layout_marginHorizontal="10dp"
+            android:text="@string/Done"
             android:textColor="@color/TBGreen"
-            android:visibility="visible"
             android:textSize="12sp"
             android:textStyle="italic"
-            android:layout_marginHorizontal="10dp"/>
+            android:visibility="visible" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/doDone"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:visibility="visible"
             android:layout_marginHorizontal="5dp"
             android:backgroundTint="@color/white"
-            android:src="@drawable/ic_baseline_check_24" />
+            android:src="@drawable/ic_baseline_check_24"
+            android:visibility="visible" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/notDone"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:visibility="visible"
             android:layout_marginHorizontal="5dp"
             android:backgroundTint="@color/white"
-            android:src="@drawable/ic_baseline_close_24" />
-    </LinearLayout>
+            android:src="@drawable/ic_baseline_close_24"
+            android:visibility="visible" />
 
+    </LinearLayout>
 
 </FrameLayout>
