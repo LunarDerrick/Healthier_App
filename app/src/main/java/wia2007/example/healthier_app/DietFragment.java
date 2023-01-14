@@ -12,8 +12,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 /**
@@ -69,9 +71,59 @@ public class DietFragment extends Fragment {
         final LayoutInflater[] inflater1 = {inflater};
         Button BtnComplete = view.findViewById(R.id.BtnComplete);
         Button BtnReset = view.findViewById(R.id.BtnReset);
+        Button BtnEdit = view.findViewById(R.id.BTEditPlan);
+        Button BtnDone = view.findViewById(R.id.BtnDone);
+        TableLayout TLWeekly = view.findViewById(R.id.TLWeekly);
+        TableLayout ETTLWeekly = view.findViewById(R.id.ETTLWeekly);
         TextView TVStatus = view.findViewById(R.id.TVStatus);
+        // TableLayout TextView values
+        TextView TVTable2BFDayM = view.findViewById(R.id.TVTable2BFDayM);
+        TextView TVTable2LDayM = view.findViewById(R.id.TVTable2LDayM);
+        TextView TVTable2DDayM = view.findViewById(R.id.TVTable2DDayM);
+        TextView TVTable2BFDayT = view.findViewById(R.id.TVTable2BFDayT);
+        TextView TVTable2LDayT = view.findViewById(R.id.TVTable2LDayT);
+        TextView TVTable2DDayT = view.findViewById(R.id.TVTable2DDayT);
+        TextView TVTable2BFDayW = view.findViewById(R.id.TVTable2BFDayW);
+        TextView TVTable2LDayW = view.findViewById(R.id.TVTable2LDayW);
+        TextView TVTable2DDayW = view.findViewById(R.id.TVTable2DDayW);
+        TextView TVTable2BFDayTh = view.findViewById(R.id.TVTable2BFDayTh);
+        TextView TVTable2LDayTh = view.findViewById(R.id.TVTable2LDayTh);
+        TextView TVTable2DDayTh = view.findViewById(R.id.TVTable2DDayTh);
+        TextView TVTable2BFDayF = view.findViewById(R.id.TVTable2BFDayF);
+        TextView TVTable2LDayF = view.findViewById(R.id.TVTable2LDayF);
+        TextView TVTable2DDayF = view.findViewById(R.id.TVTable2DDayF);
+        TextView TVTable2BFDayS = view.findViewById(R.id.TVTable2BFDayS);
+        TextView TVTable2LDayS = view.findViewById(R.id.TVTable2LDayS);
+        TextView TVTable2DDayS = view.findViewById(R.id.TVTable2DDayS);
+        TextView TVTable2BFDaySu = view.findViewById(R.id.TVTable2BFDaySu);
+        TextView TVTable2LDaySu = view.findViewById(R.id.TVTable2LDaySu);
+        TextView TVTable2DDaySu = view.findViewById(R.id.TVTable2DDaySu);
+        // TableLayout EditText values
+        EditText ETTable2BFDayM = view.findViewById(R.id.ETTable2BFDayM);
+        EditText ETTable2LDayM = view.findViewById(R.id.ETTable2LDayM);
+        EditText ETTable2DDayM = view.findViewById(R.id.ETTable2DDayM);
+        EditText ETTable2BFDayT = view.findViewById(R.id.ETTable2BFDayT);
+        EditText ETTable2LDayT = view.findViewById(R.id.ETTable2LDayT);
+        EditText ETTable2DDayT = view.findViewById(R.id.ETTable2DDayT);
+        EditText ETTable2BFDayW = view.findViewById(R.id.ETTable2BFDayW);
+        EditText ETTable2LDayW = view.findViewById(R.id.ETTable2LDayW);
+        EditText ETTable2DDayW = view.findViewById(R.id.ETTable2DDayW);
+        EditText ETTable2BFDayTh = view.findViewById(R.id.ETTable2BFDayTh);
+        EditText ETTable2LDayTh = view.findViewById(R.id.ETTable2LDayTh);
+        EditText ETTable2DDayTh = view.findViewById(R.id.ETTable2DDayTh);
+        EditText ETTable2BFDayF = view.findViewById(R.id.ETTable2BFDayF);
+        EditText ETTable2LDayF = view.findViewById(R.id.ETTable2LDayF);
+        EditText ETTable2DDayF = view.findViewById(R.id.ETTable2DDayF);
+        EditText ETTable2BFDayS = view.findViewById(R.id.ETTable2BFDayS);
+        EditText ETTable2LDayS = view.findViewById(R.id.ETTable2LDayS);
+        EditText ETTable2DDayS = view.findViewById(R.id.ETTable2DDayS);
+        EditText ETTable2BFDaySu = view.findViewById(R.id.ETTable2BFDaySu);
+        EditText ETTable2LDaySu = view.findViewById(R.id.ETTable2LDaySu);
+        EditText ETTable2DDaySu = view.findViewById(R.id.ETTable2DDaySu);
 
         BtnReset.setVisibility(View.GONE);
+        BtnDone.setVisibility(View.GONE);
+        ETTLWeekly.setVisibility(View.GONE);
 
         // BtnComplete
         View.OnClickListener OCLComplete = new View.OnClickListener() {
@@ -117,6 +169,52 @@ public class DietFragment extends Fragment {
             }
         };
         BtnReset.setOnClickListener(OCLReset);
+
+        // BtnEdit
+        View.OnClickListener OCLEdit = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BtnEdit.setVisibility(View.GONE);
+                BtnDone.setVisibility(View.VISIBLE);
+                ETTLWeekly.setVisibility(View.VISIBLE);
+                TLWeekly.setVisibility(View.GONE);
+            }
+        };
+        BtnEdit.setOnClickListener(OCLEdit);
+
+        // BtnDone
+        View.OnClickListener OCLDone = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BtnEdit.setVisibility(View.VISIBLE);
+                BtnDone.setVisibility(View.GONE);
+                ETTLWeekly.setVisibility(View.GONE);
+                TLWeekly.setVisibility(View.VISIBLE);
+                // saving values from edittext to textview
+                TVTable2BFDayM.setText(ETTable2BFDayM.getText().toString());
+                TVTable2LDayM.setText(ETTable2LDayM.getText().toString());
+                TVTable2DDayM.setText(ETTable2DDayM.getText().toString());
+                TVTable2BFDayT.setText(ETTable2BFDayT.getText().toString());
+                TVTable2LDayT.setText(ETTable2LDayT.getText().toString());
+                TVTable2DDayT.setText(ETTable2DDayT.getText().toString());
+                TVTable2BFDayW.setText(ETTable2BFDayW.getText().toString());
+                TVTable2LDayW.setText(ETTable2LDayW.getText().toString());
+                TVTable2DDayW.setText(ETTable2DDayW.getText().toString());
+                TVTable2BFDayTh.setText(ETTable2BFDayTh.getText().toString());
+                TVTable2LDayTh.setText(ETTable2LDayTh.getText().toString());
+                TVTable2DDayTh.setText(ETTable2DDayTh.getText().toString());
+                TVTable2BFDayF.setText(ETTable2BFDayF.getText().toString());
+                TVTable2LDayF.setText(ETTable2LDayF.getText().toString());
+                TVTable2DDayF.setText(ETTable2DDayF.getText().toString());
+                TVTable2BFDayS.setText(ETTable2BFDayS.getText().toString());
+                TVTable2LDayS.setText(ETTable2LDayS.getText().toString());
+                TVTable2DDayS.setText(ETTable2DDayS.getText().toString());
+                TVTable2BFDaySu.setText(ETTable2BFDaySu.getText().toString());
+                TVTable2LDaySu.setText(ETTable2LDaySu.getText().toString());
+                TVTable2DDaySu.setText(ETTable2DDaySu.getText().toString());
+            }
+        };
+        BtnDone.setOnClickListener(OCLDone);
 
         return view;
     }

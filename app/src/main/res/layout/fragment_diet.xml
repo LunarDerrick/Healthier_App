@@ -237,8 +237,24 @@
             android:drawableEnd="@drawable/pen"
             android:fontFamily="@font/inter"
             android:letterSpacing="0"
-            android:onClick="BtnEditOnClick"
             android:text="@string/BtnEdit"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TVStatusTitle"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,UsingOnClickInXml,DuplicateClickableBoundsCheck" />
+
+        <Button
+            android:id="@+id/BtnDone"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="75dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="4dp"
+            android:drawableEnd="@android:drawable/checkbox_on_background"
+            android:fontFamily="@font/inter"
+            android:letterSpacing="0"
+            android:text="@string/Done"
             android:textAllCaps="false"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -686,13 +702,455 @@
             </TableRow>
         </TableLayout>
 
+        <TableLayout
+            android:id="@+id/ETTLWeekly"
+            android:layout_width="405dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:stretchColumns="*"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TVWeekly">
+
+            <TableRow
+                android:id="@+id/ETTRWeekly1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/ETTVBlank"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/ETTVTable2TitleBF"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_green_topleft"
+                    android:padding="5dp"
+                    android:text="@string/TVTableTitleBF"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ETTVTable2TitleL"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_green"
+                    android:padding="5dp"
+                    android:text="@string/TVTableTitleL"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ETTVTable2TitleD"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_green_topright"
+                    android:padding="5dp"
+                    android:text="@string/TVTableTitleD"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ETTRWeekly2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/ETTVTable2DayM"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDayM"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ETTable2BFDayM"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Cereal, toast,\njam, tea"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2LDayM"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Pasta salad, hot\nchocolate"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2DDayM"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Chicken katsu, rice,\norange juice"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ETTRWeekly3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/ETTVTable2DayT"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDayT"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ETTable2BFDayT"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Banana,\nmilk, sausage"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2LDayT"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Grilled chicken\nsalad, green tea"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2DDayT"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Lasagna, sweet\nparfait, water"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ETTRWeekly4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/ETTVTable2DayW"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDayW"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ETTable2BFDayW"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Sandwich,\nmilk, sausage"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2LDayW"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Grilled cheese,\ntomato soup, soda"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2DDayW"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Spicy salmon\nbowl, coca cola"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ETTRWeekly5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/ETTVTable2DayTh"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDayTh"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ETTable2BFDayTh"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Scrambled eggs,\nmuffins, water"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2LDayTh"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Speghetti, lemon\nwater, cookie"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2DDayTh"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Vegan meatballs,\nmint tea, pudding"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ETTRWeekly6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/ETTVTable2DayF"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDayF"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ETTable2BFDayF"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Oats, croissant,\nmilkshake"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2LDayF"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Mac &amp; cheese, kiwi\nsmoothie"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2DDayF"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Orange chicken,\nrice, yogurt drink"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ETTRWeekly7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/ETTVTable2DayS"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDayS"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ETTable2BFDayS"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Pancake, boiled\neggs, chai tea"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2LDayS"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Chicken fried rice,\nmango juice"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2DDayS"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Spaghetti tomato,\nwatermelon juice"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ETTRWeekly8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/ETTVTable2DaySu"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/TVTableDaySu"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/ETTable2BFDaySu"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Butter bread, fruit\nsalad, soy milk"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2LDaySu"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Ramen, mochi,\ngreen tea, sushi"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/ETTable2DDaySu"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:fontFamily="@font/inter"
+                    android:padding="5dp"
+                    android:text="Buttermilk chicken,\nrice, pie, water"
+                    android:textAlignment="center"
+                    android:textColor="#0B8600"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+            </TableRow>
+        </TableLayout>
+
         <View
             android:id="@+id/ViewBlank"
             android:layout_width="0dp"
             android:layout_height="250dp"
+            android:layout_marginTop="310dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TLWeekly" />
+            app:layout_constraintTop_toBottomOf="@+id/BTEditPlan" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
