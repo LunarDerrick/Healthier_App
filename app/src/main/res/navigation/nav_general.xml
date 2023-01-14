@@ -20,6 +20,4 @@
         android:name="wia2007.example.healthier_app.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
-
-    <!--    <include app:graph="@navigation/nav_healthier"/>-->
 </navigation>

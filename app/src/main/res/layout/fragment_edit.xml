@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/CLEdit"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/white_bg"
@@ -69,7 +69,7 @@
                 android:id="@+id/height"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Height (cm)"
+                android:hint="@string/TIHeight"
                 android:inputType="numberDecimal"
                 tools:layout_editor_absoluteX="218dp"
                 tools:layout_editor_absoluteY="271dp" />
@@ -90,7 +90,7 @@
                 android:id="@+id/etweight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Weight (kg)"
+                android:hint="@string/TIWeight"
                 android:inputType="numberDecimal"
                 tools:layout_editor_absoluteX="64dp"
                 tools:layout_editor_absoluteY="268dp" />
@@ -117,7 +117,7 @@
             android:layout_marginStart="45dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="45dp"
-            android:hint="Username"
+            android:hint="@string/username"
             android:textColor="#000"
             app:boxBackgroundColor="#FFF3D2"
             app:boxCornerRadiusBottomEnd="5dp"
@@ -162,7 +162,7 @@
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Phone"
+                android:hint="@string/ETPhone"
                 android:inputType="phone"
                 tools:ignore="TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="65dp"
@@ -190,7 +190,7 @@
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Name"
+                android:hint="@string/TVTable3TitleName"
                 android:inputType="text"
                 tools:layout_editor_absoluteX="65dp"
                 tools:layout_editor_absoluteY="121dp" />
@@ -201,6 +201,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
+            android:contentDescription="@string/CDDownArrow"
             android:src="@android:drawable/arrow_down_float"
             app:layout_constraintBottom_toBottomOf="@+id/gender"
             app:layout_constraintEnd_toEndOf="@+id/gender"
@@ -223,7 +224,7 @@
                 android:id="@+id/age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Age"
+                android:hint="@string/TVAge"
                 android:inputType="number"
                 tools:layout_editor_absoluteX="64dp"
                 tools:layout_editor_absoluteY="194dp" />

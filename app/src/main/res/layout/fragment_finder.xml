@@ -8,10 +8,6 @@
     android:background="#C1ACE6"
     tools:context=".FinderFragment">
 
-    <!--    <ScrollView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content">-->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,7 +59,8 @@
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/pro_1" />
+                        android:src="@drawable/pro_1"
+                        android:contentDescription="@string/CDMan" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -73,15 +70,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="20dp"
-                    android:drawableEnd="@drawable/ic_baseline_verified_24"
-
-
                     android:text="@string/TVPro1"
                     android:textColor="#000000"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/CVPro1"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:drawableEndCompat="@drawable/ic_baseline_verified_24" />
 
                 <TextView
                     android:id="@+id/TVDescPro1"
@@ -145,13 +140,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="20dp"
-                    android:drawableEnd="@drawable/ic_baseline_verified_24"
                     android:text="@string/TVPro2"
                     android:textColor="#050505"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/CVPro2"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:drawableEndCompat="@drawable/ic_baseline_verified_24" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/CVPro2"
@@ -169,13 +164,11 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
+                        android:contentDescription="@string/CDDumbbell"
                         android:scaleType="centerCrop"
                         android:src="@drawable/pro_2" />
-
                 </androidx.cardview.widget.CardView>
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -223,13 +216,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="20dp"
-                    android:drawableEnd="@drawable/ic_baseline_verified_24"
                     android:text="@string/TVPro3"
                     android:textColor="#050505"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/CVPro3"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:drawableEndCompat="@drawable/ic_baseline_verified_24" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/CVPro3"
@@ -248,7 +241,8 @@
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/pro_3" />
+                        android:src="@drawable/pro_3"
+                        android:contentDescription="@string/CDWoman2" />
                 </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -262,6 +256,5 @@
             app:layout_constraintTop_toBottomOf="@+id/CVProHelpFinder3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <!--    </ScrollView>-->
 
 </ScrollView>

@@ -1,226 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/BigCL"
+    android:id="@+id/SVCalorie"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F6E7B6"
     tools:context=".HelpFragment">
 
-    <ScrollView
-        android:id="@+id/SVHelp"
-        android:layout_width="336dp"
-        android:layout_height="650dp"
-        android:background="@drawable/white_rectangle_rounded"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/BigCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/SmallCL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="30dp">
+        <ScrollView
+            android:id="@+id/SVHelp"
+            android:layout_width="336dp"
+            android:layout_height="650dp"
+            android:background="@drawable/white_rectangle_rounded"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            tools:ignore="NestedScrolling">
 
-            <TextView
-                android:id="@+id/TVCustServ"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/SmallCL"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/customer_serv"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ans4" />
+                android:paddingBottom="30dp">
 
-            <TextView
-                android:id="@+id/TVAbout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/about"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/TVCustServ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/customer_serv"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ans4" />
 
-            <TextView
-                android:id="@+id/TVfaq"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/faq"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/TVAboutDesc" />
+                <TextView
+                    android:id="@+id/TVAbout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/about"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/ques1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/inter"
-                android:text="@string/ques1"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/TVfaq" />
+                <TextView
+                    android:id="@+id/TVfaq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/faq"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/TVAboutDesc" />
 
-            <TextView
-                android:id="@+id/ques2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/inter"
-                android:text="@string/ques2"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ans1" />
+                <TextView
+                    android:id="@+id/ques1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/ques1"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/TVfaq" />
 
-            <TextView
-                android:id="@+id/ques3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/inter"
-                android:text="@string/ques3"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ans2" />
+                <TextView
+                    android:id="@+id/ques2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/ques2"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ans1" />
 
-            <TextView
-                android:id="@+id/ques4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/inter"
-                android:text="@string/ques4"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ans3" />
+                <TextView
+                    android:id="@+id/ques3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/ques3"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ans2" />
 
-            <TextView
-                android:id="@+id/ques6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/inter"
-                android:text="@string/customer_servdesc"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/TVCustServ" />
+                <TextView
+                    android:id="@+id/ques4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/ques4"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ans3" />
 
-            <TextView
-                android:id="@+id/ans1"
-                android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:fontFamily="@font/inter"
-                android:lineSpacingExtra="1sp"
-                android:text="@string/ans1"
-                android:textAlignment="gravity"
-                android:textColor="#6D6D6D"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ques1" />
+                <TextView
+                    android:id="@+id/ques6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/customer_servdesc"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/TVCustServ" />
 
-            <TextView
-                android:id="@+id/ans2"
-                android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:fontFamily="@font/inter"
-                android:lineSpacingExtra="1sp"
-                android:text="@string/ans2"
-                android:textAlignment="gravity"
-                android:textColor="#6D6D6D"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ques2" />
+                <TextView
+                    android:id="@+id/ans1"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:fontFamily="@font/inter"
+                    android:lineSpacingExtra="1sp"
+                    android:text="@string/ans1"
+                    android:textAlignment="gravity"
+                    android:textColor="#6D6D6D"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ques1" />
 
-            <TextView
-                android:id="@+id/ans3"
-                android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:fontFamily="@font/inter"
-                android:lineSpacingExtra="1sp"
-                android:text="@string/ans3"
-                android:textAlignment="gravity"
-                android:textColor="#6D6D6D"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ques3" />
+                <TextView
+                    android:id="@+id/ans2"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:fontFamily="@font/inter"
+                    android:lineSpacingExtra="1sp"
+                    android:text="@string/ans2"
+                    android:textAlignment="gravity"
+                    android:textColor="#6D6D6D"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ques2" />
 
-            <TextView
-                android:id="@+id/ans4"
-                android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:fontFamily="@font/inter"
-                android:lineSpacingExtra="1sp"
-                android:text="@string/ans4"
-                android:textAlignment="gravity"
-                android:textColor="#6D6D6D"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ques4" />
+                <TextView
+                    android:id="@+id/ans3"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:fontFamily="@font/inter"
+                    android:lineSpacingExtra="1sp"
+                    android:text="@string/ans3"
+                    android:textAlignment="gravity"
+                    android:textColor="#6D6D6D"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ques3" />
 
-            <TextView
-                android:id="@+id/TVAboutDesc"
-                android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/inter"
-                android:lineSpacingExtra="1sp"
-                android:text="@string/aboutdesc"
-                android:textAlignment="gravity"
-                android:textColor="#6D6D6D"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/TVAbout" />
+                <TextView
+                    android:id="@+id/ans4"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:fontFamily="@font/inter"
+                    android:lineSpacingExtra="1sp"
+                    android:text="@string/ans4"
+                    android:textAlignment="gravity"
+                    android:textColor="#6D6D6D"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ques4" />
 
-            <TextView
-                android:id="@+id/ans5"
-                android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:fontFamily="@font/inter"
-                android:lineSpacingExtra="1sp"
-                android:text="@string/contact_info"
-                android:textAlignment="gravity"
-                android:textColor="#6D6D6D"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ques6" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+                <TextView
+                    android:id="@+id/TVAboutDesc"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter"
+                    android:lineSpacingExtra="1sp"
+                    android:text="@string/aboutdesc"
+                    android:textAlignment="gravity"
+                    android:textColor="#6D6D6D"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/TVAbout" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/ans5"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:fontFamily="@font/inter"
+                    android:lineSpacingExtra="1sp"
+                    android:text="@string/contact_info"
+                    android:textAlignment="gravity"
+                    android:textColor="#6D6D6D"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ques6" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

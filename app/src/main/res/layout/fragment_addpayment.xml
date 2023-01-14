@@ -1,172 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/CLAddPay"
+    android:id="@+id/SVCalorie"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F6E7B6"
     tools:context=".AddPaymentFragment">
 
-    <TextView
-        android:id="@+id/white_bg"
-        android:layout_width="340dp"
-        android:layout_height="600dp"
-        android:background="@drawable/white_rectangle_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.583" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLAddPay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/confrimBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#F0C869"
-        android:fontFamily="@font/inter_bold"
-        android:letterSpacing="0"
-        android:text="@string/confirm"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/white_bg"
-        app:layout_constraintEnd_toEndOf="@+id/white_bg"
-        app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/e_wallet" />
+        <TextView
+            android:id="@+id/white_bg"
+            android:layout_width="340dp"
+            android:layout_height="600dp"
+            android:background="@drawable/white_rectangle_rounded"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.583" />
 
-    <Spinner
-        android:id="@+id/e_wallet"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="280dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/edit_text_lightyellow"
-        android:gravity="center_horizontal|center_vertical"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="@+id/white_bg"
-        app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/choose_ewallet"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/CardInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/card_info"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/payment_icon" />
-
-    <TextView
-        android:id="@+id/ewallet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/ewallet"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/TICardExpire" />
-
-    <TextView
-        android:id="@+id/choose_ewallet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/inter"
-        android:text="@string/choose_ewallet"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/ewallet" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TICardNo"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="280dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        app:boxBackgroundColor="#FFF3D2"
-        app:layout_constraintEnd_toEndOf="@+id/white_bg"
-        app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/CardInfo">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/cardno"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/confrimBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/cardnoHint"
-            android:inputType="number"
-            android:maxLength="16" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:backgroundTint="#F0C869"
+            android:fontFamily="@font/inter_bold"
+            android:letterSpacing="0"
+            android:text="@string/confirm"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="@+id/white_bg"
+            app:layout_constraintEnd_toEndOf="@+id/white_bg"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/e_wallet" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TICardExpire"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        app:boxBackgroundColor="#FFF3D2"
-        app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/TICardNo">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/cardexpire"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/cardexpireHint"
-            android:inputType="datetime"
-            android:maxLength="5" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TICvv"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        app:boxBackgroundColor="#FFF3D2"
-        app:layout_constraintEnd_toEndOf="@+id/white_bg"
-        app:layout_constraintTop_toBottomOf="@+id/TICardNo">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/cvv"
+        <Spinner
+            android:id="@+id/e_wallet"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_lightyellow"
+            android:gravity="center_horizontal|center_vertical"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="@+id/white_bg"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/choose_ewallet"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/CardInfo"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/cvvHint"
-            android:inputType="number"
-            android:maxLength="3" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/card_info"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/payment_icon" />
 
-    <ImageView
-        android:id="@+id/payment_icon"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/payment_page"
-        app:layout_constraintEnd_toEndOf="@+id/white_bg"
-        app:layout_constraintStart_toStartOf="@+id/white_bg"
-        app:layout_constraintTop_toTopOf="@+id/white_bg"
-        android:contentDescription="@string/CDPayment" />
+        <TextView
+            android:id="@+id/ewallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/ewallet"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/TICardExpire" />
 
-    <ImageView
-        android:id="@+id/dropdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:src="@android:drawable/arrow_down_float"
-        app:layout_constraintBottom_toBottomOf="@+id/e_wallet"
-        app:layout_constraintEnd_toEndOf="@+id/e_wallet"
-        app:layout_constraintTop_toTopOf="@+id/e_wallet"
-        android:contentDescription="@string/CDDownArrow" />
+        <TextView
+            android:id="@+id/choose_ewallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/choose_ewallet"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/ewallet" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TICardNo"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            app:boxBackgroundColor="#FFF3D2"
+            app:layout_constraintEnd_toEndOf="@+id/white_bg"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/CardInfo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cardno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/cardnoHint"
+                android:inputType="number"
+                android:maxLength="16" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TICardExpire"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            app:boxBackgroundColor="#FFF3D2"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/TICardNo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cardexpire"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/cardexpireHint"
+                android:inputType="datetime"
+                android:maxLength="5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TICvv"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            app:boxBackgroundColor="#FFF3D2"
+            app:layout_constraintEnd_toEndOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/TICardNo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cvv"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/cvvHint"
+                android:inputType="number"
+                android:maxLength="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/payment_icon"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/CDPayment"
+            android:src="@drawable/payment_page"
+            app:layout_constraintEnd_toEndOf="@+id/white_bg"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toTopOf="@+id/white_bg" />
+
+        <ImageView
+            android:id="@+id/dropdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/CDDownArrow"
+            android:src="@android:drawable/arrow_down_float"
+            app:layout_constraintBottom_toBottomOf="@+id/e_wallet"
+            app:layout_constraintEnd_toEndOf="@+id/e_wallet"
+            app:layout_constraintTop_toTopOf="@+id/e_wallet" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

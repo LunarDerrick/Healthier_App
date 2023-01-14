@@ -53,7 +53,8 @@
         app:layout_constraintEnd_toEndOf="@+id/whiterec"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/whiterec"
-        app:layout_constraintTop_toTopOf="@+id/whiterec" />
+        app:layout_constraintTop_toTopOf="@+id/whiterec"
+        android:contentDescription="@string/CDManEat" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TIUname"
@@ -63,7 +64,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="45dp"
-        android:hint="Username"
+        android:hint="@string/username"
         android:textColor="#000"
         app:boxBackgroundColor="#FFF3D2"
         app:boxCornerRadiusBottomEnd="5dp"
@@ -92,7 +93,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="45dp"
-        android:hint="E-mail"
+        android:hint="@string/email"
         android:textColor="#000"
         app:boxBackgroundColor="#FFF3D2"
         app:boxCornerRadiusBottomEnd="5dp"
@@ -121,7 +122,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="45dp"
-        android:hint="Password"
+        android:hint="@string/password"
         android:textColor="#000"
         app:boxBackgroundColor="#FFF3D2"
         app:boxCornerRadiusBottomEnd="5dp"
@@ -152,7 +153,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="45dp"
-        android:hint="Confirm Password"
+        android:hint="@string/confirm_password"
         android:textColor="#000"
         app:boxBackgroundColor="#FFF3D2"
         app:boxCornerRadiusBottomEnd="5dp"
@@ -189,7 +190,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/AgreeBtn"
         app:layout_constraintTop_toBottomOf="@+id/TICP"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        android:focusable="true" />
 
     <Button
         android:id="@+id/RegBtn"
@@ -219,7 +221,8 @@
         app:layout_constraintEnd_toEndOf="@+id/whiterec"
         app:layout_constraintStart_toStartOf="@+id/whiterec"
         app:layout_constraintTop_toBottomOf="@+id/RegBtn"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,UsingOnClickInXml"
+        android:focusable="true" />
 
     <RadioButton
         android:id="@+id/AgreeBtn"
@@ -227,8 +230,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:clickable="true"
+        android:focusable="true"
         android:fontFamily="@font/inter"
-        android:text="Agree with"
+        android:text="@string/agree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.273"
         app:layout_constraintStart_toStartOf="parent"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0C869"
-    tools:context=".LoginFragment" >
+    tools:context=".LoginFragment">
 
     <TextView
         android:id="@+id/whiterec_login"
@@ -53,7 +53,8 @@
         android:src="@drawable/login_pic"
         app:layout_constraintEnd_toEndOf="@+id/whiterec_login"
         app:layout_constraintStart_toStartOf="@+id/whiterec_login"
-        app:layout_constraintTop_toBottomOf="@+id/TV_logdesc" />
+        app:layout_constraintTop_toBottomOf="@+id/TV_logdesc"
+        android:contentDescription="@string/CDManWoman" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TIEmail"
@@ -63,7 +64,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="45dp"
-        android:hint="E-mail"
+        android:hint="@string/email"
         android:textColor="#000"
         app:boxBackgroundColor="#FFF3D2"
         app:boxCornerRadiusBottomEnd="5dp"
@@ -92,7 +93,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="45dp"
-        android:hint="Password"
+        android:hint="@string/password"
         android:textColor="#000"
         app:boxBackgroundColor="#FFF3D2"
         app:boxCornerRadiusBottomEnd="5dp"
@@ -129,7 +130,8 @@
         app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TIPassW"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        android:focusable="true" />
 
     <Button
         android:id="@+id/loginBtn"
@@ -161,5 +163,7 @@
         app:layout_constraintEnd_toEndOf="@+id/whiterec_login"
         app:layout_constraintStart_toStartOf="@+id/whiterec_login"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,UsingOnClickInXml"
+        android:focusable="true" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -63,6 +63,7 @@ public class PlannerActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     }
 
+
     public void BtnCompleteOnClick(View view) {
         String message = "'Complete' button pressed";
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();

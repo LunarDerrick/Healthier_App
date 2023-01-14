@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/level_TV"
@@ -36,7 +36,8 @@
             android:textSize="12sp"
             android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@id/level_TV"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/reward_TV"
@@ -126,7 +127,8 @@
                 android:text="0%"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
         <LinearLayout
@@ -159,7 +161,8 @@
                 android:textSize="12sp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toEndOf="@id/level_TV"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/reward_TV_2"
@@ -192,7 +195,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
             android:layout_marginTop="150dp"
-            android:text="Reward Activity:"
+            android:text="@string/TVRewardActivity"
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="normal"
@@ -215,40 +218,41 @@
             app:layout_constraintTop_toBottomOf="@+id/reward_activity_TV">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Run 2km"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/doneText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Done"
+                android:layout_marginHorizontal="10dp"
+                android:text="@string/TVDone"
                 android:textColor="@color/TBGreen"
-                android:visibility="invisible"
                 android:textSize="12sp"
                 android:textStyle="italic"
-                android:layout_marginHorizontal="10dp"/>
+                android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatImageButton
 
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:visibility="visible"
                 android:layout_marginHorizontal="5dp"
                 android:backgroundTint="@color/white"
-                android:src="@drawable/ic_baseline_check_24" />
+                android:src="@drawable/ic_baseline_check_24"
+                android:visibility="visible" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:visibility="visible"
                 android:layout_marginHorizontal="5dp"
                 android:backgroundTint="@color/white"
-                android:src="@drawable/ic_baseline_close_24" />
+                android:src="@drawable/ic_baseline_close_24"
+                android:visibility="visible" />
         </LinearLayout>
 
         <LinearLayout
@@ -267,12 +271,13 @@
             app:layout_constraintTop_toBottomOf="@+id/reward_activity_item">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Drink 6 cups of water"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="HardcodedText" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="24dp"
@@ -305,12 +310,13 @@
             app:layout_constraintTop_toBottomOf="@+id/reward_activity_item_02">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Skip ice cream for a day"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="HardcodedText" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="24dp"
@@ -332,12 +338,12 @@
             android:id="@+id/linearContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/reward_activity_item_3"
-            android:orientation="vertical">
+            app:layout_constraintTop_toBottomOf="@id/reward_activity_item_3">
 
         </LinearLayout>
 

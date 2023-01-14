@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/current_progress_TV2"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
             android:layout_marginTop="21dp"
-            android:text="Grocery List:"
+            android:text="@string/TVGrocery"
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="normal"
@@ -75,7 +75,8 @@
                         android:text="Cheese"
                         android:textColor="@color/white"
                         android:textSize="12sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -86,7 +87,8 @@
                         android:text="Bread"
                         android:textColor="@color/white"
                         android:textSize="12sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -97,7 +99,8 @@
                         android:text="Carrot"
                         android:textColor="@color/white"
                         android:textSize="12sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
 
                     <androidx.appcompat.widget.AppCompatImageButton
                         android:id="@+id/add_btn_groc_item"
@@ -150,10 +153,11 @@
                     android:background="@color/tracker_submit_darkerPink"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Food"
+                    android:text="@string/TVFood"
                     android:textColor="@color/white"
                     android:textSize="13dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="SpUsage" />
 
                 <TextView
                     android:id="@+id/amount_column_food_invent"
@@ -163,10 +167,11 @@
                     android:background="@color/tracker_submit_darkerPink"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Amount"
+                    android:text="@string/TVAmount"
                     android:textColor="@color/white"
                     android:textSize="13dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="SpUsage" />
 
                 <TextView
                     android:id="@+id/duration_column_food_invent"
@@ -176,16 +181,18 @@
                     android:background="@color/tracker_submit_darkerPink"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Duration (days)"
+                    android:text="@string/TVDuration"
                     android:textColor="@color/white"
                     android:textSize="13dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="SpUsage" />
 
             </TableRow>
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:ignore="NestedScrolling">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/content_you_have_list"
@@ -207,7 +214,8 @@
                             android:padding="10dp"
                             android:text="Garlic"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/amount_1"
@@ -219,7 +227,8 @@
                             android:text="5"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/duration_1"
@@ -231,7 +240,8 @@
                             android:text="31"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
                     </TableRow>
 
                     <TableRow
@@ -248,7 +258,8 @@
                             android:padding="10dp"
                             android:text="Eggs"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/amount_2"
@@ -260,7 +271,8 @@
                             android:text="10"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/duration_2"
@@ -272,7 +284,8 @@
                             android:text="14"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
                     </TableRow>
 
                     <TableRow
@@ -289,7 +302,8 @@
                             android:padding="10dp"
                             android:text="Milk"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/amount_3"
@@ -301,7 +315,8 @@
                             android:text="1"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/duration_3"
@@ -313,7 +328,8 @@
                             android:text="15"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
                     </TableRow>
 
                     <TableRow
@@ -330,7 +346,8 @@
                             android:padding="10dp"
                             android:text="Potato"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/amount_4"
@@ -342,7 +359,8 @@
                             android:text="4"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/duration_4"
@@ -354,7 +372,8 @@
                             android:text="27"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
                     </TableRow>
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </ScrollView>
@@ -404,7 +423,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
             android:layout_marginTop="20dp"
-            android:text="Recipe Recommendation"
+            android:text="@string/TVRecipe"
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="normal"
@@ -436,7 +455,7 @@
                     android:background="@color/tracker_submit_darkerPink"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="List of Recipes"
+                    android:text="@string/TVListRecipe"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
@@ -444,7 +463,8 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:ignore="NestedScrolling">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -462,19 +482,21 @@
                             android:background="@drawable/border_white">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:padding="10dp"
                                 android:text="Stuffed Potato"
                                 android:textColor="@color/black"
-                                android:textSize="12sp" />
+                                android:textSize="12sp"
+                                tools:ignore="HardcodedText" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginHorizontal="10dp"
+                                android:contentDescription="@string/CDPlus"
                                 android:src="@drawable/ic_baseline_add_24_black" />
                         </LinearLayout>
                     </TableRow>
@@ -491,19 +513,21 @@
                             android:background="@drawable/border_white">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:padding="10dp"
                                 android:text="Deviled Eggs"
                                 android:textColor="@color/black"
-                                android:textSize="12sp" />
+                                android:textSize="12sp"
+                                tools:ignore="HardcodedText" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginHorizontal="10dp"
+                                android:contentDescription="@string/CDPlus"
                                 android:src="@drawable/ic_baseline_add_24_black" />
                         </LinearLayout>
                     </TableRow>
@@ -520,19 +544,21 @@
                             android:background="@drawable/border_white">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:padding="10dp"
                                 android:text="Healthy Salad"
                                 android:textColor="@color/black"
-                                android:textSize="12sp" />
+                                android:textSize="12sp"
+                                tools:ignore="HardcodedText" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginHorizontal="10dp"
+                                android:contentDescription="@string/CDPlus"
                                 android:src="@drawable/ic_baseline_add_24_black" />
                         </LinearLayout>
                     </TableRow>

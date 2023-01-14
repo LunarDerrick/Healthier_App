@@ -11,13 +11,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/CLManage"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/profile"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginTop="44dp"
+            android:contentDescription="@string/CDWoman4"
             android:src="@drawable/profile_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -44,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/inter_bold"
-            android:text="Name"
+            android:text="@string/TVTable3TitleName"
             android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +64,8 @@
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sample_username"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck"
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/managepay_btn"
@@ -75,7 +77,8 @@
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/user_btn"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck"
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/help_btn"
@@ -87,7 +90,8 @@
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/managepay_btn"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck"
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/logout_btn"
@@ -99,7 +103,8 @@
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/help_btn"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck"
+            android:focusable="true" />
 
         <TextView
             android:id="@+id/TVUser"
@@ -195,7 +200,8 @@
             android:layout_marginTop="88dp"
             android:src="@drawable/editprofile_icon"
             app:layout_constraintEnd_toEndOf="@+id/profile"
-            app:layout_constraintTop_toTopOf="@+id/profile" />
+            app:layout_constraintTop_toTopOf="@+id/profile"
+            tools:ignore="ContentDescription" />
 
         <View
             android:id="@+id/ViewBlank"

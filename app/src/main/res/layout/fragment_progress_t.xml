@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/text_taken"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/daily_calorie_tracker"
@@ -79,11 +79,12 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="3dp"
             android:background="@android:color/transparent"
-            android:hint="type here"
+            android:hint="@string/HintTypeHere"
             android:text="1187"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/text_taken"
-            app:layout_constraintTop_toTopOf="@+id/daily_calorie_taken" />
+            app:layout_constraintTop_toTopOf="@+id/daily_calorie_taken"
+            tools:ignore="Autofill,HardcodedText,TextFields" />
 
         <EditText
             android:id="@+id/calorieBurnt"
@@ -92,11 +93,12 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="3dp"
             android:background="@android:color/transparent"
-            android:hint="type here"
+            android:hint="@string/HintTypeHere"
             android:text="490"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/text_burnt"
-            app:layout_constraintTop_toTopOf="@+id/daily_calorie_burnt" />
+            app:layout_constraintTop_toTopOf="@+id/daily_calorie_burnt"
+            tools:ignore="Autofill,HardcodedText,TextFields" />
 
         <TextView
             android:id="@+id/text_burnt"
@@ -156,7 +158,8 @@
             android:textColor="#686868"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/textView6"
-            app:layout_constraintTop_toTopOf="@+id/daily_average_result_container" />
+            app:layout_constraintTop_toTopOf="@+id/daily_average_result_container"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/textView7"
@@ -175,39 +178,39 @@
         <!--    not running yet-->
         <!--    still need to code the behaviour/-->
 
-<!--        <RadioGroup-->
-<!--            android:id="@+id/view_choices"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:layout_marginEnd="31dp"-->
-<!--            android:background="@drawable/radio_group_bg"-->
-<!--            android:orientation="horizontal"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/weekly_calorie_tracker">-->
+        <!--        <RadioGroup-->
+        <!--            android:id="@+id/view_choices"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="15dp"-->
+        <!--            android:layout_marginEnd="31dp"-->
+        <!--            android:background="@drawable/radio_group_bg"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/weekly_calorie_tracker">-->
 
-<!--            <RadioButton-->
-<!--                android:id="@+id/graphForm"-->
-<!--                android:layout_width="115dp"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:button="@null"-->
-<!--                android:gravity="center"-->
-<!--                android:text="Graph Form"-->
-<!--                android:textColor="#8B8B8B"-->
-<!--                android:textSize="12sp"-->
-<!--                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />-->
+        <!--            <RadioButton-->
+        <!--                android:id="@+id/graphForm"-->
+        <!--                android:layout_width="115dp"-->
+        <!--                android:layout_height="30dp"-->
+        <!--                android:button="@null"-->
+        <!--                android:gravity="center"-->
+        <!--                android:text="Graph Form"-->
+        <!--                android:textColor="#8B8B8B"-->
+        <!--                android:textSize="12sp"-->
+        <!--                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />-->
 
-<!--            <RadioButton-->
-<!--                android:id="@+id/listForm"-->
-<!--                android:layout_width="115dp"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:button="@null"-->
-<!--                android:gravity="center"-->
-<!--                android:text="List Form"-->
-<!--                android:textColor="#8B8B8B"-->
-<!--                android:textSize="12sp"-->
-<!--                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />-->
-<!--        </RadioGroup>-->
+        <!--            <RadioButton-->
+        <!--                android:id="@+id/listForm"-->
+        <!--                android:layout_width="115dp"-->
+        <!--                android:layout_height="30dp"-->
+        <!--                android:button="@null"-->
+        <!--                android:gravity="center"-->
+        <!--                android:text="List Form"-->
+        <!--                android:textColor="#8B8B8B"-->
+        <!--                android:textSize="12sp"-->
+        <!--                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />-->
+        <!--        </RadioGroup>-->
         <!--
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/line_graph_view"
@@ -226,8 +229,8 @@
             android:id="@+id/line_graph_view"
             android:layout_width="match_parent"
             android:layout_height="250dip"
-            android:layout_marginTop="15dp"
             android:layout_marginStart="31dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="31dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

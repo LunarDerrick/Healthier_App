@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/CLFasting"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:scrollbarSize="50dp"
         android:textAlignment="viewStart">
 
@@ -22,7 +22,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/inter"
-            android:text="You're fasting!"
+            android:text="@string/TVStatusFast"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
             android:textColor="#14ABFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TVStatusFast"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <ProgressBar
             android:id="@+id/PBProgressFast"
@@ -63,7 +63,8 @@
             app:layout_constraintEnd_toEndOf="@+id/PBProgressFast"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/PBProgressFast"
-            app:layout_constraintTop_toTopOf="@+id/PBProgressFast" />
+            app:layout_constraintTop_toTopOf="@+id/PBProgressFast"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/TVTimeCountDown"
@@ -75,7 +76,8 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/PBProgressFast"
             app:layout_constraintStart_toStartOf="@+id/PBProgressFast"
-            app:layout_constraintTop_toBottomOf="@+id/TVProgComp" />
+            app:layout_constraintTop_toBottomOf="@+id/TVProgComp"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/TVProgDur"
@@ -84,7 +86,8 @@
             android:text="2hrs remaining"
             app:layout_constraintEnd_toEndOf="@+id/PBProgressFast"
             app:layout_constraintStart_toStartOf="@+id/PBProgressFast"
-            app:layout_constraintTop_toBottomOf="@+id/TVTimeCountDown" />
+            app:layout_constraintTop_toBottomOf="@+id/TVTimeCountDown"
+            tools:ignore="HardcodedText" />
 
         <TableLayout
             android:id="@+id/TLStatusFast"
@@ -137,7 +140,8 @@
                     android:padding="10dp"
                     android:text="Today at 9:00 PM"
                     android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/TVTimeEnd"
@@ -148,7 +152,8 @@
                     android:padding="10dp"
                     android:text="Tomorrow at 11:00 AM"
                     android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:ignore="HardcodedText" />
             </TableRow>
 
             <TableRow
@@ -169,7 +174,7 @@
                     android:textAlignment="textStart"
                     android:textAllCaps="false"
                     android:textColor="#14ABFF"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
             </TableRow>
 
         </TableLayout>
@@ -182,7 +187,7 @@
             android:layout_marginTop="5dp"
             android:backgroundTint="#70BF69"
             android:fontFamily="@font/inter"
-            android:text="Start fast"
+            android:text="@string/BtnStart"
             android:textAllCaps="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TLStatusFast" />
@@ -199,7 +204,8 @@
             android:text="@string/BtnPause"
             android:textAllCaps="false"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TLStatusFast" />
+            app:layout_constraintTop_toBottomOf="@+id/TLStatusFast"
+            tools:ignore="UsingOnClickInXml" />
 
         <Button
             android:id="@+id/BtnResume"
@@ -209,7 +215,7 @@
             android:layout_marginTop="5dp"
             android:backgroundTint="#70BF69"
             android:fontFamily="@font/inter"
-            android:text="Resume fast"
+            android:text="@string/BtnResume"
             android:textAllCaps="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TLStatusFast" />
@@ -223,10 +229,11 @@
             android:backgroundTint="#70BF69"
             android:fontFamily="@font/inter"
             android:onClick="BtnStopOnClick"
-            android:text="End fast"
+            android:text="@string/BtnEnd"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TLStatusFast" />
+            app:layout_constraintTop_toBottomOf="@+id/TLStatusFast"
+            tools:ignore="UsingOnClickInXml" />
 
         <TextView
             android:id="@+id/TVPracticeFast"
@@ -253,7 +260,8 @@
             android:text="@string/Btn52Diet"
             android:textAllCaps="false"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TVPracticeFast" />
+            app:layout_constraintTop_toBottomOf="@+id/TVPracticeFast"
+            tools:ignore="UsingOnClickInXml" />
 
         <Button
             android:id="@+id/BtnEatStop"
@@ -266,7 +274,8 @@
             android:text="@string/BtnEatStop"
             android:textAllCaps="false"
             app:layout_constraintStart_toEndOf="@+id/Btn52Diet"
-            app:layout_constraintTop_toBottomOf="@+id/TVPracticeFast" />
+            app:layout_constraintTop_toBottomOf="@+id/TVPracticeFast"
+            tools:ignore="UsingOnClickInXml" />
 
         <Button
             android:id="@+id/Btn168Method"
@@ -280,7 +289,8 @@
             android:text="@string/Btn168Method"
             android:textAllCaps="false"
             app:layout_constraintStart_toEndOf="@+id/BtnEatStop"
-            app:layout_constraintTop_toBottomOf="@+id/TVPracticeFast" />
+            app:layout_constraintTop_toBottomOf="@+id/TVPracticeFast"
+            tools:ignore="UsingOnClickInXml" />
 
         <View
             android:id="@+id/ViewBlank"
