@@ -71,7 +71,7 @@ public class DietFragment extends Fragment {
         Button BtnReset = view.findViewById(R.id.BtnReset);
         TextView TVStatus = view.findViewById(R.id.TVStatus);
 
-        BtnReset.setVisibility(view.GONE);
+        BtnReset.setVisibility(View.GONE);
 
         // BtnComplete
         View.OnClickListener OCLComplete = new View.OnClickListener() {
@@ -101,8 +101,8 @@ public class DietFragment extends Fragment {
                 });
 
                 TVStatus.setText("Completed");
-                BtnReset.setVisibility(view.VISIBLE);
-                BtnComplete.setVisibility(view.GONE);
+                BtnReset.setVisibility(View.VISIBLE);
+                BtnComplete.setVisibility(View.GONE);
             }
         };
         BtnComplete.setOnClickListener(OCLComplete);
@@ -112,8 +112,8 @@ public class DietFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 TVStatus.setText("Not Completed Yet");
-                BtnReset.setVisibility(view.GONE);
-                BtnComplete.setVisibility(view.VISIBLE);
+                BtnReset.setVisibility(View.GONE);
+                BtnComplete.setVisibility(View.VISIBLE);
             }
         };
         BtnReset.setOnClickListener(OCLReset);
