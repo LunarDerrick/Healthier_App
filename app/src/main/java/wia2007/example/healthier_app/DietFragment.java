@@ -1,12 +1,20 @@
 package wia2007.example.healthier_app;
 
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,7 +64,60 @@ public class DietFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_diet, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_diet, container, false);
 
+        final LayoutInflater[] inflater1 = {inflater};
+        Button BtnComplete = view.findViewById(R.id.BtnComplete);
+        Button BtnReset = view.findViewById(R.id.BtnReset);
+        TextView TVStatus = view.findViewById(R.id.TVStatus);
+
+        BtnReset.setVisibility(view.GONE);
+
+        // BtnComplete
+        View.OnClickListener OCLComplete = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // inflate the layout of the popup window
+                inflater1[0] = (LayoutInflater) getActivity().getSystemService(LAYOUT_INFLATER_SERVICE);
+                View popupView = inflater1[0].inflate(R.layout.popup_window, null);
+
+                // create the popup window
+                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                boolean focusable = true; // lets taps outside the popup also dismiss it
+                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+                // show the popup window
+                // which view you pass in doesn't matter, it is only used for the window tolken
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+                // dismiss the popup window when touched
+                popupView.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        popupWindow.dismiss();
+                        return true;
+                    }
+                });
+
+                TVStatus.setText("Completed");
+                BtnReset.setVisibility(view.VISIBLE);
+                BtnComplete.setVisibility(view.GONE);
+            }
+        };
+        BtnComplete.setOnClickListener(OCLComplete);
+
+        // BtnReset
+        View.OnClickListener OCLReset = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TVStatus.setText("Not Completed Yet");
+                BtnReset.setVisibility(view.GONE);
+                BtnComplete.setVisibility(view.VISIBLE);
+            }
+        };
+        BtnReset.setOnClickListener(OCLReset);
+
+        return view;
+    }
 }

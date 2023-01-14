@@ -160,6 +160,28 @@
 
         </TableLayout>
 
+        <TextView
+            android:id="@+id/TVStatusTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="7dp"
+            android:text="@string/TVStatusTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TLToday" />
+
+        <TextView
+            android:id="@+id/TVStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="7dp"
+            android:text="Not complete yet"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintStart_toEndOf="@+id/TVStatusTitle"
+            app:layout_constraintTop_toBottomOf="@+id/TLToday"
+            tools:ignore="HardcodedText" />
+
         <Button
             android:id="@+id/BtnComplete"
             android:layout_width="wrap_content"
@@ -169,8 +191,23 @@
             android:backgroundTint="#70BF69"
             android:fontFamily="@font/inter"
             android:letterSpacing="0"
-            android:onClick="BtnCompleteOnClick"
             android:text="@string/BtnComplete"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TLToday"
+            tools:ignore="UsingOnClickInXml,DuplicateClickableBoundsCheck" />
+
+        <Button
+            android:id="@+id/BtnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="#70BF69"
+            android:fontFamily="@font/inter"
+            android:letterSpacing="0"
+            android:text="@string/BtnReset"
             android:textAllCaps="false"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -182,20 +219,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="45dp"
             android:fontFamily="@font/inter"
             android:text="@string/TVWeekly"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BtnComplete" />
+            app:layout_constraintTop_toBottomOf="@+id/TVStatusTitle" />
 
         <Button
             android:id="@+id/BTEditPlan"
             style="?attr/borderlessButtonStyle"
             android:layout_width="75dp"
             android:layout_height="35dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="4dp"
             android:drawableEnd="@drawable/pen"
             android:fontFamily="@font/inter"
@@ -205,8 +242,8 @@
             android:textAllCaps="false"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BtnComplete"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/TVStatusTitle"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
         <TableLayout
             android:id="@+id/TLWeekly"

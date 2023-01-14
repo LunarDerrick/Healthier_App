@@ -17,6 +17,7 @@
     <string name="BtnEditStart">Edit start</string>
     <string name="BtnEnd">End fast</string>
     <string name="BtnPause">Pause fast</string>
+    <string name="BtnReset">Reset</string>
     <string name="BtnResume">Resume fast</string>
     <string name="BtnStart">Start fast</string>
     <string name="BtnStrTrain">Strength Training</string>
@@ -86,6 +87,7 @@
     <string name="TVCarbs">Carbs</string>
     <string name="TVChooseEWallet3">Preferred E-wallet</string>
     <string name="TVCircularTotal">Total\n\n\nkcal</string>
+    <string name="TVCongratulate">Well done!\nKeep it up!</string>
     <string name="TVCycle">Cycling</string>
     <string name="TVDate">5 December 2022</string>
     <string name="TVDay">Monday</string>
@@ -131,6 +133,7 @@
     <string name="TVRecipe">Recipe Recommendation</string>
     <string name="TVRewardActivity">Reward Activity:</string>
     <string name="TVStatusFast">You\'re fasting!</string>
+    <string name="TVStatusTitle">Status:</string>
     <string name="TVSwim">Swimming</string>
     <string name="TVTable3TitleName">Name</string>
     <string name="TVTable3TitleTime">Duration (min)</string>
