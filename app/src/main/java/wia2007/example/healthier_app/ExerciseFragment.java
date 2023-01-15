@@ -2,8 +2,6 @@ package wia2007.example.healthier_app;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -12,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -66,7 +67,11 @@ public class ExerciseFragment extends Fragment {
 
         EditText ETTargetBurn = view.findViewById(R.id.ETTargetBurn);
         EditText ETEstiBurn = view.findViewById(R.id.ETEstiBurn);
+        EditText ETNameNew = view.findViewById(R.id.ETNameNew);
+        EditText ETTimeNew = view.findViewById(R.id.ETTimeNew);
         Button BtnCheck = view.findViewById(R.id.BtnCheck);
+        Button BtnAdd = view.findViewById(R.id.BtnAdd);
+        TableLayout TLExercise = view.findViewById(R.id.TLExercise);
 
         // BtnCheck
         View.OnClickListener OCLCheck = new View.OnClickListener() {
@@ -77,9 +82,9 @@ public class ExerciseFragment extends Fragment {
                     int estimateValue = Integer.parseInt(ETEstiBurn.getText().toString());
 
                     if (targetValue > estimateValue) {
-                        ETTargetBurn.setTextColor(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.red));
+                        ETEstiBurn.setTextColor(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.red));
                     } else {
-                        ETTargetBurn.setTextColor(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.text_green));
+                        ETEstiBurn.setTextColor(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.text_green));
                     }
                 } catch (NumberFormatException e) {
                     // if user haven't input anything
@@ -89,6 +94,54 @@ public class ExerciseFragment extends Fragment {
             }
         };
         BtnCheck.setOnClickListener(OCLCheck);
+
+        // BtnAdd
+        View.OnClickListener OCLAdd = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    // fetch values from EditText
+                    String newName = ETNameNew.getText().toString();
+                    int newTime = Integer.parseInt(ETTimeNew.getText().toString());
+
+                    // Create new set of TableRow to be added
+                    TableRow TRExerciseNew = new TableRow(getContext());
+                    TextView TVTableNameNew = new TextView(getContext());
+                    TextView TVTableTimeNew = new TextView(getContext());
+
+                    // Editing layout for 1st TextView
+                    TVTableNameNew.setTextSize(14);
+                    TVTableNameNew.setLayoutParams(new TableRow.LayoutParams(172,
+                            TableRow.LayoutParams.WRAP_CONTENT));
+                    TVTableNameNew.setText(newName);
+                    TVTableNameNew.setPadding(10, 10, 10, 10);
+                    TVTableNameNew.setBackgroundResource(R.drawable.border_white);
+                    TVTableNameNew.setTextColor(getResources().getColor(R.color.black));
+
+                    // Editing layout for 2nd TextView
+                    TVTableTimeNew.setTextSize(14);
+                    TVTableTimeNew.setLayoutParams(new TableRow.LayoutParams(172,
+                            TableRow.LayoutParams.WRAP_CONTENT));
+                    TVTableTimeNew.setText(String.format("%s", newTime));
+                    TVTableTimeNew.setPadding(10, 10, 10, 10);
+                    TVTableTimeNew.setBackgroundResource(R.drawable.border_white);
+                    TVTableTimeNew.setTextColor(getResources().getColor(R.color.black));
+
+                    // Add the new TextViews to the TableRow
+                    TRExerciseNew.addView(TVTableNameNew);
+                    TRExerciseNew.addView(TVTableTimeNew);
+
+                    // Add the new TableRow to the TableLayout
+                    TLExercise.addView(TRExerciseNew);
+
+                } catch (NumberFormatException e) {
+                    // if user haven't input anything
+                    String message = "Please enter a value first!";
+                    Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+        BtnAdd.setOnClickListener(OCLAdd);
 
         return view;
     }

@@ -58,11 +58,11 @@
         <Button
             android:id="@+id/BtnCheck"
             android:layout_width="78dp"
-            android:layout_height="35dp"
+            android:layout_height="36dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="3dp"
             android:backgroundTint="#70BF69"
-            android:text="Check"
+            android:text="@string/BtnCheck"
             android:textAlignment="viewStart"
             android:textColor="@color/white"
             android:textSize="12sp"
@@ -119,87 +119,6 @@
                     android:textColor="@color/white" />
             </TableRow>
 
-            <TableRow
-                android:id="@+id/TRExercise2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/TVTable3Name1"
-                    android:layout_width="172dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_white"
-                    android:fontFamily="@font/inter"
-                    android:padding="10dp"
-                    android:text="@string/TVJog"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:id="@+id/TVTable3Time1"
-                    android:layout_width="172dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_white"
-                    android:fontFamily="@font/inter"
-                    android:padding="10dp"
-                    android:text="60"
-                    android:textColor="@color/black"
-                    tools:ignore="HardcodedText" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/TRExercise3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/TVTable3Name2"
-                    android:layout_width="172dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_white"
-                    android:fontFamily="@font/inter"
-                    android:padding="10dp"
-                    android:text="@string/TVCycle"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:id="@+id/TVTable3Time2"
-                    android:layout_width="172dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_white"
-                    android:fontFamily="@font/inter"
-                    android:padding="10dp"
-                    android:text="60"
-                    android:textColor="@color/black"
-                    tools:ignore="HardcodedText" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/TRExercise4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/TVTable3Name3"
-                    android:layout_width="172dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_white_bottomleft"
-                    android:fontFamily="@font/inter"
-                    android:padding="10dp"
-                    android:text="@string/TVSwim"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:id="@+id/TVTable3Time3"
-                    android:layout_width="172dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_white_bottomright"
-                    android:fontFamily="@font/inter"
-                    android:padding="10dp"
-                    android:text="30"
-                    android:textColor="@color/black"
-                    tools:ignore="HardcodedText" />
-            </TableRow>
-
         </TableLayout>
 
         <Button
@@ -215,6 +134,32 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TLExercise"
             tools:ignore="UsingOnClickInXml" />
+
+        <EditText
+            android:id="@+id/ETTimeNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="22dp"
+            android:hint="Duration(min)"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/BtnAdd"
+            app:layout_constraintTop_toBottomOf="@+id/TLExercise"
+            tools:ignore="Autofill,TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/ETNameNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="128dp"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/ETTimeNew"
+            app:layout_constraintTop_toBottomOf="@+id/TLExercise"
+            tools:ignore="Autofill,TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/TVEstiBurn"
