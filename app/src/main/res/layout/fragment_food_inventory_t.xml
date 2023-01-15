@@ -141,7 +141,7 @@
 
 
             <TableRow
-                android:id="@+id/TRExercise1"
+                android:id="@+id/TRExerciseTitle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 

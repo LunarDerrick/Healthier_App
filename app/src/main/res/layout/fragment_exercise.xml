@@ -94,7 +94,7 @@
             app:layout_constraintTop_toBottomOf="@+id/TVPlan">
 
             <TableRow
-                android:id="@+id/TRExercise1"
+                android:id="@+id/TRExerciseTitle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -127,7 +127,6 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="35dp"
             android:backgroundTint="#70BF69"
-            android:onClick="BtnAddOnClick"
             android:text="@string/BtnAdd"
             android:textColor="@color/white"
             android:textSize="24sp"
@@ -161,17 +160,42 @@
             app:layout_constraintTop_toBottomOf="@+id/TLExercise"
             tools:ignore="Autofill,TouchTargetSizeCheck" />
 
+        <Button
+            android:id="@+id/BtnRemove"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="35dp"
+            android:backgroundTint="#70BF69"
+            android:text="@string/BtnRemove"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BtnAdd"
+            tools:ignore="UsingOnClickInXml" />
+
+        <EditText
+            android:id="@+id/ETRowIndex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/ETRowIndex"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/BtnAdd"
+            app:layout_constraintTop_toBottomOf="@+id/BtnAdd"
+            tools:ignore="Autofill,TouchTargetSizeCheck" />
+
         <TextView
             android:id="@+id/TVEstiBurn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
             android:layout_marginTop="12dp"
+            android:layout_marginStart="35dp"
             android:fontFamily="@font/inter"
             android:text="@string/TVEstiBurn"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BtnAdd" />
+            app:layout_constraintTop_toBottomOf="@+id/BtnRemove" />
 
         <EditText
             android:id="@+id/ETEstiBurn"
@@ -187,7 +211,7 @@
             android:textAlignment="center"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/TVEstiBurn"
-            app:layout_constraintTop_toBottomOf="@+id/BtnAdd"
+            app:layout_constraintTop_toBottomOf="@+id/BtnRemove"
             tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck" />
 
         <TextView
@@ -200,7 +224,7 @@
             android:text="@string/TVUnitKcal"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/ETEstiBurn"
-            app:layout_constraintTop_toBottomOf="@+id/BtnAdd" />
+            app:layout_constraintTop_toBottomOf="@+id/BtnRemove" />
 
         <TextView
             android:id="@+id/TVExCourse"

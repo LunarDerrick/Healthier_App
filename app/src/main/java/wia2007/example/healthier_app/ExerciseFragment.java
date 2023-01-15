@@ -15,6 +15,8 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ExerciseFragment#newInstance} factory method to
@@ -28,6 +30,9 @@ public class ExerciseFragment extends Fragment {
 
     private String mParam1;
     private String mParam2;
+
+    int i = 0; // tablerow counter
+    TableRow row; // placeholder variable to create new table rows
 
     public ExerciseFragment() {
         // Required empty public constructor
@@ -69,9 +74,12 @@ public class ExerciseFragment extends Fragment {
         EditText ETEstiBurn = view.findViewById(R.id.ETEstiBurn);
         EditText ETNameNew = view.findViewById(R.id.ETNameNew);
         EditText ETTimeNew = view.findViewById(R.id.ETTimeNew);
+        EditText ETRowIndex = view.findViewById(R.id.ETRowIndex);
         Button BtnCheck = view.findViewById(R.id.BtnCheck);
         Button BtnAdd = view.findViewById(R.id.BtnAdd);
+        Button BtnRemove = view.findViewById(R.id.BtnRemove);
         TableLayout TLExercise = view.findViewById(R.id.TLExercise);
+        ArrayList<TableRow> rows = new ArrayList<>();
 
         // BtnCheck
         View.OnClickListener OCLCheck = new View.OnClickListener() {
@@ -105,7 +113,7 @@ public class ExerciseFragment extends Fragment {
                     int newTime = Integer.parseInt(ETTimeNew.getText().toString());
 
                     // Create new set of TableRow to be added
-                    TableRow TRExerciseNew = new TableRow(getContext());
+                    row = new TableRow(getContext());
                     TextView TVTableNameNew = new TextView(getContext());
                     TextView TVTableTimeNew = new TextView(getContext());
 
@@ -128,11 +136,13 @@ public class ExerciseFragment extends Fragment {
                     TVTableTimeNew.setTextColor(getResources().getColor(R.color.black));
 
                     // Add the new TextViews to the TableRow
-                    TRExerciseNew.addView(TVTableNameNew);
-                    TRExerciseNew.addView(TVTableTimeNew);
+                    row.addView(TVTableNameNew);
+                    row.addView(TVTableTimeNew);
+                    rows.add(row); // Add the fully edited row to ArrayList
+                    i++; // Add counter to the ArrayList
 
                     // Add the new TableRow to the TableLayout
-                    TLExercise.addView(TRExerciseNew);
+                    TLExercise.addView(row);
 
                 } catch (NumberFormatException e) {
                     // if user haven't input anything
@@ -142,6 +152,31 @@ public class ExerciseFragment extends Fragment {
             }
         };
         BtnAdd.setOnClickListener(OCLAdd);
+
+        // BtnRemove
+        View.OnClickListener OCLRemove = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    // Assume people think row number as 1, 2, 3
+                    int rowIndex = Integer.parseInt(ETRowIndex.getText().toString()) - 1;
+
+                    try {
+                        row = rows.get(rowIndex);
+                        TLExercise.removeView(row);
+                        rows.remove(rowIndex);
+                    } catch (IndexOutOfBoundsException e) {
+                        String message = "Row number doesn't exist";
+                        Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                    }
+                } catch (NumberFormatException e) {
+                    // if user haven't input anything
+                    String message = "Please enter a value first!";
+                    Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+        BtnRemove.setOnClickListener(OCLRemove);
 
         return view;
     }
