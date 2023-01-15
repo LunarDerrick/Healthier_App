@@ -41,7 +41,7 @@
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/TVTargetBurn"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="Autofill,HardcodedText" />
+            tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/TVUnitKcal"
@@ -54,6 +54,21 @@
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/ETTargetBurn"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/BtnCheck"
+            android:layout_width="78dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="3dp"
+            android:backgroundTint="#70BF69"
+            android:text="Check"
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/TVUnitKcal"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UsingOnClickInXml,TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/TVPlan"
@@ -228,7 +243,7 @@
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/TVEstiBurn"
             app:layout_constraintTop_toBottomOf="@+id/BtnAdd"
-            tools:ignore="Autofill,HardcodedText" />
+            tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/TVUnitKcal2"
@@ -260,14 +275,14 @@
             android:layout_height="75dp"
             android:layout_marginTop="8dp"
             android:clickable="true"
+            android:contentDescription="@string/CDDumbbell"
+            android:focusable="true"
             android:onClick="BtnStrTrainOnClick"
             android:src="@drawable/strength_training"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TVExCourse"
-            android:contentDescription="@string/CDDumbbell"
-            android:focusable="true"
             tools:ignore="UsingOnClickInXml" />
 
         <TextView
@@ -288,14 +303,14 @@
             android:layout_width="372dp"
             android:layout_height="75dp"
             android:clickable="true"
+            android:contentDescription="@string/CDYoga"
+            android:focusable="true"
             android:onClick="BtnYogaOnClick"
             android:src="@drawable/yoga_stretch"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/BtnStrTrain"
-            android:contentDescription="@string/CDYoga"
-            android:focusable="true"
             tools:ignore="UsingOnClickInXml" />
 
         <TextView

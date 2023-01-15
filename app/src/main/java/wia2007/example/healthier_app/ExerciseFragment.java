@@ -2,11 +2,17 @@ package wia2007.example.healthier_app;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,6 +62,34 @@ public class ExerciseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_exercise, container, false);
+        View view = inflater.inflate(R.layout.fragment_exercise, container, false);
+
+        EditText ETTargetBurn = view.findViewById(R.id.ETTargetBurn);
+        EditText ETEstiBurn = view.findViewById(R.id.ETEstiBurn);
+        Button BtnCheck = view.findViewById(R.id.BtnCheck);
+
+        // BtnCheck
+        View.OnClickListener OCLCheck = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    int targetValue = Integer.parseInt(ETTargetBurn.getText().toString());
+                    int estimateValue = Integer.parseInt(ETEstiBurn.getText().toString());
+
+                    if (targetValue > estimateValue) {
+                        ETTargetBurn.setTextColor(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.red));
+                    } else {
+                        ETTargetBurn.setTextColor(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.text_green));
+                    }
+                } catch (NumberFormatException e) {
+                    // if user haven't input anything
+                    String message = "Please enter a value first!";
+                    Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+        BtnCheck.setOnClickListener(OCLCheck);
+
+        return view;
     }
 }
