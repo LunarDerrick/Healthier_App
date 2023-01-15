@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -32,6 +33,8 @@ public class ExerciseFragment extends Fragment {
     private String mParam2;
 
     int i = 0; // tablerow counter
+    TableLayout TLExercise;
+    ArrayList<TableRow> rows = new ArrayList<>();
     TableRow row; // placeholder variable to create new table rows
 
     public ExerciseFragment() {
@@ -78,8 +81,9 @@ public class ExerciseFragment extends Fragment {
         Button BtnCheck = view.findViewById(R.id.BtnCheck);
         Button BtnAdd = view.findViewById(R.id.BtnAdd);
         Button BtnRemove = view.findViewById(R.id.BtnRemove);
-        TableLayout TLExercise = view.findViewById(R.id.TLExercise);
-        ArrayList<TableRow> rows = new ArrayList<>();
+        ImageView BtnStrTrain = view.findViewById(R.id.BtnStrTrain);
+        ImageView BtnYoga = view.findViewById(R.id.BtnYoga);
+        TLExercise = view.findViewById(R.id.TLExercise);
 
         // BtnCheck
         View.OnClickListener OCLCheck = new View.OnClickListener() {
@@ -112,37 +116,12 @@ public class ExerciseFragment extends Fragment {
                     String newName = ETNameNew.getText().toString();
                     int newTime = Integer.parseInt(ETTimeNew.getText().toString());
 
-                    // Create new set of TableRow to be added
-                    row = new TableRow(getContext());
-                    TextView TVTableNameNew = new TextView(getContext());
-                    TextView TVTableTimeNew = new TextView(getContext());
+                    // To account for left section must be filled too
+                    if (newName.equals("")) {
+                        throw new NumberFormatException();
+                    }
 
-                    // Editing layout for 1st TextView
-                    TVTableNameNew.setTextSize(14);
-                    TVTableNameNew.setLayoutParams(new TableRow.LayoutParams(172,
-                            TableRow.LayoutParams.WRAP_CONTENT));
-                    TVTableNameNew.setText(newName);
-                    TVTableNameNew.setPadding(10, 10, 10, 10);
-                    TVTableNameNew.setBackgroundResource(R.drawable.border_white);
-                    TVTableNameNew.setTextColor(getResources().getColor(R.color.black));
-
-                    // Editing layout for 2nd TextView
-                    TVTableTimeNew.setTextSize(14);
-                    TVTableTimeNew.setLayoutParams(new TableRow.LayoutParams(172,
-                            TableRow.LayoutParams.WRAP_CONTENT));
-                    TVTableTimeNew.setText(String.format("%s", newTime));
-                    TVTableTimeNew.setPadding(10, 10, 10, 10);
-                    TVTableTimeNew.setBackgroundResource(R.drawable.border_white);
-                    TVTableTimeNew.setTextColor(getResources().getColor(R.color.black));
-
-                    // Add the new TextViews to the TableRow
-                    row.addView(TVTableNameNew);
-                    row.addView(TVTableTimeNew);
-                    rows.add(row); // Add the fully edited row to ArrayList
-                    i++; // Add counter to the ArrayList
-
-                    // Add the new TableRow to the TableLayout
-                    TLExercise.addView(row);
+                    addTableRow(newName, newTime);
 
                 } catch (NumberFormatException e) {
                     // if user haven't input anything
@@ -178,6 +157,68 @@ public class ExerciseFragment extends Fragment {
         };
         BtnRemove.setOnClickListener(OCLRemove);
 
+        // BtnStrTrain
+        View.OnClickListener OCLStrTrain = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addTableRow("Squat", 5);
+                addTableRow("Push-Up", 2);
+                addTableRow("Plank", 5);
+
+                String message = "'Strength training' applied";
+                Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            }
+        };
+        BtnStrTrain.setOnClickListener(OCLStrTrain);
+
+        // BtnYoga
+        View.OnClickListener OCLYoga = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addTableRow("High Lunge", 5);
+                addTableRow("Warrior 1", 5);
+                addTableRow("Triangle Pose", 5);
+
+                String message = "'Yoga and stretching training' applied";
+                Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            }
+        };
+        BtnYoga.setOnClickListener(OCLYoga);
+
         return view;
+    }
+
+    private void addTableRow(String newName, int newTime) {
+        // Create new set of TableRow to be added
+        row = new TableRow(getContext());
+        TextView TVTableNameNew = new TextView(getContext());
+        TextView TVTableTimeNew = new TextView(getContext());
+
+        // Editing layout for 1st TextView
+        TVTableNameNew.setTextSize(14);
+        TVTableNameNew.setLayoutParams(new TableRow.LayoutParams(172,
+                TableRow.LayoutParams.WRAP_CONTENT));
+        TVTableNameNew.setText(newName);
+        TVTableNameNew.setPadding(10, 10, 10, 10);
+        TVTableNameNew.setBackgroundResource(R.drawable.border_white);
+        TVTableNameNew.setTextColor(getResources().getColor(R.color.black));
+
+        // Editing layout for 2nd TextView
+        TVTableTimeNew.setTextSize(14);
+        TVTableTimeNew.setLayoutParams(new TableRow.LayoutParams(172,
+                TableRow.LayoutParams.WRAP_CONTENT));
+        TVTableTimeNew.setText(String.format("%s", newTime));
+        TVTableTimeNew.setPadding(10, 10, 10, 10);
+        TVTableTimeNew.setBackgroundResource(R.drawable.border_white);
+        TVTableTimeNew.setTextColor(getResources().getColor(R.color.black));
+
+        // Add the new TextViews to the TableRow
+        row.addView(TVTableNameNew);
+        row.addView(TVTableTimeNew);
+        rows.add(row); // Add the fully edited row to ArrayList
+        i++; // Add counter to the ArrayList
+
+        // Add the new TableRow to the TableLayout
+        TLExercise.addView(row);
     }
 }
