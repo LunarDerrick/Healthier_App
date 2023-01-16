@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#028A0F">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center"
+        android:layout_marginBottom="30dp"
+        android:text="16/8 Method\n\nSplit one day into 16 hours and 8 hours. Eat healthily during the 8hr window while fast during the 16hr window. Adjust window to your preference, optional to follow for few days in a row.\n\nRun 16hr fast once per attempt."
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+</RelativeLayout>

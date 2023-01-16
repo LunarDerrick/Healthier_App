@@ -62,24 +62,4 @@ public class PlannerActivity extends AppCompatActivity {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     }
-
-    public void BtnEditStartOnClick(View view) {
-        String message = "'Edit start' button pressed";
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-    }
-
-    public void Btn52DietOnClick(View view) {
-        String message = "'5:2 Diet' button pressed";
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-    }
-
-    public void BtnEatStopOnClick(View view) {
-        String message = "'Eat-Stop-Eat' button pressed";
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-    }
-
-    public void Btn168MethodOnClick(View view) {
-        String message = "'16/8 Method' button pressed";
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-    }
 }

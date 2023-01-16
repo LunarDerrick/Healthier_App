@@ -13,6 +13,7 @@
     <string name="BtnAdd">+</string>
     <string name="BtnCheck">Check</string>
     <string name="BtnComplete">Complete</string>
+    <string name="BtnDoneEdit">Done Edit</string>
     <string name="BtnEatStop">Eat-Stop-Eat</string>
     <string name="BtnEdit">Edit</string>
     <string name="BtnEditStart">Edit start</string>

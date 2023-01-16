@@ -1,17 +1,24 @@
 package wia2007.example.healthier_app;
 
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
 import android.os.CountDownTimer;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.ProgressBar;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,14 +78,30 @@ public class FastingFragment extends Fragment {
         Button BtnPause = view.findViewById(R.id.BtnPause);
         Button BtnResume = view.findViewById(R.id.BtnResume);
         Button BtnEnd = view.findViewById(R.id.BtnEnd);
+        Button BtnEditStart = view.findViewById(R.id.BtnEditStart);
+        Button BtnDoneEdit = view.findViewById(R.id.BtnDoneEdit);
+        Button Btn52Diet = view.findViewById(R.id.Btn52Diet);
+        Button BtnEatStop = view.findViewById(R.id.BtnEatStop);
+        Button Btn168Method = view.findViewById(R.id.Btn168Method);
         TextView TVTimeCountDown = view.findViewById(R.id.TVTimeCountDown);
+        TextView TVTimeStart = view.findViewById(R.id.TVTimeStart);
+        TextView TVTimeEnd = view.findViewById(R.id.TVTimeEnd);
+        TextView TVTimeEnd2 = view.findViewById(R.id.TVTimeEnd2);
         EditText ETDurationFastHr = view.findViewById(R.id.ETDurationFastHr);
         EditText ETDurationFastMin = view.findViewById(R.id.ETDurationFastMin);
         EditText ETDurationFastSec = view.findViewById(R.id.ETDurationFastSec);
+        EditText ETTimeStart = view.findViewById(R.id.ETTimeStart);
         ProgressBar progressBar = view.findViewById(R.id.PBProgressFast);
+        TableRow TRStatusFast2 = view.findViewById(R.id.TRStatusFast2);
+        TableRow TRStatusFast3 = view.findViewById(R.id.TRStatusFast3);
+        TableRow TRStatusFast4 = view.findViewById(R.id.TRStatusFast4);
+        TableRow TRStatusFast5 = view.findViewById(R.id.TRStatusFast5);
+        final LayoutInflater[] inflater1 = {inflater};
 
         BtnPause.setVisibility(View.GONE);
         BtnResume.setVisibility(View.GONE);
+        TRStatusFast4.setVisibility(View.GONE);
+        TRStatusFast5.setVisibility(View.GONE);
 
         BtnStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +111,7 @@ public class FastingFragment extends Fragment {
                     String durationHrStr = ETDurationFastHr.getText().toString();
                     String durationMinStr = ETDurationFastMin.getText().toString();
                     String durationSecStr = ETDurationFastSec.getText().toString();
+                    String timeStart = TVTimeStart.getText().toString();
 
                     durationHr = Integer.parseInt(durationHrStr);
                     durationMin = Integer.parseInt(durationMinStr);
@@ -106,6 +130,25 @@ public class FastingFragment extends Fragment {
                         throw new Exception("Second out of range");
                     }
 
+                    // Edit start-end table
+                    String[] time = timeStart.split(":");
+                    int timeStartHr = Integer.parseInt(time[0]);
+                    int timeStartMin = Integer.parseInt(time[1]);
+                    int timeEndHr = timeStartHr + durationHr;
+                    int timeEndMin = timeStartMin + durationMin;
+
+                    if (timeEndMin >= 60) {
+                        timeEndMin -= 60;
+                        timeEndHr++;
+                    }
+                    if (timeEndHr >= 24) {
+                        timeEndHr -= 24;
+                    }
+
+                    String TimeEndNew = String.format("%02d:%02d", timeEndHr, timeEndMin);
+                    TVTimeEnd.setText(TimeEndNew);
+                    TVTimeEnd2.setText(TimeEndNew);
+
                     // Implementation
                     counter += durationHr * 3600;
                     counter += durationMin * 60;
@@ -121,7 +164,7 @@ public class FastingFragment extends Fragment {
 
                     countDownTimer = new CountDownTimer(counter * 1000, 1000) {
                         public void onTick(long millisUntilFinished) {
-                            TVTimeCountDown.setText(String.format("%d:%d:%d", displayHr, displayMin, displaySec));
+                            TVTimeCountDown.setText(String.format("%02d:%02d:%02d", displayHr, displayMin, displaySec));
                             counter--;
                             if (displaySec == 0) {
                                 displaySec = 59;
@@ -180,7 +223,7 @@ public class FastingFragment extends Fragment {
 
                 countDownTimer = new CountDownTimer(counter * 1000, 1000) {
                     public void onTick(long millisUntilFinished) {
-                        TVTimeCountDown.setText(String.format("%d:%d:%d", displayHr, displayMin, displaySec));
+                        TVTimeCountDown.setText(String.format("%02d:%02d:%02d", displayHr, displayMin, displaySec));
                         counter--;
                         if (displaySec == 0) {
                             displaySec = 59;
@@ -231,7 +274,7 @@ public class FastingFragment extends Fragment {
                 displayMin = durationMin;
                 displaySec = durationSec;
 
-                TVTimeCountDown.setText(String.format("%d:%d:%d", displayHr, displayMin, displaySec));
+                TVTimeCountDown.setText(String.format("%02d:%02d:%02d", displayHr, displayMin, displaySec));
                 progressBar.setProgress(0);
 
                 BtnPause.setVisibility(View.GONE);
@@ -240,6 +283,127 @@ public class FastingFragment extends Fragment {
 
                 String message = "Timer cancelled";
                 Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        BtnEditStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TRStatusFast2.setVisibility(View.GONE);
+                TRStatusFast3.setVisibility(View.GONE);
+                TRStatusFast4.setVisibility(View.VISIBLE);
+                TRStatusFast5.setVisibility(View.VISIBLE);
+
+                String message = "Enter Edit Mode";
+                Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        BtnDoneEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TRStatusFast2.setVisibility(View.VISIBLE);
+                TRStatusFast3.setVisibility(View.VISIBLE);
+                TRStatusFast4.setVisibility(View.GONE);
+                TRStatusFast5.setVisibility(View.GONE);
+
+                TVTimeStart.setText(ETTimeStart.getText().toString());
+
+                String message = "Exit Edit Mode";
+                Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Btn52Diet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflater1[0] = (LayoutInflater) getActivity().getSystemService(LAYOUT_INFLATER_SERVICE);
+                View popupView = inflater1[0].inflate(R.layout.popup_52diet, null);
+
+                // create the popup window
+                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                boolean focusable = true; // lets taps outside the popup also dismiss it
+                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+                // show the popup window
+                // which view you pass in doesn't matter, it is only used for the window tolken
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+                // dismiss the popup window when touched
+                popupView.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        popupWindow.dismiss();
+                        return true;
+                    }
+                });
+
+                ETDurationFastHr.setText("23");
+                ETDurationFastMin.setText("59");
+                ETDurationFastSec.setText("59");
+            }
+        });
+
+        BtnEatStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflater1[0] = (LayoutInflater) getActivity().getSystemService(LAYOUT_INFLATER_SERVICE);
+                View popupView = inflater1[0].inflate(R.layout.popup_eatstop, null);
+
+                // create the popup window
+                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                boolean focusable = true; // lets taps outside the popup also dismiss it
+                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+                // show the popup window
+                // which view you pass in doesn't matter, it is only used for the window tolken
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+                // dismiss the popup window when touched
+                popupView.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        popupWindow.dismiss();
+                        return true;
+                    }
+                });
+
+                ETDurationFastHr.setText("23");
+                ETDurationFastMin.setText("59");
+                ETDurationFastSec.setText("59");
+            }
+        });
+
+        Btn168Method.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflater1[0] = (LayoutInflater) getActivity().getSystemService(LAYOUT_INFLATER_SERVICE);
+                View popupView = inflater1[0].inflate(R.layout.popup_168method, null);
+
+                // create the popup window
+                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                boolean focusable = true; // lets taps outside the popup also dismiss it
+                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+                // show the popup window
+                // which view you pass in doesn't matter, it is only used for the window tolken
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+                // dismiss the popup window when touched
+                popupView.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        popupWindow.dismiss();
+                        return true;
+                    }
+                });
+
+                ETDurationFastHr.setText("16");
+                ETDurationFastMin.setText("0");
+                ETDurationFastSec.setText("0");
             }
         });
 

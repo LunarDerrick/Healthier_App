@@ -184,7 +184,7 @@
                     android:background="#B9E9B6"
                     android:fontFamily="@font/inter"
                     android:padding="10dp"
-                    android:text="Today at 9:00 PM"
+                    android:text="21:00"
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     tools:ignore="HardcodedText" />
@@ -196,7 +196,7 @@
                     android:background="#B9E9B6"
                     android:fontFamily="@font/inter"
                     android:padding="10dp"
-                    android:text="Tomorrow at 11:00 AM"
+                    android:text="11:00"
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     tools:ignore="HardcodedText" />
@@ -222,6 +222,59 @@
                     android:textColor="#14ABFF"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
             </TableRow>
+
+            <TableRow
+                android:id="@+id/TRStatusFast4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_lightgreen_bottom">
+
+                <EditText
+                    android:id="@+id/ETTimeStart"
+                    android:layout_width="164dp"
+                    android:layout_height="wrap_content"
+                    android:background="#B9E9B6"
+                    android:fontFamily="@font/inter"
+                    android:inputType="time"
+                    android:padding="10dp"
+                    android:text="21:00"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/TVTimeEnd2"
+                    android:layout_width="164dp"
+                    android:layout_height="wrap_content"
+                    android:background="#B9E9B6"
+                    android:fontFamily="@font/inter"
+                    android:padding="10dp"
+                    android:text="11:00"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    tools:ignore="HardcodedText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TRStatusFast5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_lightgreen_bottom">
+
+                <Button
+                    android:id="@+id/BtnDoneEdit"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="164dp"
+                    android:layout_height="35dp"
+                    android:backgroundTint="#B9E9B6"
+                    android:drawableEnd="@android:drawable/checkbox_on_background"
+                    android:text="@string/BtnDoneEdit"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="#14ABFF"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
+            </TableRow>
+
 
         </TableLayout>
 

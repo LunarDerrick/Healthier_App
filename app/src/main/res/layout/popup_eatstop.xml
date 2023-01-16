@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#028A0F">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center"
+        android:layout_marginBottom="30dp"
+        android:text="Eat-Stop-Eat\n\nEat healthily for 5 days while fast for 2 days. You may alternate or arrange eat and fasting days to your preference.\n\nRun 24hr fast twice per week."
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+</RelativeLayout>
