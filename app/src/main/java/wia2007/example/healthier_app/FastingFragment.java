@@ -29,8 +29,7 @@ public class FastingFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public int counter;
-    public int pauseCounter;
+    public int counter, pauseCounter, initialCounter, durationHr, durationMin, durationSec, displayHr, displayMin, displaySec;
     public CountDownTimer countDownTimer;
 
     public FastingFragment() {
@@ -73,7 +72,9 @@ public class FastingFragment extends Fragment {
         Button BtnResume = view.findViewById(R.id.BtnResume);
         Button BtnEnd = view.findViewById(R.id.BtnEnd);
         TextView TVTimeCountDown = view.findViewById(R.id.TVTimeCountDown);
-        EditText ETDurationFast = view.findViewById(R.id.ETDurationFast);
+        EditText ETDurationFastHr = view.findViewById(R.id.ETDurationFastHr);
+        EditText ETDurationFastMin = view.findViewById(R.id.ETDurationFastMin);
+        EditText ETDurationFastSec = view.findViewById(R.id.ETDurationFastSec);
         ProgressBar progressBar = view.findViewById(R.id.PBProgressFast);
 
         BtnPause.setVisibility(View.GONE);
@@ -82,33 +83,79 @@ public class FastingFragment extends Fragment {
         BtnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String durationStr = ETDurationFast.getText().toString();
-                counter = Integer.parseInt(durationStr);
-                progressBar.setProgress(0);
-                progressBar.setMax(counter + 1);
+                try {
+                    // Retrieve user input
+                    String durationHrStr = ETDurationFastHr.getText().toString();
+                    String durationMinStr = ETDurationFastMin.getText().toString();
+                    String durationSecStr = ETDurationFastSec.getText().toString();
 
-                countDownTimer = new CountDownTimer(counter * 1000, 1000) {
-                    public void onTick(long millisUntilFinished) {
-                        TVTimeCountDown.setText(String.valueOf(counter));
-                        counter--;
-                        progressBar.incrementProgressBy(1);
+                    durationHr = Integer.parseInt(durationHrStr);
+                    durationMin = Integer.parseInt(durationMinStr);
+                    durationSec = Integer.parseInt(durationSecStr);
+
+                    // Cancel action if input out of range
+                    if (durationHr < 0 || durationHr > 23) {
+                        throw new Exception("Hour out of range");
                     }
 
-                    public void onFinish() {
-                        TVTimeCountDown.setText("COMPLETE");
-                        progressBar.incrementProgressBy(1);
-
-                        BtnPause.setVisibility(View.GONE);
-                        BtnResume.setVisibility(View.GONE);
-                        BtnStart.setVisibility(View.VISIBLE);
-
-                        String message = "Time's Up";
-                        Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                    if (durationMin < 0 || durationMin > 59) {
+                        throw new Exception("Minute out of range");
                     }
-                }.start();
 
-                BtnStart.setVisibility(View.GONE);
-                BtnPause.setVisibility(View.VISIBLE);
+                    if (durationSec < 0 || durationSec > 59) {
+                        throw new Exception("Second out of range");
+                    }
+
+                    // Implementation
+                    counter += durationHr * 3600;
+                    counter += durationMin * 60;
+                    counter += durationSec;
+                    initialCounter = counter;
+
+                    progressBar.setProgress(0);
+                    progressBar.setMax(counter + 1);
+
+                    displayHr = durationHr;
+                    displayMin = durationMin;
+                    displaySec = durationSec;
+
+                    countDownTimer = new CountDownTimer(counter * 1000, 1000) {
+                        public void onTick(long millisUntilFinished) {
+                            TVTimeCountDown.setText(String.format("%d:%d:%d", displayHr, displayMin, displaySec));
+                            counter--;
+                            if (displaySec == 0) {
+                                displaySec = 59;
+                                if (displayMin == 0) {
+                                    displayMin = 59;
+                                    displayHr--;
+                                } else {
+                                    displayMin--;
+                                }
+                            } else {
+                                displaySec--;
+                            }
+                            progressBar.incrementProgressBy(1);
+                        }
+
+                        public void onFinish() {
+                            TVTimeCountDown.setText("COMPLETE");
+                            progressBar.incrementProgressBy(1);
+
+                            BtnPause.setVisibility(View.GONE);
+                            BtnResume.setVisibility(View.GONE);
+                            BtnStart.setVisibility(View.VISIBLE);
+
+                            String message = "Time's Up";
+                            Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                        }
+                    }.start();
+
+                    BtnStart.setVisibility(View.GONE);
+                    BtnPause.setVisibility(View.VISIBLE);
+                } catch (Exception e) {
+                    String message = e.getMessage();
+                    Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -129,12 +176,23 @@ public class FastingFragment extends Fragment {
         BtnResume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setProgress(Integer.parseInt(ETDurationFast.getText().toString()) - pauseCounter + 1);
+                progressBar.setProgress(initialCounter - pauseCounter + 1);
 
                 countDownTimer = new CountDownTimer(counter * 1000, 1000) {
                     public void onTick(long millisUntilFinished) {
-                        TVTimeCountDown.setText(String.valueOf(counter));
+                        TVTimeCountDown.setText(String.format("%d:%d:%d", displayHr, displayMin, displaySec));
                         counter--;
+                        if (displaySec == 0) {
+                            displaySec = 59;
+                            if (displayMin == 0) {
+                                displayMin = 59;
+                                displayHr--;
+                            } else {
+                                displayMin--;
+                            }
+                        } else {
+                            displaySec--;
+                        }
                         progressBar.incrementProgressBy(1);
                     }
 
@@ -161,9 +219,19 @@ public class FastingFragment extends Fragment {
             public void onClick(View v) {
                 countDownTimer.cancel();
 
-                String durationStr = ETDurationFast.getText().toString();
-                counter = Integer.parseInt(durationStr);
-                TVTimeCountDown.setText(String.valueOf(counter));
+                String durationHrStr = ETDurationFastHr.getText().toString();
+                String durationMinStr = ETDurationFastMin.getText().toString();
+                String durationSecStr = ETDurationFastSec.getText().toString();
+
+                durationHr = Integer.parseInt(durationHrStr);
+                durationMin = Integer.parseInt(durationMinStr);
+                durationSec = Integer.parseInt(durationSecStr);
+
+                displayHr = durationHr;
+                displayMin = durationMin;
+                displaySec = durationSec;
+
+                TVTimeCountDown.setText(String.format("%d:%d:%d", displayHr, displayMin, displaySec));
                 progressBar.setProgress(0);
 
                 BtnPause.setVisibility(View.GONE);

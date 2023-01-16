@@ -151,6 +151,7 @@
     <string name="TVTableTitleD">Dinner</string>
     <string name="TVTableTitleL">Lunch</string>
     <string name="TVTargetBurn">Target Calorie Burnt:</string>
+    <string name="TVTimeColon">:</string>
     <string name="TVTitleEnd">Ending</string>
     <string name="TVTitleStart">Started</string>
     <string name="TVToday">Today\'s plan:</string>
