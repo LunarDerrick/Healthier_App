@@ -150,6 +150,8 @@ public class FastingFragment extends Fragment {
                     TVTimeEnd2.setText(TimeEndNew);
 
                     // Implementation
+                    counter = 0; // reset in case of resume button
+                    pauseCounter = 0; // reset in case of resume button
                     counter += durationHr * 3600;
                     counter += durationMin * 60;
                     counter += durationSec;

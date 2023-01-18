@@ -163,7 +163,7 @@ public class DietFragment extends Fragment {
         View.OnClickListener OCLReset = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TVStatus.setText("Not Completed Yet");
+                TVStatus.setText("Not Complete Yet");
                 BtnReset.setVisibility(View.GONE);
                 BtnComplete.setVisibility(View.VISIBLE);
             }
