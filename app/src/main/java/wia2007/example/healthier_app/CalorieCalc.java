@@ -28,12 +28,12 @@ public class CalorieCalc extends Fragment {
     TextView brkfst, mngsnk, lnch, dnr, brminmax, msminmax, lcminmax, dnminmax, perclr, etms, totcal, tvrec;
     CardView cvrec;
     TableLayout tbleat;
-    TableRow tbladd;
+    TableRow tbladd, tblms;
     Button calculate, add, edit;
     Spinner spinner;
     String[] mealsperday = {"3", "4"};
     int qty, calinput;
-    String bfd, lfd, dfd, bcl, lcl, dcl, mfd, mcl;
+    String bfast, lunch, dnnr, bfastcal, lunchcal, dnnrcal, snack, snackcal;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,10 +60,13 @@ public class CalorieCalc extends Fragment {
         brefoods = view.findViewById(R.id.brfoods);
         lunfoods = view.findViewById(R.id.lufoods);
         dinfoods = view.findViewById(R.id.difoods);
+        etsnack = view.findViewById(R.id.msfoods);
         brecal = view.findViewById(R.id.brcal);
         luncal = view.findViewById(R.id.lucal);
         dincal = view.findViewById(R.id.dical);
+        etmscal = view.findViewById(R.id.mscal);
         calo = view.findViewById(R.id.Calories);
+        tblms = view.findViewById(R.id.TBRMs);
         spinner = view.findViewById(R.id.mealsperday);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_spinner_item, mealsperday);
@@ -97,7 +100,7 @@ public class CalorieCalc extends Fragment {
                             Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
                         } else {
                             Integer clr = Integer.parseInt(calo.getText().toString());
-                            perclr.setText(String.format(" /%d kcal", clr));
+                            //perclr.setText(String.format(" /%d kcal", clr));
                             if (qty == 3) {
                                 Double dmin = clr * 0.25;
                                 Double dn = clr * 0.3;
@@ -149,42 +152,13 @@ public class CalorieCalc extends Fragment {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(requireContext(), "Morning snack row added", Toast.LENGTH_SHORT).show();
-                tbladd = new TableRow(getContext());
-                etms = new TextView(getContext());
-                etsnack = new EditText(getContext());
-                etmscal = new EditText(getContext());
-                //etms
-                etms.setTextSize(12);
-                etms.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
-                        TableRow.LayoutParams.WRAP_CONTENT, 1f));
-                etms.setText("Morning snack");
-                etms.setGravity(Gravity.CENTER);
-                etms.setBackgroundResource(R.drawable.cell_shape);
-                etms.setPadding(6, 18, 6, 18);
-                etms.setTextColor(Color.rgb(0, 25, 255));
-                //etsnack
-                etsnack.setTextSize(12);
-                etsnack.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
-                        TableRow.LayoutParams.WRAP_CONTENT, 2f));
-                etsnack.setText("Foods");
-                etsnack.setGravity(Gravity.CENTER);
-                etsnack.setBackgroundResource(R.drawable.cell_shape);
-                etsnack.setPadding(6, 18, 6, 18);
-                etsnack.setTextColor(Color.rgb(0, 25, 255));
-                //etmscal
-                etmscal.setTextSize(12);
-                etmscal.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
-                        TableRow.LayoutParams.WRAP_CONTENT, 1f));
-                etmscal.setText("0 kcal");
-                etmscal.setGravity(Gravity.CENTER);
-                etmscal.setBackgroundResource(R.drawable.cell_shape);
-                etmscal.setPadding(6, 18, 6, 18);
-                etmscal.setTextColor(Color.rgb(0, 25, 255));
-                tbladd.addView(etms);
-                tbladd.addView(etsnack);
-                tbladd.addView(etmscal);
-                tbleat.addView(tbladd);
+                if(qty == 3){
+                    tblms.setVisibility(View.GONE);
+                    Toast.makeText(requireContext(), "Only 3 meals today!", Toast.LENGTH_SHORT).show();
+                }else if(qty == 4){
+                    tblms.setVisibility(View.VISIBLE);
+                    Toast.makeText(requireContext(), "Snack morning row added", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -192,82 +166,77 @@ public class CalorieCalc extends Fragment {
         int calinput1 = calprefs.getInt("calories", calinput);
         calo.setText("" + calinput1);
 
-        String bfdd = calprefs.getString("bfd", "");
-        if (brefoods != null) {
-            brefoods.setText("" + bfdd);
-        }
-        String lfdd = calprefs.getString("lfd", "");
-        if (lunfoods != null) {
-            lunfoods.setText("" + lfdd);
-        }
-        String dfdd = calprefs.getString("dfd", "");
-        if (dinfoods != null) {
-            dinfoods.setText("" + dfdd);
-        }
-        String bcll = calprefs.getString("bcl", "");
-        if (brecal != null) {
-            brecal.setText("" + bcll);
-        }
-        String lcll = calprefs.getString("lcl", "");
-        if (luncal != null) {
-            luncal.setText("" + lcll);
-        }
-        String dcll = calprefs.getString("dcl", "");
-        if (dincal != null) {
-            dincal.setText("" + dcll);
-        }
-        String mfdd = calprefs.getString("mfd", mfd);
+        String bfd = calprefs.getString("breakfast", "");
+        brefoods.setText("" + bfd);
+
+        String lfd = calprefs.getString("lunch", "");
+        lunfoods.setText("" + lfd);
+
+        String dfd = calprefs.getString("dinner", "");
+        dinfoods.setText("" + dfd);
+
+        String bcl = calprefs.getString("breakfastcalorie", "0 kcal");
+        brecal.setText("" + bcl);
+
+        String lcl = calprefs.getString("lunchcalorie", "0 kcal");
+        luncal.setText("" + lcl);
+
+        String dcl = calprefs.getString("dinnercalorie", "0 kcal");
+        dincal.setText("" + dcl);
+
+        //final String[] mpd = {calprefs.getString("mealsperday", "")};
+
+
+        String mfd = calprefs.getString("snack", "");
         if (etsnack != null) {
-            etsnack.setText("" + mfdd);
+            etsnack.setText("" + mfd);
         }
-        String mcll = calprefs.getString("mcl", mcl);
+
+        String mcl = calprefs.getString("snackcalorie", "0 kcal");
         if (etmscal != null) {
-            etmscal.setText("" + mcll);
+            etmscal.setText("" + mcl);
         }
+
+        String percalo = calprefs.getString("perclr", "/0 kcal");
+        perclr.setText(percalo);
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(requireContext(), "Saved successfully", Toast.LENGTH_SHORT).show();
                 String input = calo.getText().toString();
-                bfd = brefoods.getText().toString();
-                lfd = lunfoods.getText().toString();
-                dfd = dinfoods.getText().toString();
-                bcl = brecal.getText().toString();
-                lcl = luncal.getText().toString();
-                dcl = dincal.getText().toString();
-                if (etsnack != null) {
-                    mfd = etsnack.getText().toString();
-                }
-                if (etmscal != null) {
-                    mcl = etmscal.getText().toString();
-                }
+                bfast = brefoods.getText().toString();
+                lunch = lunfoods.getText().toString();
+                dnnr = dinfoods.getText().toString();
+                bfastcal = brecal.getText().toString();
+                lunchcal = luncal.getText().toString();
+                dnnrcal = dincal.getText().toString();
+                snack = etsnack.getText().toString();
+                snackcal = etmscal.getText().toString();
+                //mpd[0] = spinner.getSelectedItem().toString();
+
                 calinput = Integer.parseInt(input);
+                perclr.setText("/" + calinput + " kcal");
 
                 SharedPreferences precal = PreferenceManager.getDefaultSharedPreferences(requireContext());
                 SharedPreferences.Editor edtcal = precal.edit();
 
                 edtcal.putInt("calories", calinput);
-                edtcal.putString("bfd", bfd);
-                edtcal.putString("lfd", lfd);
-                edtcal.putString("dfd", dfd);
-                edtcal.putString("bcl", bcl);
-                edtcal.putString("lcl", lcl);
-                edtcal.putString("dcl", dcl);
-                //check
-                edtcal.putString("mfd", mfd);
-                edtcal.putString("mcl", mcl);
+                //edtcal.putString("mealsperday", mpd[0]);
+                edtcal.putString("breakfast", bfast);
+                edtcal.putString("lunch", lunch);
+                edtcal.putString("dinner", dnnr);
+                edtcal.putString("breakfastcalorie", bfastcal);
+                edtcal.putString("lunchcalorie", lunchcal);
+                edtcal.putString("dinnercalorie", dnnrcal);
+                edtcal.putString("snack", snack);
+                edtcal.putString("snackcalorie", snackcal);
+                edtcal.putString("perclr", perclr.getText().toString());
                 edtcal.apply();
 
                 String brcl = brecal.getText().toString();
                 brcl = brcl.replaceAll("[^\\d]", "");
-                Integer brclnum = 0;
-                if (!brcl.trim().isEmpty()) {
-                    brclnum = Integer.parseInt(brcl);
-                } else {
-                    brcl = "0 kcal";
-                    Toast.makeText(requireContext(), "Please enter again", Toast.LENGTH_SHORT).show();
-                }
+                Integer brclnum = Integer.parseInt(brcl);
 
                 String lucl = luncal.getText().toString();
                 lucl = lucl.replaceAll("[^\\d]", "");
@@ -276,9 +245,10 @@ public class CalorieCalc extends Fragment {
                 String dicl = dincal.getText().toString();
                 dicl = dicl.replaceAll("[^\\d]", "");
                 Integer diclnum = Integer.parseInt(dicl);
+
                 Integer totclr = diclnum + brclnum + luclnum;
 
-                if (etmscal != null) {
+                if (qty == 4) {
                     String mscal = etmscal.getText().toString();
                     mscal = mscal.replaceAll("[^\\d]", "");
                     Integer mscalnum = Integer.parseInt(mscal);

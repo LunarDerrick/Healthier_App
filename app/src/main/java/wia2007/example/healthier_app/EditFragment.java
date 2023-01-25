@@ -49,14 +49,9 @@ public class EditFragment extends Fragment {
         phone = view.findViewById(R.id.phone);
         confirm = view.findViewById(R.id.confirmBtn);
 
-        //get the spinner from the xml.
         Spinner dropdown = view.findViewById(R.id.gender);
-        //create a list of items for the spinner.
         String[] items = new String[]{"Male", "Female"};
-        //create an adapter to describe how the items are displayed, adapters are used in several places in android.
-        //There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, items);
-        //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
 
         DatabaseReference dbuser = FirebaseDatabase
@@ -73,6 +68,7 @@ public class EditFragment extends Fragment {
                 phone.setText(userProfile.getPhoneNumber());
                 weight.setText((int) userProfile.getWeight() + "");
                 height.setText((int) userProfile.getHeight() + "");
+                //gender.setSelection(userProfile.getGender().indexOf());
             }
 
             @Override
