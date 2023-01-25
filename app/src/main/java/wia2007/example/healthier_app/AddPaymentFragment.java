@@ -14,17 +14,20 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class AddPaymentFragment extends Fragment {
 
     TextInputEditText cnum, expdate, cvv;
     Button confirm;
     FirebaseDatabase db = FirebaseDatabase.getInstance("https://healthier-app-aed74-default-rtdb.asia-southeast1.firebasedatabase.app");
-    DatabaseReference root = db.getReference().child("Payment");
+    DatabaseReference root = db.getInstance().getReference();
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,14 +35,9 @@ public class AddPaymentFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_addpayment, container, false);
 
-        //get the spinner from the xml.
         Spinner dropdown = view.findViewById(R.id.e_wallet);
-        //create a list of items for the spinner.
         String[] items = new String[]{"Touch\'N\'Go", "GrabPay", "Boost"};
-        //create an adapter to describe how the items are displayed, adapters are used in several places in android.
-        //There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, items);
-        //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
 
         cnum = view.findViewById(R.id.cardno);
@@ -64,7 +62,7 @@ public class AddPaymentFragment extends Fragment {
                 paymentMap.put("expirydate", expired);
                 paymentMap.put("cvv", cvvcode);
 
-                root.child(cardnum).updateChildren(paymentMap);
+                root.child("User").child(Objects.requireNonNull(firebaseAuth.getUid())).updateChildren(paymentMap);
 
                 Navigation.findNavController(view).navigate(R.id.DestPayment);
             }

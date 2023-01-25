@@ -12,17 +12,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+import java.util.Objects;
+
 public class EditPaymentFragment extends Fragment {
 
     TextView cnum, expdate, cvvcode, wallet;
     Button gobtn;
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,18 +44,16 @@ public class EditPaymentFragment extends Fragment {
 
         DatabaseReference dbpay = FirebaseDatabase
                 .getInstance("https://healthier-app-aed74-default-rtdb.asia-southeast1.firebasedatabase.app")
-                .getReference().child("Payment");
+                .getReference("User").child(firebaseAuth.getUid());
 
         dbpay.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    Payment paymentProfile = dataSnapshot.getValue(Payment.class);
-                    cnum.setText(paymentProfile.getCardnumber());
-                    expdate.setText(paymentProfile.getExpirydate());
-                    cvvcode.setText(paymentProfile.getCvv() + "");
-                    wallet.setText(paymentProfile.getEwallet());
-                }
+                User userPayment = snapshot.getValue(User.class);
+                cnum.setText(userPayment.getCardnumber());
+                expdate.setText(userPayment.getExpirydate());
+                cvvcode.setText(userPayment.getCvv() + "");
+                wallet.setText(userPayment.getEwallet());
             }
 
             @Override

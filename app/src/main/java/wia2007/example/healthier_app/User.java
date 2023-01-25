@@ -9,6 +9,10 @@ public class User {
     private String phoneNumber;
     private String name;
     private String gender;
+    private String cardnumber;
+    private String expirydate;
+    private int cvv;
+    private String ewallet;
 
     public User() {
     }
@@ -18,16 +22,30 @@ public class User {
         this.email = email;
     }
 
-    public User(String username, String email, int age, double height, double weight, String phoneNumber, String name, String gender) {
-        this.name = name;
+    public User(String username, String email, int age, double height, double weight, String phoneNumber, String name,
+                String gender, String cardnumber, String expirydate, int cvv, String ewallet) {
         this.username = username;
         this.email = email;
         this.age = age;
         this.height = height;
         this.weight = weight;
         this.phoneNumber = phoneNumber;
+        this.name = name;
         this.gender = gender;
+        this.cardnumber = cardnumber;
+        this.expirydate = expirydate;
+        this.cvv = cvv;
+        this.ewallet = ewallet;
     }
+
+    /*
+    public User(String cardnumber, String expirydate, int cvv, String ewallet) {
+        this.cardnumber = cardnumber;
+        this.expirydate = expirydate;
+        this.cvv = cvv;
+        this.ewallet = ewallet;
+    }
+     */
 
     public String getUsername() {
         return username;
@@ -91,5 +109,37 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getCardnumber() {
+        return cardnumber;
+    }
+
+    public void setCardnumber(String cardnumber) {
+        this.cardnumber = cardnumber;
+    }
+
+    public String getExpirydate() {
+        return expirydate;
+    }
+
+    public void setExpirydate(String expirydate) {
+        this.expirydate = expirydate;
+    }
+
+    public int getCvv() {
+        return cvv;
+    }
+
+    public void setCvv(int cvv) {
+        this.cvv = cvv;
+    }
+
+    public String getEwallet() {
+        return ewallet;
+    }
+
+    public void setEwallet(String ewallet) {
+        this.ewallet = ewallet;
     }
 }
