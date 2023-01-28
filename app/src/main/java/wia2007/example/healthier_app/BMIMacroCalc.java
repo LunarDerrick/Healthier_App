@@ -1,5 +1,6 @@
 package wia2007.example.healthier_app;
 
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -266,6 +268,16 @@ public class BMIMacroCalc extends Fragment implements View.OnClickListener {
 
                     cardbmi.setVisibility(View.VISIBLE);
                     cardmacro.setVisibility(View.VISIBLE);
+
+                    SharedPreferences precal = PreferenceManager.getDefaultSharedPreferences(requireContext());
+                    SharedPreferences.Editor edtcal = precal.edit();
+
+                    String input = circle.getText().toString();
+                    int totcircle = Integer.parseInt(input);
+
+                    edtcal.putInt("calories", totcircle);
+                    edtcal.apply();
+
                 }
             }
         });

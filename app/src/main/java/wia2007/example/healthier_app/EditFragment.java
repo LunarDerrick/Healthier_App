@@ -68,7 +68,7 @@ public class EditFragment extends Fragment {
                 phone.setText(userProfile.getPhoneNumber());
                 weight.setText((int) userProfile.getWeight() + "");
                 height.setText((int) userProfile.getHeight() + "");
-                //gender.setSelection(userProfile.getGender().indexOf());
+                //dropdown.setSelection(items.indexOf(userProfile.getGender()))
             }
 
             @Override

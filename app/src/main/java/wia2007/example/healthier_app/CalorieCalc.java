@@ -154,7 +154,7 @@ public class CalorieCalc extends Fragment {
         });
 
         SharedPreferences calprefs = PreferenceManager.getDefaultSharedPreferences(requireContext());
-        int calinput1 = calprefs.getInt("calories", calinput);
+        int calinput1 = calprefs.getInt("calories", 0);
         calo.setText("" + calinput1);
 
         String bfd = calprefs.getString("breakfast", "");
@@ -210,12 +210,12 @@ public class CalorieCalc extends Fragment {
                 totalcalorie = totcal.getText().toString();
                 position = spinner.getSelectedItemPosition();
                 calinput = Integer.parseInt(input);
-                perclr.setText("/" + calinput + " kcal");
+                perclr.setText("/" + calo.getText().toString() + " kcal");
 
                 SharedPreferences precal = PreferenceManager.getDefaultSharedPreferences(requireContext());
                 SharedPreferences.Editor edtcal = precal.edit();
 
-                edtcal.putInt("calories", calinput);
+                //edtcal.putInt("calories", calinput);
                 edtcal.putInt("quantity", position);
                 edtcal.putString("breakfast", bfast);
                 edtcal.putString("lunch", lunch);
@@ -251,10 +251,6 @@ public class CalorieCalc extends Fragment {
                 }
 
                 totcal.setText(String.format("%d", totclr));
-
-                if(totclr > calinput){
-                    totcal.setTextColor(Color.RED);
-                }
 
             }
         });
