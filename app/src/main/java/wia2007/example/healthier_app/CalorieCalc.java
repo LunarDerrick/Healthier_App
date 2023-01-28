@@ -28,11 +28,11 @@ public class CalorieCalc extends Fragment {
     TextView brkfst, mngsnk, lnch, dnr, brminmax, msminmax, lcminmax, dnminmax, perclr, etms, totcal, tvrec;
     CardView cvrec;
     TableLayout tbleat;
-    TableRow tbladd, tblms;
+    TableRow tblms;
     Button calculate, add, edit;
     Spinner spinner;
     String[] mealsperday = {"3", "4"};
-    int qty, calinput;
+    int qty, calinput, position;
     String bfast, lunch, dnnr, bfastcal, lunchcal, dnnrcal, snack, snackcal, totalcalorie;
 
     @Override
@@ -42,7 +42,6 @@ public class CalorieCalc extends Fragment {
         View view = inflater.inflate(R.layout.fragment_calorie, container, false);
 
         calculate = view.findViewById(R.id.calcButton);
-        add = view.findViewById(R.id.BTPlus);
         edit = view.findViewById(R.id.BTEditEat);
         tbleat = view.findViewById(R.id.TBLEaten);
         mngsnk = view.findViewById(R.id.TVMornSnack);
@@ -68,6 +67,7 @@ public class CalorieCalc extends Fragment {
         calo = view.findViewById(R.id.Calories);
         tblms = view.findViewById(R.id.TBRMs);
         spinner = view.findViewById(R.id.mealsperday);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_spinner_item, mealsperday);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -78,6 +78,11 @@ public class CalorieCalc extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selected = (String) parent.getItemAtPosition(position);
                 qty = Integer.parseInt(selected);
+                if(qty == 3){
+                    tblms.setVisibility(View.GONE);
+                }else if(qty == 4){
+                    tblms.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
@@ -100,7 +105,6 @@ public class CalorieCalc extends Fragment {
                             Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
                         } else {
                             Integer clr = Integer.parseInt(calo.getText().toString());
-                            //perclr.setText(String.format(" /%d kcal", clr));
                             if (qty == 3) {
                                 Double dmin = clr * 0.25;
                                 Double dn = clr * 0.3;
@@ -119,8 +123,6 @@ public class CalorieCalc extends Fragment {
                                 msminmax.setText("(min: 0, max: 0)");
                                 lcminmax.setText(String.format("(min: %.0f, max: %.0f)", lmin, lmax));
                                 dnminmax.setText(String.format("(min: %.0f, max: %.0f)", dmin, dmax));
-                                tblms.setVisibility(View.GONE);
-                                Toast.makeText(requireContext(), "Only 3 meals today!", Toast.LENGTH_SHORT).show();
                             } else if (qty == 4) {
                                 Double msmin = clr * 0.05;
                                 Double mgsk = clr * 0.075;
@@ -142,24 +144,11 @@ public class CalorieCalc extends Fragment {
                                 msminmax.setText(String.format("(min: %.0f, max: %.0f)", msmin, msmax));
                                 lcminmax.setText(String.format("(min: %.0f, max: %.0f)", lmin, lmax));
                                 dnminmax.setText(String.format("(min: %.0f, max: %.0f)", dmin, dmax));
-                                tblms.setVisibility(View.VISIBLE);
-                                Toast.makeText(requireContext(), "Snack morning row added", Toast.LENGTH_SHORT).show();
                             }
                         }
                     } catch (NumberFormatException e) {
                         Toast.makeText(requireContext(), R.string.toastError, Toast.LENGTH_SHORT).show();
                     }
-                }
-            }
-        });
-
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(qty == 3){
-                    Toast.makeText(requireContext(), "Only 3 meals today!", Toast.LENGTH_SHORT).show();
-                }else if(qty == 4){
-                    Toast.makeText(requireContext(), "Only 4 meals today!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -186,8 +175,8 @@ public class CalorieCalc extends Fragment {
         String dcl = calprefs.getString("dinnercalorie", "0 kcal");
         dincal.setText("" + dcl);
 
-        //final String[] mpd = {calprefs.getString("mealsperday", "")};
-
+        int quantity = calprefs.getInt("quantity", 0);
+        spinner.setSelection(quantity);
 
         String mfd = calprefs.getString("snack", "");
         if (etsnack != null) {
@@ -219,8 +208,7 @@ public class CalorieCalc extends Fragment {
                 snack = etsnack.getText().toString();
                 snackcal = etmscal.getText().toString();
                 totalcalorie = totcal.getText().toString();
-                //mpd[0] = spinner.getSelectedItem().toString();
-
+                position = spinner.getSelectedItemPosition();
                 calinput = Integer.parseInt(input);
                 perclr.setText("/" + calinput + " kcal");
 
@@ -228,7 +216,7 @@ public class CalorieCalc extends Fragment {
                 SharedPreferences.Editor edtcal = precal.edit();
 
                 edtcal.putInt("calories", calinput);
-                //edtcal.putString("mealsperday", mpd[0]);
+                edtcal.putInt("quantity", position);
                 edtcal.putString("breakfast", bfast);
                 edtcal.putString("lunch", lunch);
                 edtcal.putString("dinner", dnnr);
@@ -263,6 +251,10 @@ public class CalorieCalc extends Fragment {
                 }
 
                 totcal.setText(String.format("%d", totclr));
+
+                if(totclr > calinput){
+                    totcal.setTextColor(Color.RED);
+                }
 
             }
         });

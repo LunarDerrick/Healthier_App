@@ -304,19 +304,6 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-        <Button
-            android:id="@+id/BTPlus"
-            style="?attr/borderlessButtonStyle"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="384dp"
-            android:layout_marginEnd="100dp"
-            android:contentDescription="@string/CDPlus"
-            android:drawableEnd="@drawable/ic_baseline_add_24_black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
         <TableLayout
             android:id="@+id/TBLEaten"
             android:layout_width="346dp"
