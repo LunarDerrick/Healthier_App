@@ -16,8 +16,8 @@ public class ViewPagerAdapterCoaching extends FragmentStateAdapter {
         switch (position) {
             case 1:
                 return new LessonsFragment();
-            case 2:
-                return new LocatorFragment();
+//            case 2:
+//                return new LocatorFragment();
             default:
                 return new FinderFragment();
         }
@@ -25,6 +25,6 @@ public class ViewPagerAdapterCoaching extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 2;
     }
 }

@@ -41,11 +41,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/TILesson" />
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/TILocator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/TILocator" />
+<!--            <com.google.android.material.tabs.TabItem-->
+<!--                android:id="@+id/TILocator"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/TILocator" />-->
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager2.widget.ViewPager2
@@ -69,16 +69,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/FCVLocator"
-        android:name="wia2007.example.healthier_app.LocatorFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TBCoaching"
-        tools:layout="@layout/fragment_locator" />
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/FCVLocator"-->
+<!--        android:name="wia2007.example.healthier_app.LocatorFragment"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/TBCoaching"-->
+<!--        tools:layout="@layout/fragment_locator" />-->
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCVLesson"

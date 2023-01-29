@@ -47,7 +47,7 @@ public class GymLocator extends FragmentActivity implements OnMapReadyCallback,
     private LocationRequest locationRequest;
     private Location lastlocation;
     private Marker currentLocationmMarker;
-    public static final int REQUEST_LOCATION_CODE = 99;
+    public static final int REQUEST_LOCATION_CODE = 60;
     int PROXIMITY_RADIUS = 10000;
     double latitude, longitude;
 
