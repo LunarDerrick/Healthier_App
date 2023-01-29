@@ -111,7 +111,7 @@ public class EarnRewardTFragment extends Fragment {
         View view = getLayoutInflater().inflate(R.layout.item_view, null);
 
         TextView act = view.findViewById(R.id.ETACtivity);
-        Button delete = view.findViewById(R.id.closeImageButton);
+        ImageButton delete = view.findViewById(R.id.closeImageButton);
 
         act.setText(activityName);
         delete.setOnClickListener(new View.OnClickListener() {

@@ -45,7 +45,7 @@
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/drawable/white_rectangle_rounded.xml" value="0.3345" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/font/inter.xml" value="0.3927083333333333" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/font/inter_bold.xml" value="0.3927083333333333" />
-        <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/activity_calculator.xml" value="0.25" />
+        <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/activity_calculator.xml" value="0.33" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/activity_coaching.xml" value="0.3625" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/activity_general.xml" value="0.33" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
@@ -57,7 +57,7 @@
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_activity_reward.xml" value="0.33" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_addpayment.xml" value="0.22" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_blank.xml" value="0.3625" />
-        <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_bmi_macro.xml" value="0.22" />
+        <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_bmi_macro.xml" value="0.33" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_calorie.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_diet.xml" value="0.33" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_earn_reward_t.xml" value="0.33" />
@@ -68,7 +68,7 @@
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_finder.xml" value="0.1" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_food_inventory_t.xml" value="0.33" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_help.xml" value="0.25815217391304346" />
-        <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_info.xml" value="0.2598958333333333" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_lessons.xml" value="0.33" />
         <entry key="..\:/Users/derri/AndroidStudioProjects/Healthier_App/app/src/main/res/layout/fragment_locator.xml" value="0.3453038674033149" />
