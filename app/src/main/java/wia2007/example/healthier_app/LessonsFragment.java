@@ -73,5 +73,6 @@ public class LessonsFragment extends Fragment {
             }
         };
         BtnMore1.setOnClickListener(OCLMore1);
+
     }
 }

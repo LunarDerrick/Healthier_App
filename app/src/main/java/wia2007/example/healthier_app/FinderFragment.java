@@ -99,5 +99,15 @@ public class FinderFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        Button BtnFind = view.findViewById(R.id.BtnFindGym1);
+        View.OnClickListener OCLFind = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), GymLocator.class);
+                startActivity(intent);
+            }
+        };
+        BtnFind.setOnClickListener(OCLFind);
     }
 }
